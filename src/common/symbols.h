@@ -341,7 +341,7 @@ static constexpr size_t kMacBaseLocalPort = 8180;
 static constexpr size_t kMacBaseClientPort = 7070;
 
 // Number of subcarriers in a partial transpose block
-static constexpr size_t kTransposeBlockSize = 8;
+static constexpr size_t kTransposeBlockSize = 16;
 static_assert(IsPowerOfTwo(kTransposeBlockSize));  // For cheap modulo
 static_assert(kTransposeBlockSize % kSCsPerCacheline == 0);
 

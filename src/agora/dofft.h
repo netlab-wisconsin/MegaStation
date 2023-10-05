@@ -18,6 +18,9 @@
 #include "stats.h"
 #include "symbols.h"
 
+#include <cuda_runtime.h>
+#include <cufftXt.h>
+
 class DoFFT : public Doer {
  public:
   DoFFT(Config* config, size_t tid, Table<complex_float>& data_buffer,
@@ -110,6 +113,12 @@ class DoFFT : public Doer {
   DurationStat* duration_stat_fft_;
   DurationStat* duration_stat_csi_;
   PhyStats* phy_stats_;
+
+  // GPU
+  cufftHandle cufft_plan_;
+  cudaStream_t cuda_stream_;
+  cudaStream_t cuda_stream2_;
+  cufftComplex *fft_inout_cuda_;
 };
 
 #endif  // DOFFT_H_

@@ -1,6 +1,6 @@
 {
-    "bs_radio_num": 8,
-    "ue_radio_num": 8,
+    "bs_radio_num": 64,
+    "ue_radio_num": 16,
     "frame_schedule": [
         "PUUUUUUUUUUUUU"
     ],
@@ -19,6 +19,6 @@
     "exclude_cores": [
         0
     ],
-    "worker_thread_num": 22,
-    "socket_thread_num": 1
+    "worker_thread_num": 23,
+    "socket_thread_num": 2
 }

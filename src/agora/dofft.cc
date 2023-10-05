@@ -43,6 +43,14 @@ DoFFT::DoFFT(Config* config, size_t tid, Table<complex_float>& data_buffer,
       static_cast<std::complex<float>*>(Agora_memory::PaddedAlignedAlloc(
           Agora_memory::Alignment_t::kAlign64,
           cfg_->SampsPerSymbol() * sizeof(std::complex<float>)));
+  
+  // GPU
+  cufftCreate(&cufft_plan_);
+  cufftPlan1d(&cufft_plan_, cfg_->OfdmCaNum(), CUFFT_C2C, 1);
+  cudaStreamCreateWithFlags(&cuda_stream_, cudaStreamNonBlocking);
+  cufftSetStream(cufft_plan_, cuda_stream_);
+  cudaMalloc(reinterpret_cast<void **>(&fft_inout_cuda_), sizeof(std::complex<float>) * cfg_->OfdmCaNum());
+  cudaStreamCreateWithFlags(&cuda_stream2_, cudaStreamNonBlocking);
 }
 
 DoFFT::~DoFFT() {
@@ -51,6 +59,10 @@ DoFFT::~DoFFT() {
   std::free(fft_shift_tmp_);
   std::free(rx_samps_tmp_);
   std::free(temp_16bits_iq_);
+  cudaFree(fft_inout_cuda_);
+  cufftDestroy(cufft_plan_);
+  cudaStreamDestroy(cuda_stream_);
+  cudaStreamDestroy(cuda_stream2_);
 }
 
 // @brief
@@ -119,6 +131,8 @@ EventData DoFFT::Launch(size_t tag) {
                               reinterpret_cast<float*>(fft_inout_),
                               cfg_->OfdmCaNum() * 2);
     }
+    // GPU
+    cudaMemcpyAsync(fft_inout_cuda_, fft_inout_, sizeof(std::complex<float>) * cfg_->OfdmCaNum(), cudaMemcpyHostToDevice, cuda_stream_);
     if (kDebugPrintInTask) {
       std::printf("In doFFT thread %d: frame: %zu, symbol: %zu, ant: %zu\n",
                   tid_, frame_id, symbol_id, ant_id);
@@ -182,10 +196,18 @@ EventData DoFFT::Launch(size_t tag) {
   duration_stat->task_duration_.at(1) += start_tsc1 - start_tsc;
 
   if (!cfg_->FftInRru() == true) {
-    DftiComputeForward(
+    /*DftiComputeForward(
         mkl_handle_,
-        reinterpret_cast<float*>(fft_inout_));  // Compute FFT in-place
-  }
+        reinterpret_cast<float*>(fft_inout_));*/  // Compute FFT in-place
+    // GPU
+    cufftExecC2C(cufft_plan_, fft_inout_cuda_, fft_inout_cuda_, CUFFT_FORWARD);
+    cudaMemcpyAsync(fft_inout_, fft_inout_cuda_ + cfg_->OfdmCaNum() / 2,
+              sizeof(float) * cfg_->OfdmCaNum(), cudaMemcpyDeviceToHost, cuda_stream_);
+    cudaMemcpyAsync(fft_inout_ + cfg_->OfdmCaNum() / 2, fft_inout_cuda_,
+              sizeof(float) * cfg_->OfdmCaNum(), cudaMemcpyDeviceToHost, cuda_stream2_);
+    cudaStreamSynchronize(cuda_stream_);
+    cudaStreamSynchronize(cuda_stream2_);
+  } else{
 
   //// FFT shift the buffer
   std::memcpy(fft_shift_tmp_, fft_inout_, sizeof(float) * cfg_->OfdmCaNum());
@@ -193,6 +215,7 @@ EventData DoFFT::Launch(size_t tag) {
               sizeof(float) * cfg_->OfdmCaNum());
   std::memcpy(fft_inout_ + cfg_->OfdmCaNum() / 2, fft_shift_tmp_,
               sizeof(float) * cfg_->OfdmCaNum());
+  }
 
   size_t start_tsc2 = GetTime::WorkerRdtsc();
   duration_stat->task_duration_.at(2) += start_tsc2 - start_tsc1;
