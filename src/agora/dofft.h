@@ -13,20 +13,25 @@
 #include "doer.h"
 #include "memory_manage.h"
 #include "message.h"
-#include "mkl_dfti.h"
 #include "phy_stats.h"
 #include "stats.h"
 #include "symbols.h"
 
 #include <cuda_runtime.h>
 #include <cufftXt.h>
+#include "doFFTCallback.h"
 
 class DoFFT : public Doer {
  public:
   DoFFT(Config* config, size_t tid, Table<complex_float>& data_buffer,
         PtrGrid<kFrameWnd, kMaxUEs, complex_float>& csi_buffers,
         Table<complex_float>& calib_dl_buffer,
-        Table<complex_float>& calib_ul_buffer, PhyStats* in_phy_stats,
+        Table<complex_float>& calib_ul_buffer,
+        PhyStats* in_phy_stats,
+        short *packet_buffer,
+        cufftComplex *fft_out,
+        Table<cudaStream_t>& cuda_streams,
+        struct storeInfo *stInfo,
         Stats* stats_manager);
   ~DoFFT() override;
 
@@ -102,7 +107,7 @@ class DoFFT : public Doer {
   PtrGrid<kFrameWnd, kMaxUEs, complex_float>& csi_buffers_;
   Table<complex_float>& calib_dl_buffer_;
   Table<complex_float>& calib_ul_buffer_;
-  DFTI_DESCRIPTOR_HANDLE mkl_handle_;
+  //DFTI_DESCRIPTOR_HANDLE mkl_handle_;
   complex_float* fft_inout_;      // Buffer for both FFT input and output
   complex_float* fft_shift_tmp_;  // Buffer for both FFT input and output
 
@@ -116,9 +121,14 @@ class DoFFT : public Doer {
 
   // GPU
   cufftHandle cufft_plan_;
-  cudaStream_t cuda_stream_;
-  cudaStream_t cuda_stream2_;
-  cufftComplex *fft_inout_cuda_;
+  short *fft_in_;
+  cufftComplex *fft_out_;
+  Table<cudaStream_t>& cuda_streams_;
+
+  cufftCallbackLoadC hostLoadCallbackPtr;
+  cufftCallbackStoreC hostStoreUplinkPtr;
+  cufftCallbackStoreC hostStorePilotPtr;
+  struct storeInfo *stInfoPtr_;
 };
 
 #endif  // DOFFT_H_

@@ -16,19 +16,28 @@ static constexpr bool kPrintPilotCorrStats = false;
 DoFFT::DoFFT(Config* config, size_t tid, Table<complex_float>& data_buffer,
              PtrGrid<kFrameWnd, kMaxUEs, complex_float>& csi_buffers,
              Table<complex_float>& calib_dl_buffer,
-             Table<complex_float>& calib_ul_buffer, PhyStats* in_phy_stats,
+             Table<complex_float>& calib_ul_buffer,
+             PhyStats* in_phy_stats,
+             short *packet_buffer,
+             cufftComplex *fft_out,
+             Table<cudaStream_t>& cuda_streams,
+             struct storeInfo *stInfo,
              Stats* stats_manager)
     : Doer(config, tid),
       data_buffer_(data_buffer),
       csi_buffers_(csi_buffers),
       calib_dl_buffer_(calib_dl_buffer),
       calib_ul_buffer_(calib_ul_buffer),
-      phy_stats_(in_phy_stats) {
+      phy_stats_(in_phy_stats),
+      fft_in_(packet_buffer),
+      fft_out_(fft_out),
+      cuda_streams_(cuda_streams),
+      stInfoPtr_(stInfo) {
   duration_stat_fft_ = stats_manager->GetDurationStat(DoerType::kFFT, tid);
   duration_stat_csi_ = stats_manager->GetDurationStat(DoerType::kCSI, tid);
-  DftiCreateDescriptor(&mkl_handle_, DFTI_SINGLE, DFTI_COMPLEX, 1,
-                       cfg_->OfdmCaNum());
-  DftiCommitDescriptor(mkl_handle_);
+  //DftiCreateDescriptor(&mkl_handle_, DFTI_SINGLE, DFTI_COMPLEX, 1,
+  //                     cfg_->OfdmCaNum());
+  //DftiCommitDescriptor(mkl_handle_);
 
   // Aligned for SIMD
   fft_inout_ = static_cast<complex_float*>(Agora_memory::PaddedAlignedAlloc(
@@ -46,23 +55,29 @@ DoFFT::DoFFT(Config* config, size_t tid, Table<complex_float>& data_buffer,
   
   // GPU
   cufftCreate(&cufft_plan_);
-  cufftPlan1d(&cufft_plan_, cfg_->OfdmCaNum(), CUFFT_C2C, 1);
-  cudaStreamCreateWithFlags(&cuda_stream_, cudaStreamNonBlocking);
-  cufftSetStream(cufft_plan_, cuda_stream_);
-  cudaMalloc(reinterpret_cast<void **>(&fft_inout_cuda_), sizeof(std::complex<float>) * cfg_->OfdmCaNum());
-  cudaStreamCreateWithFlags(&cuda_stream2_, cudaStreamNonBlocking);
+  cufftPlan1d(&cufft_plan_, cfg_->OfdmCaNum(), CUFFT_C2C, cfg_->BsAntNum());
+
+  cudaMemcpyFromSymbol(&hostLoadCallbackPtr,
+      cufftLoadCallbackPtr,
+      sizeof(hostLoadCallbackPtr));
+  cudaMemcpyFromSymbol(&hostStoreUplinkPtr,
+      cufftStoreUplinkPtr,
+      sizeof(hostStoreUplinkPtr));
+  cudaMemcpyFromSymbol(&hostStorePilotPtr,
+      cufftStorePilotPtr,
+      sizeof(hostStorePilotPtr));
+  cufftXtSetCallback(cufft_plan_,
+    reinterpret_cast<void **>(&hostLoadCallbackPtr),
+    CUFFT_CB_LD_COMPLEX, NULL);
 }
 
 DoFFT::~DoFFT() {
-  DftiFreeDescriptor(&mkl_handle_);
+  //DftiFreeDescriptor(&mkl_handle_);
   std::free(fft_inout_);
   std::free(fft_shift_tmp_);
   std::free(rx_samps_tmp_);
   std::free(temp_16bits_iq_);
-  cudaFree(fft_inout_cuda_);
   cufftDestroy(cufft_plan_);
-  cudaStreamDestroy(cuda_stream_);
-  cudaStreamDestroy(cuda_stream2_);
 }
 
 // @brief
@@ -99,8 +114,89 @@ static inline void CalibRegressionEstimate(const arma::cx_fvec& in_vec,
 }
 
 EventData DoFFT::Launch(size_t tag) {
+  RtAssert(!kUsePartialTrans, "Don't support partial trans in GPU");
   const size_t start_tsc = GetTime::WorkerRdtsc();
-  Packet* pkt = fft_req_tag_t(tag).rx_packet_->RawPacket();
+  const size_t frame_id = gen_tag_t(tag).frame_id_;
+  const size_t frame_slot = frame_id % kFrameWnd;
+  const size_t symbol_id = gen_tag_t(tag).symbol_id_;
+  const SymbolType sym_type = cfg_->GetSymbolType(symbol_id);
+
+  DurationStat dummy_duration_stat;  // TODO: timing for calibration symbols
+  DurationStat* duration_stat = nullptr;
+  if (sym_type == SymbolType::kUL) {
+    duration_stat = duration_stat_fft_;
+  } else if (sym_type == SymbolType::kPilot) {
+    duration_stat = duration_stat_csi_;
+  } else {
+    duration_stat = &dummy_duration_stat;  // For calibration symbols
+  }
+
+  size_t start_tsc1 = GetTime::WorkerRdtsc();
+  duration_stat->task_duration_.at(1) += start_tsc1 - start_tsc;
+
+  cudaStream_t cur_stream = cuda_streams_[symbol_id][0];
+  short *in_ptr = fft_in_
+    + symbol_id * (cfg_->OfdmCaNum() * cfg_->BsAntNum() * 2);
+  cufftComplex *out_ptr = fft_out_
+    + symbol_id * (cfg_->OfdmDataNum() * cfg_->BsAntNum());
+  complex_float *out_cpu_buffer = NULL;
+  size_t pilot_symbol_id;
+
+  if (sym_type == SymbolType::kPilot) {
+    pilot_symbol_id = cfg_->Frame().GetPilotSymbolIdx(symbol_id);
+    out_cpu_buffer = csi_buffers_[frame_slot][pilot_symbol_id];
+    cufftXtSetCallback(cufft_plan_,
+      reinterpret_cast<void **>(&hostStorePilotPtr),
+      CUFFT_CB_ST_COMPLEX,
+      reinterpret_cast<void **>(&stInfoPtr_));
+  } else if (sym_type == SymbolType::kUL) {
+    out_cpu_buffer = cfg_->GetDataBuf(data_buffer_, frame_id, symbol_id);
+    cufftXtSetCallback(cufft_plan_,
+      reinterpret_cast<void **>(&hostStoreUplinkPtr),
+      CUFFT_CB_ST_COMPLEX,
+      reinterpret_cast<void **>(&stInfoPtr_));
+  }
+  RtAssert(out_cpu_buffer != NULL, "Invalid symbol type for gpu");
+
+  cufftSetStream(cufft_plan_, cur_stream);
+  cufftExecC2C(cufft_plan_, reinterpret_cast<cufftComplex *>(in_ptr),
+    out_ptr, CUFFT_FORWARD);
+
+  size_t start_tsc2 = GetTime::WorkerRdtsc();
+  duration_stat->task_duration_.at(2) += start_tsc2 - start_tsc1;
+
+  cudaMemcpyAsync(out_cpu_buffer, out_ptr,
+      sizeof(cufftComplex) * cfg_->OfdmDataNum() * cfg_->BsAntNum(),
+      cudaMemcpyDeviceToHost, cur_stream);
+  cudaStreamSynchronize(cur_stream);
+  //std::printf("First FFT symbol: %f, %f\n", out_cpu_buffer[0].re, out_cpu_buffer[0].im);
+  if (sym_type == SymbolType::kPilot && cfg_->FreqOrthogonalPilot()
+    && pilot_symbol_id == cfg_->Frame().NumPilotSyms() - 1) {
+    //const size_t printOffset = 11 * cfg_->OfdmDataNum() + 721;
+    //std::printf("First Input Symbol is %f, %f\n", out_cpu_buffer[printOffset].re, out_cpu_buffer[printOffset].im);
+    const size_t num_blocks = cfg_->OfdmDataNum() * cfg_->BsAntNum() / kTransposeBlockSize;
+    for (ssize_t ue_id = cfg_->UeAntNum() - 1; ue_id >= 0; ue_id--) {
+      for (size_t block_idx = 0; block_idx < num_blocks; block_idx++) {
+        const size_t block_offset = block_idx * kTransposeBlockSize;
+        complex_float src = csi_buffers_[frame_slot][0][block_offset + ue_id];
+        complex_float *dst = &csi_buffers_[frame_slot][ue_id][block_offset];
+        for (size_t sc_idx = 0; sc_idx < kTransposeBlockSize; sc_idx++) {
+          dst[sc_idx] = src;
+        }
+      }
+    }
+    //std::printf("First Output Symbol is %f, %f\n", out_cpu_buffer[printOffset].re, out_cpu_buffer[printOffset].im);
+  }
+
+  duration_stat->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc2;
+
+  duration_stat->task_count_++;
+  duration_stat->task_duration_[0] += GetTime::WorkerRdtsc() - start_tsc;
+
+  return EventData(EventType::kFFT,
+      gen_tag_t::FrmSym(frame_id, symbol_id).tag_);
+
+  /*Packet* pkt = fft_req_tag_t(tag).rx_packet_->RawPacket();
   const size_t frame_id = pkt->frame_id_;
   const size_t frame_slot = frame_id % kFrameWnd;
   const size_t symbol_id = pkt->symbol_id_;
@@ -132,7 +228,7 @@ EventData DoFFT::Launch(size_t tag) {
                               cfg_->OfdmCaNum() * 2);
     }
     // GPU
-    cudaMemcpyAsync(fft_inout_cuda_, fft_inout_, sizeof(std::complex<float>) * cfg_->OfdmCaNum(), cudaMemcpyHostToDevice, cuda_stream_);
+    //cudaMemcpyAsync(fft_inout_cuda_, fft_inout_, sizeof(std::complex<float>) * cfg_->OfdmCaNum(), cudaMemcpyHostToDevice, cuda_stream_);
     if (kDebugPrintInTask) {
       std::printf("In doFFT thread %d: frame: %zu, symbol: %zu, ant: %zu\n",
                   tid_, frame_id, symbol_id, ant_id);
@@ -196,17 +292,17 @@ EventData DoFFT::Launch(size_t tag) {
   duration_stat->task_duration_.at(1) += start_tsc1 - start_tsc;
 
   if (!cfg_->FftInRru() == true) {
-    /*DftiComputeForward(
-        mkl_handle_,
-        reinterpret_cast<float*>(fft_inout_));*/  // Compute FFT in-place
+    //DftiComputeForward(
+    //    mkl_handle_,
+    //    reinterpret_cast<float*>(fft_inout_));  // Compute FFT in-place
     // GPU
-    cufftExecC2C(cufft_plan_, fft_inout_cuda_, fft_inout_cuda_, CUFFT_FORWARD);
-    cudaMemcpyAsync(fft_inout_, fft_inout_cuda_ + cfg_->OfdmCaNum() / 2,
-              sizeof(float) * cfg_->OfdmCaNum(), cudaMemcpyDeviceToHost, cuda_stream_);
-    cudaMemcpyAsync(fft_inout_ + cfg_->OfdmCaNum() / 2, fft_inout_cuda_,
-              sizeof(float) * cfg_->OfdmCaNum(), cudaMemcpyDeviceToHost, cuda_stream2_);
-    cudaStreamSynchronize(cuda_stream_);
-    cudaStreamSynchronize(cuda_stream2_);
+    //cufftExecC2C(cufft_plan_, fft_inout_cuda_, fft_inout_cuda_, CUFFT_FORWARD);
+    //cudaMemcpyAsync(fft_inout_, fft_inout_cuda_ + cfg_->OfdmCaNum() / 2,
+    //          sizeof(float) * cfg_->OfdmCaNum(), cudaMemcpyDeviceToHost, cuda_stream_);
+    //cudaMemcpyAsync(fft_inout_ + cfg_->OfdmCaNum() / 2, fft_inout_cuda_,
+    //          sizeof(float) * cfg_->OfdmCaNum(), cudaMemcpyDeviceToHost, cuda_stream2_);
+    //cudaStreamSynchronize(cuda_stream_);
+    //cudaStreamSynchronize(cuda_stream2_);
   } else{
 
   //// FFT shift the buffer
@@ -316,13 +412,13 @@ EventData DoFFT::Launch(size_t tag) {
   duration_stat->task_count_++;
   duration_stat->task_duration_[0] += GetTime::WorkerRdtsc() - start_tsc;
   return EventData(EventType::kFFT,
-                   gen_tag_t::FrmSym(pkt->frame_id_, pkt->symbol_id_).tag_);
+                   gen_tag_t::FrmSym(pkt->frame_id_, pkt->symbol_id_).tag_);*/
 }
 
 void DoFFT::PartialTranspose(complex_float* out_buf, size_t ant_id,
                              SymbolType symbol_type) const {
   // We have OfdmDataNum() % kTransposeBlockSize == 0
-  const size_t num_sc_blocks = cfg_->OfdmDataNum() / kTransposeBlockSize;
+  /*const size_t num_sc_blocks = cfg_->OfdmDataNum() / kTransposeBlockSize;
 
   for (size_t sc_block_idx = 0; sc_block_idx < num_sc_blocks; sc_block_idx++) {
     const size_t sc_block_base_offset =
@@ -389,5 +485,5 @@ void DoFFT::PartialTranspose(complex_float* out_buf, size_t ant_id,
       _mm256_stream_ps(reinterpret_cast<float*>(dst + 4), fft_result1);
 #endif
     }
-  }
+  }*/
 }

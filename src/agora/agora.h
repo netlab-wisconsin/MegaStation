@@ -165,6 +165,7 @@ class Agora {
   // Per-frame queues of delayed FFT tasks. The queue contains offsets into
   // TX/RX buffers.
   std::array<std::queue<fft_req_tag_t>, kFrameWnd> fft_queue_arr_;
+  std::array<std::queue<fft_req_tag_t>, kFrameWnd> fft_stale_arr_;
 
   // Master thread's message queue for receiving packets
   moodycamel::ConcurrentQueue<EventData> message_queue_;

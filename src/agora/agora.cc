@@ -773,19 +773,70 @@ void Agora::Start() {
       // or (b) the current frame being updated.
       std::queue<fft_req_tag_t>& cur_fftq =
           fft_queue_arr_.at(frame_tracking_.cur_sche_frame_id_ % kFrameWnd);
+      std::queue<fft_req_tag_t>& cur_staleq =
+          fft_stale_arr_.at(frame_tracking_.cur_sche_frame_id_ % kFrameWnd);
       const size_t qid = frame_tracking_.cur_sche_frame_id_ & 0x1;
       if (cur_fftq.size() >= config_->FftBlockSize()) {
         const size_t num_fft_blocks = cur_fftq.size() / config_->FftBlockSize();
         for (size_t i = 0; i < num_fft_blocks; i++) {
-          EventData do_fft_task;
-          do_fft_task.num_tags_ = config_->FftBlockSize();
-          do_fft_task.event_type_ = EventType::kFFT;
+          //EventData do_fft_task;
+          //do_fft_task.num_tags_ = config_->FftBlockSize();
+          //do_fft_task.event_type_ = EventType::kFFT;
 
           for (size_t j = 0; j < config_->FftBlockSize(); j++) {
             RtAssert(!cur_fftq.empty(),
                      "Using front element cur_fftq when it is empty");
-            do_fft_task.tags_[j] = cur_fftq.front().tag_;
+            //do_fft_task.tags_[j] = cur_fftq.front().tag_;
+            fft_req_tag_t &tag = cur_fftq.front();
             cur_fftq.pop();
+
+            // extract frame_id, symbol_id, ant_id from do_fft_task.tags_[j]
+            // dofft.cc: L103-107
+            Packet* pkt = tag.rx_packet_->RawPacket();
+            const size_t frame_id = pkt->frame_id_;
+            const size_t symbol_id = pkt->symbol_id_;
+            const size_t ant_id = pkt->ant_id_;
+            const SymbolType sym_type = config_->GetSymbolType(symbol_id);
+
+            // Copy to gpu memory & free pkt
+            AgoraBuffer *buffer = agora_memory_.get();
+            short *src_cpu_buffer = pkt->data_ + 2 * config_->OfdmRxZeroPrefixBs();
+            short *dst_gpu_buffer = buffer->packet_buffer_
+              + symbol_id * (config_->OfdmCaNum() * config_->BsAntNum() * 2)
+              + ant_id * config_->OfdmCaNum() * 2;
+            cudaStream_t stream = buffer->cuda_streams_[symbol_id][0];
+            cudaMemcpyAsync(dst_gpu_buffer, src_cpu_buffer,
+                sizeof(short) * config_->OfdmCaNum() * 2,
+                cudaMemcpyHostToDevice, stream);
+            cur_staleq.push(tag);
+
+            // Call complete task (function HandleEventFft)
+            // If last task of symbol, assign doFFT
+            if (sym_type == SymbolType::kPilot) {
+              const bool last_fft_task =
+                pilot_fft_counters_.CompleteTask(frame_id, symbol_id);
+
+              if (last_fft_task == true) {
+                EventData do_fft_task = EventData(EventType::kFFT,
+                  gen_tag_t::FrmSym(frame_id, symbol_id).tag_);
+                TryEnqueueFallback(message_->GetConq(EventType::kFFT, qid),
+                      message_->GetPtok(EventType::kFFT, qid),
+                      do_fft_task);
+              }
+            } else if (sym_type == SymbolType::kUL) {
+              const bool last_fft_per_symbol =
+                uplink_fft_counters_.CompleteTask(frame_id, symbol_id);
+
+              if (last_fft_per_symbol == true) {
+                EventData do_fft_task = EventData(EventType::kFFT,
+                  gen_tag_t::FrmSym(frame_id, symbol_id).tag_);
+                TryEnqueueFallback(message_->GetConq(EventType::kFFT, qid),
+                      message_->GetPtok(EventType::kFFT, qid),
+                      do_fft_task);
+              }
+            } else {
+              RtAssert(false, "Can't process this symbol in GPU version");
+            }
 
             if (this->fft_created_count_ == 0) {
               this->stats_->MasterSetTsc(TsType::kProcessingStarted,
@@ -801,9 +852,6 @@ void Agora::Start() {
               }
             }
           }
-          TryEnqueueFallback(message_->GetConq(EventType::kFFT, qid),
-                             message_->GetPtok(EventType::kFFT, qid),
-                             do_fft_task);
         }
       }
     } /* End of for */
@@ -833,9 +881,9 @@ void Agora::HandleEventFft(size_t tag) {
   const SymbolType sym_type = config_->GetSymbolType(symbol_id);
 
   if (sym_type == SymbolType::kPilot) {
-    const bool last_fft_task =
-        pilot_fft_counters_.CompleteTask(frame_id, symbol_id);
-    if (last_fft_task == true) {
+    //const bool last_fft_task =
+    //    pilot_fft_counters_.CompleteTask(frame_id, symbol_id);
+    //if (last_fft_task == true) {
       stats_->PrintPerSymbolDone(
           PrintType::kFFTPilots, frame_id, symbol_id,
           pilot_fft_counters_.GetSymbolCount(frame_id) + 1);
@@ -849,7 +897,7 @@ void Agora::HandleEventFft(size_t tag) {
         if (last_pilot_fft == true) {
           this->stats_->MasterSetTsc(TsType::kFFTPilotsDone, frame_id);
           stats_->PrintPerFrameDone(PrintType::kFFTPilots, frame_id);
-          this->pilot_fft_counters_.Reset(frame_id);
+          //this->pilot_fft_counters_.Reset(frame_id);
           if (kPrintPhyStats == true) {
             this->phy_stats_->PrintUlSnrStats(frame_id);
           }
@@ -860,14 +908,14 @@ void Agora::HandleEventFft(size_t tag) {
           ScheduleSubcarriers(EventType::kBeam, frame_id, 0);
         }
       }
-    }
+    //}
   } else if (sym_type == SymbolType::kUL) {
     const size_t symbol_idx_ul = config_->Frame().GetULSymbolIdx(symbol_id);
 
-    const bool last_fft_per_symbol =
-        uplink_fft_counters_.CompleteTask(frame_id, symbol_id);
+    //const bool last_fft_per_symbol =
+    //    uplink_fft_counters_.CompleteTask(frame_id, symbol_id);
 
-    if (last_fft_per_symbol == true) {
+    //if (last_fft_per_symbol == true) {
       fft_cur_frame_for_symbol_.at(symbol_idx_ul) = frame_id;
 
       stats_->PrintPerSymbolDone(
@@ -880,11 +928,12 @@ void Agora::HandleEventFft(size_t tag) {
       const bool last_uplink_fft =
           uplink_fft_counters_.CompleteSymbol(frame_id);
       if (last_uplink_fft == true) {
-        uplink_fft_counters_.Reset(frame_id);
+        //uplink_fft_counters_.Reset(frame_id);
       }
-    }
+    //}
   } else if ((sym_type == SymbolType::kCalDL) ||
              (sym_type == SymbolType::kCalUL)) {
+    RtAssert(false, "Can't process this symbol in GPU version");
     stats_->PrintPerSymbolDone(PrintType::kFFTCal, frame_id, symbol_id,
                                rc_counters_.GetSymbolCount(frame_id) + 1);
 
@@ -908,6 +957,17 @@ void Agora::HandleEventFft(size_t tag) {
       }  // kPrintPhyStats
     }    // last_rc_task
   }      // kCaLDL || kCalUl
+  if (pilot_fft_counters_.IsLastSymbol(frame_id)
+      && uplink_fft_counters_.IsLastSymbol(frame_id)) {
+    std::queue<fft_req_tag_t>& cur_staleq = fft_stale_arr_.at(frame_id % kFrameWnd);
+    while (!cur_staleq.empty()) {
+      fft_req_tag_t &tag = cur_staleq.front();
+      cur_staleq.pop();
+      tag.rx_packet_->Free();
+    }
+    pilot_fft_counters_.Reset(frame_id);
+    uplink_fft_counters_.Reset(frame_id);
+  }
 }
 
 void Agora::UpdateRanConfig(RanConfig rc) {

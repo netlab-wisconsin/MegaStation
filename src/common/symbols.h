@@ -187,7 +187,7 @@ static constexpr bool kDebug12BitIQ = false;
 static constexpr bool kDebugDownlink = false;
 static constexpr bool kDebugUplink = false;
 
-static constexpr bool kUsePartialTrans = true;
+static constexpr bool kUsePartialTrans = false;
 
 // Enable hard demodulation and disable LDPC decoding
 // Useful for evaluating constellation quality

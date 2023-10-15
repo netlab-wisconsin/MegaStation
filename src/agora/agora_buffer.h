@@ -17,6 +17,11 @@
 #include "symbols.h"
 #include "utils.h"
 
+// GPU
+#include <cuda_runtime.h>
+#include <cufftXt.h>
+#include "doFFTCallback.h"
+
 class AgoraBuffer {
  public:
   explicit AgoraBuffer(Config* const cfg);
@@ -90,6 +95,16 @@ class AgoraBuffer {
   char* dl_socket_buffer_;
   Table<complex_float> calib_ul_buffer_;
   Table<complex_float> calib_dl_buffer_;
+
+  // GPU
+  // 2 * sizeof(short) * #symbol * #ant * #OfdmCA
+public:
+  short *packet_buffer_;
+  // sizeof(cufftComplex) * #symbol * #ant * #Ofdm
+  cufftComplex *fft_out_;
+  // #symbol
+  Table<cudaStream_t> cuda_streams_;
+  struct storeInfo *stInfoPtr_;
 };
 
 struct SchedInfo {

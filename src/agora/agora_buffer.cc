@@ -43,6 +43,30 @@ void AgoraBuffer::AllocateTables() {
   ue_spec_pilot_buffer_.Calloc(
       kFrameWnd, config_->Frame().ClientUlPilotSymbols() * config_->UeAntNum(),
       Agora_memory::Alignment_t::kAlign64);
+  
+  // GPU
+  size_t total_ul_sym = config_->Frame().NumPilotSyms() + config_->Frame().NumULSyms();
+  cudaMalloc(reinterpret_cast<void **>(&packet_buffer_),
+      2 * sizeof(short) * config_->OfdmCaNum() * total_ul_sym * config_->BsAntNum());
+  cudaMalloc(reinterpret_cast<void **>(&fft_out_),
+      sizeof(cufftComplex) * config_->OfdmDataNum() * total_ul_sym * config_->BsAntNum());
+  cuda_streams_.Malloc(total_ul_sym, 1, Agora_memory::Alignment_t::kAlign64);
+  for (size_t i = 0; i < total_ul_sym; i++) {
+    cudaStreamCreateWithFlags(cuda_streams_[i], cudaStreamNonBlocking);
+  }
+
+  struct storeInfo stInfo = {
+      .ofdmStart = config_->OfdmDataStart(),
+      .ofdmNum = config_->OfdmDataNum(),
+      .ofdmCAnum = config_->OfdmCaNum(),
+      .pilotSign = NULL,
+  };
+  cudaMalloc(reinterpret_cast<void **>(&(stInfo.pilotSign)),
+    sizeof(cufftComplex) * config_->OfdmDataNum());
+  cudaMemcpy(stInfo.pilotSign, config_->PilotsSgn(),
+    sizeof(cufftComplex) * config_->OfdmDataNum(), cudaMemcpyHostToDevice);
+  cudaMalloc(reinterpret_cast<void **>(&stInfoPtr_), sizeof(stInfo));
+  cudaMemcpy(stInfoPtr_, &stInfo, sizeof(stInfo), cudaMemcpyHostToDevice);
 
   // Downlink
   if (config_->Frame().NumDLSyms() > 0) {

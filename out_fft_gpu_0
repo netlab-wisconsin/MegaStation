@@ -1,0 +1,737 @@
+FlexRAN SDK bblib_lte_ldpc_encoder version sdk-19.04-ea1-1-g3be2380
+FlexRAN SDK bblib_lte_ldpc_decoder version sdk-19.04-ea1-1-g3be2380
+FlexRAN SDK bblib_common version sdk-19.04-ea1-1-g3be2380
+System CPU count 64
+NUMA node 0 1010101010101010101010101010101010101010101010101010101010101010 CPUs: 0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 
+NUMA node 1 0101010101010101010101010101010101010101010101010101010101010101 CPUs: 1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63 
+Usable Cpu count 63
+[56:080076][I] Config: Frame schedule PUUUUUUUUUUUUU (14 symbols)
+[56:080121][I] Setting beam_block_size to pilot_sc_group_size 16
+[56:080179][I] Downlink MCS Info: LDPC: Zc: 64, 1 code blocks per symbol, 1408 information bits per encoding, 4224 bits per encoded code word, decoder iterations: 5, code rate 0.333 (nRows = 46), modulation 16QAM
+[56:080181][I] Uplink MCS Info: LDPC: Zc: 104, 1 code blocks per symbol, 2288 information bits per encoding, 6864 bits per encoded code word, decoder iterations: 5, code rate 0.333 (nRows = 46), modulation 64QAM
+[56:080190][I] Config: 64 BS antennas, 16 UE antennas, 1 pilot symbols per frame,
+	13 uplink data symbols per frame, 0 downlink data symbols per frame,
+	2048 OFDM subcarriers (1200 data subcarriers),
+	UL modulation 64QAM, DL modulation 16QAM, Beamforming ZF, 
+	1 UL codeblocks per symbol, 286 UL bytes per code block,
+	1 DL codeblocks per symbol, 176 DL bytes per code block,
+	3588 UL MAC data bytes per frame, 3718 UL MAC bytes per frame,
+	0 DL MAC data bytes per frame, 0 DL MAC bytes per frame,
+	Frame time 5734.400 usec
+Uplink Max Mac data per-user tp (Mbps) 5.006
+Downlink Max Mac data per-user tp (Mbps) 0.000
+Radio Network Traffic Peak (Mbps): 120.000
+Radio Network Traffic Avg  (Mbps): 120.000
+Basestation Network Traffic Peak (Mbps): 7680.000
+Basestation Network Traffic Avg  (Mbps): 7680.000
+UE Network Traffic Peak (Mbps): 240.000
+UE Network Traffic Avg  (Mbps): 240.000
+All UEs Network Traffic Avg (Mbps): 3840.000
+All UEs Network Traffic Avg (Mbps): 3840.000
+Uplink PAPR 45.69 dB, Downlink PAPR -nan dB
+[59:882507][I] Agora: project directory [.], RDTSC frequency = 2.19 GHz
+[59:891065][I] Agora: Total recip cal receive symbols per frame: 0
+[59:891114][I] PacketTxRx: Number of workers 2, Buffers per interface 560, Number of Total buffers 35840
+[59:900732][I] Master thread core 4, TX/RX thread cores 5--6, worker thread cores 7--29
+[59:900738][I] PacketTxRxSim[0]: Creating worker handling 32 interfaces starting at 0 - antennas 0:31
+[59:900790][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900791][I] UDPComm socket 56 created 127.0.0.1 :  requested port 8000
+[59:900804][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900805][I] UDPComm socket 57 created 127.0.0.1 :  requested port 8001
+[59:900811][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900811][I] UDPComm socket 58 created 127.0.0.1 :  requested port 8002
+[59:900816][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900816][I] UDPComm socket 59 created 127.0.0.1 :  requested port 8003
+[59:900821][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900821][I] UDPComm socket 60 created 127.0.0.1 :  requested port 8004
+[59:900826][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900826][I] UDPComm socket 61 created 127.0.0.1 :  requested port 8005
+[59:900832][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900832][I] UDPComm socket 62 created 127.0.0.1 :  requested port 8006
+[59:900836][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900837][I] UDPComm socket 63 created 127.0.0.1 :  requested port 8007
+[59:900842][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900842][I] UDPComm socket 64 created 127.0.0.1 :  requested port 8008
+[59:900847][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900847][I] UDPComm socket 65 created 127.0.0.1 :  requested port 8009
+[59:900852][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900852][I] UDPComm socket 66 created 127.0.0.1 :  requested port 8010
+[59:900857][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900880][I] UDPComm socket 67 created 127.0.0.1 :  requested port 8011
+[59:900886][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900887][I] UDPComm socket 68 created 127.0.0.1 :  requested port 8012
+[59:900891][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900892][I] UDPComm socket 69 created 127.0.0.1 :  requested port 8013
+[59:900897][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900897][I] UDPComm socket 70 created 127.0.0.1 :  requested port 8014
+[59:900902][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900903][I] UDPComm socket 71 created 127.0.0.1 :  requested port 8015
+[59:900908][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900909][I] UDPComm socket 72 created 127.0.0.1 :  requested port 8016
+[59:900914][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900914][I] UDPComm socket 73 created 127.0.0.1 :  requested port 8017
+[59:900919][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900927][I] UDPComm socket 74 created 127.0.0.1 :  requested port 8018
+[59:900932][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900932][I] UDPComm socket 75 created 127.0.0.1 :  requested port 8019
+[59:900938][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900945][I] UDPComm socket 76 created 127.0.0.1 :  requested port 8020
+[59:900950][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900951][I] UDPComm socket 77 created 127.0.0.1 :  requested port 8021
+[59:900956][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900956][I] UDPComm socket 78 created 127.0.0.1 :  requested port 8022
+[59:900961][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900962][I] UDPComm socket 79 created 127.0.0.1 :  requested port 8023
+[59:900966][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900967][I] UDPComm socket 80 created 127.0.0.1 :  requested port 8024
+[59:900972][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900972][I] UDPComm socket 81 created 127.0.0.1 :  requested port 8025
+[59:900977][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900978][I] UDPComm socket 82 created 127.0.0.1 :  requested port 8026
+[59:900982][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900983][I] UDPComm socket 83 created 127.0.0.1 :  requested port 8027
+[59:900987][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900988][I] UDPComm socket 84 created 127.0.0.1 :  requested port 8028
+[59:900992][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900993][I] UDPComm socket 85 created 127.0.0.1 :  requested port 8029
+[59:900997][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:900998][I] UDPComm socket 86 created 127.0.0.1 :  requested port 8030
+[59:901003][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901003][I] UDPComm socket 87 created 127.0.0.1 :  requested port 8031
+[59:901007][I] PacketTxRxSim[1]: Creating worker handling 32 interfaces starting at 32 - antennas 32:63
+[59:901011][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901012][I] UDPComm socket 88 created 127.0.0.1 :  requested port 8032
+[59:901016][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901017][I] UDPComm socket 89 created 127.0.0.1 :  requested port 8033
+[59:901022][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901022][I] UDPComm socket 90 created 127.0.0.1 :  requested port 8034
+[59:901027][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901028][I] UDPComm socket 91 created 127.0.0.1 :  requested port 8035
+[59:901033][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901033][I] UDPComm socket 92 created 127.0.0.1 :  requested port 8036
+[59:901038][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901038][I] UDPComm socket 93 created 127.0.0.1 :  requested port 8037
+[59:901043][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901043][I] UDPComm socket 94 created 127.0.0.1 :  requested port 8038
+[59:901048][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901049][I] UDPComm socket 95 created 127.0.0.1 :  requested port 8039
+[59:901054][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901054][I] UDPComm socket 96 created 127.0.0.1 :  requested port 8040
+[59:901059][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901059][I] UDPComm socket 97 created 127.0.0.1 :  requested port 8041
+[59:901064][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901065][I] UDPComm socket 98 created 127.0.0.1 :  requested port 8042
+[59:901069][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901070][I] UDPComm socket 100 created 127.0.0.1 :  requested port 8043
+[59:901075][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901075][I] UDPComm socket 101 created 127.0.0.1 :  requested port 8044
+[59:901080][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901080][I] UDPComm socket 102 created 127.0.0.1 :  requested port 8045
+[59:901085][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901085][I] UDPComm socket 103 created 127.0.0.1 :  requested port 8046
+[59:901089][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901090][I] UDPComm socket 104 created 127.0.0.1 :  requested port 8047
+[59:901094][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901095][I] UDPComm socket 105 created 127.0.0.1 :  requested port 8048
+[59:901099][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901099][I] UDPComm socket 106 created 127.0.0.1 :  requested port 8049
+[59:901104][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901105][I] UDPComm socket 107 created 127.0.0.1 :  requested port 8050
+[59:901109][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901109][I] UDPComm socket 108 created 127.0.0.1 :  requested port 8051
+[59:901115][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901116][I] UDPComm socket 109 created 127.0.0.1 :  requested port 8052
+[59:901120][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901121][I] UDPComm socket 110 created 127.0.0.1 :  requested port 8053
+[59:901125][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901126][I] UDPComm socket 111 created 127.0.0.1 :  requested port 8054
+[59:901130][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901131][I] UDPComm socket 112 created 127.0.0.1 :  requested port 8055
+[59:901135][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901136][I] UDPComm socket 113 created 127.0.0.1 :  requested port 8056
+[59:901140][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901140][I] UDPComm socket 114 created 127.0.0.1 :  requested port 8057
+[59:901144][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901145][I] UDPComm socket 115 created 127.0.0.1 :  requested port 8058
+[59:901150][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901150][I] UDPComm socket 116 created 127.0.0.1 :  requested port 8059
+[59:901155][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901156][I] UDPComm socket 117 created 127.0.0.1 :  requested port 8060
+[59:901160][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901161][I] UDPComm socket 118 created 127.0.0.1 :  requested port 8061
+[59:901166][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901167][I] UDPComm socket 119 created 127.0.0.1 :  requested port 8062
+[59:901171][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[59:901172][I] UDPComm socket 120 created 127.0.0.1 :  requested port 8063
+[00:052344][I] PacketTxRx: workers synchronized
+[00:052349][I] TxRxWorker[1]: synchronized
+[00:052349][I] TxRxWorker[0]: synchronized
+[08:169674][I] Main [frame 0 + 443331267.84 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[08:170903][I] Main [frame 0 + 1.32 ms]: Received all pilots
+[08:181511][I] Main [frame 0 + 11.92 ms]: FFT-ed all pilots
+[08:181908][I] Frame 0 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[08:196291][I] Main [frame 0 + 26.70 ms]: Completed ZF beamweight calc
+[08:196341][I] Frame 0 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+Thread 9 Decode takes 651.97
+Thread 7 Decode takes 741.61
+Thread 10 Decode takes 835.41
+Thread 21 Decode takes 847.77
+Thread 12 Decode takes 859.84
+Thread 14 Decode takes 863.08
+Thread 13 Decode takes 882.83
+Thread 19 Decode takes 935.49
+Thread 22 Decode takes 949.79
+Thread 15 Decode takes 948.44
+Thread 17 Decode takes 949.18
+Thread 1 Decode takes 949.15
+Thread 6 Decode takes 951.48
+Thread 3 Decode takes 974.40
+[08:355141][I] Main [frame 0 + 185.55 ms]: Received all packets
+[08:355999][I] Main [frame 0 + 186.41 ms]: Completed demodulation
+[08:356069][I] Frame 0 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[08:356152][I] Main [frame 0 + 186.57 ms]: Completed LDPC decoding (13 UL symbols)
+[08:356870][I] Frame 0 Summary: FFT (13 tasks): 0.298769 ms (~0.000248785 + 0.0904829 + 0.208031 ms), CSI (1 tasks): 0.458444 ms (~0.000775556 + 0.0798116 + 0.377857 ms), Beamweights (75 tasks): 13.6905 ms (~0.0538805 + 0.0105989 + 13.626 ms), Demul (15600 tasks): 5.88928 ms (~0.151654 + 0.329184 + 5.34112 ms), Decode (208 tasks): 1.52822 ms (~0.0206166 + 1.07679 + 0 ms), Total: 21.865254 ms
+[08:369080][I] Main [frame 1 + 199.50 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[08:369467][I] Main [frame 1 + 0.39 ms]: Received all pilots
+[08:373072][I] Main [frame 1 + 3.99 ms]: FFT-ed all pilots
+[08:373147][I] Frame 1 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[08:376761][I] Main [frame 1 + 7.68 ms]: Completed ZF beamweight calc
+[08:376786][I] Frame 1 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[08:555143][I] Main [frame 1 + 186.06 ms]: Received all packets
+[08:556381][I] Main [frame 1 + 187.30 ms]: Completed demodulation
+[08:556459][I] Frame 1 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[08:556516][I] Main [frame 1 + 187.43 ms]: Completed LDPC decoding (13 UL symbols)
+[08:556583][I] Frame 1 Summary: FFT (13 tasks): 0.218683 ms (~0.000173622 + 0.0476527 + 0.170851 ms), CSI (1 tasks): 0.155845 ms (~2.4724e-05 + 0.00474553 + 0.151074 ms), Beamweights (75 tasks): 2.92509 ms (~0.0256477 + 0.000278977 + 2.8991 ms), Demul (15600 tasks): 1.05021 ms (~0.138808 + 0.308225 + 0.53441 ms), Decode (208 tasks): 0.994635 ms (~0.000203656 + 0.941746 + 0 ms), Total: 5.344461 ms
+[08:569068][I] Main [frame 2 + 199.99 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[08:569453][I] Main [frame 2 + 0.38 ms]: Received all pilots
+[08:572977][I] Main [frame 2 + 3.91 ms]: FFT-ed all pilots
+[08:573053][I] Frame 2 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[08:575148][I] Main [frame 2 + 6.08 ms]: Completed ZF beamweight calc
+[08:575179][I] Frame 2 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[08:755142][I] Main [frame 2 + 186.07 ms]: Received all packets
+[08:755911][I] Main [frame 2 + 186.84 ms]: Completed demodulation
+[08:755951][I] Frame 2 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[08:756044][I] Main [frame 2 + 186.98 ms]: Completed LDPC decoding (13 UL symbols)
+[08:756108][I] Frame 2 Summary: FFT (13 tasks): 0.208936 ms (~0.000204052 + 0.0372161 + 0.17151 ms), CSI (1 tasks): 0.152645 ms (~2.43277e-05 + 0.00305662 + 0.149564 ms), Beamweights (75 tasks): 1.82513 ms (~0.027789 + 0.000362737 + 1.79692 ms), Demul (15600 tasks): 0.614856 ms (~0.141276 + 0.301059 + 0.111866 ms), Decode (208 tasks): 1.01832 ms (~0.000205993 + 0.964093 + 0 ms), Total: 3.819886 ms
+[08:769064][I] Main [frame 3 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[08:769453][I] Main [frame 3 + 0.39 ms]: Received all pilots
+[08:772562][I] Main [frame 3 + 3.50 ms]: FFT-ed all pilots
+[08:772647][I] Frame 3 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[08:774540][I] Main [frame 3 + 5.47 ms]: Completed ZF beamweight calc
+[08:774566][I] Frame 3 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[08:955312][I] Main [frame 3 + 186.24 ms]: Received all packets
+[08:955665][I] Main [frame 3 + 186.60 ms]: Completed demodulation
+[08:955721][I] Frame 3 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[08:955806][I] Main [frame 3 + 186.74 ms]: Completed LDPC decoding (13 UL symbols)
+[08:955871][I] Frame 3 Summary: FFT (13 tasks): 0.295437 ms (~0.000132574 + 0.141793 + 0.153505 ms), CSI (1 tasks): 0.134491 ms (~1.27978e-05 + 0.00237382 + 0.132104 ms), Beamweights (75 tasks): 1.49006 ms (~0.0272677 + 0.000334606 + 1.46241 ms), Demul (15600 tasks): 1.03282 ms (~0.147239 + 0.308119 + 0.51145 ms), Decode (208 tasks): 1.00923 ms (~0.000210827 + 0.955526 + 0 ms), Total: 3.962037 ms
+[08:969063][I] Main [frame 4 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[08:969626][I] Main [frame 4 + 0.56 ms]: Received all pilots
+[08:973228][I] Main [frame 4 + 4.16 ms]: FFT-ed all pilots
+[08:973313][I] Frame 4 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[08:975774][I] Main [frame 4 + 6.71 ms]: Completed ZF beamweight calc
+[08:975826][I] Frame 4 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[09:155046][I] Main [frame 4 + 185.98 ms]: Received all packets
+[09:155379][I] Main [frame 4 + 186.31 ms]: Completed demodulation
+[09:155418][I] Frame 4 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[09:155512][I] Main [frame 4 + 186.45 ms]: Completed LDPC decoding (13 UL symbols)
+[09:155576][I] Frame 4 Summary: FFT (13 tasks): 0.204673 ms (~0.000155476 + 0.0341401 + 0.170371 ms), CSI (1 tasks): 0.155924 ms (~1.67204e-05 + 0.00236684 + 0.15354 ms), Beamweights (75 tasks): 1.93461 ms (~0.0297369 + 0.000251321 + 1.90456 ms), Demul (15600 tasks): 0.852227 ms (~0.136791 + 0.30178 + 0.352332 ms), Decode (208 tasks): 0.979563 ms (~0.000216533 + 0.927999 + 0 ms), Total: 4.126994 ms
+[09:169066][I] Main [frame 5 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[09:169361][I] Main [frame 5 + 0.30 ms]: Received all pilots
+[09:172986][I] Main [frame 5 + 3.92 ms]: FFT-ed all pilots
+[09:173075][I] Frame 5 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[09:174532][I] Main [frame 5 + 5.46 ms]: Completed ZF beamweight calc
+[09:174585][I] Frame 5 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[09:355531][I] Main [frame 5 + 186.46 ms]: Received all packets
+[09:355933][I] Main [frame 5 + 186.87 ms]: Completed demodulation
+[09:355972][I] Frame 5 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[09:356064][I] Main [frame 5 + 187.00 ms]: Completed LDPC decoding (13 UL symbols)
+[09:356128][I] Frame 5 Summary: FFT (13 tasks): 0.207843 ms (~0.000162806 + 0.0367702 + 0.170904 ms), CSI (1 tasks): 0.156941 ms (~6.65645e-06 + 0.00221957 + 0.154715 ms), Beamweights (75 tasks): 1.34542 ms (~0.0263546 + 0.000222318 + 1.31879 ms), Demul (15600 tasks): 1.0531 ms (~0.143555 + 0.305122 + 0.537867 ms), Decode (208 tasks): 0.995212 ms (~0.000215067 + 0.942643 + 0 ms), Total: 3.758515 ms
+[09:369168][I] Main [frame 6 + 200.10 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[09:369931][I] Main [frame 6 + 0.76 ms]: Received all pilots
+[09:373508][I] Main [frame 6 + 4.34 ms]: FFT-ed all pilots
+[09:373615][I] Frame 6 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[09:375524][I] Main [frame 6 + 6.35 ms]: Completed ZF beamweight calc
+[09:375548][I] Frame 6 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[09:555056][I] Main [frame 6 + 185.88 ms]: Received all packets
+[09:555783][I] Main [frame 6 + 186.61 ms]: Completed demodulation
+[09:555826][I] Frame 6 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[09:555923][I] Main [frame 6 + 186.75 ms]: Completed LDPC decoding (13 UL symbols)
+[09:555987][I] Frame 6 Summary: FFT (13 tasks): 0.202798 ms (~0.000137448 + 0.0323986 + 0.170251 ms), CSI (1 tasks): 0.154958 ms (~1.27582e-05 + 0.0031321 + 0.151812 ms), Beamweights (75 tasks): 1.5258 ms (~0.0301732 + 0.000260117 + 1.49531 ms), Demul (15600 tasks): 1.05116 ms (~0.145353 + 0.315344 + 0.522996 ms), Decode (208 tasks): 0.986916 ms (~0.000196722 + 0.934857 + 0 ms), Total: 3.921631 ms
+[09:569083][I] Main [frame 7 + 199.91 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[09:569361][I] Main [frame 7 + 0.28 ms]: Received all pilots
+[09:572511][I] Main [frame 7 + 3.43 ms]: FFT-ed all pilots
+[09:572587][I] Frame 7 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[09:574041][I] Main [frame 7 + 4.96 ms]: Completed ZF beamweight calc
+[09:574067][I] Frame 7 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[09:755297][I] Main [frame 7 + 186.21 ms]: Received all packets
+[09:756021][I] Main [frame 7 + 186.94 ms]: Completed demodulation
+[09:756067][I] Frame 7 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[09:756155][I] Main [frame 7 + 187.07 ms]: Completed LDPC decoding (13 UL symbols)
+[09:756233][I] Frame 7 Summary: FFT (13 tasks): 0.207249 ms (~0.000138478 + 0.0370294 + 0.170075 ms), CSI (1 tasks): 0.13564 ms (~1.58091e-05 + 0.00279789 + 0.132825 ms), Beamweights (75 tasks): 1.2904 ms (~0.0400651 + 0.000241376 + 1.25004 ms), Demul (15600 tasks): 1.04527 ms (~0.14734 + 0.307714 + 0.519465 ms), Decode (208 tasks): 1.00517 ms (~0.000203101 + 0.950267 + 0 ms), Total: 3.683731 ms
+[09:769072][I] Main [frame 8 + 199.99 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[09:769355][I] Main [frame 8 + 0.28 ms]: Received all pilots
+[09:773045][I] Main [frame 8 + 3.97 ms]: FFT-ed all pilots
+[09:773135][I] Frame 8 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[09:774567][I] Main [frame 8 + 5.49 ms]: Completed ZF beamweight calc
+[09:774592][I] Frame 8 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[09:955044][I] Main [frame 8 + 185.97 ms]: Received all packets
+[09:955386][I] Main [frame 8 + 186.31 ms]: Completed demodulation
+[09:955435][I] Frame 8 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[09:955525][I] Main [frame 8 + 186.45 ms]: Completed LDPC decoding (13 UL symbols)
+[09:955604][I] Frame 8 Summary: FFT (13 tasks): 0.185223 ms (~0.000156308 + 0.0314631 + 0.153597 ms), CSI (1 tasks): 0.159782 ms (~1.24016e-05 + 0.0032344 + 0.156535 ms), Beamweights (75 tasks): 1.36159 ms (~0.032094 + 0.000696154 + 1.32874 ms), Demul (15600 tasks): 1.03677 ms (~0.136319 + 0.306062 + 0.531173 ms), Decode (208 tasks): 0.962904 ms (~0.000200486 + 0.91024 + 0 ms), Total: 3.706269 ms
+[09:969065][I] Main [frame 9 + 199.99 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[09:969618][I] Main [frame 9 + 0.55 ms]: Received all pilots
+[09:973225][I] Main [frame 9 + 4.16 ms]: FFT-ed all pilots
+[09:973305][I] Frame 9 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[09:975688][I] Main [frame 9 + 6.62 ms]: Completed ZF beamweight calc
+[09:975713][I] Frame 9 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[10:155046][I] Main [frame 9 + 185.98 ms]: Received all packets
+[10:155398][I] Main [frame 9 + 186.33 ms]: Completed demodulation
+[10:155453][I] Frame 9 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[10:155526][I] Main [frame 9 + 186.46 ms]: Completed LDPC decoding (13 UL symbols)
+[10:155609][I] Frame 9 Summary: FFT (13 tasks): 0.200461 ms (~9.46959e-05 + 0.0315461 + 0.168814 ms), CSI (1 tasks): 0.15618 ms (~1.19658e-05 + 0.00300951 + 0.153158 ms), Beamweights (75 tasks): 2.03108 ms (~0.0301979 + 0.000242208 + 2.00058 ms), Demul (15600 tasks): 1.03288 ms (~0.142664 + 0.308065 + 0.519071 ms), Decode (208 tasks): 0.992293 ms (~0.00021158 + 0.940414 + 0 ms), Total: 4.412891 ms
+[10:169064][I] Main [frame 10 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[10:169335][I] Main [frame 10 + 0.27 ms]: Received all pilots
+[10:172487][I] Main [frame 10 + 3.42 ms]: FFT-ed all pilots
+[10:172573][I] Frame 10 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[10:174471][I] Main [frame 10 + 5.40 ms]: Completed ZF beamweight calc
+[10:174497][I] Frame 10 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[10:355036][I] Main [frame 10 + 185.97 ms]: Received all packets
+[10:355385][I] Main [frame 10 + 186.32 ms]: Completed demodulation
+[10:355423][I] Frame 10 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[10:355528][I] Main [frame 10 + 186.46 ms]: Completed LDPC decoding (13 UL symbols)
+[10:355592][I] Frame 10 Summary: FFT (13 tasks): 0.206473 ms (~0.000241217 + 0.0363925 + 0.169833 ms), CSI (1 tasks): 0.136357 ms (~1.80279e-05 + 0.00225127 + 0.134087 ms), Beamweights (75 tasks): 1.42611 ms (~0.0320198 + 0.000221565 + 1.39382 ms), Demul (15600 tasks): 1.02088 ms (~0.137155 + 0.298466 + 0.522831 ms), Decode (208 tasks): 0.959634 ms (~0.000199535 + 0.907257 + 0 ms), Total: 3.749458 ms
+[10:369063][I] Main [frame 11 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[10:369360][I] Main [frame 11 + 0.30 ms]: Received all pilots
+[10:373047][I] Main [frame 11 + 3.98 ms]: FFT-ed all pilots
+[10:373127][I] Frame 11 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[10:374532][I] Main [frame 11 + 5.47 ms]: Completed ZF beamweight calc
+[10:374557][I] Frame 11 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[10:555280][I] Main [frame 11 + 186.21 ms]: Received all packets
+[10:556043][I] Main [frame 11 + 186.98 ms]: Completed demodulation
+[10:556080][I] Frame 11 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[10:556186][I] Main [frame 11 + 187.12 ms]: Completed LDPC decoding (13 UL symbols)
+[10:556251][I] Frame 11 Summary: FFT (13 tasks): 0.200772 ms (~0.000128573 + 0.0337061 + 0.166931 ms), CSI (1 tasks): 0.159635 ms (~1.41053e-05 + 0.00363014 + 0.15599 ms), Beamweights (75 tasks): 1.33843 ms (~0.0321283 + 0.000302235 + 1.30549 ms), Demul (15600 tasks): 1.04261 ms (~0.141727 + 0.317643 + 0.515 ms), Decode (208 tasks): 1.07419 ms (~0.000216216 + 1.02192 + 0 ms), Total: 3.815641 ms
+[10:569066][I] Main [frame 12 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[10:569345][I] Main [frame 12 + 0.28 ms]: Received all pilots
+[10:572905][I] Main [frame 12 + 3.84 ms]: FFT-ed all pilots
+[10:572981][I] Frame 12 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[10:575254][I] Main [frame 12 + 6.18 ms]: Completed ZF beamweight calc
+[10:575309][I] Frame 12 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[10:755038][I] Main [frame 12 + 185.97 ms]: Received all packets
+[10:755770][I] Main [frame 12 + 186.70 ms]: Completed demodulation
+[10:755833][I] Frame 12 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[10:755907][I] Main [frame 12 + 186.84 ms]: Completed LDPC decoding (13 UL symbols)
+[10:755971][I] Frame 12 Summary: FFT (13 tasks): 0.204986 ms (~0.000169224 + 0.0325569 + 0.172253 ms), CSI (1 tasks): 0.154269 ms (~1.10545e-05 + 0.00300392 + 0.151253 ms), Beamweights (75 tasks): 1.93828 ms (~0.0355129 + 0.000256154 + 1.90246 ms), Demul (15600 tasks): 1.04503 ms (~0.14417 + 0.310444 + 0.523206 ms), Decode (208 tasks): 0.993393 ms (~0.000206627 + 0.940213 + 0 ms), Total: 4.335956 ms
+[10:769058][I] Main [frame 13 + 199.99 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[10:769595][I] Main [frame 13 + 0.54 ms]: Received all pilots
+[10:772743][I] Main [frame 13 + 3.68 ms]: FFT-ed all pilots
+[10:772845][I] Frame 13 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[10:774773][I] Main [frame 13 + 5.71 ms]: Completed ZF beamweight calc
+[10:774803][I] Frame 13 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[10:955038][I] Main [frame 13 + 185.98 ms]: Received all packets
+[10:955397][I] Main [frame 13 + 186.34 ms]: Completed demodulation
+[10:955434][I] Frame 13 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[10:955527][I] Main [frame 13 + 186.47 ms]: Completed LDPC decoding (13 UL symbols)
+[10:955592][I] Frame 13 Summary: FFT (13 tasks): 0.183769 ms (~0.000151276 + 0.0331013 + 0.150506 ms), CSI (1 tasks): 0.136228 ms (~6.41872e-06 + 0.00229568 + 0.133925 ms), Beamweights (75 tasks): 1.75978 ms (~0.0320013 + 0.000242604 + 1.7274 ms), Demul (15600 tasks): 1.02082 ms (~0.141411 + 0.305052 + 0.509565 ms), Decode (208 tasks): 0.981975 ms (~0.000205042 + 0.92929 + 0 ms), Total: 4.082575 ms
+[10:969063][I] Main [frame 14 + 200.01 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[10:969335][I] Main [frame 14 + 0.27 ms]: Received all pilots
+[10:972994][I] Main [frame 14 + 3.93 ms]: FFT-ed all pilots
+[10:973082][I] Frame 14 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[10:974525][I] Main [frame 14 + 5.46 ms]: Completed ZF beamweight calc
+[10:974551][I] Frame 14 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[11:155037][I] Main [frame 14 + 185.97 ms]: Received all packets
+[11:155364][I] Main [frame 14 + 186.30 ms]: Completed demodulation
+[11:155402][I] Frame 14 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[11:155498][I] Main [frame 14 + 186.44 ms]: Completed LDPC decoding (13 UL symbols)
+[11:155562][I] Frame 14 Summary: FFT (13 tasks): 0.199853 ms (~0.000137131 + 0.0306608 + 0.169049 ms), CSI (1 tasks): 0.158441 ms (~1.77109e-05 + 0.0022872 + 0.156135 ms), Beamweights (75 tasks): 1.36348 ms (~0.033488 + 0.000220495 + 1.32971 ms), Demul (15600 tasks): 1.02169 ms (~0.139225 + 0.298677 + 0.519737 ms), Decode (208 tasks): 0.971838 ms (~0.000212491 + 0.919188 + 0 ms), Total: 3.715300 ms
+[11:169061][I] Main [frame 15 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[11:169336][I] Main [frame 15 + 0.28 ms]: Received all pilots
+[11:172926][I] Main [frame 15 + 3.86 ms]: FFT-ed all pilots
+[11:173013][I] Frame 15 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[11:174469][I] Main [frame 15 + 5.41 ms]: Completed ZF beamweight calc
+[11:174519][I] Frame 15 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[11:355035][I] Main [frame 15 + 185.97 ms]: Received all packets
+[11:355382][I] Main [frame 15 + 186.32 ms]: Completed demodulation
+[11:355421][I] Frame 15 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[11:355541][I] Main [frame 15 + 186.48 ms]: Completed LDPC decoding (13 UL symbols)
+[11:355605][I] Frame 15 Summary: FFT (13 tasks): 0.202221 ms (~0.000119539 + 0.0330679 + 0.169028 ms), CSI (1 tasks): 0.155418 ms (~6.29985e-06 + 0.00227924 + 0.153132 ms), Beamweights (75 tasks): 1.35098 ms (~0.029284 + 0.000684347 + 1.32096 ms), Demul (15600 tasks): 1.0267 ms (~0.138174 + 0.305012 + 0.519785 ms), Decode (208 tasks): 0.97375 ms (~0.000197911 + 0.922122 + 0 ms), Total: 3.709071 ms
+[11:369057][I] Main [frame 16 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[11:369359][I] Main [frame 16 + 0.30 ms]: Received all pilots
+[11:372519][I] Main [frame 16 + 3.46 ms]: FFT-ed all pilots
+[11:372605][I] Frame 16 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[11:374521][I] Main [frame 16 + 5.46 ms]: Completed ZF beamweight calc
+[11:374548][I] Frame 16 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[11:555296][I] Main [frame 16 + 186.23 ms]: Received all packets
+[11:555617][I] Main [frame 16 + 186.56 ms]: Completed demodulation
+[11:555657][I] Frame 16 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[11:555759][I] Main [frame 16 + 186.70 ms]: Completed LDPC decoding (13 UL symbols)
+[11:555824][I] Frame 16 Summary: FFT (13 tasks): 0.202143 ms (~0.000155793 + 0.0328393 + 0.169133 ms), CSI (1 tasks): 0.136784 ms (~6.41872e-06 + 0.00324351 + 0.133534 ms), Beamweights (75 tasks): 1.47375 ms (~0.0329101 + 0.000207103 + 1.44058 ms), Demul (15600 tasks): 1.00965 ms (~0.14353 + 0.303957 + 0.500637 ms), Decode (208 tasks): 0.956668 ms (~0.000199971 + 0.905347 + 0 ms), Total: 3.778994 ms
+[11:569071][I] Main [frame 17 + 200.01 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[11:569612][I] Main [frame 17 + 0.54 ms]: Received all pilots
+[11:573208][I] Main [frame 17 + 4.14 ms]: FFT-ed all pilots
+[11:573312][I] Frame 17 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[11:575216][I] Main [frame 17 + 6.14 ms]: Completed ZF beamweight calc
+[11:575246][I] Frame 17 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[11:755023][I] Main [frame 17 + 185.95 ms]: Received all packets
+[11:755774][I] Main [frame 17 + 186.70 ms]: Completed demodulation
+[11:755820][I] Frame 17 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[11:755912][I] Main [frame 17 + 186.84 ms]: Completed LDPC decoding (13 UL symbols)
+[11:755992][I] Frame 17 Summary: FFT (13 tasks): 0.205483 ms (~0.000144144 + 0.0355432 + 0.169789 ms), CSI (1 tasks): 0.155715 ms (~8.67716e-06 + 0.00227357 + 0.153433 ms), Beamweights (75 tasks): 1.37162 ms (~0.0297905 + 0.000260751 + 1.34151 ms), Demul (15600 tasks): 1.05106 ms (~0.142211 + 0.31303 + 0.53163 ms), Decode (208 tasks): 0.986079 ms (~0.000207697 + 0.934214 + 0 ms), Total: 3.769957 ms
+[11:769055][I] Main [frame 18 + 199.98 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[11:769338][I] Main [frame 18 + 0.28 ms]: Received all pilots
+[11:772929][I] Main [frame 18 + 3.87 ms]: FFT-ed all pilots
+[11:773019][I] Frame 18 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[11:774426][I] Main [frame 18 + 5.37 ms]: Completed ZF beamweight calc
+[11:774452][I] Frame 18 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[11:955034][I] Main [frame 18 + 185.98 ms]: Received all packets
+[11:955390][I] Main [frame 18 + 186.34 ms]: Completed demodulation
+[11:955428][I] Frame 18 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[11:955512][I] Main [frame 18 + 186.46 ms]: Completed LDPC decoding (13 UL symbols)
+[11:955575][I] Frame 18 Summary: FFT (13 tasks): 0.18483 ms (~0.000166015 + 0.0302105 + 0.154447 ms), CSI (1 tasks): 0.154706 ms (~1.55317e-05 + 0.00235214 + 0.152338 ms), Beamweights (75 tasks): 1.336 ms (~0.0320102 + 0.000215344 + 1.30372 ms), Demul (15600 tasks): 1.02702 ms (~0.140095 + 0.30643 + 0.51821 ms), Decode (208 tasks): 0.998048 ms (~0.000669607 + 0.945029 + 0 ms), Total: 3.700607 ms
+[11:969056][I] Main [frame 19 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[11:969351][I] Main [frame 19 + 0.30 ms]: Received all pilots
+[11:972487][I] Main [frame 19 + 3.43 ms]: FFT-ed all pilots
+[11:972564][I] Frame 19 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[11:974417][I] Main [frame 19 + 5.36 ms]: Completed ZF beamweight calc
+[11:974441][I] Frame 19 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[12:155030][I] Main [frame 19 + 185.97 ms]: Received all packets
+[12:155362][I] Main [frame 19 + 186.30 ms]: Completed demodulation
+[12:155401][I] Frame 19 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[12:155494][I] Main [frame 19 + 186.44 ms]: Completed LDPC decoding (13 UL symbols)
+[12:155557][I] Frame 19 Summary: FFT (13 tasks): 0.201682 ms (~0.000135586 + 0.0333117 + 0.168229 ms), CSI (1 tasks): 0.135734 ms (~1.09752e-05 + 0.00294366 + 0.132778 ms), Beamweights (75 tasks): 1.46411 ms (~0.0304401 + 0.00024407 + 1.43337 ms), Demul (15600 tasks): 1.02729 ms (~0.136121 + 0.308294 + 0.519165 ms), Decode (208 tasks): 0.966589 ms (~0.000202507 + 0.914794 + 0 ms), Total: 3.795403 ms
+[12:169051][I] Main [frame 20 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[12:169332][I] Main [frame 20 + 0.28 ms]: Received all pilots
+[12:172880][I] Main [frame 20 + 3.83 ms]: FFT-ed all pilots
+[12:172972][I] Frame 20 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[12:174381][I] Main [frame 20 + 5.33 ms]: Completed ZF beamweight calc
+[12:174428][I] Frame 20 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[12:355309][I] Main [frame 20 + 186.25 ms]: Received all packets
+[12:355668][I] Main [frame 20 + 186.62 ms]: Completed demodulation
+[12:355710][I] Frame 20 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[12:355808][I] Main [frame 20 + 186.76 ms]: Completed LDPC decoding (13 UL symbols)
+[12:355897][I] Frame 20 Summary: FFT (13 tasks): 0.203787 ms (~0.000100084 + 0.0317785 + 0.171902 ms), CSI (1 tasks): 0.153697 ms (~4.47726e-05 + 0.00310127 + 0.15055 ms), Beamweights (75 tasks): 1.21744 ms (~0.0328969 + 0.000219187 + 1.18427 ms), Demul (15600 tasks): 1.03268 ms (~0.138985 + 0.30435 + 0.525309 ms), Decode (208 tasks): 0.989989 ms (~0.000202388 + 0.937482 + 0 ms), Total: 3.597588 ms
+[12:369066][I] Main [frame 21 + 200.02 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[12:369599][I] Main [frame 21 + 0.53 ms]: Received all pilots
+[12:373221][I] Main [frame 21 + 4.15 ms]: FFT-ed all pilots
+[12:373308][I] Frame 21 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[12:374730][I] Main [frame 21 + 5.66 ms]: Completed ZF beamweight calc
+[12:374755][I] Frame 21 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[12:555027][I] Main [frame 21 + 185.96 ms]: Received all packets
+[12:555884][I] Main [frame 21 + 186.82 ms]: Completed demodulation
+[12:555930][I] Frame 21 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[12:556008][I] Main [frame 21 + 186.94 ms]: Completed LDPC decoding (13 UL symbols)
+[12:556078][I] Frame 21 Summary: FFT (13 tasks): 0.204535 ms (~0.000119856 + 0.035767 + 0.168642 ms), CSI (1 tasks): 0.156838 ms (~7.8451e-06 + 0.00230963 + 0.15452 ms), Beamweights (75 tasks): 1.14526 ms (~0.0276995 + 0.000278184 + 1.11722 ms), Demul (15600 tasks): 1.04265 ms (~0.136558 + 0.303038 + 0.535013 ms), Decode (208 tasks): 0.987838 ms (~0.000708753 + 0.934891 + 0 ms), Total: 3.537117 ms
+[12:569065][I] Main [frame 22 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[12:569342][I] Main [frame 22 + 0.28 ms]: Received all pilots
+[12:572974][I] Main [frame 22 + 3.91 ms]: FFT-ed all pilots
+[12:573062][I] Frame 22 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[12:575138][I] Main [frame 22 + 6.07 ms]: Completed ZF beamweight calc
+[12:575158][I] Frame 22 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[12:755037][I] Main [frame 22 + 185.97 ms]: Received all packets
+[12:756274][I] Main [frame 22 + 187.21 ms]: Completed demodulation
+[12:756337][I] Frame 22 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[12:756410][I] Main [frame 22 + 187.35 ms]: Completed LDPC decoding (13 UL symbols)
+[12:756473][I] Frame 22 Summary: FFT (13 tasks): 0.203503 ms (~0.000159398 + 0.0322337 + 0.171104 ms), CSI (1 tasks): 0.157229 ms (~1.45412e-05 + 0.0024319 + 0.154782 ms), Beamweights (75 tasks): 1.4805 ms (~0.0277564 + 0.000281354 + 1.45241 ms), Demul (15600 tasks): 1.03955 ms (~0.143034 + 0.307709 + 0.525898 ms), Decode (208 tasks): 1.00797 ms (~0.000219742 + 0.953653 + 0 ms), Total: 3.888757 ms
+[12:769058][I] Main [frame 23 + 199.99 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[12:769356][I] Main [frame 23 + 0.30 ms]: Received all pilots
+[12:772485][I] Main [frame 23 + 3.43 ms]: FFT-ed all pilots
+[12:772562][I] Frame 23 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[12:774027][I] Main [frame 23 + 4.97 ms]: Completed ZF beamweight calc
+[12:774051][I] Frame 23 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[12:955025][I] Main [frame 23 + 185.96 ms]: Received all packets
+[12:955391][I] Main [frame 23 + 186.33 ms]: Completed demodulation
+[12:955429][I] Frame 23 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[12:955525][I] Main [frame 23 + 186.47 ms]: Completed LDPC decoding (13 UL symbols)
+[12:955589][I] Frame 23 Summary: FFT (13 tasks): 0.188793 ms (~0.00014141 + 0.0360646 + 0.152581 ms), CSI (1 tasks): 0.135436 ms (~1.13318e-05 + 0.00304933 + 0.132375 ms), Beamweights (75 tasks): 1.22516 ms (~0.03049 + 0.000202942 + 1.19442 ms), Demul (15600 tasks): 0.612433 ms (~0.136666 + 0.304113 + 0.107379 ms), Decode (208 tasks): 0.981377 ms (~0.000209361 + 0.929645 + 0 ms), Total: 3.143201 ms
+[12:969054][I] Main [frame 24 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[12:969329][I] Main [frame 24 + 0.28 ms]: Received all pilots
+[12:973018][I] Main [frame 24 + 3.96 ms]: FFT-ed all pilots
+[12:973106][I] Frame 24 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[12:974489][I] Main [frame 24 + 5.43 ms]: Completed ZF beamweight calc
+[12:974513][I] Frame 24 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[13:155408][I] Main [frame 24 + 186.35 ms]: Received all packets
+[13:155747][I] Main [frame 24 + 186.69 ms]: Completed demodulation
+[13:155786][I] Frame 24 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[13:155882][I] Main [frame 24 + 186.83 ms]: Completed LDPC decoding (13 UL symbols)
+[13:155947][I] Frame 24 Summary: FFT (13 tasks): 0.199928 ms (~0.000129642 + 0.0306756 + 0.169117 ms), CSI (1 tasks): 0.159749 ms (~1.28374e-05 + 0.00333928 + 0.156397 ms), Beamweights (75 tasks): 1.31327 ms (~0.0330352 + 0.000287575 + 1.27944 ms), Demul (15600 tasks): 1.03218 ms (~0.137525 + 0.301797 + 0.527251 ms), Decode (208 tasks): 0.971242 ms (~0.000205597 + 0.918975 + 0 ms), Total: 3.676374 ms
+[13:169072][I] Main [frame 25 + 200.02 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[13:169370][I] Main [frame 25 + 0.30 ms]: Received all pilots
+[13:172859][I] Main [frame 25 + 3.79 ms]: FFT-ed all pilots
+[13:172938][I] Frame 25 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[13:174845][I] Main [frame 25 + 5.77 ms]: Completed ZF beamweight calc
+[13:174905][I] Frame 25 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[13:355039][I] Main [frame 25 + 185.96 ms]: Received all packets
+[13:355387][I] Main [frame 25 + 186.31 ms]: Completed demodulation
+[13:355430][I] Frame 25 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[13:355507][I] Main [frame 25 + 186.43 ms]: Completed LDPC decoding (13 UL symbols)
+[13:355584][I] Frame 25 Summary: FFT (13 tasks): 0.205533 ms (~0.000152544 + 0.0350908 + 0.170284 ms), CSI (1 tasks): 0.151152 ms (~1.62845e-05 + 0.00282963 + 0.148306 ms), Beamweights (75 tasks): 1.53481 ms (~0.0302768 + 0.000263643 + 1.50422 ms), Demul (15600 tasks): 1.02339 ms (~0.139061 + 0.306411 + 0.514515 ms), Decode (208 tasks): 0.974224 ms (~0.000214274 + 0.921948 + 0 ms), Total: 3.889108 ms
+[13:369053][I] Main [frame 26 + 199.98 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[13:369594][I] Main [frame 26 + 0.54 ms]: Received all pilots
+[13:372748][I] Main [frame 26 + 3.69 ms]: FFT-ed all pilots
+[13:372840][I] Frame 26 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[13:374728][I] Main [frame 26 + 5.67 ms]: Completed ZF beamweight calc
+[13:374756][I] Frame 26 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[13:555034][I] Main [frame 26 + 185.98 ms]: Received all packets
+[13:555376][I] Main [frame 26 + 186.32 ms]: Completed demodulation
+[13:555420][I] Frame 26 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[13:555515][I] Main [frame 26 + 186.46 ms]: Completed LDPC decoding (13 UL symbols)
+[13:555579][I] Frame 26 Summary: FFT (13 tasks): 0.201113 ms (~0.000199297 + 0.0319564 + 0.168951 ms), CSI (1 tasks): 0.136424 ms (~1.7077e-05 + 0.00229937 + 0.134107 ms), Beamweights (75 tasks): 1.42834 ms (~0.034961 + 0.00027022 + 1.39305 ms), Demul (15600 tasks): 1.03963 ms (~0.14109 + 0.301404 + 0.534413 ms), Decode (208 tasks): 0.986061 ms (~0.000217008 + 0.933152 + 0 ms), Total: 3.791561 ms
+[13:569074][I] Main [frame 27 + 200.02 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[13:569347][I] Main [frame 27 + 0.27 ms]: Received all pilots
+[13:573017][I] Main [frame 27 + 3.94 ms]: FFT-ed all pilots
+[13:573109][I] Frame 27 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[13:574501][I] Main [frame 27 + 5.43 ms]: Completed ZF beamweight calc
+[13:574552][I] Frame 27 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[13:755028][I] Main [frame 27 + 185.95 ms]: Received all packets
+[13:755752][I] Main [frame 27 + 186.68 ms]: Completed demodulation
+[13:755791][I] Frame 27 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[13:755898][I] Main [frame 27 + 186.82 ms]: Completed LDPC decoding (13 UL symbols)
+[13:755962][I] Frame 27 Summary: FFT (13 tasks): 0.202564 ms (~0.000109752 + 0.0337257 + 0.168718 ms), CSI (1 tasks): 0.158973 ms (~8.43943e-06 + 0.00276583 + 0.156198 ms), Beamweights (75 tasks): 1.33897 ms (~0.0319506 + 0.000231629 + 1.30673 ms), Demul (15600 tasks): 0.652111 ms (~0.143865 + 0.312672 + 0.129064 ms), Decode (208 tasks): 1.01421 ms (~0.000211699 + 0.961662 + 0 ms), Total: 3.366821 ms
+[13:769058][I] Main [frame 28 + 199.98 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[13:769337][I] Main [frame 28 + 0.28 ms]: Received all pilots
+[13:772975][I] Main [frame 28 + 3.92 ms]: FFT-ed all pilots
+[13:773066][I] Frame 28 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[13:774937][I] Main [frame 28 + 5.88 ms]: Completed ZF beamweight calc
+[13:774961][I] Frame 28 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[13:955290][I] Main [frame 28 + 186.23 ms]: Received all packets
+[13:956006][I] Main [frame 28 + 186.95 ms]: Completed demodulation
+[13:956065][I] Frame 28 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[13:956147][I] Main [frame 28 + 187.09 ms]: Completed LDPC decoding (13 UL symbols)
+[13:956224][I] Frame 28 Summary: FFT (13 tasks): 0.203075 ms (~0.000168155 + 0.0318447 + 0.171047 ms), CSI (1 tasks): 0.156368 ms (~5.66591e-06 + 0.00224338 + 0.154118 ms), Beamweights (75 tasks): 1.53167 ms (~0.0320396 + 0.000258136 + 1.49932 ms), Demul (15600 tasks): 1.03005 ms (~0.140614 + 0.308203 + 0.516425 ms), Decode (208 tasks): 0.993761 ms (~0.000207142 + 0.941001 + 0 ms), Total: 3.914931 ms
+[13:969066][I] Main [frame 29 + 200.01 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[13:969378][I] Main [frame 29 + 0.31 ms]: Received all pilots
+[13:972522][I] Main [frame 29 + 3.45 ms]: FFT-ed all pilots
+[13:972615][I] Frame 29 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[13:974478][I] Main [frame 29 + 5.41 ms]: Completed ZF beamweight calc
+[13:974507][I] Frame 29 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[14:155024][I] Main [frame 29 + 185.96 ms]: Received all packets
+[14:155357][I] Main [frame 29 + 186.29 ms]: Completed demodulation
+[14:155397][I] Frame 29 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[14:155482][I] Main [frame 29 + 186.42 ms]: Completed LDPC decoding (13 UL symbols)
+[14:155545][I] Frame 29 Summary: FFT (13 tasks): 0.185972 ms (~0.000113318 + 0.0320976 + 0.153755 ms), CSI (1 tasks): 0.136049 ms (~1.01035e-05 + 0.00227385 + 0.133765 ms), Beamweights (75 tasks): 1.41613 ms (~0.0305054 + 0.00027442 + 1.3853 ms), Demul (15600 tasks): 1.02099 ms (~0.136264 + 0.305496 + 0.514401 ms), Decode (208 tasks): 0.972248 ms (~0.000206627 + 0.91881 + 0 ms), Total: 3.731389 ms
+[14:169051][I] Main [frame 30 + 199.98 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[14:169595][I] Main [frame 30 + 0.54 ms]: Received all pilots
+[14:173246][I] Main [frame 30 + 4.19 ms]: FFT-ed all pilots
+[14:173334][I] Frame 30 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[14:174739][I] Main [frame 30 + 5.69 ms]: Completed ZF beamweight calc
+[14:174764][I] Frame 30 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[14:355028][I] Main [frame 30 + 185.97 ms]: Received all packets
+[14:355352][I] Main [frame 30 + 186.30 ms]: Completed demodulation
+[14:355392][I] Frame 30 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[14:355492][I] Main [frame 30 + 186.44 ms]: Completed LDPC decoding (13 UL symbols)
+[14:355574][I] Frame 30 Summary: FFT (13 tasks): 0.201683 ms (~0.00014561 + 0.0314498 + 0.170081 ms), CSI (1 tasks): 0.158118 ms (~1.27186e-05 + 0.00220067 + 0.155904 ms), Beamweights (75 tasks): 1.32283 ms (~0.0328557 + 0.000258215 + 1.28921 ms), Demul (15600 tasks): 1.0464 ms (~0.145045 + 0.309239 + 0.529553 ms), Decode (208 tasks): 1.00608 ms (~0.000210154 + 0.952914 + 0 ms), Total: 3.735115 ms
+[14:369049][I] Main [frame 31 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[14:369330][I] Main [frame 31 + 0.28 ms]: Received all pilots
+[14:372793][I] Main [frame 31 + 3.74 ms]: FFT-ed all pilots
+[14:372870][I] Frame 31 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[14:374284][I] Main [frame 31 + 5.23 ms]: Completed ZF beamweight calc
+[14:374309][I] Frame 31 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[14:555028][I] Main [frame 31 + 185.98 ms]: Received all packets
+[14:555378][I] Main [frame 31 + 186.33 ms]: Completed demodulation
+[14:555417][I] Frame 31 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[14:555513][I] Main [frame 31 + 186.46 ms]: Completed LDPC decoding (13 UL symbols)
+[14:555577][I] Frame 31 Summary: FFT (13 tasks): 0.200914 ms (~0.000145333 + 0.0347788 + 0.165984 ms), CSI (1 tasks): 0.150015 ms (~1.42242e-05 + 0.00244573 + 0.147555 ms), Beamweights (75 tasks): 1.31009 ms (~0.0323507 + 0.000498956 + 1.27718 ms), Demul (15600 tasks): 0.968824 ms (~0.142196 + 0.316427 + 0.446226 ms), Decode (208 tasks): 0.996782 ms (~0.000197673 + 0.943664 + 0 ms), Total: 3.626624 ms
+[14:569053][I] Main [frame 32 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[14:569328][I] Main [frame 32 + 0.27 ms]: Received all pilots
+[14:572480][I] Main [frame 32 + 3.42 ms]: FFT-ed all pilots
+[14:572574][I] Frame 32 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[14:573969][I] Main [frame 32 + 4.91 ms]: Completed ZF beamweight calc
+[14:573995][I] Frame 32 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[14:755022][I] Main [frame 32 + 185.97 ms]: Received all packets
+[14:755766][I] Main [frame 32 + 186.71 ms]: Completed demodulation
+[14:755838][I] Frame 32 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[14:755927][I] Main [frame 32 + 186.87 ms]: Completed LDPC decoding (13 UL symbols)
+[14:755992][I] Frame 32 Summary: FFT (13 tasks): 0.202331 ms (~0.000212967 + 0.0319449 + 0.170167 ms), CSI (1 tasks): 0.136399 ms (~6.3791e-06 + 0.00353925 + 0.132853 ms), Beamweights (75 tasks): 1.26729 ms (~0.0288955 + 0.000269349 + 1.23807 ms), Demul (15600 tasks): 1.01769 ms (~0.136882 + 0.302727 + 0.512569 ms), Decode (208 tasks): 0.961014 ms (~0.000203695 + 0.908776 + 0 ms), Total: 3.584719 ms
+[14:769049][I] Main [frame 33 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[14:769332][I] Main [frame 33 + 0.28 ms]: Received all pilots
+[14:772806][I] Main [frame 33 + 3.76 ms]: FFT-ed all pilots
+[14:772883][I] Frame 33 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[14:774711][I] Main [frame 33 + 5.66 ms]: Completed ZF beamweight calc
+[14:774736][I] Frame 33 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[14:955025][I] Main [frame 33 + 185.97 ms]: Received all packets
+[14:955762][I] Main [frame 33 + 186.71 ms]: Completed demodulation
+[14:955803][I] Frame 33 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[14:955899][I] Main [frame 33 + 186.85 ms]: Completed LDPC decoding (13 UL symbols)
+[14:955963][I] Frame 33 Summary: FFT (13 tasks): 0.205661 ms (~0.000130514 + 0.0347618 + 0.170763 ms), CSI (1 tasks): 0.150457 ms (~2.70616e-05 + 0.00273224 + 0.147698 ms), Beamweights (75 tasks): 1.35253 ms (~0.0283093 + 0.000234838 + 1.32394 ms), Demul (15600 tasks): 1.03096 ms (~0.138179 + 0.31195 + 0.518747 ms), Decode (208 tasks): 0.969643 ms (~0.000202031 + 0.917683 + 0 ms), Total: 3.709258 ms
+[14:969059][I] Main [frame 34 + 200.01 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[14:969610][I] Main [frame 34 + 0.55 ms]: Received all pilots
+[14:973199][I] Main [frame 34 + 4.14 ms]: FFT-ed all pilots
+[14:973286][I] Frame 34 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[14:974289][I] Main [frame 34 + 5.23 ms]: Completed ZF beamweight calc
+[14:974313][I] Frame 34 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[15:155026][I] Main [frame 34 + 185.96 ms]: Received all packets
+[15:155406][I] Main [frame 34 + 186.35 ms]: Completed demodulation
+[15:155446][I] Frame 34 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[15:155552][I] Main [frame 34 + 186.49 ms]: Completed LDPC decoding (13 UL symbols)
+[15:155615][I] Frame 34 Summary: FFT (13 tasks): 0.186265 ms (~0.000157219 + 0.0317296 + 0.154372 ms), CSI (1 tasks): 0.155406 ms (~7.60737e-06 + 0.00244605 + 0.152952 ms), Beamweights (75 tasks): 0.877224 ms (~0.0296514 + 0.000220019 + 0.847296 ms), Demul (15600 tasks): 1.03039 ms (~0.145186 + 0.312882 + 0.50642 ms), Decode (208 tasks): 0.981362 ms (~0.000207103 + 0.92818 + 0 ms), Total: 3.230646 ms
+[15:169052][I] Main [frame 35 + 199.99 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[15:169328][I] Main [frame 35 + 0.28 ms]: Received all pilots
+[15:172428][I] Main [frame 35 + 3.38 ms]: FFT-ed all pilots
+[15:172505][I] Frame 35 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[15:174352][I] Main [frame 35 + 5.30 ms]: Completed ZF beamweight calc
+[15:174375][I] Frame 35 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[15:355034][I] Main [frame 35 + 185.98 ms]: Received all packets
+[15:355388][I] Main [frame 35 + 186.34 ms]: Completed demodulation
+[15:355434][I] Frame 35 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[15:355545][I] Main [frame 35 + 186.49 ms]: Completed LDPC decoding (13 UL symbols)
+[15:355623][I] Frame 35 Summary: FFT (13 tasks): 0.202229 ms (~0.000120173 + 0.0322396 + 0.169863 ms), CSI (1 tasks): 0.134217 ms (~1.06582e-05 + 0.00286683 + 0.131339 ms), Beamweights (75 tasks): 1.45627 ms (~0.0325985 + 0.000246804 + 1.42337 ms), Demul (15600 tasks): 0.647213 ms (~0.141146 + 0.313886 + 0.126909 ms), Decode (208 tasks): 1.01231 ms (~0.0275887 + 0.932112 + 0 ms), Total: 3.452242 ms
+[15:369050][I] Main [frame 36 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[15:369352][I] Main [frame 36 + 0.30 ms]: Received all pilots
+[15:372891][I] Main [frame 36 + 3.84 ms]: FFT-ed all pilots
+[15:372969][I] Frame 36 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[15:374873][I] Main [frame 36 + 5.82 ms]: Completed ZF beamweight calc
+[15:374925][I] Frame 36 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[15:555029][I] Main [frame 36 + 185.98 ms]: Received all packets
+[15:555355][I] Main [frame 36 + 186.31 ms]: Completed demodulation
+[15:555393][I] Frame 36 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[15:555498][I] Main [frame 36 + 186.45 ms]: Completed LDPC decoding (13 UL symbols)
+[15:555562][I] Frame 36 Summary: FFT (13 tasks): 0.202319 ms (~0.00014771 + 0.0314856 + 0.17068 ms), CSI (1 tasks): 0.153292 ms (~6.89418e-06 + 0.00208553 + 0.151199 ms), Beamweights (75 tasks): 1.38754 ms (~0.0334246 + 0.000224417 + 1.35384 ms), Demul (15600 tasks): 1.03837 ms (~0.14445 + 0.307048 + 0.520362 ms), Decode (208 tasks): 1.02011 ms (~0.0332592 + 0.934725 + 0 ms), Total: 3.801634 ms
+[15:569066][I] Main [frame 37 + 200.02 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[15:569339][I] Main [frame 37 + 0.27 ms]: Received all pilots
+[15:573015][I] Main [frame 37 + 3.95 ms]: FFT-ed all pilots
+[15:573093][I] Frame 37 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[15:574507][I] Main [frame 37 + 5.44 ms]: Completed ZF beamweight calc
+[15:574533][I] Frame 37 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[15:755288][I] Main [frame 37 + 186.22 ms]: Received all packets
+[15:755637][I] Main [frame 37 + 186.57 ms]: Completed demodulation
+[15:755683][I] Frame 37 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[15:755781][I] Main [frame 37 + 186.71 ms]: Completed LDPC decoding (13 UL symbols)
+[15:755858][I] Frame 37 Summary: FFT (13 tasks): 0.204398 ms (~0.000123065 + 0.0343591 + 0.16991 ms), CSI (1 tasks): 0.159237 ms (~1.3194e-05 + 0.00304275 + 0.156181 ms), Beamweights (75 tasks): 1.29995 ms (~0.0300951 + 0.000247874 + 1.26955 ms), Demul (15600 tasks): 1.03863 ms (~0.148777 + 0.311481 + 0.516581 ms), Decode (208 tasks): 1.00634 ms (~0.0224324 + 0.931448 + 0 ms), Total: 3.708553 ms
+[15:769062][I] Main [frame 38 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[15:769579][I] Main [frame 38 + 0.52 ms]: Received all pilots
+[15:773209][I] Main [frame 38 + 4.14 ms]: FFT-ed all pilots
+[15:773316][I] Frame 38 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[15:775197][I] Main [frame 38 + 6.13 ms]: Completed ZF beamweight calc
+[15:775226][I] Frame 38 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[15:955026][I] Main [frame 38 + 185.96 ms]: Received all packets
+[15:955806][I] Main [frame 38 + 186.74 ms]: Completed demodulation
+[15:955846][I] Frame 38 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[15:955946][I] Main [frame 38 + 186.88 ms]: Completed LDPC decoding (13 UL symbols)
+[15:956010][I] Frame 38 Summary: FFT (13 tasks): 0.203446 ms (~0.000141212 + 0.0323531 + 0.170945 ms), CSI (1 tasks): 0.157153 ms (~1.4145e-05 + 0.00235622 + 0.154782 ms), Beamweights (75 tasks): 1.47845 ms (~0.0314997 + 0.000241098 + 1.44666 ms), Demul (15600 tasks): 1.04032 ms (~0.140754 + 0.317316 + 0.517863 ms), Decode (208 tasks): 1.01565 ms (~0.0263145 + 0.936973 + 0 ms), Total: 3.895026 ms
+[15:969055][I] Main [frame 39 + 199.99 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[15:969327][I] Main [frame 39 + 0.27 ms]: Received all pilots
+[15:976356][I] Main [frame 39 + 7.30 ms]: FFT-ed all pilots
+[15:976431][I] Frame 39 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[15:978215][I] Main [frame 39 + 9.16 ms]: Completed ZF beamweight calc
+[15:978239][I] Frame 39 Beamweight matrix inverse condition number range:     [0.00,0.08], Mean: 0.00
+[16:154916][E] TxRxWorker [0]: rx buffer full, memory overrun
+[16:154926][E] TxRxWorker [1]: rx buffer full, memory overrun
+[16:155027][I] Main [frame 39 + 185.97 ms]: Received all packets
