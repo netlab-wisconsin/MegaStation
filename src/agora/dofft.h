@@ -123,12 +123,15 @@ class DoFFT : public Doer {
   cufftHandle cufft_plan_;
   short *fft_in_;
   cufftComplex *fft_out_;
+  cufftComplex *pilot_fft_out_;
+  cufftComplex *uplink_fft_out_;
   Table<cudaStream_t>& cuda_streams_;
 
   cufftCallbackLoadC hostLoadCallbackPtr;
   cufftCallbackStoreC hostStoreUplinkPtr;
   cufftCallbackStoreC hostStorePilotPtr;
   struct storeInfo *stInfoPtr_;
+  struct storeInfo *stInfoPtr_pilot_;
 };
 
 #endif  // DOFFT_H_

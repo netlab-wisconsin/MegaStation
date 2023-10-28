@@ -52,7 +52,7 @@ TEST(TestZF, Perf) {
   auto compute_zf = std::make_unique<DoBeamWeights>(
       cfg.get(), tid, csi_buffers, calib_dl_buffer, calib_ul_buffer,
       calib_dl_msum_buffer, calib_ul_msum_buffer, calib_buffer, ul_zf_matrices,
-      dl_zf_matrices, phy_stats.get(), stats.get());
+      dl_zf_matrices, phy_stats.get(), nullptr, stats.get());
 
   FastRand fast_rand;
   size_t start_tsc = GetTime::Rdtsc();

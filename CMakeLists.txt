@@ -487,7 +487,7 @@ set(CLIENT_SOURCES
   src/mac/mac_thread_client.cc)
 add_library(client_sources_lib OBJECT ${CLIENT_SOURCES})
 
-set(COMMON_LIBS cufft_static culibos -Wl,--start-group ${MKL_LIBS} ${BLAS_LIBRARIES} -Wl,--end-group ${NUMA_LIBRARIES} ${FLEXRAN_LDPC_LIBS} ${HDF5_LIBRARIES} ${DPDK_LIBRARIES} ${ARMADILLO_LIBRARIES} ${SOAPY_LIB}
+set(COMMON_LIBS cufft_static culibos cublas cusolver -Wl,--start-group ${MKL_LIBS} ${BLAS_LIBRARIES} -Wl,--end-group ${NUMA_LIBRARIES} ${FLEXRAN_LDPC_LIBS} ${HDF5_LIBRARIES} ${DPDK_LIBRARIES} ${ARMADILLO_LIBRARIES} ${SOAPY_LIB}
     ${PYTHON_LIB} ${Boost_LIBRARIES} ${GFLAGS_LIBRARIES} ${UHD_LIBRARIES} ${COMMON_LIBS})
 message(VERBOSE "Common libs: ${COMMON_LIBS}")
 

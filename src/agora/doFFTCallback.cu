@@ -20,6 +20,7 @@ __device__ cufftComplex short_to_complex(
 __device__ cufftCallbackLoadC cufftLoadCallbackPtr = short_to_complex;
 
 
+// For one symbol
 __device__ void shift_filter_uplink(
 		void *dataOut,
 		size_t offset,
@@ -51,30 +52,31 @@ __device__ void shift_filter_pilot(
 		void *sharedPtr)
 {
 	struct storeInfo *storeInfo = (struct storeInfo *)callerInfo;
-	int64_t block_offset = (offset + (storeInfo->ofdmCAnum / 2)) % storeInfo->ofdmCAnum
+	int64_t carrier_offset = (offset + (storeInfo->ofdmCAnum / 2)) % storeInfo->ofdmCAnum
 				- storeInfo->ofdmStart;
 
-	if (block_offset < 0 || block_offset >= storeInfo->ofdmNum) {
+	if (carrier_offset < 0 || carrier_offset >= storeInfo->ofdmNum) {
 		return;
 	}
 
-	/*if (offset == 0) {
-		std::printf("First Input Symbol is %f, %f\n", element.x, element.y);
-	}
-	if (offset == 0) {
-		std::printf("First Output Symbol is %f, %f\n", element.x, element.y);
-	}*/
-
-	cufftComplex pilot = storeInfo->pilotSign[block_offset];
+	cufftComplex pilot = storeInfo->pilotSign[carrier_offset];
 	element = {
 		element.x * pilot.x + element.y * pilot.y,
-		element.y * pilot.x - element.x * pilot.y
+		//element.y * pilot.x - element.x * pilot.y,
+		element.x * pilot.y - element.y * pilot.x,
 	};
 
-	size_t block_start = (offset / storeInfo->ofdmCAnum) * storeInfo->ofdmNum;
-	/*if (block_start + block_offset == 11 * storeInfo->ofdmNum + 721) {
-		std::printf("GPU Output Symbol is %f, %f\n", element.x, element.y);
-	}*/
+	size_t bs_offset = offset / storeInfo->ofdmCAnum;
+	size_t cg_offset = carrier_offset / storeInfo->scGroup;
+	size_t ue_offset = storeInfo->ueStart + carrier_offset % storeInfo->scGroup;
+
+	if (ue_offset >= storeInfo->ueAnt) {
+		return;
+	}
+
+	size_t block_size = storeInfo->bsAnt * storeInfo->ueAnt;
+	size_t block_start = cg_offset * block_size;
+	size_t block_offset = bs_offset * storeInfo->ueAnt + ue_offset;
 
 	((cufftComplex *)dataOut)[block_start + block_offset] = element;
 }

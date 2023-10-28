@@ -74,7 +74,7 @@ void MasterToWorkerDynamicWorker(
   auto compute_beam = std::make_unique<DoBeamWeights>(
       cfg, worker_id, csi_buffers, calib_dl_buffer, calib_ul_buffer,
       calib_dl_msum_buffer, calib_ul_msum_buffer, calib_buffer,
-      ul_beam_matrices, dl_beam_matrices, phy_stats, stats);
+      ul_beam_matrices, dl_beam_matrices, phy_stats, nullptr, stats);
 
   size_t start_tsc = GetTime::Rdtsc();
   size_t num_tasks = 0;

@@ -15,6 +15,10 @@ struct storeInfo {
 	size_t ofdmStart;
 	size_t ofdmNum;
 	size_t ofdmCAnum;
+	size_t bsAnt;
+	size_t ueAnt;
+	size_t scGroup;
+	size_t ueStart;
 	cufftComplex *pilotSign;
 };
 

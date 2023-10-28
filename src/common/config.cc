@@ -343,6 +343,8 @@ Config::Config(std::string jsonfilename)
     RtAssert(ue_ant_num_ <= pilot_sc_group_size_,
              "user antennas must be no more than pilot_sc_group_size " +
                  std::to_string(pilot_sc_group_size_));
+  } else {
+    pilot_sc_group_size_ = 1;
   }
   correct_phase_shift_ = tdd_conf.value("correct_phase_shift", false);
 
@@ -620,7 +622,8 @@ Config::Config(std::string jsonfilename)
     if (beam_block_size_ == 1) {
       AGORA_LOG_INFO("Setting beam_block_size to pilot_sc_group_size %zu\n",
                      pilot_sc_group_size_);
-      beam_block_size_ = pilot_sc_group_size_;
+      //beam_block_size_ = pilot_sc_group_size_ * 5;
+      beam_block_size_ = ofdm_data_num_;
     }
 
     //Set beam block size to the pilot sc group size so events arn't generated for the redundant sc

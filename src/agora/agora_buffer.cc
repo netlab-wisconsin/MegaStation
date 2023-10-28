@@ -50,6 +50,9 @@ void AgoraBuffer::AllocateTables() {
       2 * sizeof(short) * config_->OfdmCaNum() * total_ul_sym * config_->BsAntNum());
   cudaMalloc(reinterpret_cast<void **>(&fft_out_),
       sizeof(cufftComplex) * config_->OfdmDataNum() * total_ul_sym * config_->BsAntNum());
+  pilot_fft_out_ = fft_out_;
+  uplink_fft_out_ = fft_out_
+    + config_->OfdmDataNum() * config_->Frame().NumPilotSyms() * config_->BsAntNum();
   cuda_streams_.Malloc(total_ul_sym, 1, Agora_memory::Alignment_t::kAlign64);
   for (size_t i = 0; i < total_ul_sym; i++) {
     cudaStreamCreateWithFlags(cuda_streams_[i], cudaStreamNonBlocking);
@@ -59,6 +62,10 @@ void AgoraBuffer::AllocateTables() {
       .ofdmStart = config_->OfdmDataStart(),
       .ofdmNum = config_->OfdmDataNum(),
       .ofdmCAnum = config_->OfdmCaNum(),
+      .bsAnt = config_->BsAntNum(),
+	    .ueAnt = config_->UeAntNum(),
+      .scGroup = config_->PilotScGroupSize(),
+      .ueStart = 0,
       .pilotSign = NULL,
   };
   cudaMalloc(reinterpret_cast<void **>(&(stInfo.pilotSign)),

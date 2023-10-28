@@ -26,7 +26,7 @@ DoBeamWeights::DoBeamWeights(
     Table<complex_float>& calib_buffer,
     PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& ul_beam_matrices,
     PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& dl_beam_matrices,
-    PhyStats* in_phy_stats, Stats* stats_manager)
+    PhyStats* in_phy_stats, cuComplex *csi_gpu_buffer, Stats* stats_manager)
     : Doer(config, tid),
       csi_buffers_(csi_buffers),
       calib_dl_buffer_(calib_dl_buffer),
@@ -36,7 +36,8 @@ DoBeamWeights::DoBeamWeights(
       calib_buffer_(calib_buffer),
       ul_beam_matrices_(ul_beam_matrices),
       dl_beam_matrices_(dl_beam_matrices),
-      phy_stats_(in_phy_stats) {
+      phy_stats_(in_phy_stats),
+      csi_gpu_buffer_(csi_gpu_buffer) {
   duration_stat_ = stats_manager->GetDurationStat(DoerType::kBeam, tid);
   pred_csi_buffer_ =
       static_cast<complex_float*>(Agora_memory::PaddedAlignedAlloc(
@@ -76,6 +77,20 @@ DoBeamWeights::DoBeamWeights(
       }
     }
   }
+
+  cudaStreamCreate(&stream_);
+  cublasCreate_v2(&handle_blas_);
+  cublasSetStream_v2(handle_blas_, stream_);
+  cusolverDnCreate(&handle_solver_);
+  cusolverDnSetStream(handle_solver_, stream_);
+
+  int estim_batch_count = (cfg_->BeamBlockSize() - 1) / cfg_->PilotScGroupSize() + 1;
+  cudaMalloc(&gpu_buffer_, estim_batch_count * cfg_->UeAntNum() * cfg_->UeAntNum() * sizeof(cuComplex));
+  Aarray_cpu_ = (cuComplex**)malloc(estim_batch_count * cfg_->BsAntNum() * sizeof(cuComplex*));
+  cudaMalloc(&Aarray_, estim_batch_count * cfg_->BsAntNum() * sizeof(cuComplex*));
+  Xarray_cpu_ = (cuComplex**)malloc(estim_batch_count * cfg_->BsAntNum() * sizeof(cuComplex*));
+  cudaMalloc(&Xarray_, estim_batch_count * cfg_->BsAntNum() * sizeof(cuComplex*));
+  cudaMalloc(&infoArray_, estim_batch_count * cfg_->BsAntNum() * sizeof(int));
 }
 
 DoBeamWeights::~DoBeamWeights() {
@@ -90,6 +105,98 @@ EventData DoBeamWeights::Launch(size_t tag) {
   return EventData(EventType::kBeam, tag);
 }
 
+void DoBeamWeights::cuda_precoder(cuComplex *csi, int batch_count = 1) {
+  size_t ue = cfg_->UeAntNum();
+  size_t bs = cfg_->BsAntNum();
+
+  //cudaMemcpyAsync(gpu_buffer_, csi, batch_count * ue * bs * sizeof(cuComplex), cudaMemcpyHostToDevice, stream_);
+  //csi_gpu_buffer_ = gpu_buffer_;
+  //cudaMemcpyAsync(dst_buffer_, csi, ue * bs * sizeof(cuComplex), cudaMemcpyHostToDevice, stream_);
+  cuComplex *CSI = csi;
+
+  // Compute B = CSI * CSI^H, CSI is a column-major matrix ue*bs
+  cuComplex alpha = make_cuComplex(1.0f, 0.0f);
+  cuComplex beta = make_cuComplex(0.0f, 0.0f);
+
+  size_t lda = ue, ldb = ue, ldc = ue;
+
+  cuComplex* A = gpu_buffer_;
+  //cudaMalloc(&A, ue * ue * batch_count * sizeof(cuComplex));
+
+  size_t stride_in = ue * bs;
+  size_t stride_out = ue * ue;
+
+  cublasCgemmStridedBatched(
+    handle_blas_, CUBLAS_OP_N, CUBLAS_OP_C,
+    ue, ue, bs,
+    &alpha, CSI, lda, stride_in,
+    CSI, ldb, stride_in,
+    &beta, A, ldc, stride_out, batch_count);
+  // TRANSPOSE CSI for future computation
+  /*ldb = ue;
+  cublasCgeam(handle_blas_, CUBLAS_OP_C, CUBLAS_OP_N, ue, bs, &alpha, CSI, lda, &beta, CSI, ldb, CSI, ldc);*/
+
+  // Compute Inverse of A using Cholesky decomposition
+  //cuComplex **Aarray_cpu = (cuComplex**)malloc(batch_count * sizeof(cuComplex*));
+  for (int i = 0; i < batch_count; i++) {
+    Aarray_cpu_[i] = A + i * stride_out;
+  }
+  //cuComplex **Aarray;
+  //cudaMalloc(&Aarray, batch_count * sizeof(cuComplex*));
+  cudaMemcpyAsync(Aarray_, Aarray_cpu_, batch_count * sizeof(cuComplex*), cudaMemcpyHostToDevice, stream_);
+
+  //int *infoArray;
+  //cudaMalloc(&infoArray, batch_count * sizeof(int));
+
+  //cusolverDnCpotrfBatched(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, Aarray, lda, infoArray, batch_count);
+  cusolverDnCpotrfBatched(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, Aarray_, lda, infoArray_, batch_count);
+  //printf("status: %d\n", status);
+  //printf("info: %d\n", *info);
+  /*int Lwork;
+  cusolverDnCpotrf_bufferSize(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, A, lda, &Lwork);
+
+  cuComplex* workspace;
+  cudaMalloc(&workspace, Lwork * sizeof(cuComplex));
+
+  cusolverDnCpotrf(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, A, lda, workspace, Lwork, info);*/
+
+  //RtAssert(*info == 0, "Failed to compute Cholesky decomposition");
+
+  // Compute A * X = CSI^H
+  //cudaFree(Aarray);
+  //cudaFree(infoArray);
+  //free(Aarray_cpu);
+  //cudaMalloc(&infoArray, bs * batch_count * sizeof(int));
+  //Aarray_cpu = (cuComplex**)malloc(bs * batch_count * sizeof(cuComplex*));
+  for (size_t i = 0; i < batch_count * bs; i++) {
+    Aarray_cpu_[i] = A + (i / bs) * stride_out;
+  }
+  //cudaMalloc(&Aarray_, bs * batch_count * sizeof(cuComplex*));
+  cudaMemcpyAsync(Aarray_, Aarray_cpu_, bs * batch_count * sizeof(cuComplex*), cudaMemcpyHostToDevice, stream_);
+  //cuComplex **Xarray_cpu = (cuComplex**)malloc(batch_count * bs * sizeof(cuComplex*));
+  for (size_t i = 0; i < batch_count * bs; i++) {
+    Xarray_cpu_[i] = CSI + i * ue;
+  }
+  //cuComplex **Xarray;
+  //cudaMalloc(&Xarray, batch_count * bs * sizeof(cuComplex*));
+  cudaMemcpyAsync(Xarray_, Xarray_cpu_, batch_count * bs * sizeof(cuComplex*), cudaMemcpyHostToDevice, stream_);
+  cusolverDnCpotrsBatched(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, 1, Aarray_, lda, Xarray_, ldb, infoArray_, batch_count * bs);
+  /*for (int i = 0; i < batch_count; i++) {
+    cusolverDnCpotrs(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, bs, A, lda, CSI + i * stride_in, ldb, infoArray);
+  }*/
+
+  //RtAssert(*info == 0, "Failed to compute inverse");
+
+  /*cudaMemcpyAsync(csi_h, CSI, batch_count * ue * bs * sizeof(cuComplex), cudaMemcpyDeviceToHost, stream_);*/
+  //cudaStreamSynchronize(stream_);
+
+  //cudaFree(Xarray);
+  //cudaFree(Aarray);
+  //cudaFree(infoArray);
+  //free(Xarray_cpu);
+  //free(Aarray_cpu);
+}
+
 void DoBeamWeights::ComputePrecoder(size_t frame_id, size_t cur_sc_id,
                                     const arma::cx_fmat& mat_csi,
                                     const arma::cx_fvec& calib_sc_vec,
@@ -101,13 +208,27 @@ void DoBeamWeights::ComputePrecoder(size_t frame_id, size_t cur_sc_id,
   }
   arma::cx_fmat mat_ul_beam(reinterpret_cast<arma::cx_float*>(ul_beam_mem),
                             cfg_->UeAntNum(), cfg_->BsAntNum(), false);
-  arma::cx_fmat mat_ul_beam_tmp;
+  arma::cx_fmat mat_ul_beam_2(reinterpret_cast<arma::cx_float*>
+                            (ul_beam_mem + cfg_->BsAntNum() * cfg_->UeAntNum()),
+                            cfg_->UeAntNum(), cfg_->BsAntNum(), false);
+  arma::cx_fmat mat_ul_beam_tmp(cfg_->UeAntNum(), cfg_->BsAntNum());
   switch (cfg_->BeamformingAlgo()) {
     case CommsLib::BeamformingAlgorithm::kZF:
       if (kUseInverseForZF) {
         try {
           mat_ul_beam_tmp =
-              arma::inv_sympd(mat_csi.t() * mat_csi) * mat_csi.t();
+              arma::inv_sympd(mat_csi * mat_csi.t()) * mat_csi;
+          /*cuda_precoder((cuComplex*)mat_csi.memptr(),
+            (cuComplex*)mat_ul_beam_tmp.memptr(), 1);*/
+          /*if (cur_sc_id + cfg_->PilotScGroupSize() >= cfg_->OfdmDataNum()) {
+            cuda_precoder((cuComplex*)mat_csi.memptr(),
+            (cuComplex*)mat_ul_beam.memptr(), 1);
+          } else {
+          cuda_precoder((cuComplex*)mat_csi.memptr(),
+            (cuComplex*)mat_ul_beam.memptr(), 2);
+          std::printf("%ld: %f + %fj\n", cur_sc_id + cfg_->PilotScGroupSize(), mat_ul_beam_2(14, 61).real(), mat_ul_beam_2(14, 61).imag());
+          }
+          mat_ul_beam_tmp = mat_ul_beam;*/
         } catch (std::runtime_error&) {
           AGORA_LOG_WARN(
               "Failed to invert channel matrix, falling back to pinv()\n");
@@ -390,6 +511,7 @@ static inline void TransposeGather(size_t cur_sc_id, float* src, float*& dst,
 
 void DoBeamWeights::ComputeBeams(size_t tag) {
   //Request was generated from gen_tag_t::FrmSc
+  const size_t start_tsc1 = GetTime::WorkerRdtsc();
   const size_t frame_id = gen_tag_t(tag).frame_id_;
   const size_t base_sc_id = gen_tag_t(tag).sc_id_;
   const size_t frame_slot = frame_id % kFrameWnd;
@@ -419,8 +541,38 @@ void DoBeamWeights::ComputeBeams(size_t tag) {
     }
   }
 
-  // Handle each subcarrier in the block (base_sc_id : last_sc_id -1)
+  size_t sc_group_id = start_sc / cfg_->PilotScGroupSize();
+  size_t gather_offset = sc_group_id * cfg_->BsAntNum() * cfg_->UeAntNum();
+  int batch_count = (last_sc_id - start_sc) / sc_inc;
+  //std::printf("batch_count: %d\n", batch_count);
+
+  const size_t start_tsc2 = GetTime::WorkerRdtsc();
+  duration_stat_->task_duration_[1] += start_tsc2 - start_tsc1;
+
+  cuComplex *cur_csi_gpu_ = csi_gpu_buffer_ + gather_offset;
+  cuda_precoder(cur_csi_gpu_, batch_count);
+
+  //std::printf("%ld: %f + %fj\n", 176, ul_beam_matrices_[frame_slot][176 / 16][14].re, ul_beam_matrices_[frame_slot][176 / 16][14].im);
+
+  const double start_tsc3 = GetTime::WorkerRdtsc();
+  duration_stat_->task_duration_[2] += start_tsc3 - start_tsc2;
+
   for (size_t cur_sc_id = start_sc; cur_sc_id < last_sc_id;
+       cur_sc_id = cur_sc_id + sc_inc) {
+    cudaMemcpyAsync(ul_beam_matrices_[frame_slot][cur_sc_id], cur_csi_gpu_,
+      cfg_->BsAntNum() * cfg_->UeAntNum() * sizeof(complex_float),
+      cudaMemcpyDeviceToHost, stream_);
+    cur_csi_gpu_ += cfg_->BsAntNum() * cfg_->UeAntNum();
+  }
+  cudaStreamSynchronize(stream_);
+  //std::printf("%ld: %f + %fj\n", 176, ul_beam_matrices_[frame_slot][176][14].re, ul_beam_matrices_[frame_slot][176][14].im);
+  duration_stat_->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc3;
+  duration_stat_->task_count_++;
+  duration_stat_->task_duration_[0] += GetTime::WorkerRdtsc() - start_tsc1;
+
+
+  // Handle each subcarrier in the block (base_sc_id : last_sc_id -1)
+  /*for (size_t cur_sc_id = start_sc; cur_sc_id < last_sc_id;
        cur_sc_id = cur_sc_id + sc_inc) {
     arma::cx_fvec& cal_sc_vec = *calib_sc_vec_ptr_;
     const size_t start_tsc1 = GetTime::WorkerRdtsc();
@@ -441,18 +593,24 @@ void DoBeamWeights::ComputeBeams(size_t tag) {
             dst_csi_ptr, cfg_->BsAntNum(), cfg_->OfdmDataNum());
       }
     }
+    size_t sc_group_id = cur_sc_id / cfg_->PilotScGroupSize();
+    size_t gather_offset = sc_group_id * cfg_->BsAntNum() * cfg_->UeAntNum();
+    //memcpy(csi_gather_buffer_, csi_buffers_[frame_slot][0] + gather_offset,
+    //  cfg_->BsAntNum() * cfg_->UeAntNum() * sizeof(complex_float));
 
     const size_t start_tsc2 = GetTime::WorkerRdtsc();
     duration_stat_->task_duration_[1] += start_tsc2 - start_tsc1;
 
-    arma::cx_fmat mat_csi((arma::cx_float*)csi_gather_buffer_, cfg_->BsAntNum(),
-                          cfg_->UeAntNum(), false);
+    //arma::cx_fmat mat_csi((arma::cx_float*)csi_gather_buffer_, cfg_->UeAntNum(),
+    //                      cfg_->BsAntNum(), false);
+    arma::cx_fmat mat_csi((arma::cx_float*)csi_buffers_[frame_slot][0] + gather_offset, cfg_->UeAntNum(), cfg_->BsAntNum(), false);
 
     if (cfg_->Frame().NumDLSyms() > 0) {
       ComputeCalib(frame_id, cur_sc_id, cal_sc_vec);
     }
     if (num_ext_ref_ > 0) {
-      mat_csi.shed_rows(ext_ref_id_);
+      RtAssert(false, "External reference not supported");
+      mat_csi.shed_cols(ext_ref_id_);
     }
 
     const double start_tsc3 = GetTime::WorkerRdtsc();
@@ -469,5 +627,6 @@ void DoBeamWeights::ComputeBeams(size_t tag) {
     duration_stat_->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc3;
     duration_stat_->task_count_++;
     duration_stat_->task_duration_[0] += GetTime::WorkerRdtsc() - start_tsc1;
-  }
+  }*/
+  //cudaStreamSynchronize(stream_);
 }

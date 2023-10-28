@@ -54,6 +54,10 @@ DoFFT::DoFFT(Config* config, size_t tid, Table<complex_float>& data_buffer,
           cfg_->SampsPerSymbol() * sizeof(std::complex<float>)));
   
   // GPU
+  pilot_fft_out_ = fft_out_;
+  uplink_fft_out_ = fft_out_
+    + cfg_->OfdmDataNum() * cfg_->BsAntNum() * cfg_->Frame().NumPilotSyms();
+
   cufftCreate(&cufft_plan_);
   cufftPlan1d(&cufft_plan_, cfg_->OfdmCaNum(), CUFFT_C2C, cfg_->BsAntNum());
 
@@ -69,6 +73,10 @@ DoFFT::DoFFT(Config* config, size_t tid, Table<complex_float>& data_buffer,
   cufftXtSetCallback(cufft_plan_,
     reinterpret_cast<void **>(&hostLoadCallbackPtr),
     CUFFT_CB_LD_COMPLEX, NULL);
+  
+  cudaMalloc(reinterpret_cast<void **>(&stInfoPtr_pilot_), sizeof(struct storeInfo));
+  cudaMemcpy(stInfoPtr_pilot_, stInfoPtr_,
+      sizeof(struct storeInfo), cudaMemcpyDeviceToDevice);
 }
 
 DoFFT::~DoFFT() {
@@ -135,21 +143,26 @@ EventData DoFFT::Launch(size_t tag) {
   duration_stat->task_duration_.at(1) += start_tsc1 - start_tsc;
 
   cudaStream_t cur_stream = cuda_streams_[symbol_id][0];
-  short *in_ptr = fft_in_
-    + symbol_id * (cfg_->OfdmCaNum() * cfg_->BsAntNum() * 2);
-  cufftComplex *out_ptr = fft_out_
-    + symbol_id * (cfg_->OfdmDataNum() * cfg_->BsAntNum());
+  short *in_ptr = fft_in_ + symbol_id * (cfg_->OfdmCaNum() * cfg_->BsAntNum() * 2);
+  cufftComplex *out_ptr = NULL;
   complex_float *out_cpu_buffer = NULL;
-  size_t pilot_symbol_id;
+  size_t pilot_symbol_id, uplink_symbol_id;
 
   if (sym_type == SymbolType::kPilot) {
     pilot_symbol_id = cfg_->Frame().GetPilotSymbolIdx(symbol_id);
-    out_cpu_buffer = csi_buffers_[frame_slot][pilot_symbol_id];
+    out_ptr = pilot_fft_out_;
+    out_cpu_buffer = csi_buffers_[frame_slot][0];
+    size_t ue_start = pilot_symbol_id * cfg_->PilotScGroupSize();
+    cudaMemcpy(&(stInfoPtr_pilot_->ueStart), &ue_start,
+        sizeof(size_t), cudaMemcpyHostToDevice);
     cufftXtSetCallback(cufft_plan_,
       reinterpret_cast<void **>(&hostStorePilotPtr),
       CUFFT_CB_ST_COMPLEX,
-      reinterpret_cast<void **>(&stInfoPtr_));
+      reinterpret_cast<void **>(&stInfoPtr_pilot_));
   } else if (sym_type == SymbolType::kUL) {
+    uplink_symbol_id = cfg_->Frame().GetULSymbolIdx(symbol_id);
+    out_ptr = uplink_fft_out_
+      + uplink_symbol_id * (cfg_->OfdmDataNum() * cfg_->BsAntNum());
     out_cpu_buffer = cfg_->GetDataBuf(data_buffer_, frame_id, symbol_id);
     cufftXtSetCallback(cufft_plan_,
       reinterpret_cast<void **>(&hostStoreUplinkPtr),
@@ -170,7 +183,8 @@ EventData DoFFT::Launch(size_t tag) {
       cudaMemcpyDeviceToHost, cur_stream);
   cudaStreamSynchronize(cur_stream);
   //std::printf("First FFT symbol: %f, %f\n", out_cpu_buffer[0].re, out_cpu_buffer[0].im);
-  if (sym_type == SymbolType::kPilot && cfg_->FreqOrthogonalPilot()
+  // CHANGE: remove this
+  /*if (sym_type == SymbolType::kPilot && cfg_->FreqOrthogonalPilot()
     && pilot_symbol_id == cfg_->Frame().NumPilotSyms() - 1) {
     //const size_t printOffset = 11 * cfg_->OfdmDataNum() + 721;
     //std::printf("First Input Symbol is %f, %f\n", out_cpu_buffer[printOffset].re, out_cpu_buffer[printOffset].im);
@@ -186,7 +200,7 @@ EventData DoFFT::Launch(size_t tag) {
       }
     }
     //std::printf("First Output Symbol is %f, %f\n", out_cpu_buffer[printOffset].re, out_cpu_buffer[printOffset].im);
-  }
+  }*/
 
   duration_stat->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc2;
 

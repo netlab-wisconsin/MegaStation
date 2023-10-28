@@ -102,6 +102,8 @@ public:
   short *packet_buffer_;
   // sizeof(cufftComplex) * #symbol * #ant * #Ofdm
   cufftComplex *fft_out_;
+  cufftComplex *pilot_fft_out_;
+  cufftComplex *uplink_fft_out_;
   // #symbol
   Table<cudaStream_t> cuda_streams_;
   struct storeInfo *stInfoPtr_;

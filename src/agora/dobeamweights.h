@@ -7,6 +7,7 @@
 
 #include <memory>
 
+#define half flex_half
 #include "armadillo"
 #include "common_typedef_sdk.h"
 #include "config.h"
@@ -16,6 +17,13 @@
 #include "message.h"
 #include "phy_stats.h"
 #include "stats.h"
+#undef half
+
+#define half cuda_half
+#include <cusolverDn.h>
+#include <cuda_runtime.h>
+#include <cublas_v2.h>
+#undef half
 
 class DoBeamWeights : public Doer {
  public:
@@ -29,7 +37,7 @@ class DoBeamWeights : public Doer {
       Table<complex_float>& calib_buffer,
       PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& ul_beam_matrices_,
       PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& dl_beam_matrices_,
-      PhyStats* in_phy_stats, Stats* stats_manager);
+      PhyStats* in_phy_stats, cuComplex *csi_gpu_buffer, Stats* stats_manager);
   ~DoBeamWeights() override;
 
   /**
@@ -58,6 +66,7 @@ class DoBeamWeights : public Doer {
                        complex_float* ul_beam_mem, complex_float* dl_beam_mem);
   void ComputeCalib(size_t frame_id, size_t sc_id, arma::cx_fvec& calib_sc_vec);
   void ComputeBeams(size_t tag);
+  void cuda_precoder(cuComplex *csi, int batch_count);
 
   PtrGrid<kFrameWnd, kMaxUEs, complex_float>& csi_buffers_;
   complex_float* pred_csi_buffer_;
@@ -82,6 +91,18 @@ class DoBeamWeights : public Doer {
   PhyStats* phy_stats_;
   arma::uvec ext_ref_id_;
   size_t num_ext_ref_;
+
+  //GPU
+  cublasHandle_t handle_blas_;
+  cudaStream_t stream_;
+  cusolverDnHandle_t handle_solver_;
+  cuComplex* gpu_buffer_;
+  cuComplex* csi_gpu_buffer_;
+  cuComplex **Aarray_cpu_;
+  cuComplex **Aarray_;
+  cuComplex **Xarray_cpu_;
+  cuComplex **Xarray_;
+  int *infoArray_;
 };
 
 #endif  // DOBEAMWEIGHTS_H_
