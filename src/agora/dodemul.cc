@@ -8,6 +8,8 @@
 #include "concurrent_queue_wrapper.h"
 #include "modulation.h"
 
+#include "temp_launch.h"
+
 static constexpr bool kUseSIMDGather = true;
 
 DoDemul::DoDemul(
@@ -16,14 +18,23 @@ DoDemul::DoDemul(
     Table<complex_float>& ue_spec_pilot_buffer,
     Table<complex_float>& equal_buffer,
     PtrCube<kFrameWnd, kMaxSymbols, kMaxUEs, int8_t>& demod_buffers,
-    PhyStats* in_phy_stats, Stats* stats_manager)
+    PhyStats* in_phy_stats,
+    Table<cudaStream_t>& cuda_streams,
+    float2* cuda_data_buffer,
+    float2* cuda_beam_buffer,
+    int8_t* cuda_demod_buffer,
+    Stats* stats_manager)
     : Doer(config, tid),
       data_buffer_(data_buffer),
       ul_beam_matrices_(ul_beam_matrices),
       ue_spec_pilot_buffer_(ue_spec_pilot_buffer),
       equal_buffer_(equal_buffer),
       demod_buffers_(demod_buffers),
-      phy_stats_(in_phy_stats) {
+      phy_stats_(in_phy_stats),
+      cuda_streams_(cuda_streams),
+      cuda_data_buffer_((complex_demul *)cuda_data_buffer),
+      cuda_beam_buffer_((complex_demul *)cuda_beam_buffer),
+      cuda_demod_buffer_(cuda_demod_buffer) {
   duration_stat_ = stats_manager->GetDurationStat(DoerType::kDemul, tid);
 
   data_gather_buffer_ =
@@ -63,6 +74,7 @@ DoDemul::DoDemul(
   }
   mkl_jit_cgemm_ = mkl_jit_get_cgemm_ptr(jitter_);
 #endif
+  //cudaStreamCreateWithFlags(&cuda_stream_, cudaStreamNonBlocking);
 }
 
 DoDemul::~DoDemul() {
@@ -79,12 +91,64 @@ DoDemul::~DoDemul() {
 }
 
 EventData DoDemul::Launch(size_t tag) {
-  const size_t frame_id = gen_tag_t(tag).frame_id_;
+  size_t start_tsc = GetTime::WorkerRdtsc();
+
   const size_t symbol_id = gen_tag_t(tag).symbol_id_;
   const size_t base_sc_id = gen_tag_t(tag).sc_id_;
 
-  const size_t symbol_idx_ul = this->cfg_->Frame().GetULSymbolIdx(symbol_id);
-  const size_t data_symbol_idx_ul =
+  for (size_t pilot_id = 0; pilot_id < cfg_->Frame().NumPilotSyms(); pilot_id++) {
+    cudaStreamSynchronize(cuda_streams_[cfg_->Frame().GetPilotSymbol(pilot_id)][0]);
+  }
+  cuda_stream_ = cuda_streams_[symbol_id][0];
+
+  const size_t symbol_idx_ul = cfg_->Frame().GetULSymbolIdx(symbol_id);
+  size_t batch_count =
+      std::min(cfg_->DemulBlockSize(), cfg_->OfdmDataNum() - base_sc_id);
+
+  complex_demul *data_ptr = cuda_data_buffer_ + symbol_idx_ul * cfg_->BsAntNum() * cfg_->OfdmDataNum() + base_sc_id * cfg_->BsAntNum();
+  complex_demul *ul_beam_ptr = cuda_beam_buffer_
+      + (base_sc_id / cfg_->PilotScGroupSize()) * cfg_->BsAntNum() * cfg_->UeAntNum();
+  int8_t *demod_ptr = cuda_demod_buffer_
+    + symbol_idx_ul * cfg_->UeAntNum() * cfg_->OfdmDataNum() * cfg_->ModOrderBits(Direction::kUplink) 
+    + base_sc_id * cfg_->ModOrderBits(Direction::kUplink);
+
+  size_t start_tsc2 = GetTime::WorkerRdtsc();
+  duration_stat_->task_duration_[1] += start_tsc2 - start_tsc;
+
+  temp_launch(
+    cfg_->UeAntNum(),
+    cfg_->BsAntNum(),
+    batch_count,
+    cfg_->ModOrderBits(Direction::kUplink),
+    ul_beam_ptr,
+    data_ptr,
+    demod_ptr,
+    cfg_->OfdmDataNum() * cfg_->ModOrderBits(Direction::kUplink),
+    cfg_->PilotScGroupSize(),
+    cuda_stream_
+  );
+
+  size_t start_tsc3 = GetTime::WorkerRdtsc();
+  duration_stat_->task_duration_[2] += start_tsc3 - start_tsc2;
+  duration_stat_->task_count_++;
+
+  const size_t frame_id = gen_tag_t(tag).frame_id_;
+  const size_t frame_slot = frame_id % kFrameWnd;
+  if (batch_count != cfg_->OfdmDataNum()) {
+    for (size_t ue_id = 0; ue_id < cfg_->UeAntNum(); ue_id++) {
+      int8_t* demod_ptr_cpu = demod_buffers_[frame_slot][symbol_idx_ul][ue_id] + base_sc_id * cfg_->ModOrderBits(Direction::kUplink);
+      cudaMemcpyAsync(demod_ptr_cpu, demod_ptr + ue_id * cfg_->OfdmDataNum() * cfg_->ModOrderBits(Direction::kUplink), sizeof(int8_t) * batch_count * cfg_->ModOrderBits(Direction::kUplink), cudaMemcpyDeviceToHost, cuda_stream_);
+    }
+  } else {
+    int8_t* demod_ptr_cpu = demod_buffers_[frame_slot][symbol_idx_ul][0];
+    cudaMemcpyAsync(demod_ptr_cpu, demod_ptr, sizeof(int8_t) * cfg_->OfdmDataNum() * cfg_->ModOrderBits(Direction::kUplink) * cfg_->UeAntNum(), cudaMemcpyDeviceToHost, cuda_stream_);
+  }
+  duration_stat_->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc3;
+
+  cudaStreamSynchronize(cuda_stream_);
+  duration_stat_->task_duration_[0] += GetTime::WorkerRdtsc() - start_tsc;
+  return EventData(EventType::kDemul, tag);
+  /*const size_t data_symbol_idx_ul =
       symbol_idx_ul - this->cfg_->Frame().ClientUlPilotSymbols();
   const size_t total_data_symbol_idx_ul =
       cfg_->GetTotalDataSymbolIdxUl(frame_id, symbol_idx_ul);
@@ -380,5 +444,5 @@ EventData DoDemul::Launch(size_t tag) {
 
   duration_stat_->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc3;
   duration_stat_->task_duration_[0] += GetTime::WorkerRdtsc() - start_tsc;
-  return EventData(EventType::kDemul, tag);
+  return EventData(EventType::kDemul, tag);*/
 }

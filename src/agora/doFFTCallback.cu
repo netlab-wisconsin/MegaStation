@@ -29,16 +29,17 @@ __device__ void shift_filter_uplink(
 		void *sharedPtr)
 {
 	struct storeInfo *storeInfo = (struct storeInfo *)callerInfo;
-	int64_t block_offset = (offset + (storeInfo->ofdmCAnum / 2)) % storeInfo->ofdmCAnum
+	int64_t carrier_offset = (offset + (storeInfo->ofdmCAnum / 2)) % storeInfo->ofdmCAnum
 				- storeInfo->ofdmStart;
 
-	if (block_offset < 0 || block_offset >= storeInfo->ofdmNum) {
+	if (carrier_offset < 0 || carrier_offset >= storeInfo->ofdmNum) {
 		return;
 	}
 
-	size_t block_start = (offset / storeInfo->ofdmCAnum) * storeInfo->ofdmNum;
+	size_t bsAnt_id = offset / storeInfo->ofdmCAnum;
+	size_t block_start = carrier_offset * storeInfo->bsAnt;
 
-	((cufftComplex *)dataOut)[block_start + block_offset] = element;
+	((cufftComplex *)dataOut)[block_start + bsAnt_id] = element;
 }
 
 __device__ cufftCallbackStoreC cufftStoreUplinkPtr = shift_filter_uplink; 

@@ -99,11 +99,13 @@ class AgoraBuffer {
   // GPU
   // 2 * sizeof(short) * #symbol * #ant * #OfdmCA
 public:
+  Table<short> fft_gather_cpu_;
   short *packet_buffer_;
   // sizeof(cufftComplex) * #symbol * #ant * #Ofdm
   cufftComplex *fft_out_;
   cufftComplex *pilot_fft_out_;
   cufftComplex *uplink_fft_out_;
+  int8_t *demul_out_;
   // #symbol
   Table<cudaStream_t> cuda_streams_;
   struct storeInfo *stInfoPtr_;

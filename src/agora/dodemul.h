@@ -16,6 +16,14 @@
 #include "stats.h"
 #include "symbols.h"
 
+#include "cuda.h"
+#include "cuda_runtime.h"
+
+struct complex_demul {
+  float re;
+  float im;
+};
+
 class DoDemul : public Doer {
  public:
   DoDemul(Config* config, int tid, Table<complex_float>& data_buffer,
@@ -23,7 +31,12 @@ class DoDemul : public Doer {
           Table<complex_float>& ue_spec_pilot_buffer,
           Table<complex_float>& equal_buffer,
           PtrCube<kFrameWnd, kMaxSymbols, kMaxUEs, int8_t>& demod_buffers_,
-          PhyStats* in_phy_stats, Stats* in_stats_manager);
+          PhyStats* in_phy_stats,
+          Table<cudaStream_t>& cuda_streams,
+          float2* cuda_data_buffer,
+          float2* cuda_beam_buffer,
+          int8_t* cuda_demod_buffer,
+          Stats* in_stats_manager);
   ~DoDemul() override;
 
   /**
@@ -77,6 +90,13 @@ class DoDemul : public Doer {
   void* jitter_;
   cgemm_jit_kernel_t mkl_jit_cgemm_;
 #endif
+
+  //GPU
+  Table<cudaStream_t>& cuda_streams_;
+  complex_demul* cuda_data_buffer_;
+  complex_demul* cuda_beam_buffer_;
+  int8_t* cuda_demod_buffer_;
+  cudaStream_t cuda_stream_;
 };
 
 #endif  // DODEMUL_H_

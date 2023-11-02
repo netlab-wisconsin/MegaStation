@@ -26,7 +26,10 @@ DoBeamWeights::DoBeamWeights(
     Table<complex_float>& calib_buffer,
     PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& ul_beam_matrices,
     PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& dl_beam_matrices,
-    PhyStats* in_phy_stats, cuComplex *csi_gpu_buffer, Stats* stats_manager)
+    PhyStats* in_phy_stats,
+    Table<cudaStream_t>& cuda_streams,
+    cuComplex *csi_gpu_buffer,
+    Stats* stats_manager)
     : Doer(config, tid),
       csi_buffers_(csi_buffers),
       calib_dl_buffer_(calib_dl_buffer),
@@ -37,6 +40,7 @@ DoBeamWeights::DoBeamWeights(
       ul_beam_matrices_(ul_beam_matrices),
       dl_beam_matrices_(dl_beam_matrices),
       phy_stats_(in_phy_stats),
+      cuda_streams_(cuda_streams),
       csi_gpu_buffer_(csi_gpu_buffer) {
   duration_stat_ = stats_manager->GetDurationStat(DoerType::kBeam, tid);
   pred_csi_buffer_ =
@@ -78,11 +82,11 @@ DoBeamWeights::DoBeamWeights(
     }
   }
 
-  cudaStreamCreate(&stream_);
+  //cudaStreamCreateWithFlags(&stream_, cudaStreamNonBlocking);
   cublasCreate_v2(&handle_blas_);
-  cublasSetStream_v2(handle_blas_, stream_);
+  //cublasSetStream_v2(handle_blas_, stream_);
   cusolverDnCreate(&handle_solver_);
-  cusolverDnSetStream(handle_solver_, stream_);
+  //cusolverDnSetStream(handle_solver_, stream_);
 
   int estim_batch_count = (cfg_->BeamBlockSize() - 1) / cfg_->PilotScGroupSize() + 1;
   cudaMalloc(&gpu_buffer_, estim_batch_count * cfg_->UeAntNum() * cfg_->UeAntNum() * sizeof(cuComplex));
@@ -106,22 +110,22 @@ EventData DoBeamWeights::Launch(size_t tag) {
 }
 
 void DoBeamWeights::cuda_precoder(cuComplex *csi, int batch_count = 1) {
+  RtAssert(cfg_->BeamformingAlgo() == CommsLib::BeamformingAlgorithm::kZF, "Only ZF is supported");
+
+  cublasSetStream_v2(handle_blas_, stream_);
+  cusolverDnSetStream(handle_solver_, stream_);
+
   size_t ue = cfg_->UeAntNum();
   size_t bs = cfg_->BsAntNum();
 
-  //cudaMemcpyAsync(gpu_buffer_, csi, batch_count * ue * bs * sizeof(cuComplex), cudaMemcpyHostToDevice, stream_);
-  //csi_gpu_buffer_ = gpu_buffer_;
-  //cudaMemcpyAsync(dst_buffer_, csi, ue * bs * sizeof(cuComplex), cudaMemcpyHostToDevice, stream_);
   cuComplex *CSI = csi;
 
-  // Compute B = CSI * CSI^H, CSI is a column-major matrix ue*bs
   cuComplex alpha = make_cuComplex(1.0f, 0.0f);
   cuComplex beta = make_cuComplex(0.0f, 0.0f);
 
   size_t lda = ue, ldb = ue, ldc = ue;
 
   cuComplex* A = gpu_buffer_;
-  //cudaMalloc(&A, ue * ue * batch_count * sizeof(cuComplex));
 
   size_t stride_in = ue * bs;
   size_t stride_out = ue * ue;
@@ -132,69 +136,25 @@ void DoBeamWeights::cuda_precoder(cuComplex *csi, int batch_count = 1) {
     &alpha, CSI, lda, stride_in,
     CSI, ldb, stride_in,
     &beta, A, ldc, stride_out, batch_count);
-  // TRANSPOSE CSI for future computation
-  /*ldb = ue;
-  cublasCgeam(handle_blas_, CUBLAS_OP_C, CUBLAS_OP_N, ue, bs, &alpha, CSI, lda, &beta, CSI, ldb, CSI, ldc);*/
 
   // Compute Inverse of A using Cholesky decomposition
-  //cuComplex **Aarray_cpu = (cuComplex**)malloc(batch_count * sizeof(cuComplex*));
   for (int i = 0; i < batch_count; i++) {
     Aarray_cpu_[i] = A + i * stride_out;
   }
-  //cuComplex **Aarray;
-  //cudaMalloc(&Aarray, batch_count * sizeof(cuComplex*));
   cudaMemcpyAsync(Aarray_, Aarray_cpu_, batch_count * sizeof(cuComplex*), cudaMemcpyHostToDevice, stream_);
 
-  //int *infoArray;
-  //cudaMalloc(&infoArray, batch_count * sizeof(int));
-
-  //cusolverDnCpotrfBatched(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, Aarray, lda, infoArray, batch_count);
   cusolverDnCpotrfBatched(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, Aarray_, lda, infoArray_, batch_count);
-  //printf("status: %d\n", status);
-  //printf("info: %d\n", *info);
-  /*int Lwork;
-  cusolverDnCpotrf_bufferSize(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, A, lda, &Lwork);
 
-  cuComplex* workspace;
-  cudaMalloc(&workspace, Lwork * sizeof(cuComplex));
-
-  cusolverDnCpotrf(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, A, lda, workspace, Lwork, info);*/
-
-  //RtAssert(*info == 0, "Failed to compute Cholesky decomposition");
-
-  // Compute A * X = CSI^H
-  //cudaFree(Aarray);
-  //cudaFree(infoArray);
-  //free(Aarray_cpu);
-  //cudaMalloc(&infoArray, bs * batch_count * sizeof(int));
-  //Aarray_cpu = (cuComplex**)malloc(bs * batch_count * sizeof(cuComplex*));
   for (size_t i = 0; i < batch_count * bs; i++) {
     Aarray_cpu_[i] = A + (i / bs) * stride_out;
   }
-  //cudaMalloc(&Aarray_, bs * batch_count * sizeof(cuComplex*));
   cudaMemcpyAsync(Aarray_, Aarray_cpu_, bs * batch_count * sizeof(cuComplex*), cudaMemcpyHostToDevice, stream_);
-  //cuComplex **Xarray_cpu = (cuComplex**)malloc(batch_count * bs * sizeof(cuComplex*));
   for (size_t i = 0; i < batch_count * bs; i++) {
     Xarray_cpu_[i] = CSI + i * ue;
   }
-  //cuComplex **Xarray;
-  //cudaMalloc(&Xarray, batch_count * bs * sizeof(cuComplex*));
   cudaMemcpyAsync(Xarray_, Xarray_cpu_, batch_count * bs * sizeof(cuComplex*), cudaMemcpyHostToDevice, stream_);
+
   cusolverDnCpotrsBatched(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, 1, Aarray_, lda, Xarray_, ldb, infoArray_, batch_count * bs);
-  /*for (int i = 0; i < batch_count; i++) {
-    cusolverDnCpotrs(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, bs, A, lda, CSI + i * stride_in, ldb, infoArray);
-  }*/
-
-  //RtAssert(*info == 0, "Failed to compute inverse");
-
-  /*cudaMemcpyAsync(csi_h, CSI, batch_count * ue * bs * sizeof(cuComplex), cudaMemcpyDeviceToHost, stream_);*/
-  //cudaStreamSynchronize(stream_);
-
-  //cudaFree(Xarray);
-  //cudaFree(Aarray);
-  //cudaFree(infoArray);
-  //free(Xarray_cpu);
-  //free(Aarray_cpu);
 }
 
 void DoBeamWeights::ComputePrecoder(size_t frame_id, size_t cur_sc_id,
@@ -510,33 +470,31 @@ static inline void TransposeGather(size_t cur_sc_id, float* src, float*& dst,
 }
 
 void DoBeamWeights::ComputeBeams(size_t tag) {
-  //Request was generated from gen_tag_t::FrmSc
   const size_t start_tsc1 = GetTime::WorkerRdtsc();
-  const size_t frame_id = gen_tag_t(tag).frame_id_;
+
+  //const size_t frame_id = gen_tag_t(tag).frame_id_;
   const size_t base_sc_id = gen_tag_t(tag).sc_id_;
-  const size_t frame_slot = frame_id % kFrameWnd;
-  if (kDebugPrintInTask) {
+  const size_t symbol_id = gen_tag_t(tag).symbol_id_;
+  //const size_t frame_slot = frame_id % kFrameWnd;
+  /*if (kDebugPrintInTask) {
     std::printf("In doZF thread %d: frame: %zu, base subcarrier: %zu\n", tid_,
                 frame_id, base_sc_id);
-  }
+  }*/
 
-  // Process BeamBlockSize (or less) number of carriers
-  // cfg_->OfdmDataNum() is the total number of usable subcarriers
-  // First sc in the next block
+  // If beam_block_size < ofdm_data_num, performance degrades, multiple sc use same stream
+  stream_ = cuda_streams_[symbol_id][0];
+  //cudaStreamSynchronize(cuda_streams_[symbol_id][0]);
+
   const size_t last_sc_id =
       base_sc_id +
       std::min(cfg_->BeamBlockSize(), cfg_->OfdmDataNum() - base_sc_id);
 
-  // Default: Handle each subcarrier one by one
   size_t sc_inc = 1;
   size_t start_sc = base_sc_id;
-  // For freqOrthPilot we can skip all sc except sc % PilotScGroupSize == 0
   if (cfg_->FreqOrthogonalPilot()) {
-    //For FreqOrthogonalPilot only process the first sc in each group
     sc_inc = cfg_->PilotScGroupSize();
     const size_t rem = start_sc % cfg_->PilotScGroupSize();
     if (rem != 0) {
-      //Start at the next multiple of PilotScGroupSize
       start_sc += (cfg_->PilotScGroupSize() - rem);
     }
   }
@@ -544,7 +502,6 @@ void DoBeamWeights::ComputeBeams(size_t tag) {
   size_t sc_group_id = start_sc / cfg_->PilotScGroupSize();
   size_t gather_offset = sc_group_id * cfg_->BsAntNum() * cfg_->UeAntNum();
   int batch_count = (last_sc_id - start_sc) / sc_inc;
-  //std::printf("batch_count: %d\n", batch_count);
 
   const size_t start_tsc2 = GetTime::WorkerRdtsc();
   duration_stat_->task_duration_[1] += start_tsc2 - start_tsc1;
@@ -552,20 +509,18 @@ void DoBeamWeights::ComputeBeams(size_t tag) {
   cuComplex *cur_csi_gpu_ = csi_gpu_buffer_ + gather_offset;
   cuda_precoder(cur_csi_gpu_, batch_count);
 
-  //std::printf("%ld: %f + %fj\n", 176, ul_beam_matrices_[frame_slot][176 / 16][14].re, ul_beam_matrices_[frame_slot][176 / 16][14].im);
-
   const double start_tsc3 = GetTime::WorkerRdtsc();
   duration_stat_->task_duration_[2] += start_tsc3 - start_tsc2;
 
-  for (size_t cur_sc_id = start_sc; cur_sc_id < last_sc_id;
+  /*for (size_t cur_sc_id = start_sc; cur_sc_id < last_sc_id;
        cur_sc_id = cur_sc_id + sc_inc) {
     cudaMemcpyAsync(ul_beam_matrices_[frame_slot][cur_sc_id], cur_csi_gpu_,
       cfg_->BsAntNum() * cfg_->UeAntNum() * sizeof(complex_float),
       cudaMemcpyDeviceToHost, stream_);
     cur_csi_gpu_ += cfg_->BsAntNum() * cfg_->UeAntNum();
   }
+  cudaStreamSynchronize(stream_);*/
   cudaStreamSynchronize(stream_);
-  //std::printf("%ld: %f + %fj\n", 176, ul_beam_matrices_[frame_slot][176][14].re, ul_beam_matrices_[frame_slot][176][14].im);
   duration_stat_->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc3;
   duration_stat_->task_count_++;
   duration_stat_->task_duration_[0] += GetTime::WorkerRdtsc() - start_tsc1;

@@ -608,7 +608,7 @@ Config::Config(std::string jsonfilename)
   beam_thread_num_ = worker_thread_num_ - fft_thread_num_ - demul_thread_num_ -
                      decode_thread_num_;
 
-  demul_block_size_ = tdd_conf.value("demul_block_size", 48);
+  demul_block_size_ = tdd_conf.value("demul_block_size", ofdm_data_num_);
   RtAssert(demul_block_size_ % kSCsPerCacheline == 0,
            "Demodulation block size must be a multiple of subcarriers per "
            "cacheline");

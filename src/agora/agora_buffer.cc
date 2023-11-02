@@ -46,6 +46,9 @@ void AgoraBuffer::AllocateTables() {
   
   // GPU
   size_t total_ul_sym = config_->Frame().NumPilotSyms() + config_->Frame().NumULSyms();
+  fft_gather_cpu_.Malloc(total_ul_sym,
+                     2 * config_->OfdmCaNum() * config_->BsAntNum(),
+                     Agora_memory::Alignment_t::kAlign64);
   cudaMalloc(reinterpret_cast<void **>(&packet_buffer_),
       2 * sizeof(short) * config_->OfdmCaNum() * total_ul_sym * config_->BsAntNum());
   cudaMalloc(reinterpret_cast<void **>(&fft_out_),
@@ -53,6 +56,8 @@ void AgoraBuffer::AllocateTables() {
   pilot_fft_out_ = fft_out_;
   uplink_fft_out_ = fft_out_
     + config_->OfdmDataNum() * config_->Frame().NumPilotSyms() * config_->BsAntNum();
+  cudaMalloc(reinterpret_cast<void **>(&demul_out_),
+      sizeof(int8_t) * config_->ModOrderBits(Direction::kUplink) * config_->OfdmDataNum() * config_->Frame().NumULSyms() * config_->UeAntNum());
   cuda_streams_.Malloc(total_ul_sym, 1, Agora_memory::Alignment_t::kAlign64);
   for (size_t i = 0; i < total_ul_sym; i++) {
     cudaStreamCreateWithFlags(cuda_streams_[i], cudaStreamNonBlocking);

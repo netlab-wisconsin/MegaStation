@@ -218,7 +218,7 @@ void Agora::ScheduleSubcarriers(EventType event_type, size_t frame_id,
       break;
     }
     case EventType::kBeam: {
-      base_tag = gen_tag_t::FrmSc(frame_id, 0);
+      base_tag = gen_tag_t::FrmSymSc(frame_id, symbol_id, 0);
       num_events = config_->BeamEventsPerSymbol();
       block_size = config_->BeamBlockSize();
       break;
@@ -773,8 +773,6 @@ void Agora::Start() {
       // or (b) the current frame being updated.
       std::queue<fft_req_tag_t>& cur_fftq =
           fft_queue_arr_.at(frame_tracking_.cur_sche_frame_id_ % kFrameWnd);
-      std::queue<fft_req_tag_t>& cur_staleq =
-          fft_stale_arr_.at(frame_tracking_.cur_sche_frame_id_ % kFrameWnd);
       const size_t qid = frame_tracking_.cur_sche_frame_id_ & 0x1;
       if (cur_fftq.size() >= config_->FftBlockSize()) {
         const size_t num_fft_blocks = cur_fftq.size() / config_->FftBlockSize();
@@ -801,14 +799,11 @@ void Agora::Start() {
             // Copy to gpu memory & free pkt
             AgoraBuffer *buffer = agora_memory_.get();
             short *src_cpu_buffer = pkt->data_ + 2 * config_->OfdmRxZeroPrefixBs();
-            short *dst_gpu_buffer = buffer->packet_buffer_
-              + symbol_id * (config_->OfdmCaNum() * config_->BsAntNum() * 2)
+            short *dst_cpu_gather = buffer->fft_gather_cpu_[symbol_id]
               + ant_id * config_->OfdmCaNum() * 2;
-            cudaStream_t stream = buffer->cuda_streams_[symbol_id][0];
-            cudaMemcpyAsync(dst_gpu_buffer, src_cpu_buffer,
-                sizeof(short) * config_->OfdmCaNum() * 2,
-                cudaMemcpyHostToDevice, stream);
-            cur_staleq.push(tag);
+            memcpy(dst_cpu_gather, src_cpu_buffer,
+                sizeof(short) * config_->OfdmCaNum() * 2);
+            tag.rx_packet_->Free();
 
             // Call complete task (function HandleEventFft)
             // If last task of symbol, assign doFFT
@@ -817,6 +812,12 @@ void Agora::Start() {
                 pilot_fft_counters_.CompleteTask(frame_id, symbol_id);
 
               if (last_fft_task == true) {
+                cudaStream_t stream = buffer->cuda_streams_[symbol_id][0];
+                short *dst_gpu_gather = buffer->packet_buffer_
+                  + symbol_id * (config_->BsAntNum() * config_->OfdmCaNum() * 2);
+                cudaMemcpyAsync(dst_gpu_gather, buffer->fft_gather_cpu_[symbol_id],
+                    sizeof(short) * config_->BsAntNum() * config_->OfdmCaNum() * 2,
+                    cudaMemcpyHostToDevice, stream);
                 EventData do_fft_task = EventData(EventType::kFFT,
                   gen_tag_t::FrmSym(frame_id, symbol_id).tag_);
                 TryEnqueueFallback(message_->GetConq(EventType::kFFT, qid),
@@ -897,7 +898,7 @@ void Agora::HandleEventFft(size_t tag) {
         if (last_pilot_fft == true) {
           this->stats_->MasterSetTsc(TsType::kFFTPilotsDone, frame_id);
           stats_->PrintPerFrameDone(PrintType::kFFTPilots, frame_id);
-          //this->pilot_fft_counters_.Reset(frame_id);
+          this->pilot_fft_counters_.Reset(frame_id);
           if (kPrintPhyStats == true) {
             this->phy_stats_->PrintUlSnrStats(frame_id);
           }
@@ -905,7 +906,7 @@ void Agora::HandleEventFft(size_t tag) {
           if (kEnableMac == true) {
             SendSnrReport(EventType::kSNRReport, frame_id, symbol_id);
           }
-          ScheduleSubcarriers(EventType::kBeam, frame_id, 0);
+          ScheduleSubcarriers(EventType::kBeam, frame_id, symbol_id);
         }
       }
     //}
@@ -928,7 +929,7 @@ void Agora::HandleEventFft(size_t tag) {
       const bool last_uplink_fft =
           uplink_fft_counters_.CompleteSymbol(frame_id);
       if (last_uplink_fft == true) {
-        //uplink_fft_counters_.Reset(frame_id);
+        uplink_fft_counters_.Reset(frame_id);
       }
     //}
   } else if ((sym_type == SymbolType::kCalDL) ||
@@ -957,17 +958,6 @@ void Agora::HandleEventFft(size_t tag) {
       }  // kPrintPhyStats
     }    // last_rc_task
   }      // kCaLDL || kCalUl
-  if (pilot_fft_counters_.IsLastSymbol(frame_id)
-      && uplink_fft_counters_.IsLastSymbol(frame_id)) {
-    std::queue<fft_req_tag_t>& cur_staleq = fft_stale_arr_.at(frame_id % kFrameWnd);
-    while (!cur_staleq.empty()) {
-      fft_req_tag_t &tag = cur_staleq.front();
-      cur_staleq.pop();
-      tag.rx_packet_->Free();
-    }
-    pilot_fft_counters_.Reset(frame_id);
-    uplink_fft_counters_.Reset(frame_id);
-  }
 }
 
 void Agora::UpdateRanConfig(RanConfig rc) {

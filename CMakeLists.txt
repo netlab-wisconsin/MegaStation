@@ -462,6 +462,7 @@ set(AGORA_SOURCES ${AGORA_SOURCES}
   src/agora/doifft.cc
   src/agora/dobeamweights.cc
   src/agora/dodemul.cc
+  src/agora/temp_launch.cu
   src/agora/doprecode.cc
   src/agora/dodecode.cc
   src/agora/radio/radio_set/radio_set_bs.cc

@@ -37,7 +37,10 @@ class DoBeamWeights : public Doer {
       Table<complex_float>& calib_buffer,
       PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& ul_beam_matrices_,
       PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& dl_beam_matrices_,
-      PhyStats* in_phy_stats, cuComplex *csi_gpu_buffer, Stats* stats_manager);
+      PhyStats* in_phy_stats,
+      Table<cudaStream_t>& cuda_streams,
+      cuComplex *csi_gpu_buffer,
+      Stats* stats_manager);
   ~DoBeamWeights() override;
 
   /**
@@ -93,6 +96,7 @@ class DoBeamWeights : public Doer {
   size_t num_ext_ref_;
 
   //GPU
+  Table<cudaStream_t>& cuda_streams_;
   cublasHandle_t handle_blas_;
   cudaStream_t stream_;
   cusolverDnHandle_t handle_solver_;

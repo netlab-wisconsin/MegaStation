@@ -55,7 +55,9 @@ void AgoraWorker::WorkerThread(int tid) {
       buffer_->GetCalibUl(), buffer_->GetCalibDlMsum(),
       buffer_->GetCalibUlMsum(), buffer_->GetCalib(),
       buffer_->GetUlBeamMatrix(), buffer_->GetDlBeamMatrix(), phy_stats_,
-      buffer_->pilot_fft_out_, stats_);
+      buffer_->cuda_streams_,
+      buffer_->pilot_fft_out_,
+      stats_);
 
   auto compute_fft = std::make_unique<DoFFT>(
       config_, tid, buffer_->GetFft(), buffer_->GetCsi(), buffer_->GetCalibDl(),
@@ -85,7 +87,12 @@ void AgoraWorker::WorkerThread(int tid) {
   auto compute_demul = std::make_unique<DoDemul>(
       config_, tid, buffer_->GetFft(), buffer_->GetUlBeamMatrix(),
       buffer_->GetUeSpecPilot(), buffer_->GetEqual(), buffer_->GetDemod(),
-      phy_stats_, stats_);
+      phy_stats_,
+      buffer_->cuda_streams_,
+      buffer_->uplink_fft_out_,
+      buffer_->pilot_fft_out_,
+      buffer_->demul_out_,
+      stats_);
 
   std::vector<Doer*> computers_vec;
   std::vector<EventType> events_vec;

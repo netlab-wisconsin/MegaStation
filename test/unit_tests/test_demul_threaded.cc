@@ -79,9 +79,10 @@ void MasterToWorkerDynamicWorker(
     // Wait
   }
 
+  Table<cudaStream_t> cuda_streams;
   auto compute_demul = std::make_unique<DoDemul>(
       cfg, worker_id, data_buffer, ul_beam_matrices, ue_spec_pilot_buffer,
-      equal_buffer, demod_buffers_, phy_stats, stats);
+      equal_buffer, demod_buffers_, phy_stats, cuda_streams, nullptr, nullptr, nullptr, stats);
 
   size_t start_tsc = GetTime::Rdtsc();
   size_t num_tasks = 0;

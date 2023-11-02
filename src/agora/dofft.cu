@@ -125,7 +125,7 @@ EventData DoFFT::Launch(size_t tag) {
   RtAssert(!kUsePartialTrans, "Don't support partial trans in GPU");
   const size_t start_tsc = GetTime::WorkerRdtsc();
   const size_t frame_id = gen_tag_t(tag).frame_id_;
-  const size_t frame_slot = frame_id % kFrameWnd;
+  //const size_t frame_slot = frame_id % kFrameWnd;
   const size_t symbol_id = gen_tag_t(tag).symbol_id_;
   const SymbolType sym_type = cfg_->GetSymbolType(symbol_id);
 
@@ -145,16 +145,16 @@ EventData DoFFT::Launch(size_t tag) {
   cudaStream_t cur_stream = cuda_streams_[symbol_id][0];
   short *in_ptr = fft_in_ + symbol_id * (cfg_->OfdmCaNum() * cfg_->BsAntNum() * 2);
   cufftComplex *out_ptr = NULL;
-  complex_float *out_cpu_buffer = NULL;
+  //complex_float *out_cpu_buffer = NULL;
   size_t pilot_symbol_id, uplink_symbol_id;
 
   if (sym_type == SymbolType::kPilot) {
     pilot_symbol_id = cfg_->Frame().GetPilotSymbolIdx(symbol_id);
     out_ptr = pilot_fft_out_;
-    out_cpu_buffer = csi_buffers_[frame_slot][0];
+    //out_cpu_buffer = csi_buffers_[frame_slot][0];
     size_t ue_start = pilot_symbol_id * cfg_->PilotScGroupSize();
     cudaMemcpy(&(stInfoPtr_pilot_->ueStart), &ue_start,
-        sizeof(size_t), cudaMemcpyHostToDevice);
+        sizeof(size_t), cudaMemcpyHostToDevice); // TODO: Use Kernel
     cufftXtSetCallback(cufft_plan_,
       reinterpret_cast<void **>(&hostStorePilotPtr),
       CUFFT_CB_ST_COMPLEX,
@@ -163,13 +163,13 @@ EventData DoFFT::Launch(size_t tag) {
     uplink_symbol_id = cfg_->Frame().GetULSymbolIdx(symbol_id);
     out_ptr = uplink_fft_out_
       + uplink_symbol_id * (cfg_->OfdmDataNum() * cfg_->BsAntNum());
-    out_cpu_buffer = cfg_->GetDataBuf(data_buffer_, frame_id, symbol_id);
+    //out_cpu_buffer = cfg_->GetDataBuf(data_buffer_, frame_id, symbol_id);
     cufftXtSetCallback(cufft_plan_,
       reinterpret_cast<void **>(&hostStoreUplinkPtr),
       CUFFT_CB_ST_COMPLEX,
       reinterpret_cast<void **>(&stInfoPtr_));
   }
-  RtAssert(out_cpu_buffer != NULL, "Invalid symbol type for gpu");
+  RtAssert(out_ptr != NULL, "Invalid symbol type for gpu");
 
   cufftSetStream(cufft_plan_, cur_stream);
   cufftExecC2C(cufft_plan_, reinterpret_cast<cufftComplex *>(in_ptr),
@@ -178,10 +178,10 @@ EventData DoFFT::Launch(size_t tag) {
   size_t start_tsc2 = GetTime::WorkerRdtsc();
   duration_stat->task_duration_.at(2) += start_tsc2 - start_tsc1;
 
-  cudaMemcpyAsync(out_cpu_buffer, out_ptr,
+  /*cudaMemcpyAsync(out_cpu_buffer, out_ptr,
       sizeof(cufftComplex) * cfg_->OfdmDataNum() * cfg_->BsAntNum(),
-      cudaMemcpyDeviceToHost, cur_stream);
-  cudaStreamSynchronize(cur_stream);
+      cudaMemcpyDeviceToHost, cur_stream);*/
+  //cudaStreamSynchronize(cur_stream);
   //std::printf("First FFT symbol: %f, %f\n", out_cpu_buffer[0].re, out_cpu_buffer[0].im);
   // CHANGE: remove this
   /*if (sym_type == SymbolType::kPilot && cfg_->FreqOrthogonalPilot()
