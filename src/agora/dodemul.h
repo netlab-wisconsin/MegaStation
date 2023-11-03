@@ -97,6 +97,8 @@ class DoDemul : public Doer {
   complex_demul* cuda_beam_buffer_;
   int8_t* cuda_demod_buffer_;
   cudaStream_t cuda_stream_;
+
+  int8_t* cpu_demod_buffer_;
 };
 
 #endif  // DODEMUL_H_

@@ -181,7 +181,11 @@ EventData DoFFT::Launch(size_t tag) {
   /*cudaMemcpyAsync(out_cpu_buffer, out_ptr,
       sizeof(cufftComplex) * cfg_->OfdmDataNum() * cfg_->BsAntNum(),
       cudaMemcpyDeviceToHost, cur_stream);*/
-  //cudaStreamSynchronize(cur_stream);
+  
+  /*cudaStreamSynchronize(cur_stream);
+  cufftComplex a;
+  cudaMemcpy(&a, out_ptr, sizeof(cufftComplex), cudaMemcpyDeviceToHost);
+  std::printf("First FFT symbol: %f, %f\n", a.x, a.y);*/
   //std::printf("First FFT symbol: %f, %f\n", out_cpu_buffer[0].re, out_cpu_buffer[0].im);
   // CHANGE: remove this
   /*if (sym_type == SymbolType::kPilot && cfg_->FreqOrthogonalPilot()

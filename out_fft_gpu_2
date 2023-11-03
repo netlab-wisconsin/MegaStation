@@ -1,0 +1,381 @@
+FlexRAN SDK bblib_lte_ldpc_encoder version sdk-19.04-ea1-1-g3be2380
+FlexRAN SDK bblib_lte_ldpc_decoder version sdk-19.04-ea1-1-g3be2380
+FlexRAN SDK bblib_common version sdk-19.04-ea1-1-g3be2380
+System CPU count 64
+NUMA node 0 1010101010101010101010101010101010101010101010101010101010101010 CPUs: 0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 
+NUMA node 1 0101010101010101010101010101010101010101010101010101010101010101 CPUs: 1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63 
+Usable Cpu count 63
+[11:904687][I] Config: Frame schedule PUUUUUUUUUUUUU (14 symbols)
+[11:904741][I] Setting beam_block_size to pilot_sc_group_size 16
+[11:904802][I] Downlink MCS Info: LDPC: Zc: 64, 1 code blocks per symbol, 1408 information bits per encoding, 4224 bits per encoded code word, decoder iterations: 5, code rate 0.333 (nRows = 46), modulation 16QAM
+[11:904804][I] Uplink MCS Info: LDPC: Zc: 104, 1 code blocks per symbol, 2288 information bits per encoding, 6864 bits per encoded code word, decoder iterations: 5, code rate 0.333 (nRows = 46), modulation 64QAM
+[11:904811][I] Config: 64 BS antennas, 16 UE antennas, 1 pilot symbols per frame,
+	13 uplink data symbols per frame, 0 downlink data symbols per frame,
+	2048 OFDM subcarriers (1200 data subcarriers),
+	UL modulation 64QAM, DL modulation 16QAM, Beamforming ZF, 
+	1 UL codeblocks per symbol, 286 UL bytes per code block,
+	1 DL codeblocks per symbol, 176 DL bytes per code block,
+	3588 UL MAC data bytes per frame, 3718 UL MAC bytes per frame,
+	0 DL MAC data bytes per frame, 0 DL MAC bytes per frame,
+	Frame time 5734.400 usec
+Uplink Max Mac data per-user tp (Mbps) 5.006
+Downlink Max Mac data per-user tp (Mbps) 0.000
+Radio Network Traffic Peak (Mbps): 120.000
+Radio Network Traffic Avg  (Mbps): 120.000
+Basestation Network Traffic Peak (Mbps): 7680.000
+Basestation Network Traffic Avg  (Mbps): 7680.000
+UE Network Traffic Peak (Mbps): 240.000
+UE Network Traffic Avg  (Mbps): 240.000
+All UEs Network Traffic Avg (Mbps): 3840.000
+All UEs Network Traffic Avg (Mbps): 3840.000
+Uplink PAPR 45.56 dB, Downlink PAPR -nan dB
+[15:713814][I] Agora: project directory [.], RDTSC frequency = 2.19 GHz
+[15:722446][I] Agora: Total recip cal receive symbols per frame: 0
+[15:722496][I] PacketTxRx: Number of workers 2, Buffers per interface 560, Number of Total buffers 35840
+[15:732620][I] Master thread core 4, TX/RX thread cores 5--6, worker thread cores 7--29
+[15:732626][I] PacketTxRxSim[0]: Creating worker handling 32 interfaces starting at 0 - antennas 0:31
+[15:732673][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732675][I] UDPComm socket 57 created 127.0.0.1 :  requested port 8000
+[15:732688][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732688][I] UDPComm socket 58 created 127.0.0.1 :  requested port 8001
+[15:732694][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732695][I] UDPComm socket 59 created 127.0.0.1 :  requested port 8002
+[15:732700][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732700][I] UDPComm socket 60 created 127.0.0.1 :  requested port 8003
+[15:732705][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732705][I] UDPComm socket 61 created 127.0.0.1 :  requested port 8004
+[15:732710][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732710][I] UDPComm socket 62 created 127.0.0.1 :  requested port 8005
+[15:732715][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732716][I] UDPComm socket 63 created 127.0.0.1 :  requested port 8006
+[15:732720][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732721][I] UDPComm socket 64 created 127.0.0.1 :  requested port 8007
+[15:732725][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732726][I] UDPComm socket 65 created 127.0.0.1 :  requested port 8008
+[15:732730][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732730][I] UDPComm socket 66 created 127.0.0.1 :  requested port 8009
+[15:732735][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732735][I] UDPComm socket 67 created 127.0.0.1 :  requested port 8010
+[15:732740][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732740][I] UDPComm socket 68 created 127.0.0.1 :  requested port 8011
+[15:732744][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732745][I] UDPComm socket 69 created 127.0.0.1 :  requested port 8012
+[15:732749][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732749][I] UDPComm socket 70 created 127.0.0.1 :  requested port 8013
+[15:732753][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732754][I] UDPComm socket 71 created 127.0.0.1 :  requested port 8014
+[15:732758][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732759][I] UDPComm socket 72 created 127.0.0.1 :  requested port 8015
+[15:732763][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732763][I] UDPComm socket 73 created 127.0.0.1 :  requested port 8016
+[15:732767][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732768][I] UDPComm socket 74 created 127.0.0.1 :  requested port 8017
+[15:732789][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732789][I] UDPComm socket 75 created 127.0.0.1 :  requested port 8018
+[15:732793][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732794][I] UDPComm socket 76 created 127.0.0.1 :  requested port 8019
+[15:732798][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732800][I] UDPComm socket 77 created 127.0.0.1 :  requested port 8020
+[15:732805][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732805][I] UDPComm socket 78 created 127.0.0.1 :  requested port 8021
+[15:732810][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732810][I] UDPComm socket 79 created 127.0.0.1 :  requested port 8022
+[15:732814][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732815][I] UDPComm socket 80 created 127.0.0.1 :  requested port 8023
+[15:732819][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732820][I] UDPComm socket 81 created 127.0.0.1 :  requested port 8024
+[15:732824][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732825][I] UDPComm socket 82 created 127.0.0.1 :  requested port 8025
+[15:732829][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732829][I] UDPComm socket 83 created 127.0.0.1 :  requested port 8026
+[15:732834][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732835][I] UDPComm socket 84 created 127.0.0.1 :  requested port 8027
+[15:732839][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732840][I] UDPComm socket 85 created 127.0.0.1 :  requested port 8028
+[15:732844][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732844][I] UDPComm socket 86 created 127.0.0.1 :  requested port 8029
+[15:732849][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732850][I] UDPComm socket 87 created 127.0.0.1 :  requested port 8030
+[15:732855][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732855][I] UDPComm socket 88 created 127.0.0.1 :  requested port 8031
+[15:732858][I] PacketTxRxSim[1]: Creating worker handling 32 interfaces starting at 32 - antennas 32:63
+[15:732863][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732863][I] UDPComm socket 89 created 127.0.0.1 :  requested port 8032
+[15:732868][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732868][I] UDPComm socket 90 created 127.0.0.1 :  requested port 8033
+[15:732873][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732873][I] UDPComm socket 91 created 127.0.0.1 :  requested port 8034
+[15:732877][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732878][I] UDPComm socket 92 created 127.0.0.1 :  requested port 8035
+[15:732884][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732884][I] UDPComm socket 93 created 127.0.0.1 :  requested port 8036
+[15:732888][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732889][I] UDPComm socket 94 created 127.0.0.1 :  requested port 8037
+[15:732893][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732894][I] UDPComm socket 95 created 127.0.0.1 :  requested port 8038
+[15:732898][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732900][I] UDPComm socket 96 created 127.0.0.1 :  requested port 8039
+[15:732904][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732905][I] UDPComm socket 97 created 127.0.0.1 :  requested port 8040
+[15:732910][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732910][I] UDPComm socket 100 created 127.0.0.1 :  requested port 8041
+[15:732914][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732915][I] UDPComm socket 101 created 127.0.0.1 :  requested port 8042
+[15:732919][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732920][I] UDPComm socket 102 created 127.0.0.1 :  requested port 8043
+[15:732924][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732925][I] UDPComm socket 103 created 127.0.0.1 :  requested port 8044
+[15:732929][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732929][I] UDPComm socket 104 created 127.0.0.1 :  requested port 8045
+[15:732934][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732934][I] UDPComm socket 105 created 127.0.0.1 :  requested port 8046
+[15:732939][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732939][I] UDPComm socket 106 created 127.0.0.1 :  requested port 8047
+[15:732943][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732944][I] UDPComm socket 107 created 127.0.0.1 :  requested port 8048
+[15:732948][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732949][I] UDPComm socket 108 created 127.0.0.1 :  requested port 8049
+[15:732954][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732954][I] UDPComm socket 109 created 127.0.0.1 :  requested port 8050
+[15:732958][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732959][I] UDPComm socket 110 created 127.0.0.1 :  requested port 8051
+[15:732963][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732963][I] UDPComm socket 111 created 127.0.0.1 :  requested port 8052
+[15:732968][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732969][I] UDPComm socket 112 created 127.0.0.1 :  requested port 8053
+[15:732973][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732973][I] UDPComm socket 113 created 127.0.0.1 :  requested port 8054
+[15:732978][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732978][I] UDPComm socket 114 created 127.0.0.1 :  requested port 8055
+[15:732982][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732983][I] UDPComm socket 115 created 127.0.0.1 :  requested port 8056
+[15:732987][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732987][I] UDPComm socket 116 created 127.0.0.1 :  requested port 8057
+[15:732991][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732992][I] UDPComm socket 117 created 127.0.0.1 :  requested port 8058
+[15:732996][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:732996][I] UDPComm socket 118 created 127.0.0.1 :  requested port 8059
+[15:733001][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:733001][I] UDPComm socket 119 created 127.0.0.1 :  requested port 8060
+[15:733006][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:733006][I] UDPComm socket 120 created 127.0.0.1 :  requested port 8061
+[15:733010][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:733011][I] UDPComm socket 121 created 127.0.0.1 :  requested port 8062
+[15:733015][W] UDPComm:  Error setting RX buffer size to 536870911 actual size 425984 with status 0
+[15:733015][I] UDPComm socket 122 created 127.0.0.1 :  requested port 8063
+[15:894298][I] PacketTxRx: workers synchronized
+[15:894305][I] TxRxWorker[1]: synchronized
+[15:894305][I] TxRxWorker[0]: synchronized
+[20:762868][I] Main [frame 0 + 283148262.05 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[20:763404][I] Main [frame 0 + 0.62 ms]: Received all pilots
+[20:767289][I] Main [frame 0 + 4.50 ms]: FFT-ed all pilots
+[20:767613][I] Frame 0 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[20:783155][I] Main [frame 0 + 20.37 ms]: Completed ZF beamweight calc
+[20:783241][I] Frame 0 Beamweight matrix inverse condition number range:     [0.00,0.00], Mean: 0.00
+HELLO: 61
+Thread 0 Decode takes 531.33
+Thread 9 Decode takes 700.52
+Thread 6 Decode takes 714.56
+Thread 7 Decode takes 818.52
+Thread 4 Decode takes 813.60
+Thread 20 Decode takes 849.82
+Thread 16 Decode takes 856.83
+Thread 14 Decode takes 869.43
+Thread 18 Decode takes 956.64
+Thread 11 Decode takes 946.98
+Thread 13 Decode takes 959.38
+Thread 15 Decode takes 951.37
+Thread 21 Decode takes 956.69
+Thread 12 Decode takes 953.81
+Thread 2 Decode takes 955.43
+Thread 22 Decode takes 956.37
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+[20:947859][I] Main [frame 0 + 185.07 ms]: Received all packets
+HELLO: 61
+[20:948499][I] Main [frame 0 + 185.71 ms]: Completed demodulation
+[20:948595][I] Frame 0 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[20:948723][I] Main [frame 0 + 185.94 ms]: Completed LDPC decoding (13 UL symbols)
+[20:948983][I] Frame 0 Summary: FFT (13 tasks): 0.364663 ms (~0.00014153 + 0.364482 + 6.14141e-06 ms), CSI (1 tasks): 0.127723 ms (~0.0198961 + 0.107824 + 4.35842e-07 ms), Beamweights (1 tasks): 0.674104 ms (~5.5867e-06 + 0.671089 + 0.00300886 ms), Demul (13 tasks): 0.300275 ms (~0.00349308 + 0.0117921 + 0.283113 ms), Decode (208 tasks): 2.3785 ms (~0.000178537 + 1.91107 + 0 ms), Total: 3.845266 ms
+[20:961937][I] Main [frame 1 + 199.16 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[20:962112][I] Main [frame 1 + 0.18 ms]: Received all pilots
+[20:965246][I] Main [frame 1 + 3.31 ms]: FFT-ed all pilots
+[20:965336][I] Frame 1 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[20:965600][I] Main [frame 1 + 3.66 ms]: Completed ZF beamweight calc
+[20:965630][I] Frame 1 Beamweight matrix inverse condition number range:     [0.00,0.00], Mean: 0.00
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+Thread 21 Decode takes 562.30
+Thread 19 Decode takes 560.68
+Thread 12 Decode takes 595.51
+Thread 6 Decode takes 603.71
+[21:147807][I] Main [frame 1 + 185.87 ms]: Received all packets
+HELLO: 61
+[21:148400][I] Main [frame 1 + 186.46 ms]: Completed demodulation
+[21:148477][I] Frame 1 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[21:148622][I] Main [frame 1 + 186.69 ms]: Completed LDPC decoding (13 UL symbols)
+[21:148687][I] Frame 1 Summary: FFT (13 tasks): 0.27238 ms (~0.000127662 + 0.272223 + 6.33952e-06 ms), CSI (1 tasks): 0.132863 ms (~1.88997e-05 + 0.132839 + 5.15086e-07 ms), Beamweights (1 tasks): 0.0109515 ms (~1.03413e-05 + 0.00606613 + 0.0048745 ms), Demul (13 tasks): 0.050017 ms (~0.00317927 + 0.00661573 + 0.0385598 ms), Decode (208 tasks): 1.78856 ms (~0.000190701 + 1.73843 + 0 ms), Total: 2.254776 ms
+[21:161929][I] Main [frame 2 + 199.99 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[21:162093][I] Main [frame 2 + 0.17 ms]: Received all pilots
+[21:162652][I] Main [frame 2 + 0.72 ms]: FFT-ed all pilots
+[21:162727][I] Frame 2 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[21:162967][I] Main [frame 2 + 1.04 ms]: Completed ZF beamweight calc
+[21:162997][I] Frame 2 Beamweight matrix inverse condition number range:     [0.00,0.00], Mean: 0.00
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+[21:347813][I] Main [frame 2 + 185.88 ms]: Received all packets
+HELLO: 61
+[21:348875][I] Main [frame 2 + 186.95 ms]: Completed demodulation
+[21:348934][I] Frame 2 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[21:349107][I] Main [frame 2 + 187.18 ms]: Completed LDPC decoding (13 UL symbols)
+[21:349173][I] Frame 2 Summary: FFT (13 tasks): 0.264533 ms (~0.000115736 + 0.264398 + 6.14141e-06 ms), CSI (1 tasks): 0.0212668 ms (~1.12527e-05 + 0.0212546 + 4.35842e-07 ms), Beamweights (1 tasks): 0.0100933 ms (~8.75646e-06 + 0.00498797 + 0.00509602 ms), Demul (13 tasks): 0.0649405 ms (~0.00160267 + 0.0041932 + 0.0574641 ms), Decode (208 tasks): 1.72639 ms (~0.000174258 + 1.67564 + 0 ms), Total: 2.087225 ms
+[21:361924][I] Main [frame 3 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[21:362115][I] Main [frame 3 + 0.19 ms]: Received all pilots
+[21:362606][I] Main [frame 3 + 0.68 ms]: FFT-ed all pilots
+[21:362683][I] Frame 3 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[21:362954][I] Main [frame 3 + 1.03 ms]: Completed ZF beamweight calc
+[21:362988][I] Frame 3 Beamweight matrix inverse condition number range:     [0.00,0.00], Mean: 0.00
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+HELLO: 61
+[21:548143][I] Main [frame 3 + 186.22 ms]: Received all packets
+HELLO: 61
+[21:548648][I] Main [frame 3 + 186.73 ms]: Completed demodulation
+[21:548707][I] Frame 3 Constellation:
+  EVM         0        0        0        0        0        0        0        0        0        0        0        0        0        0        0        0
+, SNR       inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf      inf
+
+[21:548880][I] Main [frame 3 + 186.96 ms]: Completed LDPC decoding (13 UL symbols)
+[21:548946][I] Frame 3 Summary: FFT (13 tasks): 0.270093 ms (~0.00014359 + 0.269933 + 6.41877e-06 ms), CSI (1 tasks): 0.0184034 ms (~9.94512e-06 + 0.0183923 + 4.35842e-07 ms), Beamweights (1 tasks): 0.0113898 ms (~1.36696e-05 + 0.00638073 + 0.00499495 ms), Demul (13 tasks): 0.0458169 ms (~0.00214098 + 0.00468213 + 0.0373764 ms), Decode (208 tasks): 1.7063 ms (~0.000196327 + 1.65579 + 0 ms), Total: 2.051999 ms
+[21:561924][I] Main [frame 4 + 200.00 ms since last frame]: Received first packet. Remaining packets in prev frame: 0
+[21:562102][I] Main [frame 4 + 0.18 ms]: Received all pilots
+[21:562660][I] Main [frame 4 + 0.74 ms]: FFT-ed all pilots
+[21:562738][I] Frame 4 Pilot Signal SNR (dB) Range at BS Antennas: User 0: [0.0,-100.0] User 1: [0.0,-100.0] User 2: [0.0,-100.0] User 3: [0.0,-100.0] User 4: [0.0,-100.0] User 5: [0.0,-100.0] User 6: [0.0,-100.0] User 7: [0.0,-100.0] User 8: [0.0,-100.0] User 9: [0.0,-100.0] User 10: [0.0,-100.0] User 11: [0.0,-100.0] User 12: [0.0,-100.0] User 13: [0.0,-100.0] User 14: [0.0,-100.0] User 15: [0.0,-100.0] 
+[21:562954][I] Main [frame 4 + 1.03 ms]: Completed ZF beamweight calc
+[21:562999][I] Frame 4 Beamweight matrix inverse condition number range:     [0.00,0.00], Mean: 0.00
+HELLO: 61
+HELLO: 61
+HELLO: 61
+Uplink totals (tasks, frames): CSI (5, 0.08), Beamweights (5, 5.00), FFT (55, 0.07), Demul (55, 0.00), [04:542417][I] Agora: printing stats and saving to file
+Decode (880, 4.23)[04:542434][I] Stats: total processed frames 4
+
+Thread 0 performed (tasks, fraction of tasks): FFT (2, 3.64%), Beamweights (1, 20.00%), Decode (38, 4.32%), 
+Thread 1 performed (tasks, fraction of tasks): Decode (29, 3.30%), 
+Thread 2 performed (tasks, fraction of tasks): FFT (1, 1.82%), Decode (41, 4.66%), 
+Thread 3 performed (tasks, fraction of tasks): FFT (2, 3.64%), Demul (1, 1.82%), Decode (32, 3.64%), 
+Thread 4 performed (tasks, fraction of tasks): FFT (2, 3.64%), Decode (35, 3.98%), 
+Thread 5 performed (tasks, fraction of tasks): FFT (2, 3.64%), Demul (3, 5.45%), Decode (39, 4.43%), 
+Thread 6 performed (tasks, fraction of tasks): FFT (1, 1.82%), Demul (2, 3.64%), Decode (38, 4.32%), 
+Thread 7 performed (tasks, fraction of tasks): FFT (4, 7.27%), CSI (1, 20.00%), Demul (1, 1.82%), Decode (41, 4.66%), 
+Thread 8 performed (tasks, fraction of tasks): FFT (5, 9.09%), Demul (2, 3.64%), Decode (40, 4.55%), 
+Thread 9 performed (tasks, fraction of tasks): FFT (1, 1.82%), Demul (1, 1.82%), Decode (44, 5.00%), 
+Thread 10 performed (tasks, fraction of tasks): FFT (2, 3.64%), Demul (5, 9.09%), Decode (38, 4.32%), 
+Thread 11 performed (tasks, fraction of tasks): FFT (2, 3.64%), Decode (37, 4.20%), 
+Thread 12 performed (tasks, fraction of tasks): FFT (2, 3.64%), CSI (2, 40.00%), Demul (1, 1.82%), Decode (42, 4.77%), 
+Thread 13 performed (tasks, fraction of tasks): FFT (13, 23.64%), CSI (1, 20.00%), Beamweights (1, 20.00%), Demul (26, 47.27%), Decode (48, 5.45%), 
+Thread 14 performed (tasks, fraction of tasks): FFT (2, 3.64%), Demul (1, 1.82%), Decode (41, 4.66%), 
+Thread 15 performed (tasks, fraction of tasks): FFT (3, 5.45%), CSI (1, 20.00%), Beamweights (1, 20.00%), Demul (2, 3.64%), Decode (46, 5.23%), 
+Thread 16 performed (tasks, fraction of tasks): FFT (1, 1.82%), Demul (2, 3.64%), Decode (34, 3.86%), 
+Thread 17 performed (tasks, fraction of tasks): FFT (2, 3.64%), Decode (33, 3.75%), 
+Thread 18 performed (tasks, fraction of tasks): FFT (1, 1.82%), Demul (4, 7.27%), Decode (40, 4.55%), 
+Thread 19 performed (tasks, fraction of tasks): Beamweights (2, 40.00%), Decode (39, 4.43%), 
+Thread 20 performed (tasks, fraction of tasks): FFT (3, 5.45%), Demul (2, 3.64%), Decode (39, 4.43%), 
+Thread 21 performed (tasks, fraction of tasks): FFT (3, 5.45%), Demul (2, 3.64%), Decode (34, 3.86%), 
+Thread 22 performed (tasks, fraction of tasks): FFT (1, 1.82%), Decode (32, 3.64%), 
+[04:542672][I] Stats: Saving master timestamps to ./files/experiment/timeresult.txt
+[04:542952][I] Stats: Printing detailed results to ./files/experiment/timeresult_detail.txt
+[04:543118][I] UE 0: Uplink bit errors (BER) 63686/125840 (0.506087), block errors (BLER) 55/55 (1.000000)
+[04:543129][I] UE 1: Uplink bit errors (BER) 63044/125840 (0.500985), block errors (BLER) 55/55 (1.000000)
+[04:543139][I] UE 2: Uplink bit errors (BER) 62612/125840 (0.497552), block errors (BLER) 55/55 (1.000000)
+[04:543147][I] UE 3: Uplink bit errors (BER) 63778/125840 (0.506818), block errors (BLER) 55/55 (1.000000)
+[04:543155][I] UE 4: Uplink bit errors (BER) 63246/125840 (0.502591), block errors (BLER) 55/55 (1.000000)
+[04:543191][I] UE 5: Uplink bit errors (BER) 63189/125840 (0.502138), block errors (BLER) 55/55 (1.000000)
+[04:543200][I] UE 6: Uplink bit errors (BER) 62887/125840 (0.499738), block errors (BLER) 55/55 (1.000000)
+[04:543209][I] UE 7: Uplink bit errors (BER) 63250/125840 (0.502622), block errors (BLER) 55/55 (1.000000)
+[04:543217][I] UE 8: Uplink bit errors (BER) 63358/125840 (0.503481), block errors (BLER) 55/55 (1.000000)
+[04:543224][I] UE 9: Uplink bit errors (BER) 63097/125840 (0.501407), block errors (BLER) 55/55 (1.000000)
+[04:543232][I] UE 10: Uplink bit errors (BER) 62948/125840 (0.500223), block errors (BLER) 55/55 (1.000000)
+[04:543240][I] UE 11: Uplink bit errors (BER) 63055/125840 (0.501073), block errors (BLER) 55/55 (1.000000)
+[04:543248][I] UE 12: Uplink bit errors (BER) 63025/125840 (0.500834), block errors (BLER) 55/55 (1.000000)
+[04:543256][I] UE 13: Uplink bit errors (BER) 62717/125840 (0.498387), block errors (BLER) 55/55 (1.000000)
+[04:543263][I] UE 14: Uplink bit errors (BER) 63585/125840 (0.505284), block errors (BLER) 55/55 (1.000000)
+[04:543289][I] UE 15: Uplink bit errors (BER) 63326/125840 (0.503226), block errors (BLER) 55/55 (1.000000)
+[04:543290][I] Agora: terminating
+=================================
+          CORE LIST SUMMARY      
+=================================
+Total Number of Cores: 64 : 64 
+|| Core ID: 10 || Requested:  4 || ThreadType: Master           || ThreadId: 140489906126848 
+|| Core ID: 12 || Requested:  5 || ThreadType: TXRX             || ThreadId: 140486316593152 
+|| Core ID: 14 || Requested:  6 || ThreadType: TXRX             || ThreadId: 140484722814976 
+|| Core ID: 16 || Requested:  7 || ThreadType: Worker           || ThreadId: 140487297196032 
+|| Core ID: 18 || Requested:  8 || ThreadType: Worker           || ThreadId: 140487288803328 
+|| Core ID: 20 || Requested:  9 || ThreadType: Worker           || ThreadId: 140487280410624 
+|| Core ID: 22 || Requested: 10 || ThreadType: Worker           || ThreadId: 140487272017920 
+|| Core ID: 24 || Requested: 11 || ThreadType: Worker           || ThreadId: 140487263625216 
+|| Core ID: 26 || Requested: 12 || ThreadType: Worker           || ThreadId: 140487255232512 
+|| Core ID: 28 || Requested: 13 || ThreadType: Worker           || ThreadId: 140487138734080 
+|| Core ID: 30 || Requested: 14 || ThreadType: Worker           || ThreadId: 140487130341376 
+|| Core ID: 32 || Requested: 15 || ThreadType: Worker           || ThreadId: 140487121948672 
+|| Core ID: 34 || Requested: 16 || ThreadType: Worker           || ThreadId: 140486434091008 
+|| Core ID: 36 || Requested: 17 || ThreadType: Worker           || ThreadId: 140486425698304 
+|| Core ID: 38 || Requested: 18 || ThreadType: Worker           || ThreadId: 140486417305600 
+|| Core ID: 40 || Requested: 19 || ThreadType: Worker           || ThreadId: 140486408912896 
+|| Core ID: 42 || Requested: 20 || ThreadType: Worker           || ThreadId: 140486400520192 
+|| Core ID: 44 || Requested: 21 || ThreadType: Worker           || ThreadId: 140486392127488 
+|| Core ID: 46 || Requested: 22 || ThreadType: Worker           || ThreadId: 140486383734784 
+|| Core ID: 48 || Requested: 23 || ThreadType: Worker           || ThreadId: 140486375342080 
+|| Core ID: 50 || Requested: 24 || ThreadType: Worker           || ThreadId: 140486366949376 
+|| Core ID: 52 || Requested: 25 || ThreadType: Worker           || ThreadId: 140486358556672 
+|| Core ID: 54 || Requested: 26 || ThreadType: Worker           || ThreadId: 140486350163968 
+|| Core ID: 56 || Requested: 27 || ThreadType: Worker           || ThreadId: 140486341771264 
+|| Core ID: 58 || Requested: 28 || ThreadType: Worker           || ThreadId: 140486333378560 
+|| Core ID: 60 || Requested: 29 || ThreadType: Worker           || ThreadId: 140486324985856 
+=================================

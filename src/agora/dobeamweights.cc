@@ -9,6 +9,7 @@
 #include "concurrent_queue_wrapper.h"
 #include "doer.h"
 #include "logger.h"
+#include "temp_launch.h"
 
 static constexpr bool kUseSIMDGather = true;
 // Calculate the zeroforcing receiver using the formula W_zf = inv(H' * H) * H'.
@@ -138,21 +139,12 @@ void DoBeamWeights::cuda_precoder(cuComplex *csi, int batch_count = 1) {
     &beta, A, ldc, stride_out, batch_count);
 
   // Compute Inverse of A using Cholesky decomposition
-  for (int i = 0; i < batch_count; i++) {
-    Aarray_cpu_[i] = A + i * stride_out;
-  }
-  cudaMemcpyAsync(Aarray_, Aarray_cpu_, batch_count * sizeof(cuComplex*), cudaMemcpyHostToDevice, stream_);
+  set_ptr_launch<cuComplex>(Aarray_, A, batch_count, stride_out, 1, stream_);
 
   cusolverDnCpotrfBatched(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, Aarray_, lda, infoArray_, batch_count);
 
-  for (size_t i = 0; i < batch_count * bs; i++) {
-    Aarray_cpu_[i] = A + (i / bs) * stride_out;
-  }
-  cudaMemcpyAsync(Aarray_, Aarray_cpu_, bs * batch_count * sizeof(cuComplex*), cudaMemcpyHostToDevice, stream_);
-  for (size_t i = 0; i < batch_count * bs; i++) {
-    Xarray_cpu_[i] = CSI + i * ue;
-  }
-  cudaMemcpyAsync(Xarray_, Xarray_cpu_, batch_count * bs * sizeof(cuComplex*), cudaMemcpyHostToDevice, stream_);
+  set_ptr_launch<cuComplex>(Aarray_, A, batch_count * bs, stride_out, bs, stream_);
+  set_ptr_launch<cuComplex>(Xarray_, CSI, batch_count * bs, ue, 1, stream_);
 
   cusolverDnCpotrsBatched(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, 1, Aarray_, lda, Xarray_, ldb, infoArray_, batch_count * bs);
 }

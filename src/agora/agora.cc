@@ -818,6 +818,7 @@ void Agora::Start() {
                 cudaMemcpyAsync(dst_gpu_gather, buffer->fft_gather_cpu_[symbol_id],
                     sizeof(short) * config_->BsAntNum() * config_->OfdmCaNum() * 2,
                     cudaMemcpyHostToDevice, stream);
+
                 EventData do_fft_task = EventData(EventType::kFFT,
                   gen_tag_t::FrmSym(frame_id, symbol_id).tag_);
                 TryEnqueueFallback(message_->GetConq(EventType::kFFT, qid),
@@ -829,6 +830,13 @@ void Agora::Start() {
                 uplink_fft_counters_.CompleteTask(frame_id, symbol_id);
 
               if (last_fft_per_symbol == true) {
+                cudaStream_t stream = buffer->cuda_streams_[symbol_id][0];
+                short *dst_gpu_gather = buffer->packet_buffer_
+                  + symbol_id * (config_->BsAntNum() * config_->OfdmCaNum() * 2);
+                cudaMemcpyAsync(dst_gpu_gather, buffer->fft_gather_cpu_[symbol_id],
+                    sizeof(short) * config_->BsAntNum() * config_->OfdmCaNum() * 2,
+                    cudaMemcpyHostToDevice, stream);
+
                 EventData do_fft_task = EventData(EventType::kFFT,
                   gen_tag_t::FrmSym(frame_id, symbol_id).tag_);
                 TryEnqueueFallback(message_->GetConq(EventType::kFFT, qid),

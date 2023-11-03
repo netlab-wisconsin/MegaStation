@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cuda.h>
-#include <stdio.h>
+#include <cuda_runtime.h>
 
 #include "modulation_cuda.h"
 
@@ -83,7 +83,7 @@ public:
       AMat(AMat),
       BVec(BVec),
       CMat(CMat),
-      a_stride(problem_size.row),
+      a_stride(problem_size.row * problem_size.col),
       b_stride(problem_size.col),
       c_stride(c_stride),
       a_skip(a_skip)
