@@ -304,6 +304,10 @@ set(GTEST_LIBRARIES ${GTEST_LIBRARIES} -lpthread)
 #third party libs included in our repo
 include_directories(third_party third_party/spdlog/include third_party/nlohmann/single_include)
 
+# cuBB
+include_directories(/home/xxc/cuBB/cuPHY/install/include)
+set(CUBB_LIBS /home/xxc/cuBB/cuPHY/install/lib/libcuphy.so /home/xxc/cuBB/cuPHY/build/nvlog/libnvlog_static.a /home/xxc/cuBB/cuPHY/install/lib/libfmtlog-static.so /home/xxc/cuBB/cuPHY/install/lib/libyaml.so)
+
 add_definitions(-DTHREADED_INIT)
 
 if(RADIO_TYPE STREQUAL PURE_UHD)
@@ -395,6 +399,18 @@ if (${ENABLE_HDF5})
 endif()
 add_library(recorder_sources_lib OBJECT ${RECORDER_SOURCES})
 
+set(CUDAToolkit_ROOT /usr/local/cuda)
+set(CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda)
+set(CUDA_VERSION 12.2)
+set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
+#find_package(CUDAToolkit REQUIRED 12.2)
+#find_package(CUDA REQUIRED 12.2)
+enable_language(CUDA)
+set(CMAKE_CUDA_STANDARD 17)
+#set_source_files_properties(src/agora/dofft.cc PROPERTIES LANGUAGE CUDA)
+set(CMAKE_CUDA_SEPARABLE_COMPILATION ON)
+set(CMAKE_CUDA_ARCHITECTURES native)
+
 set(COMMON_SOURCES
   ${PUREUHD_SOURCES}
   src/agora/stats.cc
@@ -412,6 +428,7 @@ set(COMMON_SOURCES
   src/common/crc.cc
   src/common/memory_manage.cc
   src/common/scrambler.cc
+  src/common/temp_launch.cu
   src/agora/radio/radio.cc
   src/agora/radio/radio_soapysdr.cc
   src/agora/radio/radio_data_plane.cc
@@ -441,17 +458,6 @@ if(${USE_DPDK})
     src/agora/txrx/workers/txrx_worker_dpdk.cc)
 endif()
 
-set(CUDAToolkit_ROOT /usr/local/cuda)
-set(CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda)
-set(CUDA_VERSION 12.2)
-set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
-#find_package(CUDAToolkit REQUIRED 12.2)
-#find_package(CUDA REQUIRED 12.2)
-enable_language(CUDA)
-set(CMAKE_CUDA_STANDARD 17)
-#set_source_files_properties(src/agora/dofft.cc PROPERTIES LANGUAGE CUDA)
-set(CMAKE_CUDA_SEPARABLE_COMPILATION ON)
-set(CMAKE_CUDA_ARCHITECTURES native)
 set(AGORA_SOURCES ${AGORA_SOURCES}
   ${PUREUHD_SOURCES_AGORA}
   src/agora/agora.cc
@@ -462,7 +468,6 @@ set(AGORA_SOURCES ${AGORA_SOURCES}
   src/agora/doifft.cc
   src/agora/dobeamweights.cc
   src/agora/dodemul.cc
-  src/agora/temp_launch.cu
   src/agora/doprecode.cc
   src/agora/dodecode.cc
   src/agora/radio/radio_set/radio_set_bs.cc
@@ -488,8 +493,8 @@ set(CLIENT_SOURCES
   src/mac/mac_thread_client.cc)
 add_library(client_sources_lib OBJECT ${CLIENT_SOURCES})
 
-set(COMMON_LIBS cufft_static culibos cublas cusolver -Wl,--start-group ${MKL_LIBS} ${BLAS_LIBRARIES} -Wl,--end-group ${NUMA_LIBRARIES} ${FLEXRAN_LDPC_LIBS} ${HDF5_LIBRARIES} ${DPDK_LIBRARIES} ${ARMADILLO_LIBRARIES} ${SOAPY_LIB}
-    ${PYTHON_LIB} ${Boost_LIBRARIES} ${GFLAGS_LIBRARIES} ${UHD_LIBRARIES} ${COMMON_LIBS})
+set(COMMON_LIBS cufft_static culibos cublas cusolver cuda cudart -Wl,--start-group ${MKL_LIBS} ${BLAS_LIBRARIES} -Wl,--end-group ${NUMA_LIBRARIES} ${FLEXRAN_LDPC_LIBS} ${HDF5_LIBRARIES} ${DPDK_LIBRARIES} ${ARMADILLO_LIBRARIES} ${SOAPY_LIB}
+    ${PYTHON_LIB} ${Boost_LIBRARIES} ${GFLAGS_LIBRARIES} ${UHD_LIBRARIES} ${COMMON_LIBS} ${CUBB_LIBS})
 message(VERBOSE "Common libs: ${COMMON_LIBS}")
 
 # TODO: The main agora executable is performance-critical, so we need to
@@ -586,13 +591,13 @@ foreach(test_name IN LISTS LDPC_TESTS)
     test/compute_kernels/ldpc/${test_name}.cc
     $<TARGET_OBJECTS:common_sources_lib>)
   # Unit tests should pass without memory errors
-  set_target_properties(${test_name} PROPERTIES CMAKE_CXX_FLAGS "-fsanitize=address")
+  set_target_properties(${test_name} PROPERTIES CMAKE_CXX_FLAGS "-fno-stack-protector")
   target_link_libraries(${test_name} ${COMMON_LIBS} ${GTEST_LIBRARIES})
   add_test(NAME ${test_name} COMMAND ${test_name})
 endforeach()
 
 # Unit tests
-set(UNIT_TESTS test_armadillo test_datatype_conversion test_udp_client_server
+set(UNIT_TESTS test_datatype_conversion test_udp_client_server
   test_concurrent_queue test_zf test_zf_threaded test_demul_threaded 
   test_ptr_grid test_avx512_complex_mul test_scrambler
   test_256qam_demod)

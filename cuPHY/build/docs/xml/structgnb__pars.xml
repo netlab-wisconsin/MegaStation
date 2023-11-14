@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structgnb__pars" kind="struct" language="C++" prot="public">
+    <compoundname>gnb_pars</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structgnb__pars_1a0c54a7e94243a5a61110cf5b12983617" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::cellId</definition>
+        <argsstring></argsstring>
+        <name>cellId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="566" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="566" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a2c45a57f4f16f71f8ff615de47161658" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::df</definition>
+        <argsstring></argsstring>
+        <name>df</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="570" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="570" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a39bef3e2f09802558472313d95448510" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::dt</definition>
+        <argsstring></argsstring>
+        <name>dt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="571" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="571" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a57ea7a2f0935e54679733a4735dd6c4b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::fc</definition>
+        <argsstring></argsstring>
+        <name>fc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="562" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="562" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a1f8f80dddf6367d8de193bea60532d23" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::ldpcAlgoIndex</definition>
+        <argsstring></argsstring>
+        <name>ldpcAlgoIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="577" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="577" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a863f1842d540d367cebb829ec38faa74" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::ldpcEarlyTermination</definition>
+        <argsstring></argsstring>
+        <name>ldpcEarlyTermination</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="576" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="576" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1ade829b56f5b9d2251a8fbc3206d24d72" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::ldpcFlags</definition>
+        <argsstring></argsstring>
+        <name>ldpcFlags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="578" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="578" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a0db3f9a73122a6c2b638925b75c5e61c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::ldpcKernelLaunch</definition>
+        <argsstring></argsstring>
+        <name>ldpcKernelLaunch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="580" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="580" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a3f903bb62e631506fbdf4bfe353ea85f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::ldpcnIterations</definition>
+        <argsstring></argsstring>
+        <name>ldpcnIterations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="575" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="575" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a4430362bebcb3d5e3f25c34b86c97320" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::ldpcUseHalf</definition>
+        <argsstring></argsstring>
+        <name>ldpcUseHalf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="579" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="579" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a98f685da1ed07c6431504d8418a656b4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::mu</definition>
+        <argsstring></argsstring>
+        <name>mu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="563" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="563" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a3cbb1a386f64f03ed39b17212e3dd966" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::Nf</definition>
+        <argsstring></argsstring>
+        <name>Nf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="568" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="568" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1afe1452cc7a46e62677555fcbc5b46815" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::nPrb</definition>
+        <argsstring></argsstring>
+        <name>nPrb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="565" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="565" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1ab93916126ef40ea617c8a4762c27c375" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::nRx</definition>
+        <argsstring></argsstring>
+        <name>nRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="564" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="564" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a86cee498e7f010af282d8b0269ed97a6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::Nt</definition>
+        <argsstring></argsstring>
+        <name>Nt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="569" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="569" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a18c378e20f6b3710cdfcec1c455a03e8" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::numBbuLayers</definition>
+        <argsstring></argsstring>
+        <name>numBbuLayers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="573" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="573" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a3128e217a1b49665b3c76513e8011324" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::numBsAnt</definition>
+        <argsstring></argsstring>
+        <name>numBsAnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="572" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="572" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1aac55aa93d68f2f2ef001f89a7a724014" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::numTb</definition>
+        <argsstring></argsstring>
+        <name>numTb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="574" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="574" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a5da5f03dedcfd724ab0af993d47d93c9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::nUserGroups</definition>
+        <argsstring></argsstring>
+        <name>nUserGroups</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="582" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="582" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1aa76842240f9dbfcbad7c909153fa3403" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::slotNumber</definition>
+        <argsstring></argsstring>
+        <name>slotNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="567" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="567" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgnb__pars_1a8dd777021aefec7b72f4b11798503cb0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t gnb_pars::slotType</definition>
+        <argsstring></argsstring>
+        <name>slotType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="581" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="581" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="561" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="560" bodyend="583"/>
+    <listofallmembers>
+      <member refid="structgnb__pars_1a0c54a7e94243a5a61110cf5b12983617" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>cellId</name></member>
+      <member refid="structgnb__pars_1a2c45a57f4f16f71f8ff615de47161658" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>df</name></member>
+      <member refid="structgnb__pars_1a39bef3e2f09802558472313d95448510" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>dt</name></member>
+      <member refid="structgnb__pars_1a57ea7a2f0935e54679733a4735dd6c4b" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>fc</name></member>
+      <member refid="structgnb__pars_1a1f8f80dddf6367d8de193bea60532d23" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>ldpcAlgoIndex</name></member>
+      <member refid="structgnb__pars_1a863f1842d540d367cebb829ec38faa74" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>ldpcEarlyTermination</name></member>
+      <member refid="structgnb__pars_1ade829b56f5b9d2251a8fbc3206d24d72" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>ldpcFlags</name></member>
+      <member refid="structgnb__pars_1a0db3f9a73122a6c2b638925b75c5e61c" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>ldpcKernelLaunch</name></member>
+      <member refid="structgnb__pars_1a3f903bb62e631506fbdf4bfe353ea85f" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>ldpcnIterations</name></member>
+      <member refid="structgnb__pars_1a4430362bebcb3d5e3f25c34b86c97320" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>ldpcUseHalf</name></member>
+      <member refid="structgnb__pars_1a98f685da1ed07c6431504d8418a656b4" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>mu</name></member>
+      <member refid="structgnb__pars_1a3cbb1a386f64f03ed39b17212e3dd966" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>Nf</name></member>
+      <member refid="structgnb__pars_1afe1452cc7a46e62677555fcbc5b46815" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>nPrb</name></member>
+      <member refid="structgnb__pars_1ab93916126ef40ea617c8a4762c27c375" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>nRx</name></member>
+      <member refid="structgnb__pars_1a86cee498e7f010af282d8b0269ed97a6" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>Nt</name></member>
+      <member refid="structgnb__pars_1a18c378e20f6b3710cdfcec1c455a03e8" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>numBbuLayers</name></member>
+      <member refid="structgnb__pars_1a3128e217a1b49665b3c76513e8011324" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>numBsAnt</name></member>
+      <member refid="structgnb__pars_1aac55aa93d68f2f2ef001f89a7a724014" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>numTb</name></member>
+      <member refid="structgnb__pars_1a5da5f03dedcfd724ab0af993d47d93c9" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>nUserGroups</name></member>
+      <member refid="structgnb__pars_1aa76842240f9dbfcbad7c909153fa3403" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>slotNumber</name></member>
+      <member refid="structgnb__pars_1a8dd777021aefec7b72f4b11798503cb0" prot="public" virt="non-virtual"><scope>gnb_pars</scope><name>slotType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

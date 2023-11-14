@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyBfwStatDbgPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyBfwStatDbgPrms</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyBfwStatDbgPrms_1aec8a1fb6d365dca9ebbd069fe058f6dc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyBfwStatDbgPrms::enableApiLogging</definition>
+        <argsstring></argsstring>
+        <name>enableApiLogging</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1430" column="17" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwStatDbgPrms_1a8a1ed35d42ae42e1814b2d061ffddc9d" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* _cuphyBfwStatDbgPrms::pOutFileName</definition>
+        <argsstring></argsstring>
+        <name>pOutFileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1429" column="16" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1429" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1428" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1427" bodyend="1431"/>
+    <listofallmembers>
+      <member refid="struct__cuphyBfwStatDbgPrms_1aec8a1fb6d365dca9ebbd069fe058f6dc" prot="public" virt="non-virtual"><scope>_cuphyBfwStatDbgPrms</scope><name>enableApiLogging</name></member>
+      <member refid="struct__cuphyBfwStatDbgPrms_1a8a1ed35d42ae42e1814b2d061ffddc9d" prot="public" virt="non-virtual"><scope>_cuphyBfwStatDbgPrms</scope><name>pOutFileName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

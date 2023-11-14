@@ -105,7 +105,8 @@ public:
   cufftComplex *fft_out_;
   cufftComplex *pilot_fft_out_;
   cufftComplex *uplink_fft_out_;
-  int8_t *demul_out_;
+  half *demul_out_;
+  int8_t *decoded_out_;
   // #symbol
   Table<cudaStream_t> cuda_streams_;
   struct storeInfo *stInfoPtr_;

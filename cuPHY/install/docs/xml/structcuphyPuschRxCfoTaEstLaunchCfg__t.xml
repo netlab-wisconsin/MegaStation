@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyPuschRxCfoTaEstLaunchCfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyPuschRxCfoTaEstLaunchCfg_t</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyPuschRxCfoTaEstLaunchCfg__t_1a33832c9f2a523bc4f0398d51cf185b8f" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyPuschRxCfoTaEstLaunchCfg_t::kernelArgs[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1991" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1991" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschRxCfoTaEstLaunchCfg__t_1a2e0800acdd4340e6e3bbc190ebf0b71f" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyPuschRxCfoTaEstLaunchCfg_t::kernelNodeParamsDriver</definition>
+        <argsstring></argsstring>
+        <name>kernelNodeParamsDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1990" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1990" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>cuPHY PUSCH Receiver carrier frequency offset and timing advance estimation launch configuration </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1989" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1988" bodyend="1992"/>
+    <listofallmembers>
+      <member refid="structcuphyPuschRxCfoTaEstLaunchCfg__t_1a33832c9f2a523bc4f0398d51cf185b8f" prot="public" virt="non-virtual"><scope>cuphyPuschRxCfoTaEstLaunchCfg_t</scope><name>kernelArgs</name></member>
+      <member refid="structcuphyPuschRxCfoTaEstLaunchCfg__t_1a2e0800acdd4340e6e3bbc190ebf0b71f" prot="public" virt="non-virtual"><scope>cuphyPuschRxCfoTaEstLaunchCfg_t</scope><name>kernelNodeParamsDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

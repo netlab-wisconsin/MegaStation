@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_93f93e7719755c4880de0f8c29a51a14">cuphy</innerdir>
+    <innerdir refid="dir_2fe436258727f3707fc3cab5cc3ea2f4">cuphy_hdf5</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/"/>
+  </compounddef>
+</doxygen>

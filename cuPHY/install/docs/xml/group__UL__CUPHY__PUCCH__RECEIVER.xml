@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__UL__CUPHY__PUCCH__RECEIVER" kind="group">
+    <compoundname>UL_CUPHY_PUCCH_RECEIVER</compoundname>
+    <title>PUCCH Receiver</title>
+    <innerclass refid="structPucchParams" prot="public">PucchParams</innerclass>
+    <innerclass refid="structPucchUeCellParams" prot="public">PucchUeCellParams</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__UL__CUPHY__PUCCH__RECEIVER_1gaf6ab9a56beff95b1897d34d0e902820b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cuphyCopyPucchParamsToWorkspace</definition>
+        <argsstring>(const PucchParams *h_pucch_params, void *pucch_workspace, cuphyDataType_t pucch_complex_data_type)</argsstring>
+        <name>cuphyCopyPucchParamsToWorkspace</name>
+        <param>
+          <type>const <ref refid="structPucchParams" kindref="compound">PucchParams</ref> *</type>
+          <declname>h_pucch_params</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pucch_workspace</declname>
+        </param>
+        <param>
+          <type><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref></type>
+          <declname>pucch_complex_data_type</declname>
+        </param>
+        <briefdescription>
+<para>: Copy PUCCH params from the CPU to the allocated PUCCH receiver workspace. The location of the struct in the workspace is implementation dependent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">h_pucch_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to PUCCH configuration parameters on the host. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pucch_workspace</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the pre-allocated pucch receiver&apos;s workspace on the device. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pucch_complex_data_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PUCCH receiver data type identifier: CUPHY_C_32F or CUPHY_C_16F </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4274" column="6" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4274" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__UL__CUPHY__PUCCH__RECEIVER_1gaa52bf61dc22387fcc692e021b988d2b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cuphyPucchReceiver</definition>
+        <argsstring>(cuphyTensorDescriptor_t data_rx_desc, const void *data_rx_addr, cuphyTensorDescriptor_t bit_estimates_desc, void *bit_estimates_addr, const uint32_t pucch_format, const PucchParams *pucch_params, cudaStream_t strm, void *pucch_workspace, size_t allocated_workspace_size, cuphyDataType_t pucch_complex_data_type)</argsstring>
+        <name>cuphyPucchReceiver</name>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>data_rx_desc</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>data_rx_addr</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>bit_estimates_desc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>bit_estimates_addr</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>pucch_format</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPucchParams" kindref="compound">PucchParams</ref> *</type>
+          <declname>pucch_params</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pucch_workspace</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>allocated_workspace_size</declname>
+        </param>
+        <param>
+          <type><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref></type>
+          <declname>pucch_complex_data_type</declname>
+        </param>
+        <briefdescription>
+<para>: Launch PUCCH receiver kernels that do processing at receive end of PUCCH (Physical Uplink Control Channel). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data_rx_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input tensor descriptor; dimensions: Nf x Nt x L_BS </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_rx_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to input tensor data (i.e., base station received signal); each tensor element is a complex number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bit_estimates_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output tensor descriptor; dimensions nUe_pucch x 2 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">bit_estimates_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pre-allocated device buffer with bit estimates </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pucch_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PUCCH format; currently only format 1 is supported. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pucch_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to PUCCH config params. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CUDA stream for kernel launch. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pucch_workspace</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of user allocated workspace pucch params should have been already copied there via a <ref refid="group__UL__CUPHY__PUCCH__RECEIVER_1gaf6ab9a56beff95b1897d34d0e902820b" kindref="member">cuphyCopyPucchParamsToWorkspace()</ref> call. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">allocated_workspace_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of pucch_workspace </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pucch_complex_data_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PUCCH receiver data type identifier: CUPHY_C_32F or CUPHY_C_16F </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4294" column="6" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4294" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__UL__CUPHY__PUCCH__RECEIVER_1ga7bfd5fef5bb063b825c8255b70f401be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cuphyPucchReceiverWorkspaceSize</definition>
+        <argsstring>(int num_ues, int num_bs_antennas, int num_symbols, cuphyDataType_t pucch_complex_data_type)</argsstring>
+        <name>cuphyPucchReceiverWorkspaceSize</name>
+        <param>
+          <type>int</type>
+          <declname>num_ues</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_bs_antennas</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_symbols</declname>
+        </param>
+        <param>
+          <type><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref></type>
+          <declname>pucch_complex_data_type</declname>
+        </param>
+        <briefdescription>
+<para>: Return workspace size, in bytes, needed for all configuration parameters and intermediate computations of the PUCCH receiver. Does not allocate any space. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">num_ues</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of User Equipement (UEs) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_bs_antennas</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of Base Station (BS) antennas </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_symbols</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of symbols; sum of DMRS and data symbols. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pucch_complex_data_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PUCCH receiver data type identifier: CUPHY_C_32F or CUPHY_C_16F </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>workspace size in bytes </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4263" column="8" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4263" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__UL__CUPHY__PUCCH__RECEIVER_1gab199af6acb3604181321bf23e2f26b2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cuphyUpdatePucchParamsFormat1</definition>
+        <argsstring>(PucchParams *pucch_params, const gnb_pars *gnb_params, const tb_pars *tb_params)</argsstring>
+        <name>cuphyUpdatePucchParamsFormat1</name>
+        <param>
+          <type><ref refid="structPucchParams" kindref="compound">PucchParams</ref> *</type>
+          <declname>pucch_params</declname>
+        </param>
+        <param>
+          <type>const gnb_pars *</type>
+          <declname>gnb_params</declname>
+        </param>
+        <param>
+          <type>const tb_pars *</type>
+          <declname>tb_params</declname>
+        </param>
+        <briefdescription>
+<para>: Partially update <ref refid="structPucchParams" kindref="compound">PucchParams</ref> struct for Format 1 based on tb_pars and gnb_pars. NB: the following <ref refid="structPucchParams" kindref="compound">PucchParams</ref> fields are NOT updated in this function: (1) num_pucch_ue, (2) Wf, (3) Wt_cell, (4) low_PAPR_seq_index, (5) hopping_id, and (6) the cell_params array. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pucch_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to PUCCH configuration parameters on the host. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">gnb_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to gnb_pars struct on the host. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tb_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to tb_pars struct on the host. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4251" column="6" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4251" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__UL__CUPHY__PUCCH__RECEIVER_1ga704c89664cabc0d3762c8482f7b56a57" prot="public" static="no">
+        <name>CUPHY_PUCCH_FORMAT1</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4203" column="9" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__UL__CUPHY__PUCCH__RECEIVER_1ga2e4982bd58a4d9784b43428bb8b5393a" prot="public" static="no">
+        <name>MAX_UE_CNT</name>
+        <initializer>42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4205" column="9" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__UL__CUPHY__PUCCH__RECEIVER_1ga0b8c51543377923304fb11d88051c8d0" prot="public" static="no">
+        <name>NUM_PAPR_SEQUENCES</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4204" column="9" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4204" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the structs and functions of the uplink cuPHY control channel receiver. Currently only PUCCH Format 1 is supported. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

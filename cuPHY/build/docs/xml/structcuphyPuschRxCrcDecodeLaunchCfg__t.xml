@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyPuschRxCrcDecodeLaunchCfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyPuschRxCrcDecodeLaunchCfg_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyPuschRxCrcDecodeLaunchCfg__t_1a76bc209dc641737bc23d333d6642409c" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyPuschRxCrcDecodeLaunchCfg_t::desc</definition>
+        <argsstring></argsstring>
+        <name>desc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3075" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3075" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschRxCrcDecodeLaunchCfg__t_1aee7e73fec27bf70957f46b5a95bafcc6" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyPuschRxCrcDecodeLaunchCfg_t::kernelArgs[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3076" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3076" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschRxCrcDecodeLaunchCfg__t_1a439013117dccf4ea08504f68df6fec2d" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyPuschRxCrcDecodeLaunchCfg_t::kernelNodeParamsDriver</definition>
+        <argsstring></argsstring>
+        <name>kernelNodeParamsDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3074" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3074" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3073" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3072" bodyend="3077"/>
+    <listofallmembers>
+      <member refid="structcuphyPuschRxCrcDecodeLaunchCfg__t_1a76bc209dc641737bc23d333d6642409c" prot="public" virt="non-virtual"><scope>cuphyPuschRxCrcDecodeLaunchCfg_t</scope><name>desc</name></member>
+      <member refid="structcuphyPuschRxCrcDecodeLaunchCfg__t_1aee7e73fec27bf70957f46b5a95bafcc6" prot="public" virt="non-virtual"><scope>cuphyPuschRxCrcDecodeLaunchCfg_t</scope><name>kernelArgs</name></member>
+      <member refid="structcuphyPuschRxCrcDecodeLaunchCfg__t_1a439013117dccf4ea08504f68df6fec2d" prot="public" virt="non-virtual"><scope>cuphyPuschRxCrcDecodeLaunchCfg_t</scope><name>kernelNodeParamsDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

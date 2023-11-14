@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPuschStatDbgPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPuschStatDbgPrms</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPuschStatDbgPrms_1ae634c9f87de45222ffe6f84606051a3c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPuschStatDbgPrms::descrmOn</definition>
+        <argsstring></argsstring>
+        <name>descrmOn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="153" column="17" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschStatDbgPrms_1ae546dc8d2363ec7e3d2933ab2eca97a1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPuschStatDbgPrms::enableApiLogging</definition>
+        <argsstring></argsstring>
+        <name>enableApiLogging</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="154" column="17" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschStatDbgPrms_1a87edeca704d094c99a9eb5ec526147df" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPuschStatDbgPrms::forcedNumCsi2Bits</definition>
+        <argsstring></argsstring>
+        <name>forcedNumCsi2Bits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="155" column="17" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschStatDbgPrms_1aa625706a0465552cbdb7038919d72e25" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* _cuphyPuschStatDbgPrms::pOutFileName</definition>
+        <argsstring></argsstring>
+        <name>pOutFileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="152" column="16" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="151" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="150" bodyend="156"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPuschStatDbgPrms_1ae634c9f87de45222ffe6f84606051a3c" prot="public" virt="non-virtual"><scope>_cuphyPuschStatDbgPrms</scope><name>descrmOn</name></member>
+      <member refid="struct__cuphyPuschStatDbgPrms_1ae546dc8d2363ec7e3d2933ab2eca97a1" prot="public" virt="non-virtual"><scope>_cuphyPuschStatDbgPrms</scope><name>enableApiLogging</name></member>
+      <member refid="struct__cuphyPuschStatDbgPrms_1a87edeca704d094c99a9eb5ec526147df" prot="public" virt="non-virtual"><scope>_cuphyPuschStatDbgPrms</scope><name>forcedNumCsi2Bits</name></member>
+      <member refid="struct__cuphyPuschStatDbgPrms_1aa625706a0465552cbdb7038919d72e25" prot="public" virt="non-virtual"><scope>_cuphyPuschStatDbgPrms</scope><name>pOutFileName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

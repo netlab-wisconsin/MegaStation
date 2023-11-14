@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPucchUciP1P2Crpd" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPucchUciP1P2Crpd</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPucchUciP1P2Crpd_1a67f6a3a951d0c1eae52cf2abdf02b20b" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciP1P2Crpd::numPart2s</definition>
+        <argsstring></argsstring>
+        <name>numPart2s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="590" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="590" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="589" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="588" bodyend="593"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPucchUciP1P2Crpd_1a67f6a3a951d0c1eae52cf2abdf02b20b" prot="public" virt="non-virtual"><scope>_cuphyPucchUciP1P2Crpd</scope><name>numPart2s</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

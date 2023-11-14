@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyBfwDataIn" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyBfwDataIn</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyBfwDataIn_1aa78169574bab4b9ead22163ad66127fa" prot="public" static="no" mutable="no">
+        <type>cuphySrsChEstBuffInfo_t *</type>
+        <definition>cuphySrsChEstBuffInfo_t* _cuphyBfwDataIn::pChEstInfo</definition>
+        <argsstring></argsstring>
+        <name>pChEstInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1465" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1465" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1464" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1463" bodyend="1471"/>
+    <listofallmembers>
+      <member refid="struct__cuphyBfwDataIn_1aa78169574bab4b9ead22163ad66127fa" prot="public" virt="non-virtual"><scope>_cuphyBfwDataIn</scope><name>pChEstInfo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

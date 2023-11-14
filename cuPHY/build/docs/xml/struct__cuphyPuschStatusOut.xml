@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPuschStatusOut" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPuschStatusOut</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPuschStatusOut_1a2ccd2d08b1d5b5e115cead613c8db0bb" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPuschStatusOut::cellPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="378" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschStatusOut_1aca77be6e0088e1dd7e1bd9611c258322" prot="public" static="no" mutable="no">
+        <type>cuphyPuschStatusType_t</type>
+        <definition>cuphyPuschStatusType_t _cuphyPuschStatusOut::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="377" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschStatusOut_1a2af7fc3f39fdd99aa19b7d77bcd947f8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPuschStatusOut::ueIdx</definition>
+        <argsstring></argsstring>
+        <name>ueIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="379" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>PUSCH Output Status </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="376" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="375" bodyend="380"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPuschStatusOut_1a2ccd2d08b1d5b5e115cead613c8db0bb" prot="public" virt="non-virtual"><scope>_cuphyPuschStatusOut</scope><name>cellPrmStatIdx</name></member>
+      <member refid="struct__cuphyPuschStatusOut_1aca77be6e0088e1dd7e1bd9611c258322" prot="public" virt="non-virtual"><scope>_cuphyPuschStatusOut</scope><name>status</name></member>
+      <member refid="struct__cuphyPuschStatusOut_1a2af7fc3f39fdd99aa19b7d77bcd947f8" prot="public" virt="non-virtual"><scope>_cuphyPuschStatusOut</scope><name>ueIdx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPdschDataIn" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPdschDataIn</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="struct__cuphyPdschDataIn_1a67c65efb9ecfd18aa1fd977fbbdb7d6c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>@1</name>
+        <enumvalue id="struct__cuphyPdschDataIn_1a67c65efb9ecfd18aa1fd977fbbdb7d6ca4fef1a07d5d4d7f4ee39e9edfe442a86" prot="public">
+          <name>CPU_BUFFER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="struct__cuphyPdschDataIn_1a67c65efb9ecfd18aa1fd977fbbdb7d6ca4700876bb07f8b870937c2e01b4673c1" prot="public">
+          <name>GPU_BUFFER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1946" column="5" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1945" bodyend="1949"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPdschDataIn_1a0c1b44d6facfee9c7a7a364d9231074e" prot="public" static="no" mutable="no">
+        <type>enum _cuphyPdschDataIn::@1</type>
+        <definition>enum _cuphyPdschDataIn::@1 _cuphyPdschDataIn::pBufferType</definition>
+        <argsstring></argsstring>
+        <name>pBufferType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pTbInput[] buffer type; currently only CPU_BUFFER is supported </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1949" column="23"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschDataIn_1a095aef372aaf26516ec4b9793bb9858d" prot="public" static="no" mutable="no">
+        <type>uint8_t **</type>
+        <definition>uint8_t** _cuphyPdschDataIn::pTbInput</definition>
+        <argsstring></argsstring>
+        <name>pTbInput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>array of transport block input buffers, one buffer per cell, indexed by cellPrmDynIdx. Each pTbInput[] element points to a flat array with all TBs for that cell. Currently per-cell TB allocations are contiguous, zero-padded to byte boundary. When a cell is in test mode, then the buffer contains the PN23 (pseudorandom sequence) rather than a payload. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1940" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1940" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>PDSCH Data Input </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1939" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1938" bodyend="1950"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPdschDataIn_1a67c65efb9ecfd18aa1fd977fbbdb7d6ca4fef1a07d5d4d7f4ee39e9edfe442a86" prot="public" virt="non-virtual"><scope>_cuphyPdschDataIn</scope><name>CPU_BUFFER</name></member>
+      <member refid="struct__cuphyPdschDataIn_1a67c65efb9ecfd18aa1fd977fbbdb7d6ca4700876bb07f8b870937c2e01b4673c1" prot="public" virt="non-virtual"><scope>_cuphyPdschDataIn</scope><name>GPU_BUFFER</name></member>
+      <member refid="struct__cuphyPdschDataIn_1a0c1b44d6facfee9c7a7a364d9231074e" prot="public" virt="non-virtual"><scope>_cuphyPdschDataIn</scope><name>pBufferType</name></member>
+      <member refid="struct__cuphyPdschDataIn_1a095aef372aaf26516ec4b9793bb9858d" prot="public" virt="non-virtual"><scope>_cuphyPdschDataIn</scope><name>pTbInput</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

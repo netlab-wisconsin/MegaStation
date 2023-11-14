@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPrachOccaStatPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPrachOccaStatPrms</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPrachOccaStatPrms_1af6241815b5c082d39fc1b823bf8bc49b" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPrachOccaStatPrms::cellPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index to cell-static parameter information (index into pCellPrms in cuphyPrachStatPrms_t) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2761" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2761" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachOccaStatPrms_1abf927e4cf0a6e4447eb173ca21002f6c" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPrachOccaStatPrms::prachRootSequenceIndex</definition>
+        <argsstring></argsstring>
+        <name>prachRootSequenceIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>0-137 for short preamble, 0-837 for long preamble </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2762" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2762" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachOccaStatPrms_1aa40be7c5b82a304c8f834503924a0417" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPrachOccaStatPrms::prachZeroCorrConf</definition>
+        <argsstring></argsstring>
+        <name>prachZeroCorrConf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>valid values 0-15 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2763" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2763" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2760" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2759" bodyend="2764"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPrachOccaStatPrms_1af6241815b5c082d39fc1b823bf8bc49b" prot="public" virt="non-virtual"><scope>_cuphyPrachOccaStatPrms</scope><name>cellPrmStatIdx</name></member>
+      <member refid="struct__cuphyPrachOccaStatPrms_1abf927e4cf0a6e4447eb173ca21002f6c" prot="public" virt="non-virtual"><scope>_cuphyPrachOccaStatPrms</scope><name>prachRootSequenceIndex</name></member>
+      <member refid="struct__cuphyPrachOccaStatPrms_1aa40be7c5b82a304c8f834503924a0417" prot="public" virt="non-virtual"><scope>_cuphyPrachOccaStatPrms</scope><name>prachZeroCorrConf</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

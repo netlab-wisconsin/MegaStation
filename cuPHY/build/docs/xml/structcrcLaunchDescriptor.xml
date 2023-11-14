@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcrcLaunchDescriptor" kind="struct" language="C++" prot="public">
+    <compoundname>crcLaunchDescriptor</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1acb477a7fb29ef41dd8b7d317f0aea7d0" prot="public" static="no" mutable="no">
+        <type>dim3</type>
+        <definition>dim3 crcLaunchDescriptor::cbKernelBlockDim</definition>
+        <argsstring></argsstring>
+        <name>cbKernelBlockDim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2928" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2928" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1ad99b10b995740a09157ea0fdcfb9a3bf" prot="public" static="no" mutable="no">
+        <type>dim3</type>
+        <definition>dim3 crcLaunchDescriptor::cbKernelGridDim</definition>
+        <argsstring></argsstring>
+        <name>cbKernelGridDim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2929" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2929" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1af8175cedc7a0a9bb2c9d4a87f1576de5" prot="public" static="no" mutable="no">
+        <type>const uint32_t *</type>
+        <definition>const uint32_t* crcLaunchDescriptor::inputCodeBlocks</definition>
+        <argsstring></argsstring>
+        <name>inputCodeBlocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2934" column="23" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2934" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1a743bebc707fa590f3deba08bb0e9d845" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* crcLaunchDescriptor::outputCBCRCs</definition>
+        <argsstring></argsstring>
+        <name>outputCBCRCs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2932" column="23" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2932" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1a0d29fcbf0b85a24982dcb8e684ecf930" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* crcLaunchDescriptor::outputTBCRCs</definition>
+        <argsstring></argsstring>
+        <name>outputTBCRCs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2935" column="23" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2935" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1a1b72b80757c2766719d141a69c49b0f3" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* crcLaunchDescriptor::outputTBs</definition>
+        <argsstring></argsstring>
+        <name>outputTBs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2933" column="23" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2933" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1a4250ad22c9413a7984b802e61d6dd05c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t crcLaunchDescriptor::reverseBytes</definition>
+        <argsstring></argsstring>
+        <name>reverseBytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2937" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2937" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1ad7bfa00d4f5b853542ee1cd94eede768" prot="public" static="no" mutable="no">
+        <type>dim3</type>
+        <definition>dim3 crcLaunchDescriptor::tbKernelBlockDim</definition>
+        <argsstring></argsstring>
+        <name>tbKernelBlockDim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2930" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2930" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1a8ba3e8d4f70156f0b6d6bb44f62d00af" prot="public" static="no" mutable="no">
+        <type>dim3</type>
+        <definition>dim3 crcLaunchDescriptor::tbKernelGridDim</definition>
+        <argsstring></argsstring>
+        <name>tbKernelGridDim</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2931" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2931" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcrcLaunchDescriptor_1aa1b0f01b25c5d0272f79900fd73ff0c0" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+        <definition>const PerTbParams* crcLaunchDescriptor::tbPrmsArray</definition>
+        <argsstring></argsstring>
+        <name>tbPrmsArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2936" column="23" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2936" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>crcLaunchDescriptor</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>tbPrmsArray</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>PerTbParams</label>
+        <link refid="structPerTbParams"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2927" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2926" bodyend="2939"/>
+    <listofallmembers>
+      <member refid="structcrcLaunchDescriptor_1acb477a7fb29ef41dd8b7d317f0aea7d0" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>cbKernelBlockDim</name></member>
+      <member refid="structcrcLaunchDescriptor_1ad99b10b995740a09157ea0fdcfb9a3bf" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>cbKernelGridDim</name></member>
+      <member refid="structcrcLaunchDescriptor_1af8175cedc7a0a9bb2c9d4a87f1576de5" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>inputCodeBlocks</name></member>
+      <member refid="structcrcLaunchDescriptor_1a743bebc707fa590f3deba08bb0e9d845" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>outputCBCRCs</name></member>
+      <member refid="structcrcLaunchDescriptor_1a0d29fcbf0b85a24982dcb8e684ecf930" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>outputTBCRCs</name></member>
+      <member refid="structcrcLaunchDescriptor_1a1b72b80757c2766719d141a69c49b0f3" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>outputTBs</name></member>
+      <member refid="structcrcLaunchDescriptor_1a4250ad22c9413a7984b802e61d6dd05c" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>reverseBytes</name></member>
+      <member refid="structcrcLaunchDescriptor_1ad7bfa00d4f5b853542ee1cd94eede768" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>tbKernelBlockDim</name></member>
+      <member refid="structcrcLaunchDescriptor_1a8ba3e8d4f70156f0b6d6bb44f62d00af" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>tbKernelGridDim</name></member>
+      <member refid="structcrcLaunchDescriptor_1aa1b0f01b25c5d0272f79900fd73ff0c0" prot="public" virt="non-virtual"><scope>crcLaunchDescriptor</scope><name>tbPrmsArray</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

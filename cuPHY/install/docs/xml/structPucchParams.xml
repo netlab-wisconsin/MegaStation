@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structPucchParams" kind="struct" language="C++" prot="public">
+    <compoundname>PucchParams</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPucchParams_1a91299f20f9d789d527c64f4094552259" prot="public" static="no" mutable="no">
+        <type><ref refid="structPucchUeCellParams" kindref="compound">PucchUeCellParams</ref></type>
+        <definition>PucchUeCellParams PucchParams::cell_params[MAX_UE_CNT]</definition>
+        <argsstring>[MAX_UE_CNT]</argsstring>
+        <name>cell_params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structPucchUeCellParams" kindref="compound">PucchUeCellParams</ref> structs; overprovisioned (first num_pucch_ue elements valid) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4240" column="23" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1aac1f812974bfa8622488cbc9627b5029" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PUCCH format. Should be CUPHY_PUCCH_FORMAT1 for now. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4223" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1a24936d295791ad58cd1130604acddb2e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::hopping_id</definition>
+        <argsstring></argsstring>
+        <name>hopping_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>hopping Id </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4238" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1a67761b6625cb60ea3c8c7f7c30e2ec66" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::low_PAPR_seq_index</definition>
+        <argsstring></argsstring>
+        <name>low_PAPR_seq_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>sequence of low-PAPR (Peak-to-Average Power ratio) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4232" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1a58bdf49aaef07b9cd6be73d64642e96b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::mu</definition>
+        <argsstring></argsstring>
+        <name>mu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>numerology </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4236" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1af3c305a314217103dd16f0d9def42ffc" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::num_bs_antennas</definition>
+        <argsstring></argsstring>
+        <name>num_bs_antennas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of base station antennas </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4235" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1aa46fd2ad82978022e79ee7cd0a080f7c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::num_data_symbols</definition>
+        <argsstring></argsstring>
+        <name>num_data_symbols</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of data symbols (derived parameters); num_symbols - num_dmrs_symbols </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4234" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1a509da4ac4c51e386140f714d12235d80" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::num_dmrs_symbols</definition>
+        <argsstring></argsstring>
+        <name>num_dmrs_symbols</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of DMRS symbols (derived parameter); ceil(num_symbols*1.0/2) in PUCCH Format 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4233" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1ad8ac4df0933b558b96bc2c2ccdd8613c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::num_pucch_ue</definition>
+        <argsstring></argsstring>
+        <name>num_pucch_ue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of user equipment (UEs) in PUCCH </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4224" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1a9174f3672efc96e60c7ab4e67ed26ea1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::num_symbols</definition>
+        <argsstring></argsstring>
+        <name>num_symbols</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of symbols [4, 14] </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4230" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1adf3131531638718cbdb463dda2d5d091" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::PRB_index</definition>
+        <argsstring></argsstring>
+        <name>PRB_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>index of physical resource allocation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4231" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1a66bbf9ef264af6470bad44411e0a811f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::slot_number</definition>
+        <argsstring></argsstring>
+        <name>slot_number</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>slot number </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4237" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1a202a757e7fb7133b4b3e1c9b65d4e25c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchParams::start_symbol</definition>
+        <argsstring></argsstring>
+        <name>start_symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>start symbol (in time dimension of input signal) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4229" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1a63733d06710f3ff1e522b9644a376386" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PucchParams::Wf[CUPHY_N_TONES_PER_PRB *CUPHY_N_TONES_PER_PRB]</definition>
+        <argsstring>[CUPHY_N_TONES_PER_PRB *CUPHY_N_TONES_PER_PRB]</argsstring>
+        <name>Wf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>frequency channel estimation filter </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4226" column="11" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchParams_1a34876c4ece144eb1b81440a050dbd129" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PucchParams::Wt_cell[OFDM_SYMBOLS_PER_SLOT *OFDM_SYMBOLS_PER_SLOT/4]</definition>
+        <argsstring>[OFDM_SYMBOLS_PER_SLOT *OFDM_SYMBOLS_PER_SLOT/4]</argsstring>
+        <name>Wt_cell</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>time channel estimation filter; overprovisioned </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4227" column="11" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4227" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct that tracks all necessary parameters for PUCCH receiver processing. It also includes a <ref refid="structPucchUeCellParams" kindref="compound">PucchUeCellParams</ref> struct per UE. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>PucchUeCellParams</label>
+        <link refid="structPucchUeCellParams"/>
+      </node>
+      <node id="1">
+        <label>PucchParams</label>
+        <link refid="structPucchParams"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>cell_params</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4222" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4221" bodyend="4241"/>
+    <listofallmembers>
+      <member refid="structPucchParams_1a91299f20f9d789d527c64f4094552259" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>cell_params</name></member>
+      <member refid="structPucchParams_1aac1f812974bfa8622488cbc9627b5029" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>format</name></member>
+      <member refid="structPucchParams_1a24936d295791ad58cd1130604acddb2e" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>hopping_id</name></member>
+      <member refid="structPucchParams_1a67761b6625cb60ea3c8c7f7c30e2ec66" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>low_PAPR_seq_index</name></member>
+      <member refid="structPucchParams_1a58bdf49aaef07b9cd6be73d64642e96b" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>mu</name></member>
+      <member refid="structPucchParams_1af3c305a314217103dd16f0d9def42ffc" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>num_bs_antennas</name></member>
+      <member refid="structPucchParams_1aa46fd2ad82978022e79ee7cd0a080f7c" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>num_data_symbols</name></member>
+      <member refid="structPucchParams_1a509da4ac4c51e386140f714d12235d80" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>num_dmrs_symbols</name></member>
+      <member refid="structPucchParams_1ad8ac4df0933b558b96bc2c2ccdd8613c" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>num_pucch_ue</name></member>
+      <member refid="structPucchParams_1a9174f3672efc96e60c7ab4e67ed26ea1" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>num_symbols</name></member>
+      <member refid="structPucchParams_1adf3131531638718cbdb463dda2d5d091" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>PRB_index</name></member>
+      <member refid="structPucchParams_1a66bbf9ef264af6470bad44411e0a811f" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>slot_number</name></member>
+      <member refid="structPucchParams_1a202a757e7fb7133b4b3e1c9b65d4e25c" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>start_symbol</name></member>
+      <member refid="structPucchParams_1a63733d06710f3ff1e522b9644a376386" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>Wf</name></member>
+      <member refid="structPucchParams_1a34876c4ece144eb1b81440a050dbd129" prot="public" virt="non-virtual"><scope>PucchParams</scope><name>Wt_cell</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

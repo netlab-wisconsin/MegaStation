@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__RATE__MATCHING" kind="group">
+    <compoundname>CUPHY_RATE_MATCHING</compoundname>
+    <title>Rate Matching</title>
+    <innerclass refid="structcuphyPuschRxRateMatch" prot="public">cuphyPuschRxRateMatch</innerclass>
+    <innerclass refid="structcuphyPuschRxRateMatchLaunchCfg__t" prot="public">cuphyPuschRxRateMatchLaunchCfg_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__RATE__MATCHING_1gaf459a70d3157f1428c69dc6da0f7d663" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePuschRxRateMatch</definition>
+        <argsstring>(cuphyPuschRxRateMatchHndl_t *puschRxRateMatchHndl, int FPconfig, int descramblingOn)</argsstring>
+        <name>cuphyCreatePuschRxRateMatch</name>
+        <param>
+          <type>cuphyPuschRxRateMatchHndl_t *</type>
+          <declname>puschRxRateMatchHndl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>FPconfig</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>descramblingOn</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY PuschRx rate match object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a cuPHY pusch rate match object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPuschRxRateMatchHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a PuschRxRateMatch object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxRateMatchHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new PuschRxRateMatch instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FPconfig</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-0: FP32 in, FP32 out; 1: FP16 in, FP32 out; 2: FP32 in, FP16 out; 3: FP16 in, FP16 out; other values: invalid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>descramblingOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- enable/disable descrambling</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1ga794ad0d47759edb4cfb07ad5bb377f9f" kindref="member">cuphyPuschRxRateMatchGetDescrInfo</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gab7ae52d4f26bce4dc9774c67e8dd967c" kindref="member">cuphySetupPuschRxRateMatch</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gac86fb49b0b86189c8ee5d633a3d72bc4" kindref="member">cuphyDestroyPuschRxRateMatch</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3319" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3319" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__RATE__MATCHING_1gac86fb49b0b86189c8ee5d633a3d72bc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPuschRxRateMatch</definition>
+        <argsstring>(cuphyPuschRxRateMatchHndl_t puschRxRateMatchHndl)</argsstring>
+        <name>cuphyDestroyPuschRxRateMatch</name>
+        <param>
+          <type>cuphyPuschRxRateMatchHndl_t</type>
+          <declname>puschRxRateMatchHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY PUSCH rate match object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY PUSCH rate match object that was previously created by <ref refid="group__CUPHY__RATE__MATCHING_1gaf459a70d3157f1428c69dc6da0f7d663" kindref="member">cuphyCreatePuschRxRateMatch</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>puschRxRateMatchHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxRateMatchHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated PuschRxRateMatch instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1ga794ad0d47759edb4cfb07ad5bb377f9f" kindref="member">cuphyPuschRxRateMatchGetDescrInfo</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gaf459a70d3157f1428c69dc6da0f7d663" kindref="member">cuphyCreatePuschRxRateMatch</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gab7ae52d4f26bce4dc9774c67e8dd967c" kindref="member">cuphySetupPuschRxRateMatch</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3389" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3389" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__RATE__MATCHING_1ga794ad0d47759edb4cfb07ad5bb377f9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPuschRxRateMatchGetDescrInfo</definition>
+        <argsstring>(size_t *pDescrSizeBytes, size_t *pDescrAlignBytes)</argsstring>
+        <name>cuphyPuschRxRateMatchGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute cuPHY rate match descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes cuPHY PUSCH rate match descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other PuschRxRateMatch APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pDescrSizeBytes</computeroutput> and/or <computeroutput>pDescrAlignBytes</computeroutput> </para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment of descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gaf459a70d3157f1428c69dc6da0f7d663" kindref="member">cuphyCreatePuschRxRateMatch</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gac86fb49b0b86189c8ee5d633a3d72bc4" kindref="member">cuphyDestroyPuschRxRateMatch</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3291" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3291" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__RATE__MATCHING_1gab7ae52d4f26bce4dc9774c67e8dd967c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPuschRxRateMatch</definition>
+        <argsstring>(cuphyPuschRxRateMatchHndl_t puschRxRateMatchHndl, uint16_t nSchUes, uint16_t *pSchUserIdxsCpu, const PerTbParams *pTbPrmsCpu, const PerTbParams *pTbPrmsGpu, cuphyTensorPrm_t *pTPrmRmIn, cuphyTensorPrm_t *pTPrmCdm1RmIn, void **ppRmOut, void *pCpuDesc, void *pGpuDesc, uint8_t enableCpuToGpuDescrAsyncCpy, cuphyPuschRxRateMatchLaunchCfg_t *pLaunchCfg, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPuschRxRateMatch</name>
+        <param>
+          <type>cuphyPuschRxRateMatchHndl_t</type>
+          <declname>puschRxRateMatchHndl</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nSchUes</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>pSchUserIdxsCpu</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+          <declname>pTbPrmsCpu</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+          <declname>pTbPrmsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t *</type>
+          <declname>pTPrmRmIn</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t *</type>
+          <declname>pTPrmCdm1RmIn</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>ppRmOut</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDesc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pGpuDesc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxRateMatchLaunchCfg_t *</type>
+          <declname>pLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY rate match for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY PUSCH rate match in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPuschRxChEstHndl</computeroutput> and/or <computeroutput>pDataRx</computeroutput> and/or <computeroutput>pHEst</computeroutput> and/or <computeroutput>pDbg</computeroutput> and/or <computeroutput>pDynDescrCpu</computeroutput> and/or <computeroutput>pDynDescrGpu</computeroutput> is NULL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxRateMatchHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to rate-matching class </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nSchUes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of users with sch data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pSchUserIdxsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of sch user indicies </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTbPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- starting adress of transport block paramters (CPU) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTbPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- starting adress of transport block paramters (GPU) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTPrmRmIn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- starting adress of input LLR tensor parameters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTPrmCdm1RmIn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- starting adress of input LLR tensor (for CDM=1) parameters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppRmOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- array of rm outputs, one per transport block (GPU) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to descriptor in cpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pGpuDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to descriptor in gpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- option to copy cpu descriptors from cpu to gpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to rate matching launch configuration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- stream to perform copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1ga794ad0d47759edb4cfb07ad5bb377f9f" kindref="member">cuphyPuschRxRateMatchGetDescrInfo</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gaf459a70d3157f1428c69dc6da0f7d663" kindref="member">cuphyCreatePuschRxRateMatch</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gac86fb49b0b86189c8ee5d633a3d72bc4" kindref="member">cuphyDestroyPuschRxRateMatch</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3355" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3355" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the rate matching functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

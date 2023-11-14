@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyLDPCResults__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyLDPCResults_t</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyLDPCResults__t_1a1c29ab4d59f12fdf673755b9c4b4bc0d" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char cuphyLDPCResults_t::checkErrorCount</definition>
+        <argsstring></argsstring>
+        <name>checkErrorCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3655" column="19" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3655" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCResults__t_1a5fedd09cf384623e5d327324c18e919f" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char cuphyLDPCResults_t::numIterations</definition>
+        <argsstring></argsstring>
+        <name>numIterations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3654" column="19" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3654" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>LDPC Codeword Results </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3653" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3652" bodyend="3656"/>
+    <listofallmembers>
+      <member refid="structcuphyLDPCResults__t_1a1c29ab4d59f12fdf673755b9c4b4bc0d" prot="public" virt="non-virtual"><scope>cuphyLDPCResults_t</scope><name>checkErrorCount</name></member>
+      <member refid="structcuphyLDPCResults__t_1a5fedd09cf384623e5d327324c18e919f" prot="public" virt="non-virtual"><scope>cuphyLDPCResults_t</scope><name>numIterations</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

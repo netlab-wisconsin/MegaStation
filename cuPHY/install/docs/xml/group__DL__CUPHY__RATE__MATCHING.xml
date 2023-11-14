@@ -1,0 +1,622 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__DL__CUPHY__RATE__MATCHING" kind="group">
+    <compoundname>DL_CUPHY_RATE_MATCHING</compoundname>
+    <title>DL Rate Matching</title>
+    <innerclass refid="struct__cuphyPdschStatusOut" prot="public">_cuphyPdschStatusOut</innerclass>
+    <innerclass refid="structcuphyDlRateMatchingLaunchConfig" prot="public">cuphyDlRateMatchingLaunchConfig</innerclass>
+    <innerclass refid="structPdschPerTbParams" prot="public">PdschPerTbParams</innerclass>
+    <innerclass refid="structPerTbParams" prot="public">PerTbParams</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__DL__CUPHY__RATE__MATCHING_1ga3302a34ec5fb6b2576864ad2fe983e55" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_cuphyPdschStatusType</name>
+        <enumvalue id="group__DL__CUPHY__RATE__MATCHING_1gga3302a34ec5fb6b2576864ad2fe983e55a00d12c0bfe8ea4a39219f2229d484e3f" prot="public">
+          <name>CUPHY_PDSCH_STATUS_SUCCESS_OR_UNTRACKED_ISSUE</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Default value; reset on every cuPHY PDSCH setup </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__RATE__MATCHING_1gga3302a34ec5fb6b2576864ad2fe983e55a20c12b81c09304cafe800e4826f71b69" prot="public">
+          <name>CUPHY_PDSCH_STATUS_UNSUPPORTED_MAX_ER_PER_CB</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Set if at least one UE in the cell group has per CB Er &gt; PDSCH_MAX_ER_PER_CB_BITS. Special handling in cuPHY-CP. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__RATE__MATCHING_1gga3302a34ec5fb6b2576864ad2fe983e55a297577ecccd556043f26aabd6ee38637" prot="public">
+          <name>CUPHY_MAX_PDSCH_STATUS_TYPES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PDSCH Status Types </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3562" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3561" bodyend="3568"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DL__CUPHY__RATE__MATCHING_1ga498f00a02aa5ac4d9b68e2412d276aa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDlRateMatchingGetDescrInfo</definition>
+        <argsstring>(size_t *pDescrSizeBytes, size_t *pDescrAlignBytes)</argsstring>
+        <name>cuphyDlRateMatchingGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>: Compute descriptor buffer size and alignment for rate matching. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size in bytes of descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alignment in bytes of descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CUPHY_STATUS_SUCCESS or CUPHY_STATUS_INVALID_ARGUMENT </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3551" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3551" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DL__CUPHY__RATE__MATCHING_1gad8b4e998fcaafce9be58643700fa0551" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cuphyDlRateMatchingWorkspaceSize</definition>
+        <argsstring>(int num_TBs)</argsstring>
+        <name>cuphyDlRateMatchingWorkspaceSize</name>
+        <param>
+          <type>int</type>
+          <declname>num_TBs</declname>
+        </param>
+        <briefdescription>
+<para>: Return workspace size, in bytes, needed for all configuration parameters of the rate matching component. Does not allocate any space. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">num_TBs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of Transport blocks (TBs) to be processed within a kernel launch </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>workspace size in bytes </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3534" column="8" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3534" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DL__CUPHY__RATE__MATCHING_1gaa2e4333280351b3fe5a33565c7922af2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetTBParams</definition>
+        <argsstring>(PdschPerTbParams *tb_params_struct, uint32_t cfg_rv, uint32_t cfg_Qm, uint32_t cfg_bg, uint32_t cfg_Nl, uint32_t cfg_num_CBs, uint32_t cfg_Zc, uint32_t cfg_G, uint32_t cfg_F, uint32_t cfg_cinit, uint32_t cfg_Nref)</argsstring>
+        <name>cuphySetTBParams</name>
+        <param>
+          <type><ref refid="structPdschPerTbParams" kindref="compound">PdschPerTbParams</ref> *</type>
+          <declname>tb_params_struct</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_rv</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_Qm</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_bg</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_Nl</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_num_CBs</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_Zc</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_G</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_F</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_cinit</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>cfg_Nref</declname>
+        </param>
+        <briefdescription>
+<para>Update <ref refid="structPdschPerTbParams" kindref="compound">PdschPerTbParams</ref> struct that tracks configuration information at per TB granularity. Check that configuration values are valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">tb_params_struct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to a <ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> configuration struct </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_rv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>redundancy version </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_Qm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>modulation order </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_bg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>base graph </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_Nl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of layers per Tb (at most MAX_DL_LAYERS_PER_TB for downlink) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_num_CBs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of code blocks </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_Zc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lifting factor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_G</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of rated matched bits available for TB transmission </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of filler bits </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_cinit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>seed used for scrambling sequence </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cfg_Nref</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>used to determine Ncb if smaller than N </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CUPHY_STATUS_SUCCESS or CUPHY_STATUS_INVALID_ARGUMENT. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3517" column="15" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3517" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__DL__CUPHY__RATE__MATCHING_1ga4800b96ec61cbb93411454efeded00e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupDlRateMatching</definition>
+        <argsstring>(cuphyDlRateMatchingLaunchConfig_t dlRateMatchingLaunchConfig, cuphyPdschStatusOut_t *status, const uint32_t *d_rate_matching_input, uint32_t *d_rate_matching_output, uint32_t *d_restructure_rate_matching_output, void *d_modulation_output, void *d_xtf_re_map, uint16_t max_PRB_BWP, int num_TBs, int num_layers, uint8_t enable_scrambling, uint8_t enable_layer_mapping, uint8_t enable_modulation, uint8_t precoding, uint8_t restructure_kernel, uint8_t batching, uint32_t *h_workspace, uint32_t *d_workspace, PdschPerTbParams *h_params, PdschPerTbParams *d_params, PdschDmrsParams *d_dmrs_params, PdschUeGrpParams *d_ue_grp_params, void *cpu_desc, void *gpu_desc, uint8_t enable_desc_async_copy, cudaStream_t strm)</argsstring>
+        <name>cuphySetupDlRateMatching</name>
+        <param>
+          <type>cuphyDlRateMatchingLaunchConfig_t</type>
+          <declname>dlRateMatchingLaunchConfig</declname>
+        </param>
+        <param>
+          <type>cuphyPdschStatusOut_t *</type>
+          <declname>status</declname>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>d_rate_matching_input</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>d_rate_matching_output</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>d_restructure_rate_matching_output</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>d_modulation_output</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>d_xtf_re_map</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>max_PRB_BWP</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_TBs</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_layers</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enable_scrambling</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enable_layer_mapping</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enable_modulation</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>precoding</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>restructure_kernel</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>batching</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>h_workspace</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>d_workspace</declname>
+        </param>
+        <param>
+          <type><ref refid="structPdschPerTbParams" kindref="compound">PdschPerTbParams</ref> *</type>
+          <declname>h_params</declname>
+        </param>
+        <param>
+          <type><ref refid="structPdschPerTbParams" kindref="compound">PdschPerTbParams</ref> *</type>
+          <declname>d_params</declname>
+        </param>
+        <param>
+          <type><ref refid="structPdschDmrsParams" kindref="compound">PdschDmrsParams</ref> *</type>
+          <declname>d_dmrs_params</declname>
+        </param>
+        <param>
+          <type><ref refid="structPdschUeGrpParams" kindref="compound">PdschUeGrpParams</ref> *</type>
+          <declname>d_ue_grp_params</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>cpu_desc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>gpu_desc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enable_desc_async_copy</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>: Setup rate matching component incl. kernel node params for rate-matching (incl. scrambling and layer mapping) and rate-matching output restructuring (if enabled). If enable_modulation is set, this component also performs modulation too. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dlRateMatchingLaunchConfig</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to cuphyDlRateMatchingLaunchConfig. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to cuphyPdschStatusOut_t struct; updated if CB_Er &gt; PDSCH_MAX_ER_PER_CB_BITS for any UE in cell group. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d_rate_matching_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LDPC encoder&apos;s output; device buffer, previously allocated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">d_rate_matching_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rate-matching output, with scrambling and layer-mapping, if enabled; device pointer, preallocated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">d_restructure_rate_matching_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>d_rate_matching_output restructured for modulation. There are Er bits per code block. Each layer starts at an uint32_t aligned boundary. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">d_modulation_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to output tensor (preallocated) Each symbol is a complex number using half-precision for the real and imaginary parts. Update: no longer used; the cell_output_tensor_addr field of <ref refid="structPdschDmrsParams" kindref="compound">PdschDmrsParams</ref> is used instead. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d_xtf_re_map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RE (resource element) map array, relevant when CSI-RS symbols overlap with TB allocations. Can set to nullptr if there is no such overlap. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_PRB_BWP</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum number of downlink PRBs for all cells whose TBs are processed here. Used to index into the d_xtf_re_map array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_TBs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of TBs handled in a kernel launch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_layers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of layers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">enable_scrambling</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>enable scrambling when 1, no scrambling when 0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">enable_layer_mapping</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>enable layer mapping when 1, no layer mapping when 0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">enable_modulation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>run a fused rate matching and modulation kernel when 1; used in PDSCH pipeline. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">precoding</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>1 if any TB has precoding enabled; 0 otherwise. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">restructure_kernel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set-up kernel node params for restructure kernel when 1. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">batching</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>when enabled the TBs from this kernel launch can belong to different cells </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">h_workspace</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pinned host memory for temporary buffers </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d_workspace</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>device memory for h_workspace. The H2D copy from h_workspace to d_workspace happens within cuphySetupDlRateMatching if enable_desc_async_copy is set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">h_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to # TBs <ref refid="structPdschPerTbParams" kindref="compound">PdschPerTbParams</ref> struct; pinned host memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to device memory for h_params. The H2D copy from h_params to d_params happens <emphasis>outside</emphasis> cuphySetupDlRateMatching. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d_dmrs_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to PdschDmrs parameters on the device. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d_ue_grp_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to <ref refid="structPdschUeGrpParams" kindref="compound">PdschUeGrpParams</ref> parameters on the device. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cpu_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">gpu_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">enable_desc_async_copy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>async copy CPU descriptor into GPU if set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CUDA stream for async copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CUPHY_STATUS_SUCCESS or CUPHY_STATUS_INVALID_ARGUMENT </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3620" column="1" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3620" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__DL__CUPHY__RATE__MATCHING_1gabc023544d8096a8fa1bd1f6f6f90bc41" prot="public" static="no">
+        <name>MAX_UINT16</name>
+        <initializer>0xFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3556" column="9" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3556" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the downlink rate matching functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

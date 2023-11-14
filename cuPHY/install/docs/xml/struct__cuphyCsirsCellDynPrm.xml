@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyCsirsCellDynPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyCsirsCellDynPrm</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyCsirsCellDynPrm_1aa3c0cbc60eadd591c5362bad25215438" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyCsirsCellDynPrm::cellPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index to cell-static parameter information, i.e., to the pCellStatPrms array of the cuphyCsirsStatPrms_t struct. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2561" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2561" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsCellDynPrm_1ad95a7db27d4aba8963dd40dd35c06134" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyCsirsCellDynPrm::nRrcParams</definition>
+        <argsstring></argsstring>
+        <name>nRrcParams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of RRC parameters co-scheduled for this cell. Maximum allowed: CUPHY_CSIRS_MAX_NUM_PARAMS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2559" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2559" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsCellDynPrm_1a29d302643cc4cdbeccd789ca472ff7ed" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyCsirsCellDynPrm::rrcParamsOffset</definition>
+        <argsstring></argsstring>
+        <name>rrcParamsOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>start index for this cell&apos;s nRrcParams in the pRrcDynPrm array of cuphyCsirsDynPrms_t; all elements are allocated continuously. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2558" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2558" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsCellDynPrm_1a84cc537baf7b0c32879589961ad220e5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyCsirsCellDynPrm::slotBufferIdx</definition>
+        <argsstring></argsstring>
+        <name>slotBufferIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>index into output slot buffer tensor array pDataOut-&gt;pTDataTx in cuphyCsirsCellDynPrms_t for this cell. Values: [0, nCells). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2560" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2560" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>CSI-RS Dynamic Parameters </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2557" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2556" bodyend="2562"/>
+    <listofallmembers>
+      <member refid="struct__cuphyCsirsCellDynPrm_1aa3c0cbc60eadd591c5362bad25215438" prot="public" virt="non-virtual"><scope>_cuphyCsirsCellDynPrm</scope><name>cellPrmStatIdx</name></member>
+      <member refid="struct__cuphyCsirsCellDynPrm_1ad95a7db27d4aba8963dd40dd35c06134" prot="public" virt="non-virtual"><scope>_cuphyCsirsCellDynPrm</scope><name>nRrcParams</name></member>
+      <member refid="struct__cuphyCsirsCellDynPrm_1a29d302643cc4cdbeccd789ca472ff7ed" prot="public" virt="non-virtual"><scope>_cuphyCsirsCellDynPrm</scope><name>rrcParamsOffset</name></member>
+      <member refid="struct__cuphyCsirsCellDynPrm_1a84cc537baf7b0c32879589961ad220e5" prot="public" virt="non-virtual"><scope>_cuphyCsirsCellDynPrm</scope><name>slotBufferIdx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

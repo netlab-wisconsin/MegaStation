@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__SIMPLEX__DECODER" kind="group">
+    <compoundname>CUPHY_SIMPLEX_DECODER</compoundname>
+    <title>Simplex Decoder</title>
+    <innerclass refid="structcuphySimplexDecoderLaunchCfg__t" prot="public">cuphySimplexDecoderLaunchCfg_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__SIMPLEX__DECODER_1ga8f3ad1b5aa8bb3d8cf8fcf844c485b65" prot="public" static="no">
+        <type>struct cuphySimplexDecoder *</type>
+        <definition>typedef struct cuphySimplexDecoder* cuphySimplexDecoderHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphySimplexDecoderHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5177" column="35" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="5177" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__SIMPLEX__DECODER_1gac691c6a74aee07a33cc46eede28580cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreateSimplexDecoder</definition>
+        <argsstring>(cuphySimplexDecoderHndl_t *pHndl)</argsstring>
+        <name>cuphyCreateSimplexDecoder</name>
+        <param>
+          <type>cuphySimplexDecoderHndl_t *</type>
+          <declname>pHndl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5188" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="5188" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__SIMPLEX__DECODER_1ga8e0d6802270005e0e21d3a4c5d0e4b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroySimplexDecoder</definition>
+        <argsstring>(cuphySimplexDecoderHndl_t simplexDecoderHndl)</argsstring>
+        <name>cuphyDestroySimplexDecoder</name>
+        <param>
+          <type>cuphySimplexDecoderHndl_t</type>
+          <declname>simplexDecoderHndl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5200" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="5200" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__SIMPLEX__DECODER_1ga75018e23401befffbdfdd03a17c005e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupSimplexDecoder</definition>
+        <argsstring>(cuphySimplexDecoderHndl_t simplexDecoderHndl, uint16_t nCws, cuphySimplexCwPrm_t *pCwPrmsCpu, cuphySimplexCwPrm_t *pCwPrmsGpu, uint8_t enableCpuToGpuDescrAsyncCpy, void *pCpuDynDesc, void *pGpuDynDesc, cuphySimplexDecoderLaunchCfg_t *pLaunchCfg, cudaStream_t strm)</argsstring>
+        <name>cuphySetupSimplexDecoder</name>
+        <param>
+          <type>cuphySimplexDecoderHndl_t</type>
+          <declname>simplexDecoderHndl</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nCws</declname>
+        </param>
+        <param>
+          <type>cuphySimplexCwPrm_t *</type>
+          <declname>pCwPrmsCpu</declname>
+        </param>
+        <param>
+          <type>cuphySimplexCwPrm_t *</type>
+          <declname>pCwPrmsGpu</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDesc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pGpuDynDesc</declname>
+        </param>
+        <param>
+          <type>cuphySimplexDecoderLaunchCfg_t *</type>
+          <declname>pLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5190" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="5190" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__SIMPLEX__DECODER_1gab32381369cdf636c51aa5f03b9f429dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySimplexDecoderGetDescrInfo</definition>
+        <argsstring>(size_t *pDynDescrSizeBytes, size_t *pDynDescrAlignBytes)</argsstring>
+        <name>cuphySimplexDecoderGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5185" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="5185" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the Simplex decoder functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

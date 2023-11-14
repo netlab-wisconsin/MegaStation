@@ -82,7 +82,11 @@ void AgoraWorker::WorkerThread(int tid) {
   // Uplink workers
   auto compute_decoding =
       std::make_unique<DoDecode>(config_, tid, buffer_->GetDemod(),
-                                 buffer_->GetDecod(), phy_stats_, stats_);
+                                 buffer_->GetDecod(), phy_stats_,
+                                 buffer_->cuda_streams_,
+                                 buffer_->demul_out_,
+                                 buffer_->decoded_out_,
+                                 stats_);
 
   auto compute_demul = std::make_unique<DoDemul>(
       config_, tid, buffer_->GetFft(), buffer_->GetUlBeamMatrix(),

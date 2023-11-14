@@ -1,0 +1,462 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__PUSCH__RSSI" kind="group">
+    <compoundname>CUPHY_PUSCH_RSSI</compoundname>
+    <title>Pusch receiver RSSI measurement</title>
+    <innerclass refid="structcuphyPuschRxRsrpLaunchCfg__t" prot="public">cuphyPuschRxRsrpLaunchCfg_t</innerclass>
+    <innerclass refid="structcuphyPuschRxRsrpLaunchCfgs__t" prot="public">cuphyPuschRxRsrpLaunchCfgs_t</innerclass>
+    <innerclass refid="structcuphyPuschRxRssiLaunchCfg__t" prot="public">cuphyPuschRxRssiLaunchCfg_t</innerclass>
+    <innerclass refid="structcuphyPuschRxRssiLaunchCfgs__t" prot="public">cuphyPuschRxRssiLaunchCfgs_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__PUSCH__RSSI_1ga40c272cded16a00852b9eaf8c676ce89" prot="public" static="no">
+        <type>struct cuphyPuschRxRssi *</type>
+        <definition>typedef struct cuphyPuschRxRssi* cuphyPuschRxRssiHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyPuschRxRssiHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY PUSCH Receiver RSSI metric handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2555" column="32" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2555" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__PUSCH__RSSI_1ga00b5692586838959227b1238ccb8f42e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePuschRxRssi</definition>
+        <argsstring>(cuphyPuschRxRssiHndl_t *pPuschRxRssiHndl)</argsstring>
+        <name>cuphyCreatePuschRxRssi</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUSCH__RSSI_1ga40c272cded16a00852b9eaf8c676ce89" kindref="member">cuphyPuschRxRssiHndl_t</ref> *</type>
+          <declname>pPuschRxRssiHndl</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY PuschRx RSSI, RSRP estimation object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a cuPHY RSSI (Received Signal Strength Indicator) and RSRP (Reference Signal Received Power) object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPuschRxRssiHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a PuschRxRssi object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pPuschRxRssiHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new PuschRxRssi instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga00848781788170ee8acade8d1d167be6" kindref="member">cuphyPuschRxRssiGetDescrInfo</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1gab55e850f6bf8c3a250f02feb404e4e55" kindref="member">cuphySetupPuschRxRssi</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga7bb52ce0df0b7108b7b86884a4a8b745" kindref="member">cuphyDestroyPuschRxRssi</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2637" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2637" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUSCH__RSSI_1ga7bb52ce0df0b7108b7b86884a4a8b745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPuschRxRssi</definition>
+        <argsstring>(cuphyPuschRxRssiHndl_t puschRxRssiHndl)</argsstring>
+        <name>cuphyDestroyPuschRxRssi</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUSCH__RSSI_1ga40c272cded16a00852b9eaf8c676ce89" kindref="member">cuphyPuschRxRssiHndl_t</ref></type>
+          <declname>puschRxRssiHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY PUSCH RSSI estimation object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY PUSCH RSSI (Received Signal Strength Indicator) and RSRP object that was previously created by <ref refid="group__CUPHY__PUSCH__RSSI_1ga00b5692586838959227b1238ccb8f42e" kindref="member">cuphyCreatePuschRxRssi</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>puschRxRssiHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxRssiHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated PuschRxRssi instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga00848781788170ee8acade8d1d167be6" kindref="member">cuphyPuschRxRssiGetDescrInfo</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga00b5692586838959227b1238ccb8f42e" kindref="member">cuphyCreatePuschRxRssi</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1gab55e850f6bf8c3a250f02feb404e4e55" kindref="member">cuphySetupPuschRxRssi</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2736" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2736" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUSCH__RSSI_1ga00848781788170ee8acade8d1d167be6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPuschRxRssiGetDescrInfo</definition>
+        <argsstring>(size_t *pRssiDynDescrSizeBytes, size_t *pRssiDynDescrAlignBytes, size_t *pRsrpDynDescrSizeBytes, size_t *pRsrpDynDescrAlignBytes)</argsstring>
+        <name>cuphyPuschRxRssiGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pRssiDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pRssiDynDescrAlignBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pRsrpDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pRsrpDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute cuPHY RSSI, RSRP measurement descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes cuPHY PUSCH RSSI (Received Signal Strength Indicator) and RSRP (Reference Signal Received Power) descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other PuschRxRssi APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pDynDescrSizeBytes</computeroutput> and/or <computeroutput>pDynDescrAlignBytes</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pRssiDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of RSSI dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pRssiDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of RSSI dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pRsrpDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of RSRP dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pRsrpDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of RSRP dynamic descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga00b5692586838959227b1238ccb8f42e" kindref="member">cuphyCreatePuschRxRssi</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga7bb52ce0df0b7108b7b86884a4a8b745" kindref="member">cuphyDestroyPuschRxRssi</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2611" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2611" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUSCH__RSSI_1ga695ad28ed2c58625f6137657149a69c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPuschRxRsrp</definition>
+        <argsstring>(cuphyPuschRxRssiHndl_t puschRxRssiHndl, cuphyPuschRxUeGrpPrms_t *pDrvdUeGrpPrmsCpu, cuphyPuschRxUeGrpPrms_t *pDrvdUeGrpPrmsGpu, uint16_t nUeGrps, uint32_t nMaxPrb, uint8_t enableCpuToGpuDescrAsyncCpy, void *pDynDescrsCpu, void *pDynDescrsGpu, cuphyPuschRxRsrpLaunchCfgs_t *pLaunchCfgs, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPuschRxRsrp</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUSCH__RSSI_1ga40c272cded16a00852b9eaf8c676ce89" kindref="member">cuphyPuschRxRssiHndl_t</ref></type>
+          <declname>puschRxRssiHndl</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxUeGrpPrms_t *</type>
+          <declname>pDrvdUeGrpPrmsCpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxUeGrpPrms_t *</type>
+          <declname>pDrvdUeGrpPrmsGpu</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nUeGrps</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>nMaxPrb</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pDynDescrsCpu</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pDynDescrsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxRsrpLaunchCfgs_t *</type>
+          <declname>pLaunchCfgs</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY PuschRx RSRP for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY PUSCH Reference Signal Received Power in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>puschRxRssiHndl</computeroutput> and/or <computeroutput>pDynDescrsCpu</computeroutput> and/or <computeroutput>pDynDescrsGpu</computeroutput> and/or <computeroutput>pLaunchCfgs</computeroutput> is NULL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxRssiHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle to previously created PuschRxRssi instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDrvdUeGrpPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to derived UE groups parameters in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDrvdUeGrpPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to derived UE groups parameters in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nUeGrps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of UE groups to be processed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nMaxPrb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- maximum number of PRBs across UE groups </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to channel estimation launch configurations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga00848781788170ee8acade8d1d167be6" kindref="member">cuphyPuschRxRssiGetDescrInfo</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga00b5692586838959227b1238ccb8f42e" kindref="member">cuphyCreatePuschRxRssi</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1gab55e850f6bf8c3a250f02feb404e4e55" kindref="member">cuphySetupPuschRxRssi</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga7bb52ce0df0b7108b7b86884a4a8b745" kindref="member">cuphyDestroyPuschRxRssi</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2706" column="1" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2706" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUSCH__RSSI_1gab55e850f6bf8c3a250f02feb404e4e55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPuschRxRssi</definition>
+        <argsstring>(cuphyPuschRxRssiHndl_t puschRxRssiHndl, cuphyPuschRxUeGrpPrms_t *pDrvdUeGrpPrmsCpu, cuphyPuschRxUeGrpPrms_t *pDrvdUeGrpPrmsGpu, uint16_t nUeGrps, uint32_t nMaxPrb, uint8_t enableCpuToGpuDescrAsyncCpy, void *pDynDescrsCpu, void *pDynDescrsGpu, cuphyPuschRxRssiLaunchCfgs_t *pLaunchCfgs, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPuschRxRssi</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUSCH__RSSI_1ga40c272cded16a00852b9eaf8c676ce89" kindref="member">cuphyPuschRxRssiHndl_t</ref></type>
+          <declname>puschRxRssiHndl</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxUeGrpPrms_t *</type>
+          <declname>pDrvdUeGrpPrmsCpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxUeGrpPrms_t *</type>
+          <declname>pDrvdUeGrpPrmsGpu</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nUeGrps</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>nMaxPrb</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pDynDescrsCpu</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pDynDescrsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxRssiLaunchCfgs_t *</type>
+          <declname>pLaunchCfgs</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY PuschRx RSSI for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY PUSCH Received Signal Strength Indicator in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>puschRxRssiHndl</computeroutput> and/or <computeroutput>pDynDescrsCpu</computeroutput> and/or <computeroutput>pDynDescrsGpu</computeroutput> and/or <computeroutput>pLaunchCfgs</computeroutput> is NULL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxRssiHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle to previously created PuschRxRssi instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDrvdUeGrpPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to derived UE groups parameters in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDrvdUeGrpPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to derived UE groups parameters in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nUeGrps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of UE groups to be processed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nMaxPrb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- maximum number of PRBs across UE groups </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to channel estimation launch configurations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga00848781788170ee8acade8d1d167be6" kindref="member">cuphyPuschRxRssiGetDescrInfo</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga00b5692586838959227b1238ccb8f42e" kindref="member">cuphyCreatePuschRxRssi</ref>,,<ref refid="group__CUPHY__PUSCH__RSSI_1ga695ad28ed2c58625f6137657149a69c3" kindref="member">cuphySetupPuschRxRsrp</ref>,<ref refid="group__CUPHY__PUSCH__RSSI_1ga7bb52ce0df0b7108b7b86884a4a8b745" kindref="member">cuphyDestroyPuschRxRssi</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2667" column="1" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2667" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes Pusch receiver Received Signal Strength Indicator measurement functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

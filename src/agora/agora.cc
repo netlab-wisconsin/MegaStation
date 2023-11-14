@@ -239,29 +239,34 @@ void Agora::ScheduleSubcarriers(EventType event_type, size_t frame_id,
 
 void Agora::ScheduleCodeblocks(EventType event_type, Direction dir,
                                size_t frame_id, size_t symbol_idx) {
-  auto base_tag = gen_tag_t::FrmSymCb(frame_id, symbol_idx, 0);
-  const size_t num_tasks =
-      config_->UeAntNum() * config_->LdpcConfig(dir).NumBlocksInSymbol();
-  size_t num_blocks = num_tasks / config_->EncodeBlockSize();
-  const size_t num_remainder = num_tasks % config_->EncodeBlockSize();
-  if (num_remainder > 0) {
-    num_blocks++;
-  }
-  EventData event;
-  event.num_tags_ = config_->EncodeBlockSize();
-  event.event_type_ = event_type;
   size_t qid = frame_id & 0x1;
-  for (size_t i = 0; i < num_blocks; i++) {
-    if ((i == num_blocks - 1) && num_remainder > 0) {
-      event.num_tags_ = num_remainder;
-    }
-    for (size_t j = 0; j < event.num_tags_; j++) {
-      event.tags_[j] = base_tag.tag_;
-      base_tag.cb_id_++;
-    }
-    TryEnqueueFallback(message_->GetConq(event_type, qid),
+  EventData event(event_type,
+    gen_tag_t::FrmSymCb(frame_id, symbol_idx, 0).tag_);
+  TryEnqueueFallback(message_->GetConq(event_type, qid),
                        message_->GetPtok(event_type, qid), event);
-  }
+  // auto base_tag = gen_tag_t::FrmSymCb(frame_id, symbol_idx, 0);
+  // const size_t num_tasks =
+  //     config_->UeAntNum() * config_->LdpcConfig(dir).NumBlocksInSymbol();
+  // size_t num_blocks = num_tasks / config_->EncodeBlockSize();
+  // const size_t num_remainder = num_tasks % config_->EncodeBlockSize();
+  // if (num_remainder > 0) {
+  //   num_blocks++;
+  // }
+  // EventData event;
+  // event.num_tags_ = config_->EncodeBlockSize();
+  // event.event_type_ = event_type;
+  // size_t qid = frame_id & 0x1;
+  // for (size_t i = 0; i < num_blocks; i++) {
+  //   if ((i == num_blocks - 1) && num_remainder > 0) {
+  //     event.num_tags_ = num_remainder;
+  //   }
+  //   for (size_t j = 0; j < event.num_tags_; j++) {
+  //     event.tags_[j] = base_tag.tag_;
+  //     base_tag.cb_id_++;
+  //   }
+  //   TryEnqueueFallback(message_->GetConq(event_type, qid),
+  //                      message_->GetPtok(event_type, qid), event);
+  // }
 }
 
 void Agora::ScheduleUsers(EventType event_type, size_t frame_id,
@@ -1100,8 +1105,7 @@ void Agora::InitializeCounters() {
 
   decode_counters_.Init(
       cfg->Frame().NumULSyms(),
-      cfg->LdpcConfig(Direction::kUplink).NumBlocksInSymbol() *
-          cfg->UeAntNum());
+      1);
 
   tomac_counters_.Init(cfg->Frame().NumULSyms(), cfg->UeAntNum());
 

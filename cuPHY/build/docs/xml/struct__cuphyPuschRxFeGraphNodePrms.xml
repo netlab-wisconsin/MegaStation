@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPuschRxFeGraphNodePrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPuschRxFeGraphNodePrms</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPuschRxFeGraphNodePrms_1a4a29e0c11352384ef3b4d39bfe1d9898" prot="public" static="no" mutable="no">
+        <type>cuphyPuschRxFeCreateGraphNodePrms_t *</type>
+        <definition>cuphyPuschRxFeCreateGraphNodePrms_t* _cuphyPuschRxFeGraphNodePrms::pCreatePrms</definition>
+        <argsstring></argsstring>
+        <name>pCreatePrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1571" column="41" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1571" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschRxFeGraphNodePrms_1ae9f8bce0810de6cf58ae59125b72dbf5" prot="public" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* _cuphyPuschRxFeGraphNodePrms::pSuccess</definition>
+        <argsstring></argsstring>
+        <name>pSuccess</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1573" column="41" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1573" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschRxFeGraphNodePrms_1a2cd0b5a10b9eb0a2269f66813572e5ee" prot="public" static="no" mutable="no">
+        <type>cuphyPuschRxFeUpdateGraphNodePrms_t *</type>
+        <definition>cuphyPuschRxFeUpdateGraphNodePrms_t* _cuphyPuschRxFeGraphNodePrms::pUpdatePrms</definition>
+        <argsstring></argsstring>
+        <name>pUpdatePrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1572" column="41" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1572" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>cuPHY PUSCH Receiver front-end graph node creation/update time parameters </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1570" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1569" bodyend="1574"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPuschRxFeGraphNodePrms_1a4a29e0c11352384ef3b4d39bfe1d9898" prot="public" virt="non-virtual"><scope>_cuphyPuschRxFeGraphNodePrms</scope><name>pCreatePrms</name></member>
+      <member refid="struct__cuphyPuschRxFeGraphNodePrms_1ae9f8bce0810de6cf58ae59125b72dbf5" prot="public" virt="non-virtual"><scope>_cuphyPuschRxFeGraphNodePrms</scope><name>pSuccess</name></member>
+      <member refid="struct__cuphyPuschRxFeGraphNodePrms_1a2cd0b5a10b9eb0a2269f66813572e5ee" prot="public" virt="non-virtual"><scope>_cuphyPuschRxFeGraphNodePrms</scope><name>pUpdatePrms</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

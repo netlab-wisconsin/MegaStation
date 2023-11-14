@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyPuschCellGrpDynPrm" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyPuschCellGrpDynPrm</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyPuschCellGrpDynPrm_1aee889ed9beade543f4a40c22b537680f" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t cuphyPuschCellGrpDynPrm_t::nCells</definition>
+        <argsstring></argsstring>
+        <name>nCells</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="401" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="401" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschCellGrpDynPrm_1a74dcb3211d30b8abf47d7772890e8ba8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t cuphyPuschCellGrpDynPrm_t::nUeGrps</definition>
+        <argsstring></argsstring>
+        <name>nUeGrps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="405" column="27" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="405" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschCellGrpDynPrm_1ab63db974202d678a5b87a594aeb8607d" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t cuphyPuschCellGrpDynPrm_t::nUes</definition>
+        <argsstring></argsstring>
+        <name>nUes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="409" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="409" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschCellGrpDynPrm_1a89b3e3740cd604da8096ac1b32b4c2ad" prot="public" static="no" mutable="no">
+        <type>cuphyPuschCellDynPrm_t *</type>
+        <definition>cuphyPuschCellDynPrm_t* cuphyPuschCellGrpDynPrm_t::pCellPrms</definition>
+        <argsstring></argsstring>
+        <name>pCellPrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="402" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="402" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschCellGrpDynPrm_1aeb574f9775298b88ade14f18c0ed89e1" prot="public" static="no" mutable="no">
+        <type>cuphyPuschUeGrpPrm_t *</type>
+        <definition>cuphyPuschUeGrpPrm_t* cuphyPuschCellGrpDynPrm_t::pUeGrpPrms</definition>
+        <argsstring></argsstring>
+        <name>pUeGrpPrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="406" column="26" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="406" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschCellGrpDynPrm_1a1fb692bf9af88a719f7cf41f9d52b4e0" prot="public" static="no" mutable="no">
+        <type>cuphyPuschUePrm_t *</type>
+        <definition>cuphyPuschUePrm_t* cuphyPuschCellGrpDynPrm_t::pUePrms</definition>
+        <argsstring></argsstring>
+        <name>pUePrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="410" column="23" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="410" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="399" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="398" bodyend="411"/>
+    <listofallmembers>
+      <member refid="structcuphyPuschCellGrpDynPrm_1aee889ed9beade543f4a40c22b537680f" prot="public" virt="non-virtual"><scope>cuphyPuschCellGrpDynPrm</scope><name>nCells</name></member>
+      <member refid="structcuphyPuschCellGrpDynPrm_1a74dcb3211d30b8abf47d7772890e8ba8" prot="public" virt="non-virtual"><scope>cuphyPuschCellGrpDynPrm</scope><name>nUeGrps</name></member>
+      <member refid="structcuphyPuschCellGrpDynPrm_1ab63db974202d678a5b87a594aeb8607d" prot="public" virt="non-virtual"><scope>cuphyPuschCellGrpDynPrm</scope><name>nUes</name></member>
+      <member refid="structcuphyPuschCellGrpDynPrm_1a89b3e3740cd604da8096ac1b32b4c2ad" prot="public" virt="non-virtual"><scope>cuphyPuschCellGrpDynPrm</scope><name>pCellPrms</name></member>
+      <member refid="structcuphyPuschCellGrpDynPrm_1aeb574f9775298b88ade14f18c0ed89e1" prot="public" virt="non-virtual"><scope>cuphyPuschCellGrpDynPrm</scope><name>pUeGrpPrms</name></member>
+      <member refid="structcuphyPuschCellGrpDynPrm_1a1fb692bf9af88a719f7cf41f9d52b4e0" prot="public" virt="non-virtual"><scope>cuphyPuschCellGrpDynPrm</scope><name>pUePrms</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

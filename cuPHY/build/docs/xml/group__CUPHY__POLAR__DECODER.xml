@@ -1,0 +1,373 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__POLAR__DECODER" kind="group">
+    <compoundname>CUPHY_POLAR_DECODER</compoundname>
+    <title>Polar Decoder</title>
+    <innerclass refid="structcuphyPolarDecoderLaunchCfg__t" prot="public">cuphyPolarDecoderLaunchCfg_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__POLAR__DECODER_1ga703f984c904091deadc865e645da4b29" prot="public" static="no">
+        <type>struct cuphyPolarDecoder *</type>
+        <definition>typedef struct cuphyPolarDecoder* cuphyPolarDecoderHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyPolarDecoderHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY uciPolDecoder handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6997" column="33" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6997" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__POLAR__DECODER_1ga4e829f1b9121a2486f5700eb8fdf7d1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePolarDecoder</definition>
+        <argsstring>(cuphyPolarDecoderHndl_t *pPolarDecoderHndl)</argsstring>
+        <name>cuphyCreatePolarDecoder</name>
+        <param>
+          <type><ref refid="group__CUPHY__POLAR__DECODER_1ga703f984c904091deadc865e645da4b29" kindref="member">cuphyPolarDecoderHndl_t</ref> *</type>
+          <declname>pPolarDecoderHndl</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY polarDecoder object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a polarDecoder object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPolarDecoderHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a polarDecoder object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pPolarDecoderHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new polarDecoder instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__POLAR__DECODER_1ga0c28b985b52b5b91603fde25c2bd14e7" kindref="member">cuphyPolarDecoderGetDescrInfo</ref>,<ref refid="group__CUPHY__POLAR__DECODER_1ga0a53fa5e3e623b64383154398c8e747e" kindref="member">cuphySetupPolarDecoder</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7052" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="7052" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__POLAR__DECODER_1gaf29f1622a90ae22a6911c085d47fd65d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPolarDecoder</definition>
+        <argsstring>(cuphyPolarDecoderHndl_t polarDecoderHndl)</argsstring>
+        <name>cuphyDestroyPolarDecoder</name>
+        <param>
+          <type><ref refid="group__CUPHY__POLAR__DECODER_1ga703f984c904091deadc865e645da4b29" kindref="member">cuphyPolarDecoderHndl_t</ref></type>
+          <declname>polarDecoderHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY polarDecoder object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY polarDecoder object that was previously created by <ref refid="group__CUPHY__POLAR__DECODER_1ga4e829f1b9121a2486f5700eb8fdf7d1f" kindref="member">cuphyCreatePolarDecoder</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>polarDecoderHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>polarDecoderHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated compCwTreeTypes instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__POLAR__DECODER_1ga0c28b985b52b5b91603fde25c2bd14e7" kindref="member">cuphyPolarDecoderGetDescrInfo</ref>,<ref refid="group__CUPHY__POLAR__DECODER_1ga4e829f1b9121a2486f5700eb8fdf7d1f" kindref="member">cuphyCreatePolarDecoder</ref>,<ref refid="group__CUPHY__POLAR__DECODER_1ga0a53fa5e3e623b64383154398c8e747e" kindref="member">cuphySetupPolarDecoder</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7123" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="7123" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__POLAR__DECODER_1ga0c28b985b52b5b91603fde25c2bd14e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPolarDecoderGetDescrInfo</definition>
+        <argsstring>(size_t *pDynDescrSizeBytes, size_t *pDynDescrAlignBytes)</argsstring>
+        <name>cuphyPolarDecoderGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute polarDecoder descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes polarDecoder descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other uciPolDecoder APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pDynDescrSizeBytes</computeroutput> and/or <computeroutput>pDynDescrAlignBytes</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of dynamic descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gadc383c60699974481d2c7470fe500722" kindref="member">cuphyCreateUciOnPuschSegLLRs1</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1ga34e791cf90ef169e1fb20c0f00ed6706" kindref="member">cuphyDestroyUciOnPuschSegLLRs1</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7028" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="7028" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__POLAR__DECODER_1ga0a53fa5e3e623b64383154398c8e747e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPolarDecoder</definition>
+        <argsstring>(cuphyPolarDecoderHndl_t polarDecoderHndl, uint16_t nPolCws, __half **pCwTreeLLRsAddrs, cuphyPolarCwPrm_t *pCwPrmsGpu, cuphyPolarCwPrm_t *pCwPrmsCpu, uint32_t **pPolCbEstAddrs, bool **pListPolScratchAddrs, uint8_t nPolarList, uint8_t *pPolCrcErrorFlags, bool enableCpuToGpuDescrAsyncCpy, void *pCpuDynDescPolar, void *pGpuDynDescPolar, void *pCpuDynDescPolarLLRAddrs, void *pCpuDynDescPolarCBAddrs, void *pCpuDynDescListPolarScratchAddrs, cuphyPolarDecoderLaunchCfg_t *pLaunchCfg, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPolarDecoder</name>
+        <param>
+          <type><ref refid="group__CUPHY__POLAR__DECODER_1ga703f984c904091deadc865e645da4b29" kindref="member">cuphyPolarDecoderHndl_t</ref></type>
+          <declname>polarDecoderHndl</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nPolCws</declname>
+        </param>
+        <param>
+          <type>__half **</type>
+          <declname>pCwTreeLLRsAddrs</declname>
+        </param>
+        <param>
+          <type>cuphyPolarCwPrm_t *</type>
+          <declname>pCwPrmsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyPolarCwPrm_t *</type>
+          <declname>pCwPrmsCpu</declname>
+        </param>
+        <param>
+          <type>uint32_t **</type>
+          <declname>pPolCbEstAddrs</declname>
+        </param>
+        <param>
+          <type>bool **</type>
+          <declname>pListPolScratchAddrs</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>nPolarList</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pPolCrcErrorFlags</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDescPolar</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pGpuDynDescPolar</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDescPolarLLRAddrs</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDescPolarCBAddrs</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDescListPolarScratchAddrs</declname>
+        </param>
+        <param>
+          <type><ref refid="structcuphyPolarDecoderLaunchCfg__t" kindref="compound">cuphyPolarDecoderLaunchCfg_t</ref> *</type>
+          <declname>pLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY polar decoder for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY polar decoder in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>polarDecoderHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- polar decoder component handle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nPolCws</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of polar codewords </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCwTreeLLRsAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to codeword tree LLR addresses </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCwPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to codeword parameters in GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCwPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to codeword parameters in CPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pPolCbEstAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to estimated codeblock addresses </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pListPolScratchAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to scratch buffer used in list polar decoder </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nPolarList</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- list size for polar decoder </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pPolCrcErrorFlags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to buffer storing CRC error flags </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- option to copy descriptors from CPU to GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDescPolar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to polarDecoderDynDescr descriptor in cpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pGpuDynDescPolar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to polarDecoderDynDescr descriptor in gpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDescPolarLLRAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to cwTreeLLRsAddrs in polarDecoderDynDescr descriptor in cpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDescPolarCBAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to polCbEstAddrs in polarDecoderDynDescr descriptor in cpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDescListPolarScratchAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to listPolScratchAddrs in polarDecoderDynDescr descriptor in cpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to launch configuration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- stream to perform copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__POLAR__DECODER_1ga0c28b985b52b5b91603fde25c2bd14e7" kindref="member">cuphyPolarDecoderGetDescrInfo</ref>,<ref refid="group__CUPHY__POLAR__DECODER_1gaf29f1622a90ae22a6911c085d47fd65d" kindref="member">cuphyDestroyPolarDecoder</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7086" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="7086" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes application programming interface for polar decoder. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

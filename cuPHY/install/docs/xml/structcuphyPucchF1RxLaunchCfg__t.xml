@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyPucchF1RxLaunchCfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyPucchF1RxLaunchCfg_t</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyPucchF1RxLaunchCfg__t_1afa9e40ec463a5853367f90a2724d8182" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyPucchF1RxLaunchCfg_t::kernelArgs[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5366" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="5366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPucchF1RxLaunchCfg__t_1a6b1689c61adec5aaafcd930c263e41bb" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyPucchF1RxLaunchCfg_t::kernelNodeParamsDriver</definition>
+        <argsstring></argsstring>
+        <name>kernelNodeParamsDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5365" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="5365" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>cuPHY PUCCH F1 receiver launch configuration </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5364" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="5363" bodyend="5367"/>
+    <listofallmembers>
+      <member refid="structcuphyPucchF1RxLaunchCfg__t_1afa9e40ec463a5853367f90a2724d8182" prot="public" virt="non-virtual"><scope>cuphyPucchF1RxLaunchCfg_t</scope><name>kernelArgs</name></member>
+      <member refid="structcuphyPucchF1RxLaunchCfg__t_1a6b1689c61adec5aaafcd930c263e41bb" prot="public" virt="non-virtual"><scope>cuphyPucchF1RxLaunchCfg_t</scope><name>kernelNodeParamsDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

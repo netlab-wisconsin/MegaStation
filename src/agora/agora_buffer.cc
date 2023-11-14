@@ -4,6 +4,10 @@
  */
 #include "agora_buffer.h"
 
+#define half cuda_half
+#include "ldpc_cuda.h"
+#undef half
+
 AgoraBuffer::AgoraBuffer(Config* const cfg)
     : config_(cfg),
       ul_socket_buf_size_(cfg->PacketLength() * cfg->BsAntNum() * kFrameWnd *
@@ -56,8 +60,22 @@ void AgoraBuffer::AllocateTables() {
   pilot_fft_out_ = fft_out_;
   uplink_fft_out_ = fft_out_
     + config_->OfdmDataNum() * config_->Frame().NumPilotSyms() * config_->BsAntNum();
+  size_t prefix_zeros = config_->LdpcConfig(Direction::kUplink).ExpansionFactor() * 2;
+  int dims[2] = {
+    int(config_->LdpcConfig(Direction::kUplink).NumCbCodewLen() + prefix_zeros),
+    int(config_->LdpcConfig(Direction::kUplink).NumBlocksInSymbol())
+  };
+  tensor_desc desc_encoded(CUPHY_R_16F, 2, dims, CUPHY_TENSOR_ALIGN_COALESCE);
   cudaMalloc(reinterpret_cast<void **>(&demul_out_),
-      sizeof(int8_t) * config_->ModOrderBits(Direction::kUplink) * config_->OfdmDataNum() * config_->Frame().NumULSyms() * config_->UeAntNum());
+    config_->Frame().NumULSyms() * config_->UeAntNum() * desc_encoded.sz_bytes);
+  // cudaMalloc(&decoded_out_,
+  //     sizeof(int8_t) * config_->Frame().NumULSyms() * config_->UeAntNum() *
+  //     config_->LdpcConfig(Direction::kUplink).NumBlocksInSymbol() *
+  //     Roundup<64>(config_->NumBytesPerCb(Direction::kUplink)));
+  dims[0] = int(config_->LdpcConfig(Direction::kUplink).NumCbLen());
+  tensor_desc desc_decoded(CUPHY_BIT, 2, dims, CUPHY_TENSOR_ALIGN_COALESCE);
+  cudaMalloc(reinterpret_cast<void **>(&decoded_out_),
+      config_->Frame().NumULSyms() * config_->UeAntNum() * desc_decoded.sz_bytes);
   cuda_streams_.Malloc(total_ul_sym, 1, Agora_memory::Alignment_t::kAlign64);
   for (size_t i = 0; i < total_ul_sym; i++) {
     cudaStreamCreateWithFlags(cuda_streams_[i], cudaStreamNonBlocking);

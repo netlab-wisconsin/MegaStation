@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPdschStatusOut" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPdschStatusOut</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPdschStatusOut_1abb6c543867cdbac49dc7ff5dbda48aaf" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdschStatusOut::cellPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuphyPdschCellDynPrm_t.cellPrmStatiDX of first cell in the cell group that caused status != 0. Invalid value (MAX_UINT16) if status == 0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3577" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3577" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschStatusOut_1ade4f6fb6d0371617792769ecb85d168e" prot="public" static="no" mutable="no">
+        <type>cuphyPdschStatusType_t</type>
+        <definition>cuphyPdschStatusType_t _cuphyPdschStatusOut::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3576" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3576" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschStatusOut_1adcc393a55df4f37908711d0f4e21bd3a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdschStatusOut::ueIdx</definition>
+        <argsstring></argsstring>
+        <name>ueIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>index of first UE in the cell group that cause status != 0. Index is UE position in pUePrms or pCwPrms for that cell group. Invalid value (MAX_UINT16) if status == 0. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3578" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3578" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>PDSCH Output Status </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3575" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3574" bodyend="3579"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPdschStatusOut_1abb6c543867cdbac49dc7ff5dbda48aaf" prot="public" virt="non-virtual"><scope>_cuphyPdschStatusOut</scope><name>cellPrmStatIdx</name></member>
+      <member refid="struct__cuphyPdschStatusOut_1ade4f6fb6d0371617792769ecb85d168e" prot="public" virt="non-virtual"><scope>_cuphyPdschStatusOut</scope><name>status</name></member>
+      <member refid="struct__cuphyPdschStatusOut_1adcc393a55df4f37908711d0f4e21bd3a" prot="public" virt="non-virtual"><scope>_cuphyPdschStatusOut</scope><name>ueIdx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

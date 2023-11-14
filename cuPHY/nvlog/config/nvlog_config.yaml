@@ -1,0 +1,239 @@
+# Copyright (c) 2017-2021, NVIDIA CORPORATION.  All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted
+# provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright notice, this list of
+#       conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright notice, this list of
+#       conditions and the following disclaimer in the documentation and/or other materials
+#       provided with the distribution.
+#     * Neither the name of the NVIDIA CORPORATION nor the names of its contributors may be used
+#       to endorse or promote products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+# FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL NVIDIA CORPORATION BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TOR (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+---
+# log files stored at /tmp directiry (default)
+# log file path can be customized usinf environment variable $AERIAL_LOG_PATH
+# Log levels: 0 - NONE, 1 - FATAL, 2 - ERROR, 3 - CONSOLE, 4 - WARNING, 5 - INFO, 6 - DEBUG, 7 - VERBOSE
+
+nvlog:
+  shm_log_level: 3 # SHM log level
+  max_file_size_bytes: 20000000000 # Size in bytes The rotating log files in /tmp (default)
+  nvlog_tags:
+    - 0: ""             # Reserve number 0 for no tag print
+      shm_level: 5      # Example: overlay shm_log_level for a tag
+
+    - 10: "NVLOG"       # nvlog
+    - 11: "NVLOG.TEST"
+    - 12: "NVLOG.ITAG"
+    - 13: "NVLOG.STAG"
+    - 14: "NVLOG.STAT"
+    - 15: "NVLOG.OBSERVER"
+    - 16: "NVLOG.CPP"
+    - 17: "NVLOG.SHM"
+    - 18: "NVLOG.UTILS"
+    - 19: "NVLOG.C"
+    - 20: "NVLOG.EXIT_HANDLER"
+
+    - 30: "NVIPC"         # nvipc
+    - 31: "NVIPC:YAML"
+    - 32: "NVIPC.SHM_UTILS"
+    - 33: "NVIPC.CUDAPOOL"
+    - 34: "NVIPC.CUDAUTILS"
+    - 35: "NVIPC.TESTCUDA"
+    - 36: "NVIPC.SHM"
+    - 37: "NVIPC.QUEUE"
+    - 38: "NVIPC.IPC"
+    - 39: "NVIPC.FD_SHARE"
+    - 40: "NVIPC.DEBUG"
+    - 41: "NVIPC.EFD"
+    - 42: "NVIPC.EPOLL"
+    - 43: "NVIPC.MEMPOOL"
+    - 44: "NVIPC.RING"
+    - 45: "NVIPC.SEM"
+    - 46: "NVIPC.SHMLOG"
+    - 47: "NVIPC.CONF"
+    - 48: "NVIPC.DOCA"
+    - 49: "NVIPC.DOCA_UTILS"
+    - 50: "NVIPC.DPDK"
+    - 51: "NVIPC.DPDK_UTILS"
+    - 52: "NVIPC.GPUDATAUTILS"
+    - 53: "NVIPC.GPUDATAPOOL"
+    - 54: "NVIPC.TIMING"
+    - 55: "NVIPC.DUMP"
+    - 56: "NVIPC.UDP"
+    - 57: "INIT"
+    - 58: "TEST"
+    - 59: "PHY"
+    - 60: "MAC"
+    - 61: "NVIPC.PCAP"
+
+    - 100: "CTL"        # cuPHYController
+    - 101: "CTL.SCF"
+    - 102: "CTL.ALTRAN"
+    - 103: "CTL.DRV"
+    - 104: "CTL.YAML"
+    - 105: "CTL.STARTUP_TIMES"
+      #shm_level: 5
+
+    - 200: "DRV"        # cuPHYDriver
+    - 201: "DRV.SA"
+    - 202: "DRV.TIME"
+    - 203: "DRV.CTX"
+    - 204: "DRV.API"
+    - 205: "DRV.FH"
+    - 206: "DRV.GEN_CUDA"
+    - 207: "DRV.GPUDEV"
+    - 208: "DRV.PHYCH"
+    - 209: "DRV.TASK"
+    - 210: "DRV.WORKER"
+    - 211: "DRV.DLBUF"
+    - 212: "DRV.CSIRS"
+    - 213: "DRV.PBCH"
+    - 214: "DRV.PDCCH_DL"
+    - 215: "DRV.PDSCH"
+    - 216: "DRV.MAP_DL"
+      #shm_level: 5
+    - 217: "DRV.FUNC_DL"
+      #shm_level: 5
+    - 218: "DRV.HARQ_POOL"
+    - 219: "DRV.ORDER_CUDA"
+    - 220: "DRV.ORDER_ENTITY"
+    - 221: "DRV.PRACH"
+    - 222: "DRV.PUCCH"
+    - 223: "DRV.PUSCH"
+    - 224: "DRV.MAP_UL"
+      #shm_level: 5
+    - 225: "DRV.FUNC_UL"
+      #shm_level: 5
+    - 226: "DRV.ULBUF"
+    - 227: "DRV.MPS"
+    - 228: "DRV.METRICS"
+    - 229: "DRV.MEMFOOT"
+      #shm_level: 5
+    - 230: "DRV.CELL"
+    - 231: "DRV.EXCP"
+    - 232: "DRV.CV_MEM_BNK"
+    - 233: "DRV.DLBFW"
+    - 234: "DRV.ULBFW"
+    - 235: "DRV.CUPHY_PTI"
+    - 236: "DRV.SYMBOL_TIMINGS"
+      #shm_level: 5
+    - 237: "DRV.PACKET_TIMINGS"
+      #shm_level: 5
+    - 238: "DRV.UL_PACKET_SUMMARY"
+      #shm_level: 5
+    - 239: "DRV.SRS"
+      #shm_level: 6
+
+    - 300: "L2A"        # cuphyl2adapter
+    - 301: "L2A.MAC"
+    - 302: "L2A.MACFACT"
+    - 303: "L2A.PROXY"
+    - 304: "L2A.EPOLL"
+    - 305: "L2A.TRANSPORT"
+    - 306: "L2A.MODULE"
+    - 307: "L2A.TICK"
+    - 308: "L2A.UEMD"
+    - 309: "L2A.PARAM"
+    - 310: "L2A.SIM"
+    - 311: "L2A.PROCESSING_TIMES"
+      #shm_level: 5
+    - 312: "L2A.TICK_TIMES"
+      #shm_level: 5
+
+    - 330: "SCF"        # scfl2adapter
+    - 331: "SCF.MAC"
+    - 332: "SCF.DISPATCH"
+    - 333: "SCF.PHY"
+      #shm_level: 7
+    - 334: "SCF.SLOTCMD"
+      #shm_level: 7
+    - 335: "SCF.L2SA"
+    - 336: "SCF.DUMMYMAC"
+    - 337: "SCF.CALLBACK"
+    - 338: "SCF.TICK_TEST"
+    - 339: "SCF.UL_FAPI_VALIDATE"
+
+    - 400: "MAC"        # testMAC
+    - 401: "MAC.LP"
+    - 402: "MAC.FAPI"
+    - 403: "MAC.UTILS"
+    - 404: "MAC.SCF"
+    - 405: "MAC.ALTRAN"
+    - 406: "MAC.CFG"
+    - 407: "MAC.PROC"
+    - 408: "MAC.VALD"
+      #shm_level: 7
+    - 409: "MAC.PROCESSING_TIMES"
+      #shm_level: 5
+
+    - 500: "RU"         # ru-emulator
+    - 501: "RU.EMULATOR"
+    - 502: "RU.PARSER"
+    - 503: "RU.LATE_PACKETS"
+      shm_level: 5
+    - 504: "RU.SYMBOL_TIMINGS"
+      #shm_level: 5
+    - 505: "RU.TX_TIMINGS"
+      #shm_level: 5
+    - 506: "RU.TX_TIMINGS_SUM"
+      #shm_level: 5
+
+    - 600: "FH"         # aerial-fh-driver
+    - 601: "FH.FLOW"
+    - 602: "FH.FH"
+    - 603: "FH.GPU_MP"
+    - 604: "FH.LIB"
+    - 605: "FH.MEMREG"
+    - 606: "FH.METRICS"
+    - 607: "FH.NIC"
+    - 608: "FH.PDUMP"
+    - 609: "FH.PEER"
+    - 610: "FH.QUEUE"
+    - 611: "FH.RING"
+    - 612: "FH.TIME"
+    - 613: "FH.GPU_COMM"
+    - 614: "FH.STREAMRX"
+    - 615: "FH.GPU"
+    - 616: "FH.RMAX"
+    - 617: "FH.GPU_COMM_CUDA"
+    - 618: "FH.DOCA"
+    - 619: "FH.NIC"
+    - 620: "FH.STATS"
+
+    - 650: "FHGEN"      # fh_generator
+    - 651: "FHGEN.GEN"
+    - 652: "FHGEN.WORKER"
+    - 653: "FHGEN.YAML"
+
+    - 700: "COMP"       # compression_decompression
+
+    - 800: "OAM"        # cuphyoam
+
+    - 900: "CUPHY"      # cuPHY
+    - 901: "CUPHY.SSB_TX"
+    - 902: "CUPHY.PDCCH_TX"
+    - 904: "CUPHY.PDSCH_TX"
+    - 905: "CUPHY.CSIRS_TX"
+    - 906: "CUPHY.PRACH_RX"
+    - 907: "CUPHY.PUCCH_RX"
+    - 908: "CUPHY.PUSCH_RX"
+    - 909: "CUPHY.BFW"
+    - 910: "CUPHY.SRS_RX"
+
+    # cuPHY components and common utilities (not channels)
+    - 931: "CUPHY.UTILS"
+    - 932: "CUPHY.MEMFOOT"
+    - 933: "CUPHY.PTI"
+      #shm_level: 5
+...

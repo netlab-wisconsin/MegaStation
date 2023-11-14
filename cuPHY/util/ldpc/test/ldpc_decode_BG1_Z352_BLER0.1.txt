@@ -1,0 +1,67 @@
+# Copyright (c) 2023, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted
+# provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright notice, this list of
+#       conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright notice, this list of
+#       conditions and the following disclaimer in the documentation and/or other materials
+#       provided with the distribution.
+#     * Neither the name of the NVIDIA CORPORATION nor the names of its contributors may be used
+#       to endorse or promote products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+# FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL NVIDIA CORPORATION BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TOR (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# BG     Z num_parity num_iter        SNR   max_BER    max_BLER
+#--------------------------------------------------------------
+ 1     352          4       10   6.870117         1         0.1
+ 1     352          5       10   6.127930         1         0.1
+ 1     352          6       10   5.625000         1         0.1
+ 1     352          7       10   5.170898         1         0.1
+ 1     352          8       10   4.794922         1         0.1
+ 1     352          9       10   4.482422         1         0.1
+ 1     352         10       10   4.213867         1         0.1
+ 1     352         11       10   3.935547         1         0.1
+ 1     352         12       10   3.662109         1         0.1
+ 1     352         13       10   3.442383         1         0.1
+ 1     352         14       10   3.203125         1         0.1
+ 1     352         15       10   2.998047         1         0.1
+ 1     352         16       10   2.810059         1         0.1
+ 1     352         17       10   2.631836         1         0.1
+ 1     352         18       10   2.485352         1         0.1
+ 1     352         19       10   2.304688         1         0.1
+ 1     352         20       10   2.153320         1         0.1
+ 1     352         21       10   1.962891         1         0.1
+ 1     352         22       10   1.796875         1         0.1
+ 1     352         23       10   1.663818         1         0.1
+ 1     352         24       10   1.508789         1         0.1
+ 1     352         25       10   1.381836         1         0.1
+ 1     352         26       10   1.259766         1         0.1
+ 1     352         27       10   1.118164         1         0.1
+ 1     352         28       10   0.993347         1         0.1
+ 1     352         29       10   0.874023         1         0.1
+ 1     352         30       10   0.756836         1         0.1
+ 1     352         31       10   0.638428         1         0.1
+ 1     352         32       10   0.527344         1         0.1
+ 1     352         33       10   0.424805         1         0.1
+ 1     352         34       10   0.312500         1         0.1
+ 1     352         35       10   0.224609         1         0.1
+ 1     352         36       10   0.117188         1         0.1
+ 1     352         37       10   0.024414         1         0.1
+ 1     352         38       10  -0.068359         1         0.1
+ 1     352         39       10  -0.175781         1         0.1
+ 1     352         40       10  -0.268555         1         0.1
+ 1     352         41       10  -0.356445         1         0.1
+ 1     352         42       10  -0.449219         1         0.1
+ 1     352         43       10  -0.517578         1         0.1
+ 1     352         44       10  -0.607910         1         0.1
+ 1     352         45       10  -0.678711         1         0.1
+ 1     352         46       10  -0.761719         1         0.1

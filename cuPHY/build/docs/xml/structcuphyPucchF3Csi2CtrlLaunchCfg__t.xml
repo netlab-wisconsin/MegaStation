@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyPucchF3Csi2CtrlLaunchCfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyPucchF3Csi2CtrlLaunchCfg_t</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyPucchF3Csi2CtrlLaunchCfg__t_1a0ce4d2deaf01f962bfa124ccee9c4c3a" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyPucchF3Csi2CtrlLaunchCfg_t::kernelArgs[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5816" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="5816" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPucchF3Csi2CtrlLaunchCfg__t_1ac7291e3a5fd5240e5e8986430c69b2e7" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyPucchF3Csi2CtrlLaunchCfg_t::kernelNodeParamsDriver</definition>
+        <argsstring></argsstring>
+        <name>kernelNodeParamsDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5815" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="5815" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>cuPHY PUCCH format 3 Csi2 control, launch configuration </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5814" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="5813" bodyend="5817"/>
+    <listofallmembers>
+      <member refid="structcuphyPucchF3Csi2CtrlLaunchCfg__t_1a0ce4d2deaf01f962bfa124ccee9c4c3a" prot="public" virt="non-virtual"><scope>cuphyPucchF3Csi2CtrlLaunchCfg_t</scope><name>kernelArgs</name></member>
+      <member refid="structcuphyPucchF3Csi2CtrlLaunchCfg__t_1ac7291e3a5fd5240e5e8986430c69b2e7" prot="public" virt="non-virtual"><scope>cuphyPucchF3Csi2CtrlLaunchCfg_t</scope><name>kernelNodeParamsDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

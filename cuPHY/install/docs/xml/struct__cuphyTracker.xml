@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyTracker" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyTracker</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyTracker_1a493ab125b77a5007fc3754c970f9203f" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* _cuphyTracker::pMemoryFootprint</definition>
+        <argsstring></argsstring>
+        <name>pMemoryFootprint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="119" column="16" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="118" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="117" bodyend="120"/>
+    <listofallmembers>
+      <member refid="struct__cuphyTracker_1a493ab125b77a5007fc3754c970f9203f" prot="public" virt="non-virtual"><scope>_cuphyTracker</scope><name>pMemoryFootprint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

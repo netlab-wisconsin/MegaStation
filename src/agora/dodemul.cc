@@ -8,7 +8,10 @@
 #include "concurrent_queue_wrapper.h"
 #include "modulation.h"
 
+#define half cuda_half
 #include "temp_launch.h"
+#include "ldpc_cuda.h"
+#undef half
 
 static constexpr bool kUseSIMDGather = true;
 
@@ -22,7 +25,7 @@ DoDemul::DoDemul(
     Table<cudaStream_t>& cuda_streams,
     float2* cuda_data_buffer,
     float2* cuda_beam_buffer,
-    int8_t* cuda_demod_buffer,
+    half* cuda_demod_buffer,
     Stats* stats_manager)
     : Doer(config, tid),
       data_buffer_(data_buffer),
@@ -78,6 +81,16 @@ DoDemul::DoDemul(
   cpu_demod_buffer_ = static_cast<int8_t*>(Agora_memory::PaddedAlignedAlloc(
         Agora_memory::Alignment_t::kAlign64,
         cfg_->ModOrderBits(Direction::kUplink) * cfg_->OfdmDataNum() * cfg_->UeAntNum() * sizeof(int8_t)));
+  prefix_zeros = cfg_->LdpcConfig(Direction::kUplink).ExpansionFactor() * 2;
+  int dims[2] = {
+    int(cfg_->LdpcConfig(Direction::kUplink).NumCbCodewLen() + prefix_zeros),
+    int(cfg_->LdpcConfig(Direction::kUplink).NumBlocksInSymbol())
+  };
+  tensor_desc desc_encoded(CUPHY_R_16F, 2, dims, CUPHY_TENSOR_ALIGN_COALESCE);
+  sz_line_ue = desc_encoded.sz_bytes / sizeof(half);
+  dims[1] = 1;
+  tensor_desc desc_demod(CUPHY_R_16F, 2, dims, CUPHY_TENSOR_ALIGN_COALESCE);
+  sz_block = desc_demod.sz_bytes / sizeof(half);
 }
 
 DoDemul::~DoDemul() {
@@ -105,15 +118,21 @@ EventData DoDemul::Launch(size_t tag) {
   cuda_stream_ = cuda_streams_[symbol_id][0];
 
   const size_t symbol_idx_ul = cfg_->Frame().GetULSymbolIdx(symbol_id);
-  size_t batch_count =
-      std::min(cfg_->DemulBlockSize(), cfg_->OfdmDataNum() - base_sc_id);
 
-  complex_demul *data_ptr = cuda_data_buffer_ + symbol_idx_ul * cfg_->BsAntNum() * cfg_->OfdmDataNum() + base_sc_id * cfg_->BsAntNum();
-  complex_demul *ul_beam_ptr = cuda_beam_buffer_
-      + (base_sc_id / cfg_->PilotScGroupSize()) * cfg_->BsAntNum() * cfg_->UeAntNum();
-  int8_t *demod_ptr = cuda_demod_buffer_
-    + symbol_idx_ul * cfg_->UeAntNum() * cfg_->OfdmDataNum() * cfg_->ModOrderBits(Direction::kUplink) 
-    + base_sc_id * cfg_->ModOrderBits(Direction::kUplink);
+  size_t valid_encoded_bits = cfg_->LdpcConfig(Direction::kUplink).NumCbCodewLen()
+          * cfg_->LdpcConfig(Direction::kUplink).NumBlocksInSymbol();
+  size_t batch_count = (valid_encoded_bits + cfg_->ModOrderBits(Direction::kUplink) - 1) 
+          / cfg_->ModOrderBits(Direction::kUplink);
+
+  complex_demul *data_ptr = cuda_data_buffer_ + symbol_idx_ul * cfg_->BsAntNum() * cfg_->OfdmDataNum();// + base_sc_id * cfg_->BsAntNum();
+  complex_demul *ul_beam_ptr = cuda_beam_buffer_;
+      //+ (base_sc_id / cfg_->PilotScGroupSize()) * cfg_->BsAntNum() * cfg_->UeAntNum();
+  //size_t bit_count = base_sc_id * cfg_->ModOrderBits(Direction::kUplink);
+  //int code_count = bit_count / cfg_->LdpcConfig(Direction::kUplink).NumCbCodewLen();
+  //int bit_offset = bit_count % cfg_->LdpcConfig(Direction::kUplink).NumCbCodewLen();
+  half *demod_ptr = cuda_demod_buffer_
+    + symbol_idx_ul * cfg_->UeAntNum() * sz_line_ue;
+    //+ code_count * sz_block + prefix_zeros + bit_offset;
   /*complex_demul data, beam;
   cudaMemcpy(&data, data_ptr + 192 * cfg_->BsAntNum(), sizeof(complex_demul), cudaMemcpyDeviceToHost);
   cudaMemcpy(&beam, ul_beam_ptr + (192 / cfg_->PilotScGroupSize()) * cfg_->BsAntNum() * cfg_->UeAntNum(), sizeof(complex_demul), cudaMemcpyDeviceToHost);
@@ -129,8 +148,12 @@ EventData DoDemul::Launch(size_t tag) {
     cfg_->ModOrderBits(Direction::kUplink),
     ul_beam_ptr,
     data_ptr,
-    demod_ptr,
-    cfg_->OfdmDataNum() * cfg_->ModOrderBits(Direction::kUplink),
+    (short *)demod_ptr,
+    sz_line_ue,
+    cfg_->LdpcConfig(Direction::kUplink).NumCbCodewLen(),
+    sz_block,
+    prefix_zeros,
+    valid_encoded_bits,
     cfg_->PilotScGroupSize(),
     cuda_stream_
   );
@@ -139,7 +162,7 @@ EventData DoDemul::Launch(size_t tag) {
   duration_stat_->task_duration_[2] += start_tsc3 - start_tsc2;
   duration_stat_->task_count_++;
 
-  const size_t frame_id = gen_tag_t(tag).frame_id_;
+  /*const size_t frame_id = gen_tag_t(tag).frame_id_;
   const size_t frame_slot = frame_id % kFrameWnd;
   if (batch_count != cfg_->OfdmDataNum()) {
     for (size_t ue_id = 0; ue_id < cfg_->UeAntNum(); ue_id++) {
@@ -149,10 +172,10 @@ EventData DoDemul::Launch(size_t tag) {
   } else {
     //int8_t* demod_ptr_cpu = demod_buffers_[frame_slot][symbol_idx_ul][0];
     //cudaMemcpyAsync(demod_ptr_cpu, demod_ptr, sizeof(int8_t) * cfg_->OfdmDataNum() * cfg_->ModOrderBits(Direction::kUplink) * cfg_->UeAntNum(), cudaMemcpyDeviceToHost, cuda_stream_);
-  }
+  }*/
   duration_stat_->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc3;
 
-  cudaMemcpyAsync(cpu_demod_buffer_,
+  /*cudaMemcpyAsync(cpu_demod_buffer_,
     demod_ptr - base_sc_id * cfg_->ModOrderBits(Direction::kUplink),
     sizeof(int8_t) * cfg_->OfdmDataNum()
       * cfg_->ModOrderBits(Direction::kUplink) * cfg_->UeAntNum(),
@@ -165,7 +188,7 @@ EventData DoDemul::Launch(size_t tag) {
         + ue_id * cfg_->OfdmDataNum() * cfg_->ModOrderBits(Direction::kUplink)
         + base_sc_id * cfg_->ModOrderBits(Direction::kUplink),
       sizeof(int8_t) * batch_count * cfg_->ModOrderBits(Direction::kUplink));
-  }
+  }*/
 
   duration_stat_->task_duration_[0] += GetTime::WorkerRdtsc() - start_tsc;
   return EventData(EventType::kDemul, tag);

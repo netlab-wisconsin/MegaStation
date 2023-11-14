@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPrachDynPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPrachDynPrms</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPrachDynPrms_1a1b51f3a6c278132ecdd2420e449afc9c" prot="public" static="no" mutable="no">
+        <type>cudaStream_t</type>
+        <definition>cudaStream_t _cuphyPrachDynPrms::cuStream</definition>
+        <argsstring></argsstring>
+        <name>cuStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CUDA stream on which pipeline is launched </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3025" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3025" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachDynPrms_1a5159a9742ceb171ed20d4ec52ccbaa6e" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPrachDynPrms::nOccaProc</definition>
+        <argsstring></argsstring>
+        <name>nOccaProc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of occasions to be processed. Length of array pointed to by pOccaPrms. nOccaProc &lt;= nMaxOccaProc </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3029" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3029" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachDynPrms_1ad5de0261ee634a3095b9bba902873485" prot="public" static="no" mutable="no">
+        <type>cuphyPrachDataIn_t *</type>
+        <definition>cuphyPrachDataIn_t* _cuphyPrachDynPrms::pDataIn</definition>
+        <argsstring></argsstring>
+        <name>pDataIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data parameters Pointer to PRACH data input </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3033" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3033" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachDynPrms_1a17785c6786b87481da4ed6e3c8c34240" prot="public" static="no" mutable="no">
+        <type>cuphyPrachDataOut_t *</type>
+        <definition>cuphyPrachDataOut_t* _cuphyPrachDynPrms::pDataOut</definition>
+        <argsstring></argsstring>
+        <name>pDataOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to PRACH data output </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3034" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3034" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachDynPrms_1a46eb0ed24a7b9baa559ba1be4b675b40" prot="public" static="no" mutable="no">
+        <type>cuphyPrachDynDbgPrms_t *</type>
+        <definition>cuphyPrachDynDbgPrms_t* _cuphyPrachDynPrms::pDbg</definition>
+        <argsstring></argsstring>
+        <name>pDbg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Debug parameters </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3038" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3038" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachDynPrms_1ab55f89f9f7078744d4bc4ff45a9f2334" prot="public" static="no" mutable="no">
+        <type>cuphyPrachOccaDynPrms_t *</type>
+        <definition>cuphyPrachOccaDynPrms_t* _cuphyPrachDynPrms::pOccaPrms</definition>
+        <argsstring></argsstring>
+        <name>pOccaPrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to array of occasion specific dynamic parameters </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3030" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3030" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachDynPrms_1a31e8426317647e040493c030a6f6e996" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t _cuphyPrachDynPrms::procModeBmsk</definition>
+        <argsstring></argsstring>
+        <name>procModeBmsk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Processing modes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3027" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3027" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachDynPrms_1a4c3520f80087fc54af559fa35355c262" prot="public" static="no" mutable="no">
+        <type>cuphyPrachStatusOut_t *</type>
+        <definition>cuphyPrachStatusOut_t* _cuphyPrachDynPrms::pStatusOut</definition>
+        <argsstring></argsstring>
+        <name>pStatusOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>status parameter </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3037" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3037" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>PRACH Dynamic Parameters </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3024" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3023" bodyend="3040"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPrachDynPrms_1a1b51f3a6c278132ecdd2420e449afc9c" prot="public" virt="non-virtual"><scope>_cuphyPrachDynPrms</scope><name>cuStream</name></member>
+      <member refid="struct__cuphyPrachDynPrms_1a5159a9742ceb171ed20d4ec52ccbaa6e" prot="public" virt="non-virtual"><scope>_cuphyPrachDynPrms</scope><name>nOccaProc</name></member>
+      <member refid="struct__cuphyPrachDynPrms_1ad5de0261ee634a3095b9bba902873485" prot="public" virt="non-virtual"><scope>_cuphyPrachDynPrms</scope><name>pDataIn</name></member>
+      <member refid="struct__cuphyPrachDynPrms_1a17785c6786b87481da4ed6e3c8c34240" prot="public" virt="non-virtual"><scope>_cuphyPrachDynPrms</scope><name>pDataOut</name></member>
+      <member refid="struct__cuphyPrachDynPrms_1a46eb0ed24a7b9baa559ba1be4b675b40" prot="public" virt="non-virtual"><scope>_cuphyPrachDynPrms</scope><name>pDbg</name></member>
+      <member refid="struct__cuphyPrachDynPrms_1ab55f89f9f7078744d4bc4ff45a9f2334" prot="public" virt="non-virtual"><scope>_cuphyPrachDynPrms</scope><name>pOccaPrms</name></member>
+      <member refid="struct__cuphyPrachDynPrms_1a31e8426317647e040493c030a6f6e996" prot="public" virt="non-virtual"><scope>_cuphyPrachDynPrms</scope><name>procModeBmsk</name></member>
+      <member refid="struct__cuphyPrachDynPrms_1a4c3520f80087fc54af559fa35355c262" prot="public" virt="non-virtual"><scope>_cuphyPrachDynPrms</scope><name>pStatusOut</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

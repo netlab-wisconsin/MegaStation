@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphySrsReport" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphySrsReport</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphySrsReport_1a96560dd46357c22df38a58115525abaf" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsReport::toEstMicroSec</definition>
+        <argsstring></argsstring>
+        <name>toEstMicroSec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7184" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsReport_1a9806c5b9ce3c3f7452eed49404be4922" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsReport::widebandNoiseEnergy</definition>
+        <argsstring></argsstring>
+        <name>widebandNoiseEnergy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7186" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsReport_1a0f2bd7d1ac9f198ab6f6b4cb3f38a9ff" prot="public" static="no" mutable="no">
+        <type>__half2</type>
+        <definition>__half2 _cuphySrsReport::widebandScCorr</definition>
+        <argsstring></argsstring>
+        <name>widebandScCorr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7188" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsReport_1a081c3be2752d0978a5cba93ab8e46827" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsReport::widebandSignalEnergy</definition>
+        <argsstring></argsstring>
+        <name>widebandSignalEnergy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7187" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsReport_1a687cf69d708239cbfc3ec0f6af8ddf91" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsReport::widebandSnr</definition>
+        <argsstring></argsstring>
+        <name>widebandSnr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7185" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7185" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7183" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7182" bodyend="7189"/>
+    <listofallmembers>
+      <member refid="struct__cuphySrsReport_1a96560dd46357c22df38a58115525abaf" prot="public" virt="non-virtual"><scope>_cuphySrsReport</scope><name>toEstMicroSec</name></member>
+      <member refid="struct__cuphySrsReport_1a9806c5b9ce3c3f7452eed49404be4922" prot="public" virt="non-virtual"><scope>_cuphySrsReport</scope><name>widebandNoiseEnergy</name></member>
+      <member refid="struct__cuphySrsReport_1a0f2bd7d1ac9f198ab6f6b4cb3f38a9ff" prot="public" virt="non-virtual"><scope>_cuphySrsReport</scope><name>widebandScCorr</name></member>
+      <member refid="struct__cuphySrsReport_1a081c3be2752d0978a5cba93ab8e46827" prot="public" virt="non-virtual"><scope>_cuphySrsReport</scope><name>widebandSignalEnergy</name></member>
+      <member refid="struct__cuphySrsReport_1a687cf69d708239cbfc3ec0f6af8ddf91" prot="public" virt="non-virtual"><scope>_cuphySrsReport</scope><name>widebandSnr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

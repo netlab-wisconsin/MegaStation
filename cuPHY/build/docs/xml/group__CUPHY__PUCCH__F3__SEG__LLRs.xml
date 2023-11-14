@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__PUCCH__F3__SEG__LLRs" kind="group">
+    <compoundname>CUPHY_PUCCH_F3_SEG_LLRs</compoundname>
+    <title>: segment descrambled LLR array into two LLR sub-arrays for HARQ/SR/CSIp1 and CSIp2 for PUCCH format 3.</title>
+    <innerclass refid="structcuphyPucchF3SegLLRsLaunchCfg__t" prot="public">cuphyPucchF3SegLLRsLaunchCfg_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__PUCCH__F3__SEG__LLRs_1ga33a29e7b7adab23cd58298e75979ba7b" prot="public" static="no">
+        <type>struct cuphyPucchF3SegLLRs *</type>
+        <definition>typedef struct cuphyPucchF3SegLLRs* cuphyPucchF3SegLLRsHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyPucchF3SegLLRsHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY pucchF3SegLLRs handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5954" column="35" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="5954" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__PUCCH__F3__SEG__LLRs_1ga352b86ef02d33934c94daada7df0e642" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePucchF3SegLLRs</definition>
+        <argsstring>(cuphyPucchF3SegLLRsHndl_t *pPucchF3SegLLRsHndl)</argsstring>
+        <name>cuphyCreatePucchF3SegLLRs</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUCCH__F3__SEG__LLRs_1ga33a29e7b7adab23cd58298e75979ba7b" kindref="member">cuphyPucchF3SegLLRsHndl_t</ref> *</type>
+          <declname>pPucchF3SegLLRsHndl</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY pucchF3SegLLRs object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a pucchF3SegLLRs object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPucchF3SegLLRsHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a pucchF3SegLLRs object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pPucchF3SegLLRsHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new pucchF3SegLLRs instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6009" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6009" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUCCH__F3__SEG__LLRs_1ga40be3c928bb8c6257060198445d3cef7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPucchF3SegLLRs</definition>
+        <argsstring>(cuphyPucchF3SegLLRsHndl_t pucchF3SegLLRsHndl)</argsstring>
+        <name>cuphyDestroyPucchF3SegLLRs</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUCCH__F3__SEG__LLRs_1ga33a29e7b7adab23cd58298e75979ba7b" kindref="member">cuphyPucchF3SegLLRsHndl_t</ref></type>
+          <declname>pucchF3SegLLRsHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY pucchF3SegLLRs object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY pucchF3SegLLRs object that was previously created by <ref refid="group__CUPHY__PUCCH__F3__SEG__LLRs_1ga352b86ef02d33934c94daada7df0e642" kindref="member">cuphyCreatePucchF3SegLLRs</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pucchF3SegLLRsHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pucchF3SegLLRsHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6063" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6063" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUCCH__F3__SEG__LLRs_1ga1d9ef714c8269ec598171b0d24f26fa6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPucchF3SegLLRsGetDescrInfo</definition>
+        <argsstring>(size_t *pDynDescrSizeBytes, size_t *pDynDescrAlignBytes)</argsstring>
+        <name>cuphyPucchF3SegLLRsGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute pucchF3SegLLRs descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes pucchF3SegLLRs descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other pucchF3SegLLRs APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pDynDescrSizeBytes</computeroutput> and/or <computeroutput>pDynDescrAlignBytes</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of dynamic descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5985" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="5985" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUCCH__F3__SEG__LLRs_1gadab0e3dba788f3a55433ec26e1e03897" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPucchF3SegLLRs</definition>
+        <argsstring>(cuphyPucchF3SegLLRsHndl_t pucchF3SegLLRsHndl, uint16_t nF3Ucis, cuphyPucchUciPrm_t *pF3UciPrms, __half **pDescramLLRaddrs, void *pCpuDynDesc, void *pGpuDynDesc, bool enableCpuToGpuDescrAsyncCpy, cuphyPucchF3SegLLRsLaunchCfg_t *pLaunchCfg, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPucchF3SegLLRs</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUCCH__F3__SEG__LLRs_1ga33a29e7b7adab23cd58298e75979ba7b" kindref="member">cuphyPucchF3SegLLRsHndl_t</ref></type>
+          <declname>pucchF3SegLLRsHndl</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nF3Ucis</declname>
+        </param>
+        <param>
+          <type>cuphyPucchUciPrm_t *</type>
+          <declname>pF3UciPrms</declname>
+        </param>
+        <param>
+          <type>__half **</type>
+          <declname>pDescramLLRaddrs</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDesc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pGpuDynDesc</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type><ref refid="structcuphyPucchF3SegLLRsLaunchCfg__t" kindref="compound">cuphyPucchF3SegLLRsLaunchCfg_t</ref> *</type>
+          <declname>pLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY pucchF3SegLLRs for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY pucchF3SegLLRs in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pucchF3SegLLRsHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle for Pucch F3 LLR array segmentation component instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nF3Ucis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of PF3 UCIs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pF3UciPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address of UCI parameters in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDescramLLRaddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address of descrambled LLR arrays </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to dynamic descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pGpuDynDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to dynamic descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to launch configurations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6034" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6034" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes application programming interface for the PUCCH format 3 LLR segmentation kernel. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPdschDataOut" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPdschDataOut</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPdschDataOut_1a94788c32bd8e540d41f7c6461d424403" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t *</type>
+        <definition>cuphyTensorPrm_t* _cuphyPdschDataOut::pTDataTx</definition>
+        <argsstring></argsstring>
+        <name>pTDataTx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>array of tensors with each tensor (indexed by cellPrmDynIdx) representing the transmit slot buffer of a cell in the cell group. Each cell&apos;s tensor may have a different geometry </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1958" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1958" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>PDSCH Data Output </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1957" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1956" bodyend="1960"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPdschDataOut_1a94788c32bd8e540d41f7c6461d424403" prot="public" virt="non-virtual"><scope>_cuphyPdschDataOut</scope><name>pTDataTx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

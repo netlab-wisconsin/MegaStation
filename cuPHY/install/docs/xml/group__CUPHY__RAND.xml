@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__RAND" kind="group">
+    <compoundname>CUPHY_RAND</compoundname>
+    <title>Random number generation for cuPHY tensors</title>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__RAND_1ga8e8c6fa97ff825a42299baa6e0e70efc" prot="public" static="no">
+        <type>struct cuphyRNG *</type>
+        <definition>typedef struct cuphyRNG* cuphyRNG_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyRNG_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY random number generator handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4725" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4725" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__RAND_1ga8489629e69d62c6011696c37e3dc3a65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreateRandomNumberGenerator</definition>
+        <argsstring>(cuphyRNG_t *pRNG, unsigned long long seed, unsigned int flags, cudaStream_t strm)</argsstring>
+        <name>cuphyCreateRandomNumberGenerator</name>
+        <param>
+          <type><ref refid="group__CUPHY__RAND_1ga8e8c6fa97ff825a42299baa6e0e70efc" kindref="member">cuphyRNG_t</ref> *</type>
+          <declname>pRNG</declname>
+        </param>
+        <param>
+          <type>unsigned long long</type>
+          <declname>seed</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Allocates and initializes a cuPHY random number generator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a cuPHY random number generator and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pRNG</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a context cannot be allocated on the host.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pRNG</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new <ref refid="group__CUPHY__RAND_1ga8e8c6fa97ff825a42299baa6e0e70efc" kindref="member">cuphyRNG_t</ref> instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>seed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Random number generator seed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Creation flags (currently unused) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for initialization</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CONTEXT_1gaa8cd6675adad8cb842ea225c4039a39d" kindref="member">cuphyDestroyContext</ref>,<ref refid="group__CUPHY__RAND_1ga019bf2e0d91641d84a1cdfe8964178b4" kindref="member">cuphyDestroyRandomNumberGenerator</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4753" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4753" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__RAND_1ga019bf2e0d91641d84a1cdfe8964178b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyRandomNumberGenerator</definition>
+        <argsstring>(cuphyRNG_t rng)</argsstring>
+        <name>cuphyDestroyRandomNumberGenerator</name>
+        <param>
+          <type><ref refid="group__CUPHY__RAND_1ga8e8c6fa97ff825a42299baa6e0e70efc" kindref="member">cuphyRNG_t</ref></type>
+          <declname>rng</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY random number generator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a previously created cuPHY random number generator instance</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>rng</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Existing <ref refid="group__CUPHY__RAND_1ga8e8c6fa97ff825a42299baa6e0e70efc" kindref="member">cuphyRNG_t</ref> instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CONTEXT_1gaa8cd6675adad8cb842ea225c4039a39d" kindref="member">cuphyDestroyContext</ref>,<ref refid="group__CUPHY__RAND_1ga8489629e69d62c6011696c37e3dc3a65" kindref="member">cuphyCreateRandomNumberGenerator</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4775" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4775" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__RAND_1gad7778edc9998182c95196e3f3c75ceb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyRandomNormal</definition>
+        <argsstring>(cuphyRNG_t rng, cuphyTensorDescriptor_t tDst, void *pDst, const cuphyVariant_t *mean, const cuphyVariant_t *stddev, cudaStream_t strm)</argsstring>
+        <name>cuphyRandomNormal</name>
+        <param>
+          <type><ref refid="group__CUPHY__RAND_1ga8e8c6fa97ff825a42299baa6e0e70efc" kindref="member">cuphyRNG_t</ref></type>
+          <declname>rng</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tDst</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pDst</declname>
+        </param>
+        <param>
+          <type>const cuphyVariant_t *</type>
+          <declname>mean</declname>
+        </param>
+        <param>
+          <type>const cuphyVariant_t *</type>
+          <declname>stddev</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Populate a cuPHY tensor with random data with a normal distribution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Populates a cuPHY tensor with random data that has a normal (Gaussian) distribution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>rng</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if kernel launch was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Existing <ref refid="group__CUPHY__RAND_1ga8e8c6fa97ff825a42299baa6e0e70efc" kindref="member">cuphyRNG_t</ref> instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tDst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Descriptor for output tensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of output tensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Mean value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stddev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Standard deviation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for kernel launch</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CONTEXT_1gaa8cd6675adad8cb842ea225c4039a39d" kindref="member">cuphyDestroyContext</ref>,<ref refid="group__CUPHY__RAND_1ga8489629e69d62c6011696c37e3dc3a65" kindref="member">cuphyCreateRandomNumberGenerator</ref>,<ref refid="group__CUPHY__RAND_1ga019bf2e0d91641d84a1cdfe8964178b4" kindref="member">cuphyDestroyRandomNumberGenerator</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4835" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4835" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__RAND_1gaf6cb010877f77179bfa8a82edaed29c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyRandomUniform</definition>
+        <argsstring>(cuphyRNG_t rng, cuphyTensorDescriptor_t tDst, void *pDst, const cuphyVariant_t *minValue, const cuphyVariant_t *maxValue, cudaStream_t strm)</argsstring>
+        <name>cuphyRandomUniform</name>
+        <param>
+          <type><ref refid="group__CUPHY__RAND_1ga8e8c6fa97ff825a42299baa6e0e70efc" kindref="member">cuphyRNG_t</ref></type>
+          <declname>rng</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tDst</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pDst</declname>
+        </param>
+        <param>
+          <type>const cuphyVariant_t *</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>const cuphyVariant_t *</type>
+          <declname>maxValue</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Populate a cuPHY tensor with uniformly distributed random data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Populates a cuPHY tensor with random data that has a uniform distribution, using the given min/max range. The minimum and maximum values are ignored for tensors of type CUPHY_BIT. For CUPHY_BIT tensors with a first dimension that is not a multiple of 32, high-order bits in the end of the last word will be set to zero.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>rng</computeroutput> is NULL. Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a0145d14f85ce7cd9bd62d2b261967351" kindref="member">CUPHY_STATUS_UNSUPPORTED_TYPE</ref> if the type of the input tensor is complex.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if kernel launch was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Existing <ref refid="group__CUPHY__RAND_1ga8e8c6fa97ff825a42299baa6e0e70efc" kindref="member">cuphyRNG_t</ref> instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tDst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Descriptor for output tensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of output tensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>minValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Minimum value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Maximum value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for kernel launch</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a0145d14f85ce7cd9bd62d2b261967351" kindref="member">CUPHY_STATUS_UNSUPPORTED_TYPE</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CONTEXT_1gaa8cd6675adad8cb842ea225c4039a39d" kindref="member">cuphyDestroyContext</ref>,<ref refid="group__CUPHY__RAND_1ga8489629e69d62c6011696c37e3dc3a65" kindref="member">cuphyCreateRandomNumberGenerator</ref>,<ref refid="group__CUPHY__RAND_1ga019bf2e0d91641d84a1cdfe8964178b4" kindref="member">cuphyDestroyRandomNumberGenerator</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4806" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4806" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the functions for populating cuPHY tensors with random data. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

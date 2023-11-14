@@ -1,0 +1,63 @@
+# Copyright (c) 2021-2023, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted
+# provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright notice, this list of
+#       conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright notice, this list of
+#       conditions and the following disclaimer in the documentation and/or other materials
+#       provided with the distribution.
+#     * Neither the name of the NVIDIA CORPORATION nor the names of its contributors may be used
+#       to endorse or promote products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+# FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL NVIDIA CORPORATION BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TOR (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# BG     Z num_parity num_iter        SNR   max_BER    max_BLER
+#--------------------------------------------------------------
+   2   128          4       10       5.62         1         0.1
+   2   128          5       10       4.69         1         0.1
+   2   128          6       10       4.03         1         0.1
+   2   128          7       10       3.48         1         0.1
+   2   128          8       10       3.02         1         0.1
+   2   128          9       10       2.60         1         0.1
+   2   128         10       10       2.24         1         0.1
+   2   128         11       10       1.92         1         0.1
+   2   128         12       10       1.61         1         0.1
+   2   128         13       10       1.28         1         0.1
+   2   128         14       10       1.04         1         0.1
+   2   128         15       10      0.811         1         0.1
+   2   128         16       10      0.582         1         0.1
+   2   128         17       10      0.372         1         0.1
+   2   128         18       10      0.147         1         0.1
+   2   128         19       10    -0.0390         1         0.1
+   2   128         20       10     -0.224         1         0.1
+   2   128         21       10     -0.429         1         0.1
+   2   128         22       10     -0.595         1         0.1
+   2   128         23       10     -0.800         1         0.1
+   2   128         24       10     -0.957         1         0.1
+   2   128         25       10      -1.09         1         0.1
+   2   128         26       10      -1.26         1         0.1
+   2   128         27       10      -1.38         1         0.1
+   2   128         28       10      -1.54         1         0.1
+   2   128         29       10      -1.70         1         0.1
+   2   128         30       10      -1.82         1         0.1
+   2   128         31       10      -1.92         1         0.1
+   2   128         32       10      -2.07         1         0.1
+   2   128         33       10      -2.18         1         0.1
+   2   128         34       10      -2.33         1         0.1
+   2   128         35       10      -2.44         1         0.1
+   2   128         36       10      -2.55         1         0.1
+   2   128         37       10      -2.65         1         0.1
+   2   128         38       10      -2.76         1         0.1
+   2   128         39       10      -2.84         1         0.1
+   2   128         40       10      -2.93         1         0.1
+   2   128         41       10      -3.02         1         0.1
+   2   128         42       10      -3.11         1         0.1

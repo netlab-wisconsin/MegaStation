@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPucchUciPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPucchUciPrm</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a3e4ffee422a22c5e2b517f415a418044" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::AddDmrsFlag</definition>
+        <argsstring></argsstring>
+        <name>AddDmrsFlag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="621" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="621" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a7f632af4c08059b5e8ea9c9a820b3609" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::bitLenCsiPart1</definition>
+        <argsstring></argsstring>
+        <name>bitLenCsiPart1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="620" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="620" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a1301068afb770a769c6ad02d1c76be0f" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::bitLenHarq</definition>
+        <argsstring></argsstring>
+        <name>bitLenHarq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="619" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="619" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ac73f531a2eb519bd3193f22c4f4f011d" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::bitLenSr</definition>
+        <argsstring></argsstring>
+        <name>bitLenSr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="618" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="618" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a67d38106037d5c89dcbfa981eeca202b" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::bwpStart</definition>
+        <argsstring></argsstring>
+        <name>bwpStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bandwidth part size [3GPP TS 38.213 [4], sec12]. Number of contiguous PRBs allocated to the BWP <linebreak/>
+Value: 1-&gt;275 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="602" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="602" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a558eea4a4fbcc45e97541ae6fb684486" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::cellPrmDynIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmDynIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="597" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="597" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a8a1483d9c3da0b770e290eb41c82d3d8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::cellPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="598" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="598" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ada6f22e433c514a935c6b57c13d980cc" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::dataScramblingId</definition>
+        <argsstring></argsstring>
+        <name>dataScramblingId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="622" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="622" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a0ce60ffa74b5e3e51079c6361ce06410" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::DmrsScramblingId</definition>
+        <argsstring></argsstring>
+        <name>DmrsScramblingId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="623" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="623" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ab3c5f2291d7ece413d6147feeef15eac" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphyPucchUciPrm::DTXthreshold</definition>
+        <argsstring></argsstring>
+        <name>DTXthreshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="630" column="11" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="630" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1aefd61d0fe927356829e347a2048589a8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::formatType</definition>
+        <argsstring></argsstring>
+        <name>formatType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="600" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="600" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ab6523bc8037f9e51bab43a9ecb9080d9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::freqHopFlag</definition>
+        <argsstring></argsstring>
+        <name>freqHopFlag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="611" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="611" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a7912c6556ab4b1e66efcd8699f58f36c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::groupHopFlag</definition>
+        <argsstring></argsstring>
+        <name>groupHopFlag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="613" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="613" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a2f7fd3b23e233b4732ce9d5c0511d30c" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::initialCyclicShift</definition>
+        <argsstring></argsstring>
+        <name>initialCyclicShift</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="615" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="615" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1abc458b9d8c00ad4f7644818a4c8b6a7f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::maxCodeRate</definition>
+        <argsstring></argsstring>
+        <name>maxCodeRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="624" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="624" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a32e9f4c40a11a5e539f75ffe260ee484" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::multiSlotTxIndicator</definition>
+        <argsstring></argsstring>
+        <name>multiSlotTxIndicator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="605" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="605" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ae768248c68ba6f285629e4e082207634" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::nBitsCsi2</definition>
+        <argsstring></argsstring>
+        <name>nBitsCsi2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="626" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="626" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ac40ae181aa887133cf2b341f70179496" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::nRanksBits</definition>
+        <argsstring></argsstring>
+        <name>nRanksBits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="628" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="628" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a0830793904e12dc4b8aa999684b3c213" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::nSym</definition>
+        <argsstring></argsstring>
+        <name>nSym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="610" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="610" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ae4d796947a44c91dba29043ef4fb42db" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::pi2Bpsk</definition>
+        <argsstring></argsstring>
+        <name>pi2Bpsk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="606" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="606" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a8559b3fc9b38092629a3a9f2e0a492b6" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::prbSize</definition>
+        <argsstring></argsstring>
+        <name>prbSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="608" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="608" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ac1d0a1078c5fb25f1d4bc4fe7a8899fe" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::rankBitOffset</definition>
+        <argsstring></argsstring>
+        <name>rankBitOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="627" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="627" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a1c5c112d14c952f97fd48d2304b56232" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::rnti</definition>
+        <argsstring></argsstring>
+        <name>rnti</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="601" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="601" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a9f03ed3a6f99a524bc285da6dc3dadea" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::secondHopPrb</definition>
+        <argsstring></argsstring>
+        <name>secondHopPrb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="612" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="612" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1aa2230f66aff07732f73e30dfbf2555f1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::sequenceHopFlag</definition>
+        <argsstring></argsstring>
+        <name>sequenceHopFlag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="614" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="614" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a32f4c1b3f1ce76ea81cd42be5f1ee7f8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::srFlag</definition>
+        <argsstring></argsstring>
+        <name>srFlag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="617" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="617" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ac75227e5a1832013ac1e973ab7c4e95b" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::startPrb</definition>
+        <argsstring></argsstring>
+        <name>startPrb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="607" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="607" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1adf4387200f2656a09153c4f498114142" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::startSym</definition>
+        <argsstring></argsstring>
+        <name>startSym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="609" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="609" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a4e968fd5382effd2a56fdea2159bf278" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchUciPrm::timeDomainOccIdx</definition>
+        <argsstring></argsstring>
+        <name>timeDomainOccIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="616" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="616" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1ae87c545649f0bc4f2489c52faec8845c" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchUciPrm::uciOutputIdx</definition>
+        <argsstring></argsstring>
+        <name>uciOutputIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="599" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="599" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchUciPrm_1a9d625eeeb5e2401f358eaa3e63a7f41e" prot="public" static="no" mutable="no">
+        <type>cuphyPucchUciP1P2Crpd_t</type>
+        <definition>cuphyPucchUciP1P2Crpd_t _cuphyPucchUciPrm::uciP1P2Crpd_t</definition>
+        <argsstring></argsstring>
+        <name>uciP1P2Crpd_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="634" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="634" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="596" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="595" bodyend="635"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPucchUciPrm_1a3e4ffee422a22c5e2b517f415a418044" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>AddDmrsFlag</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a7f632af4c08059b5e8ea9c9a820b3609" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>bitLenCsiPart1</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a1301068afb770a769c6ad02d1c76be0f" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>bitLenHarq</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ac73f531a2eb519bd3193f22c4f4f011d" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>bitLenSr</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a67d38106037d5c89dcbfa981eeca202b" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>bwpStart</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a558eea4a4fbcc45e97541ae6fb684486" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>cellPrmDynIdx</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a8a1483d9c3da0b770e290eb41c82d3d8" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>cellPrmStatIdx</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ada6f22e433c514a935c6b57c13d980cc" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>dataScramblingId</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a0ce60ffa74b5e3e51079c6361ce06410" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>DmrsScramblingId</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ab3c5f2291d7ece413d6147feeef15eac" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>DTXthreshold</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1aefd61d0fe927356829e347a2048589a8" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>formatType</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ab6523bc8037f9e51bab43a9ecb9080d9" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>freqHopFlag</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a7912c6556ab4b1e66efcd8699f58f36c" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>groupHopFlag</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a2f7fd3b23e233b4732ce9d5c0511d30c" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>initialCyclicShift</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1abc458b9d8c00ad4f7644818a4c8b6a7f" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>maxCodeRate</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a32e9f4c40a11a5e539f75ffe260ee484" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>multiSlotTxIndicator</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ae768248c68ba6f285629e4e082207634" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>nBitsCsi2</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ac40ae181aa887133cf2b341f70179496" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>nRanksBits</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a0830793904e12dc4b8aa999684b3c213" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>nSym</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ae4d796947a44c91dba29043ef4fb42db" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>pi2Bpsk</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a8559b3fc9b38092629a3a9f2e0a492b6" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>prbSize</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ac1d0a1078c5fb25f1d4bc4fe7a8899fe" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>rankBitOffset</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a1c5c112d14c952f97fd48d2304b56232" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>rnti</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a9f03ed3a6f99a524bc285da6dc3dadea" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>secondHopPrb</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1aa2230f66aff07732f73e30dfbf2555f1" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>sequenceHopFlag</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a32f4c1b3f1ce76ea81cd42be5f1ee7f8" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>srFlag</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ac75227e5a1832013ac1e973ab7c4e95b" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>startPrb</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1adf4387200f2656a09153c4f498114142" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>startSym</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a4e968fd5382effd2a56fdea2159bf278" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>timeDomainOccIdx</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1ae87c545649f0bc4f2489c52faec8845c" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>uciOutputIdx</name></member>
+      <member refid="struct__cuphyPucchUciPrm_1a9d625eeeb5e2401f358eaa3e63a7f41e" prot="public" virt="non-virtual"><scope>_cuphyPucchUciPrm</scope><name>uciP1P2Crpd_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

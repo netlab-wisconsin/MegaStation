@@ -1,0 +1,12 @@
+{
+  "PDSCH": 0,
+  "PDCCH": 0,
+  "CSIRS": 0,
+  "PUCCH": 1,
+  "PUCCH2": 1,
+  "PUSCH": 2,
+  "PUSCH2": 2,
+  "SRS": 3,
+  "SSB": 0,
+  "PRACH": 4
+}

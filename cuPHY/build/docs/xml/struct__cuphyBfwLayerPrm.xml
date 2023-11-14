@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyBfwLayerPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyBfwLayerPrm</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyBfwLayerPrm_1a8da1a6d63d8e26162a014eed5a6ad385" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyBfwLayerPrm::chEstInfoBufIdx</definition>
+        <argsstring></argsstring>
+        <name>chEstInfoBufIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7302" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwLayerPrm_1af7b43f28cfd50a843165e0883d8f6291" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyBfwLayerPrm::ueLayerIndex</definition>
+        <argsstring></argsstring>
+        <name>ueLayerIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7303" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7303" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7301" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7300" bodyend="7304"/>
+    <listofallmembers>
+      <member refid="struct__cuphyBfwLayerPrm_1a8da1a6d63d8e26162a014eed5a6ad385" prot="public" virt="non-virtual"><scope>_cuphyBfwLayerPrm</scope><name>chEstInfoBufIdx</name></member>
+      <member refid="struct__cuphyBfwLayerPrm_1af7b43f28cfd50a843165e0883d8f6291" prot="public" virt="non-virtual"><scope>_cuphyBfwLayerPrm</scope><name>ueLayerIndex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

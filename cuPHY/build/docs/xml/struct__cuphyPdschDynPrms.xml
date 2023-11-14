@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPdschDynPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPdschDynPrms</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPdschDynPrms_1a9f21e8118c47c5705be5d2d37d27a0c3" prot="public" static="no" mutable="no">
+        <type>cudaStream_t</type>
+        <definition>cudaStream_t _cuphyPdschDynPrms::cuStream</definition>
+        <argsstring></argsstring>
+        <name>cuStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CUDA stream on which pipeline is launched. <xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>: cuPHY internally uses a CUDA stream pool to launch multiple parallel CUDA kernels from the same component. So cuStream provided below is not the only stream where workload would be launched. To be closed after consensus with a wider group </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1967" column="18" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1967" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschDynPrms_1aef52540b1fcc582c33edfe6959245524" prot="public" static="no" mutable="no">
+        <type>cuphyPdschCellGrpDynPrm_t const  *</type>
+        <definition>cuphyPdschCellGrpDynPrm_t const* _cuphyPdschDynPrms::pCellGrpDynPrm</definition>
+        <argsstring></argsstring>
+        <name>pCellGrpDynPrm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to cell group configuration parameters. Each pipeline will process a single cell-group. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1975" column="37" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1975" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschDynPrms_1a978a3ca0bac9221c0dbe2ba2c3f5afc1" prot="public" static="no" mutable="no">
+        <type>cuphyPdschDataIn_t const  *</type>
+        <definition>cuphyPdschDataIn_t const* _cuphyPdschDynPrms::pDataIn</definition>
+        <argsstring></argsstring>
+        <name>pDataIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data parameters Pointer to PDSCH data input </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1978" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1978" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschDynPrms_1a6e59a6978da21d5ddd9bef3b821462ce" prot="public" static="no" mutable="no">
+        <type>cuphyPdschDataOut_t *</type>
+        <definition>cuphyPdschDataOut_t* _cuphyPdschDynPrms::pDataOut</definition>
+        <argsstring></argsstring>
+        <name>pDataOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to PDSCH data output that will contain pCellGrpDynPrm-&gt;nCells tensors </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1980" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1980" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschDynPrms_1a5a1505dbab8ad9be697b2d4166e261d7" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t _cuphyPdschDynPrms::procModeBmsk</definition>
+        <argsstring></argsstring>
+        <name>procModeBmsk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Control parameters Processing modes (e.g., full-slot processing w/ profile 0 PDSCH_PROC_MODE_FULL_SLOT|PDSCH_PROC_MODE_PROFILE0) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1973" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1973" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschDynPrms_1a450b07dc977172181fdf97de0eae209e" prot="public" static="no" mutable="no">
+        <type>cuphyPdschStatusOut_t *</type>
+        <definition>cuphyPdschStatusOut_t* _cuphyPdschDynPrms::pStatusInfo</definition>
+        <argsstring></argsstring>
+        <name>pStatusInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pointer to struct holding status information; currently specifies if PDSCH setup ran into MAX_ER_CB issue . </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1981" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1981" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschDynPrms_1ac174d96853792b5f18ffd1c920b4364b" prot="public" static="no" mutable="no">
+        <type>cuphyPdschDataIn_t const  *</type>
+        <definition>cuphyPdschDataIn_t const* _cuphyPdschDynPrms::pTbCRCDataIn</definition>
+        <argsstring></argsstring>
+        <name>pTbCRCDataIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to optional TB CRCs </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1979" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1979" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>PDSCH Dynamic Parameters </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1966" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1965" bodyend="1982"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPdschDynPrms_1a9f21e8118c47c5705be5d2d37d27a0c3" prot="public" virt="non-virtual"><scope>_cuphyPdschDynPrms</scope><name>cuStream</name></member>
+      <member refid="struct__cuphyPdschDynPrms_1aef52540b1fcc582c33edfe6959245524" prot="public" virt="non-virtual"><scope>_cuphyPdschDynPrms</scope><name>pCellGrpDynPrm</name></member>
+      <member refid="struct__cuphyPdschDynPrms_1a978a3ca0bac9221c0dbe2ba2c3f5afc1" prot="public" virt="non-virtual"><scope>_cuphyPdschDynPrms</scope><name>pDataIn</name></member>
+      <member refid="struct__cuphyPdschDynPrms_1a6e59a6978da21d5ddd9bef3b821462ce" prot="public" virt="non-virtual"><scope>_cuphyPdschDynPrms</scope><name>pDataOut</name></member>
+      <member refid="struct__cuphyPdschDynPrms_1a5a1505dbab8ad9be697b2d4166e261d7" prot="public" virt="non-virtual"><scope>_cuphyPdschDynPrms</scope><name>procModeBmsk</name></member>
+      <member refid="struct__cuphyPdschDynPrms_1a450b07dc977172181fdf97de0eae209e" prot="public" virt="non-virtual"><scope>_cuphyPdschDynPrms</scope><name>pStatusInfo</name></member>
+      <member refid="struct__cuphyPdschDynPrms_1ac174d96853792b5f18ffd1c920b4364b" prot="public" virt="non-virtual"><scope>_cuphyPdschDynPrms</scope><name>pTbCRCDataIn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

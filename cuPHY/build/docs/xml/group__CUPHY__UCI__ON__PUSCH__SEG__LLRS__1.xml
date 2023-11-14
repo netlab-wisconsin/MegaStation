@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1" kind="group">
+    <compoundname>CUPHY_UCI_ON_PUSCH_SEG_LLRS_1</compoundname>
+    <title>uci on pusch: LLRs segmentation part 1. De-scrambles and segments SCH, HARQ, and CSI-PART1 LLRs</title>
+    <innerclass refid="structcuphyUciOnPuschSegLLRs1LaunchCfg__t" prot="public">cuphyUciOnPuschSegLLRs1LaunchCfg_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gaebedd8b50d00cb51dc114029c7e5ff82" prot="public" static="no">
+        <type>struct cuphyUciOnPuschSegLLRs1 *</type>
+        <definition>typedef struct cuphyUciOnPuschSegLLRs1* cuphyUciOnPuschSegLLRs1Hndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyUciOnPuschSegLLRs1Hndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY uciOnPuschSegLLRs1 handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6506" column="39" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6506" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gadc383c60699974481d2c7470fe500722" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreateUciOnPuschSegLLRs1</definition>
+        <argsstring>(cuphyUciOnPuschSegLLRs1Hndl_t *pUciOnPuschSegLLRs1Hndl)</argsstring>
+        <name>cuphyCreateUciOnPuschSegLLRs1</name>
+        <param>
+          <type><ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gaebedd8b50d00cb51dc114029c7e5ff82" kindref="member">cuphyUciOnPuschSegLLRs1Hndl_t</ref> *</type>
+          <declname>pUciOnPuschSegLLRs1Hndl</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY uciOnPuschSegLLRs1 object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a uciOnPuschSegLLRs1 object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pUciOnPuschSegLLRs1Hndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a uciOnPuschSegLLRs1 object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pUciOnPuschSegLLRs1Hndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new uciOnPuschSegLLRs1 instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gaa53cb49928c565c16f4ba10185fa80b5" kindref="member">cuphyUciOnPuschSegLLRs1GetDescrInfo</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gab451acb793ee1a41436b61538edff1fc" kindref="member">cuphySetupUciOnPuschSegLLRs1</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6561" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6561" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1ga34e791cf90ef169e1fb20c0f00ed6706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyUciOnPuschSegLLRs1</definition>
+        <argsstring>(cuphyUciOnPuschSegLLRs1Hndl_t uciOnPuschSegLLRs1Hndl)</argsstring>
+        <name>cuphyDestroyUciOnPuschSegLLRs1</name>
+        <param>
+          <type><ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gaebedd8b50d00cb51dc114029c7e5ff82" kindref="member">cuphyUciOnPuschSegLLRs1Hndl_t</ref></type>
+          <declname>uciOnPuschSegLLRs1Hndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY uciOnPuschSegLLRs1 object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY uciOnPuschSegLLRs1 object that was previously created by <ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gadc383c60699974481d2c7470fe500722" kindref="member">cuphyCreateUciOnPuschSegLLRs1</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>uciOnPuschSegLLRs1Hndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uciOnPuschSegLLRs1Hndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated compCwTreeTypes instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>,q <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gaa53cb49928c565c16f4ba10185fa80b5" kindref="member">cuphyUciOnPuschSegLLRs1GetDescrInfo</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gadc383c60699974481d2c7470fe500722" kindref="member">cuphyCreateUciOnPuschSegLLRs1</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gab451acb793ee1a41436b61538edff1fc" kindref="member">cuphySetupUciOnPuschSegLLRs1</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6635" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6635" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gab451acb793ee1a41436b61538edff1fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupUciOnPuschSegLLRs1</definition>
+        <argsstring>(cuphyUciOnPuschSegLLRs1Hndl_t uciOnPuschSegLLRs1Hndl, uint16_t nUciUes, uint16_t *pUciUserIdxs, PerTbParams *pTbPrmsCpu, PerTbParams *pTbPrmsGpu, uint16_t nUeGrps, cuphyTensorPrm_t *pTensorPrmsEqOutLLRs, uint16_t *pNumPrbs, uint8_t startSym, uint8_t nPuschSym, uint8_t nPuschDataSym, uint8_t *pDataSymIdxs, uint8_t nPuschDmrsSym, uint8_t *pDmrsSymIdxs, void *pCpuDynDesc, void *pGpuDynDesc, uint8_t enableCpuToGpuDescrAsyncCpy, cuphyUciOnPuschSegLLRs1LaunchCfg_t *pLaunchCfg, cudaStream_t strm)</argsstring>
+        <name>cuphySetupUciOnPuschSegLLRs1</name>
+        <param>
+          <type><ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gaebedd8b50d00cb51dc114029c7e5ff82" kindref="member">cuphyUciOnPuschSegLLRs1Hndl_t</ref></type>
+          <declname>uciOnPuschSegLLRs1Hndl</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nUciUes</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>pUciUserIdxs</declname>
+        </param>
+        <param>
+          <type><ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+          <declname>pTbPrmsCpu</declname>
+        </param>
+        <param>
+          <type><ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+          <declname>pTbPrmsGpu</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nUeGrps</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t *</type>
+          <declname>pTensorPrmsEqOutLLRs</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>pNumPrbs</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>startSym</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>nPuschSym</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>nPuschDataSym</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pDataSymIdxs</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>nPuschDmrsSym</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pDmrsSymIdxs</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDesc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pGpuDynDesc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type><ref refid="structcuphyUciOnPuschSegLLRs1LaunchCfg__t" kindref="compound">cuphyUciOnPuschSegLLRs1LaunchCfg_t</ref> *</type>
+          <declname>pLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY uciOnPuschSegLLRs1 for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY uciOnPuschSegLLRs1 in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uciOnPuschSegLLRs1Hndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle of uciOnPuschSegLLRs1 instance <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nUciUes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of UEs bearing Uplink Control Information (UCI) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pUciUserIdxs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- indices of UCI bearing UEs (index to resolve UE from set of all UEs being processed by PUSCH) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTbPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address of Transport block parameters in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTbPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address of Transport block parameters in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nUeGrps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of UE groups to be processed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTensorPrmsEqOutLLRs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor parameters for equalizer output LLRs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pNumPrbs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of allocated PRBs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>startSym</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- first symbol of PUSCH </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nPuschSym</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- total number of PUSCH symbols </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nPuschDataSym</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of PUSCH data symbols </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDataSymIdxs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- symbol indices of PUSCH data symbols </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nPuschDmrsSym</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of PUSCH DMRS symbols </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDmrsSymIdxs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- symbol indices of PUSCH DMRS symbols </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pGpuDynDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to channel estimation launch configurations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gaa53cb49928c565c16f4ba10185fa80b5" kindref="member">cuphyUciOnPuschSegLLRs1GetDescrInfo</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1ga34e791cf90ef169e1fb20c0f00ed6706" kindref="member">cuphyDestroyUciOnPuschSegLLRs1</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6596" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6596" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gaa53cb49928c565c16f4ba10185fa80b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyUciOnPuschSegLLRs1GetDescrInfo</definition>
+        <argsstring>(size_t *pDynDescrSizeBytes, size_t *pDynDescrAlignBytes)</argsstring>
+        <name>cuphyUciOnPuschSegLLRs1GetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute uciOnPuschSegLLRs1 descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes uciOnPuschSegLLRs1 descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other uciOnPuschSegLLRs1 APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pDynDescrSizeBytes</computeroutput> and/or <computeroutput>pDynDescrAlignBytes</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of dynamic descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gadc383c60699974481d2c7470fe500722" kindref="member">cuphyCreateUciOnPuschSegLLRs1</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1ga34e791cf90ef169e1fb20c0f00ed6706" kindref="member">cuphyDestroyUciOnPuschSegLLRs1</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6537" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6537" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes application programming interface for part 1 UCI on PUSCH deSegmentation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

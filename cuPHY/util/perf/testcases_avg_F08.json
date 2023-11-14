@@ -1,0 +1,67 @@
+{
+  "F08 - PDSCH": {
+    "F08-PP-00": "TV_cuphy_F08-DS-01_slot0_MIMO4x4_PRB273_DataSyms11_qam256.h5",
+    "F08-AC-01": "TV_cuphy_F08-DS-30_slot0_MIMO4x4_PRB32_DataSyms11_qam256.h5",
+    "F08-AM-01": "TV_cuphy_F08-DS-31_slot0_MIMO2x4_PRB40_DataSyms11_qam64.h5",
+    "F08-AE-01": "TV_cuphy_F08-DS-32_slot0_MIMO1x4_PRB24_DataSyms11_qam16.h5",
+    "F08-AC-02": "TV_cuphy_F08-DS-33_slot0_MIMO4x4_PRB64_DataSyms11_qam256.h5",
+    "F08-AM-02": "TV_cuphy_F08-DS-34_slot0_MIMO2x4_PRB72_DataSyms11_qam64.h5",
+    "F08-AE-02": "TV_cuphy_F08-DS-35_slot0_MIMO1x4_PRB48_DataSyms11_qam16.h5",
+    "F08-AC-03": "TV_cuphy_F08-DS-36_slot0_MIMO4x4_PRB88_DataSyms11_qam256.h5",
+    "F08-AM-03": "TV_cuphy_F08-DS-37_slot0_MIMO2x4_PRB104_DataSyms11_qam64.h5",
+    "F08-AE-03": "TV_cuphy_F08-DS-38_slot0_MIMO1x4_PRB64_DataSyms11_qam16.h5",
+    "F08-AC-04": "TV_cuphy_F08-DS-39_slot0_MIMO4x4_PRB120_DataSyms11_qam256.h5",
+    "F08-AM-04": "TV_cuphy_F08-DS-40_slot0_MIMO2x4_PRB136_DataSyms11_qam64.h5",
+    "F08-AE-04": "TV_cuphy_F08-DS-41_slot0_MIMO1x4_PRB88_DataSyms11_qam16.h5",
+    "F08-AC-05": "TV_cuphy_F08-DS-42_slot0_MIMO4x4_PRB144_DataSyms11_qam256.h5",
+    "F08-AM-05": "TV_cuphy_F08-DS-43_slot0_MIMO2x4_PRB168_DataSyms11_qam64.h5",
+    "F08-AE-05": "TV_cuphy_F08-DS-44_slot0_MIMO1x4_PRB104_DataSyms11_qam16.h5",
+    "F08-AC-06": "TV_cuphy_F08-DS-45_slot0_MIMO4x4_PRB176_DataSyms11_qam256.h5",
+    "F08-AM-06": "TV_cuphy_F08-DS-46_slot0_MIMO2x4_PRB200_DataSyms11_qam64.h5",
+    "F08-AE-06": "TV_cuphy_F08-DS-47_slot0_MIMO1x4_PRB128_DataSyms11_qam16.h5",
+    "F08-AC-07": "TV_cuphy_F08-DS-48_slot0_MIMO4x4_PRB208_DataSyms11_qam256.h5",
+    "F08-AM-07": "TV_cuphy_F08-DS-49_slot0_MIMO2x4_PRB232_DataSyms11_qam64.h5",
+    "F08-AE-07": "TV_cuphy_F08-DS-50_slot0_MIMO1x4_PRB144_DataSyms11_qam16.h5"
+  },
+  "F08 - PUSCH": {
+    "F08-PP-00": "TV_cuphy_F08-US-01_snrdb40.00_MIMO2x4_PRB272_DataSyms12_qam256.h5",
+    "F08-AC-01": "TV_cuphy_F08-US-30_snrdb40.00_MIMO2x4_PRB32_DataSyms12_qam256.h5",
+    "F08-AM-01": "TV_cuphy_F08-US-31_snrdb40.00_MIMO1x4_PRB40_DataSyms12_qam64.h5",
+    "F08-AE-01": "TV_cuphy_F08-US-32_snrdb40.00_MIMO1x4_PRB24_DataSyms12_qam16.h5",
+    "F08-AC-02": "TV_cuphy_F08-US-33_snrdb40.00_MIMO2x4_PRB64_DataSyms12_qam256.h5",
+    "F08-AM-02": "TV_cuphy_F08-US-34_snrdb40.00_MIMO1x4_PRB72_DataSyms12_qam64.h5",
+    "F08-AE-02": "TV_cuphy_F08-US-35_snrdb40.00_MIMO1x4_PRB48_DataSyms12_qam16.h5",
+    "F08-AC-03": "TV_cuphy_F08-US-36_snrdb40.00_MIMO2x4_PRB88_DataSyms12_qam256.h5",
+    "F08-AM-03": "TV_cuphy_F08-US-37_snrdb40.00_MIMO1x4_PRB104_DataSyms12_qam64.h5",
+    "F08-AE-03": "TV_cuphy_F08-US-38_snrdb40.00_MIMO1x4_PRB64_DataSyms12_qam16.h5",
+    "F08-AC-04": "TV_cuphy_F08-US-39_snrdb40.00_MIMO2x4_PRB120_DataSyms12_qam256.h5",
+    "F08-AM-04": "TV_cuphy_F08-US-40_snrdb40.00_MIMO1x4_PRB136_DataSyms12_qam64.h5",
+    "F08-AE-04": "TV_cuphy_F08-US-41_snrdb40.00_MIMO1x4_PRB88_DataSyms12_qam16.h5",
+    "F08-AC-05": "TV_cuphy_F08-US-42_snrdb40.00_MIMO2x4_PRB144_DataSyms12_qam256.h5",
+    "F08-AM-05": "TV_cuphy_F08-US-43_snrdb40.00_MIMO1x4_PRB168_DataSyms12_qam64.h5",
+    "F08-AE-05": "TV_cuphy_F08-US-44_snrdb40.00_MIMO1x4_PRB104_DataSyms12_qam16.h5",
+    "F08-AC-06": "TV_cuphy_F08-US-45_snrdb40.00_MIMO2x4_PRB176_DataSyms12_qam256.h5",
+    "F08-AM-06": "TV_cuphy_F08-US-46_snrdb40.00_MIMO1x4_PRB200_DataSyms12_qam64.h5",
+    "F08-AE-06": "TV_cuphy_F08-US-47_snrdb40.00_MIMO1x4_PRB128_DataSyms12_qam16.h5",
+    "F08-AC-07": "TV_cuphy_F08-US-48_snrdb40.00_MIMO2x4_PRB200_DataSyms12_qam256.h5",
+    "F08-AM-07": "TV_cuphy_F08-US-49_snrdb40.00_MIMO1x4_PRB232_DataSyms12_qam64.h5",
+    "F08-AE-07": "TV_cuphy_F08-US-50_snrdb40.00_MIMO1x4_PRB144_DataSyms12_qam16.h5"
+  },
+  "F08 - PRACH": {
+    "F08-PP-00": "TV_cuphy_F08-RA-01.h5"
+  },
+  "F08 - PDCCH": {
+    "F08-PP-00": "TV_cuphy_F08-DC-01_PRB273.h5",
+    "F08-AX-01": "TV_cuphy_F08-DC-02_PRB273.h5"
+  },
+  "F08 - PUCCH": {
+    "F08-PP-00": "TV_cuphy_F08-UC-01_PRB273.h5",
+    "F08-AX-01": "TV_cuphy_F08-UC-02_PRB273.h5"
+  },
+  "F08 - SSB": {
+    "F08-PP-00": "TV_cuphy_F08-SS-01.h5"
+  },
+  "F08 - CSIRS": {
+    "F08-PP-00": "TV_cuphy_F08-CR-01.h5"
+  }
+}

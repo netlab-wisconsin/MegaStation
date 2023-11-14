@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyCsirsRrcDynPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyCsirsRrcDynPrm</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1ab219cc3c0928c84e102fa42aefd2209a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphyCsirsRrcDynPrm::beta</definition>
+        <argsstring></argsstring>
+        <name>beta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Power scaling factor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2537" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2537" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a188f845be69072b857af46f388762435" prot="public" static="no" mutable="no">
+        <type>cuphyCdmType_t</type>
+        <definition>cuphyCdmType_t _cuphyCsirsRrcDynPrm::cdmType</definition>
+        <argsstring></argsstring>
+        <name>cdmType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CDM Type, 0: noCDM, 1: fd-CDM2, 2: cdm4-FD2-TD2, 3: cdm8-FD2-TD4 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2536" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2536" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a7071460f61b2ceea1de356181055f28c" prot="public" static="no" mutable="no">
+        <type>cuphyCsiType_t</type>
+        <definition>cuphyCsiType_t _cuphyCsirsRrcDynPrm::csiType</definition>
+        <argsstring></argsstring>
+        <name>csiType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CSI Type, 0: TRS, 1: CSI-RS NZP, 2: CSI-RS ZP. Only CSI-RS NZP supported currently </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2535" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2535" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a00ba20e3f0043a87dee09d2f06185cbb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyCsirsRrcDynPrm::enablePrcdBf</definition>
+        <argsstring></argsstring>
+        <name>enablePrcdBf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pre-coding parameters: Enable pre-coding for this CSI-RS </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2539" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2539" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a63477a691cee985618a94347dafc18d8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyCsirsRrcDynPrm::freqDensity</definition>
+        <argsstring></argsstring>
+        <name>freqDensity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The density field, p and comb offset (for dot5), 0: dot5(even RB), 1: dot5 (odd RB), 2: One, 3: three </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2532" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2532" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1ad6fdd5db327baff6491c9fc5a5434ed1" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyCsirsRrcDynPrm::freqDomain</definition>
+        <argsstring></argsstring>
+        <name>freqDomain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bitmap defining the freqDomainAllocation. Counting is started from least significant bit </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2528" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2528" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a703e815d4748a942e47a47167b003259" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyCsirsRrcDynPrm::idxSlotInFrame</definition>
+        <argsstring></argsstring>
+        <name>idxSlotInFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>slot index in frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2534" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2534" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a91172eca7aa65cf49b06fd6169b55f5a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyCsirsRrcDynPrm::nRb</definition>
+        <argsstring></argsstring>
+        <name>nRb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of RBs across which this CSI resource spans. Expected value &lt;= 273-startRb </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2527" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2527" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a39115d16dbd900ef17007ff1df0e1349" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyCsirsRrcDynPrm::pmwPrmIdx</definition>
+        <argsstring></argsstring>
+        <name>pmwPrmIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index to pre-coding matrix array, i.e., to the pPmwParams array of the cuphyCsirsDynPrms_t struct </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2540" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2540" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a8204775180993528222e7e2d60b5a6a3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyCsirsRrcDynPrm::row</definition>
+        <argsstring></argsstring>
+        <name>row</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Row entry into the CSI resource location table. Valid values 1-18 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2529" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2529" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a2202e41ae07c9de4c95fcf16eb2435c1" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyCsirsRrcDynPrm::scrambId</definition>
+        <argsstring></argsstring>
+        <name>scrambId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ScramblingId of CSI-RS </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2533" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2533" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a54c3520e1054140feafd08fb553e9ce4" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyCsirsRrcDynPrm::startRb</definition>
+        <argsstring></argsstring>
+        <name>startRb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>RB where this CSI resource starts. Expected value &lt; 273 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2526" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2526" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a25ef7c298f1def4ed48da620f7e51bac" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyCsirsRrcDynPrm::symbL0</definition>
+        <argsstring></argsstring>
+        <name>symbL0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time domain location L0 and firstOFDMSymbolInTimeDomain. 0 &lt;= Valid value &lt; OFDM_SYMBOLS_PER_SLOT </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2530" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2530" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyCsirsRrcDynPrm_1a9a119b2e08063f3db23adcf3b69820b0" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyCsirsRrcDynPrm::symbL1</definition>
+        <argsstring></argsstring>
+        <name>symbL1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time domain location L1 and firstOFDMSymbolInTimeDomain2. 0 &lt;= Valid value &lt; OFDM_SYMBOLS_PER_SLOT </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2531" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2531" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>CSI-RS RRC dynamic parameters </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2525" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2524" bodyend="2542"/>
+    <listofallmembers>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1ab219cc3c0928c84e102fa42aefd2209a" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>beta</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a188f845be69072b857af46f388762435" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>cdmType</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a7071460f61b2ceea1de356181055f28c" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>csiType</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a00ba20e3f0043a87dee09d2f06185cbb" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>enablePrcdBf</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a63477a691cee985618a94347dafc18d8" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>freqDensity</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1ad6fdd5db327baff6491c9fc5a5434ed1" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>freqDomain</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a703e815d4748a942e47a47167b003259" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>idxSlotInFrame</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a91172eca7aa65cf49b06fd6169b55f5a" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>nRb</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a39115d16dbd900ef17007ff1df0e1349" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>pmwPrmIdx</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a8204775180993528222e7e2d60b5a6a3" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>row</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a2202e41ae07c9de4c95fcf16eb2435c1" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>scrambId</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a54c3520e1054140feafd08fb553e9ce4" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>startRb</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a25ef7c298f1def4ed48da620f7e51bac" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>symbL0</name></member>
+      <member refid="struct__cuphyCsirsRrcDynPrm_1a9a119b2e08063f3db23adcf3b69820b0" prot="public" virt="non-virtual"><scope>_cuphyCsirsRrcDynPrm</scope><name>symbL1</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

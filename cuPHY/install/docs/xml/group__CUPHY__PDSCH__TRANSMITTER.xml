@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__PDSCH__TRANSMITTER" kind="group">
+    <compoundname>CUPHY_PDSCH_TRANSMITTER</compoundname>
+    <title>PDSCH Transmitter</title>
+    <innerclass refid="struct__cuphyPdschCellDynPrm" prot="public">_cuphyPdschCellDynPrm</innerclass>
+    <innerclass refid="struct__cuphyPdschCellGrpDynPrm" prot="public">_cuphyPdschCellGrpDynPrm</innerclass>
+    <innerclass refid="struct__cuphyPdschCwPrm" prot="public">_cuphyPdschCwPrm</innerclass>
+    <innerclass refid="struct__cuphyPdschDataIn" prot="public">_cuphyPdschDataIn</innerclass>
+    <innerclass refid="struct__cuphyPdschDataOut" prot="public">_cuphyPdschDataOut</innerclass>
+    <innerclass refid="struct__cuphyPdschDbgPrms" prot="public">_cuphyPdschDbgPrms</innerclass>
+    <innerclass refid="struct__cuphyPdschDmrsPrm" prot="public">_cuphyPdschDmrsPrm</innerclass>
+    <innerclass refid="struct__cuphyPdschDynPrms" prot="public">_cuphyPdschDynPrms</innerclass>
+    <innerclass refid="struct__cuphyPdschStatPrms" prot="public">_cuphyPdschStatPrms</innerclass>
+    <innerclass refid="struct__cuphyPdschUeGrpPrm" prot="public">_cuphyPdschUeGrpPrm</innerclass>
+    <innerclass refid="struct__cuphyPdschUePrm" prot="public">_cuphyPdschUePrm</innerclass>
+    <innerclass refid="struct__cuphyPmW__t" prot="public">_cuphyPmW_t</innerclass>
+    <innerclass refid="struct__cuphyPmWOneLayer__t" prot="public">_cuphyPmWOneLayer_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__CUPHY__PDSCH__TRANSMITTER_1ga2937f5c1f684759ed6856308eb780f5e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_cuphyPdschProcMode</name>
+        <enumvalue id="group__CUPHY__PDSCH__TRANSMITTER_1gga2937f5c1f684759ed6856308eb780f5ea0508c46c6539414faeae761630155292" prot="public">
+          <name>PDSCH_PROC_MODE_NO_GRAPHS</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Think of it as a bitmask [...] B2 B1 B0, where B0 is the least significant bit. B0: streams (0) or graphs (1) mode B1: setup once fallback if 1; default 0 B2: inter-cell kernel batching if 1; default 0. Only applicable when there are multiple cells in a cell group. processing without CUDA GRAPHS </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__CUPHY__PDSCH__TRANSMITTER_1gga2937f5c1f684759ed6856308eb780f5ea6bb9fd127087a27f24d1aa6192415801" prot="public">
+          <name>PDSCH_PROC_MODE_GRAPHS</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>processing with CUDA graphs </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__CUPHY__PDSCH__TRANSMITTER_1gga2937f5c1f684759ed6856308eb780f5ea8178c46de6b44bbccdf496609184a080" prot="public">
+          <name>PDSCH_PROC_MODE_SETUP_ONCE_FALLBACK</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Force reset of TB-CRC buffers when running the same TV back to back with only a single setup; used to guarantee correctness. Use this mode with a bitwise or with any of the other modes (e.g., 0 to 1). Ensure value, currently 2, has only one bit set which does not overlap with any of the other modes. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__CUPHY__PDSCH__TRANSMITTER_1gga2937f5c1f684759ed6856308eb780f5eae4f904af68266a74aec86637027ae977" prot="public">
+          <name>PDSCH_INTER_CELL_BATCHING</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Deprecated; has no effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__CUPHY__PDSCH__TRANSMITTER_1gga2937f5c1f684759ed6856308eb780f5ea6ecc6ab3d4bdba82922642e5192302d4" prot="public">
+          <name>PDSCH_MAX_PROC_MODES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>maximum number of processing modes supported </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PDSCH processing modes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1643" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1642" bodyend="1655"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__PDSCH__TRANSMITTER_1gabd8c1ace9bcdea53fc84975df780019f" prot="public" static="no">
+        <type>struct cuphyPdschBatchPrm *</type>
+        <definition>typedef struct cuphyPdschBatchPrm* cuphyPdschBatchPrmHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyPdschBatchPrmHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PDSCH batch configuration handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1992" column="34" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1992" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__CUPHY__PDSCH__TRANSMITTER_1ga7f4a2a9cee1d32df32cfc26402edcb58" prot="public" static="no">
+        <type>struct cuphyPdschTx *</type>
+        <definition>typedef struct cuphyPdschTx* cuphyPdschTxHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyPdschTxHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY PDSCH transmitter handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1637" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1637" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1gaee9a42aad6a44062cb44eeb33c0bc26c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyBatchPdschTx</definition>
+        <argsstring>(cuphyPdschTxHndl_t pdschTxHndl, cuphyPdschDynPrms_t *pDynPrms, cuphyPdschBatchPrmHndl_t batchPrmHndl)</argsstring>
+        <name>cuphyBatchPdschTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga7f4a2a9cee1d32df32cfc26402edcb58" kindref="member">cuphyPdschTxHndl_t</ref></type>
+          <declname>pdschTxHndl</declname>
+        </param>
+        <param>
+          <type>cuphyPdschDynPrms_t *</type>
+          <declname>pDynPrms</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gabd8c1ace9bcdea53fc84975df780019f" kindref="member">cuphyPdschBatchPrmHndl_t</ref></type>
+          <declname>batchPrmHndl</declname>
+        </param>
+        <briefdescription>
+<para>Batch PDSCH workoad. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Batch PDSCH workload across one or more cells, UE-groups and UEs. The batched configuration is used during slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pdschTxHndl</computeroutput> and/or <computeroutput>pDynPrms</computeroutput> (or its components) and/or batchPrmHndl is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pdschTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of PdschTx instance to be setup </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Dynamic parameters carrying information needed for slot processing </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>batchPrmHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Workload batching information</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gabdd17751369db576a6388389d95ccf29" kindref="member">cuphyCreatePdschTx</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gab4bc6647a6c6d5224e14453a70c7ef4c" kindref="member">cuphyRunPdschTx</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gaad305e65c1affea95330d9e8c4ca487e" kindref="member">cuphyDestroyPdschTx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2135" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2135" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1ga654658e314c774980a7d1ce1e950be12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePdschBatchPrm</definition>
+        <argsstring>(cuphyPdschBatchPrmHndl_t *pBatchPrmHndl)</argsstring>
+        <name>cuphyCreatePdschBatchPrm</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gabd8c1ace9bcdea53fc84975df780019f" kindref="member">cuphyPdschBatchPrmHndl_t</ref> *</type>
+          <declname>pBatchPrmHndl</declname>
+        </param>
+        <briefdescription>
+<para>Allocate a container for PDSCH batch parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocate storage to hold PDSCH batch parameters and return a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pBatchPrmHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a batch parameter container object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pBatchPrmHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the container for PDSCH batch parameters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gaa41426fb9acf5e0d587c1626e38d8b54" kindref="member">cuphyDestroyPdschBatchPrm</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2063" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2063" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1gabdd17751369db576a6388389d95ccf29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePdschTx</definition>
+        <argsstring>(cuphyPdschTxHndl_t *pPdschTxHndl, cuphyPdschStatPrms_t const *pStatPrms)</argsstring>
+        <name>cuphyCreatePdschTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga7f4a2a9cee1d32df32cfc26402edcb58" kindref="member">cuphyPdschTxHndl_t</ref> *</type>
+          <declname>pPdschTxHndl</declname>
+        </param>
+        <param>
+          <type>cuphyPdschStatPrms_t const *</type>
+          <declname>pStatPrms</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY PDSCH pipeline. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocate a cuPHY PDSCH transmitter pipeline and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPdschTxHdnl</computeroutput> and/or <computeroutput>pStatPrms</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a PdschTx object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pPdschTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new PdschTx instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pStatPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to PDSCH static parameters to be used in pipeline creation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gacb71f5881aaf2c2827946e5d3125c249" kindref="member">cuphySetupPdschTx</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gab4bc6647a6c6d5224e14453a70c7ef4c" kindref="member">cuphyRunPdschTx</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gaad305e65c1affea95330d9e8c4ca487e" kindref="member">cuphyDestroyPdschTx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2020" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2020" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1gaa41426fb9acf5e0d587c1626e38d8b54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPdschBatchPrm</definition>
+        <argsstring>(cuphyPdschBatchPrmHndl_t batchPrmHndl)</argsstring>
+        <name>cuphyDestroyPdschBatchPrm</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gabd8c1ace9bcdea53fc84975df780019f" kindref="member">cuphyPdschBatchPrmHndl_t</ref></type>
+          <declname>batchPrmHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroy container for PDSCH batch parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroy a cuPHY context object that was previously created by a call to <ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga654658e314c774980a7d1ce1e950be12" kindref="member">cuphyCreatePdschBatchPrm</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>batchPrmHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>batchPrmHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- previously allocated PDSCH batch parameter instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga654658e314c774980a7d1ce1e950be12" kindref="member">cuphyCreatePdschBatchPrm</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2084" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2084" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1gaad305e65c1affea95330d9e8c4ca487e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPdschTx</definition>
+        <argsstring>(cuphyPdschTxHndl_t pdschTxHndl)</argsstring>
+        <name>cuphyDestroyPdschTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga7f4a2a9cee1d32df32cfc26402edcb58" kindref="member">cuphyPdschTxHndl_t</ref></type>
+          <declname>pdschTxHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroy a cuPHY PDSCH transmit pipeline object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroy a cuPHY PDSCH transmitter pipeline object that was previously created by <ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gabdd17751369db576a6388389d95ccf29" kindref="member">cuphyCreatePdschTx</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pdschTxHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pdschTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated PdschTx instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gabdd17751369db576a6388389d95ccf29" kindref="member">cuphyCreatePdschTx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2252" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2252" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1ga52be800fd1cccbad51d60ea583834f4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyFallbackBufferSetupPdschTx</definition>
+        <argsstring>(cuphyPdschTxHndl_t pdschTxHndl, void *pAddr, cudaStream_t strm)</argsstring>
+        <name>cuphyFallbackBufferSetupPdschTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga7f4a2a9cee1d32df32cfc26402edcb58" kindref="member">cuphyPdschTxHndl_t</ref></type>
+          <declname>pdschTxHndl</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pAddr</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Fallback single-cell output buffer setup for cuPHY PDSCH pipeline for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup the output buffer address for cuPHY PDSCH transmitter pipeline in preparation towards slot execution. This function should only be used in PDSCH_PROC_MODE_SETUP_ONCE_FALLBACK mode and requires that <ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gacb71f5881aaf2c2827946e5d3125c249" kindref="member">cuphySetupPdschTx()</ref> has been called once before it for each pipeline object. It supports only one cell per pipeline.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pdschTxHndl</computeroutput> and/or <computeroutput>pAddr</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if buffer setup was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pdschTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of PdschTx instance to be setup </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- New address for pipeline&apos;s output tensor buffer (single cell only) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for async. memory copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2183" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2183" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1gad8e2b44d014038c2d29792894a297e39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyFallbackBuffersSetupPdschTx</definition>
+        <argsstring>(cuphyPdschTxHndl_t pdschTxHndl, void **pAddr, int fallback_cells, cudaStream_t strm)</argsstring>
+        <name>cuphyFallbackBuffersSetupPdschTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga7f4a2a9cee1d32df32cfc26402edcb58" kindref="member">cuphyPdschTxHndl_t</ref></type>
+          <declname>pdschTxHndl</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>pAddr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fallback_cells</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Fallback output buffers setup for multiple cells in cell group for cuPHY PDSCH pipeline for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup the output buffer addresses for cuPHY PDSCH transmitter pipeline in preparation towards slot execution. This function should only be used in PDSCH_PROC_MODE_SETUP_ONCE_FALLBACK mode and requires that <ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gacb71f5881aaf2c2827946e5d3125c249" kindref="member">cuphySetupPdschTx()</ref> has been called once before it for each pipeline object. It supports multiple cells per pipeline.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pdschTxHndl</computeroutput> and/or <computeroutput>pAddr</computeroutput> or its elements are NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if buffers setup was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pdschTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of PdschTx instance to be setup </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Array of addresses for pipeline&apos;s output tensor buffers (one buffer per cell). Order of addresses should match the order of dynamic cells in initial, non fallback, setup </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fallback_cells</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of cells (same as valid elements in pAddr array). Should match number of cells during initial, non fallback, setup. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for async. memory copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2209" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2209" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1ga7e665fccbf8a4549f0dece5458005ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cuphyGetGpuMemoryFootprintPdschTx</definition>
+        <argsstring>(cuphyPdschTxHndl_t pdschTxHndl)</argsstring>
+        <name>cuphyGetGpuMemoryFootprintPdschTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga7f4a2a9cee1d32df32cfc26402edcb58" kindref="member">cuphyPdschTxHndl_t</ref></type>
+          <declname>pdschTxHndl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2022" column="8" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2022" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1gab4bc6647a6c6d5224e14453a70c7ef4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyRunPdschTx</definition>
+        <argsstring>(cuphyPdschTxHndl_t pdschTxHndl, uint64_t procModeBmsk)</argsstring>
+        <name>cuphyRunPdschTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga7f4a2a9cee1d32df32cfc26402edcb58" kindref="member">cuphyPdschTxHndl_t</ref></type>
+          <declname>pdschTxHndl</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>procModeBmsk</declname>
+        </param>
+        <briefdescription>
+<para>Run cuPHY PDSCH pipeline processing in specified mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call triggers cuPHY PDSCH transmitter pipeline execution in mode specified by procModeBmsk</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pdschTxHndl</computeroutput> is NULL and/or procModeBmsk is not supported.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if PdschTx execution is successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pdschTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of PdschTx instance which is to be triggered </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>procModeBmsk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Processing mode bitmask containing one or more processing modes applicable during this execution</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gabdd17751369db576a6388389d95ccf29" kindref="member">cuphyCreatePdschTx</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gacb71f5881aaf2c2827946e5d3125c249" kindref="member">cuphySetupPdschTx</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gaad305e65c1affea95330d9e8c4ca487e" kindref="member">cuphyDestroyPdschTx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2231" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2231" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PDSCH__TRANSMITTER_1gacb71f5881aaf2c2827946e5d3125c249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPdschTx</definition>
+        <argsstring>(cuphyPdschTxHndl_t pdschTxHndl, cuphyPdschDynPrms_t *pDynPrms, cuphyPdschBatchPrmHndl_t const batchPrmHndl)</argsstring>
+        <name>cuphySetupPdschTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1ga7f4a2a9cee1d32df32cfc26402edcb58" kindref="member">cuphyPdschTxHndl_t</ref></type>
+          <declname>pdschTxHndl</declname>
+        </param>
+        <param>
+          <type>cuphyPdschDynPrms_t *</type>
+          <declname>pDynPrms</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gabd8c1ace9bcdea53fc84975df780019f" kindref="member">cuphyPdschBatchPrmHndl_t</ref> const</type>
+          <declname>batchPrmHndl</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY PDSCH pipeline for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY PDSCH transmitter pipeline (and its components) state in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pdschTxHndl</computeroutput> and/or <computeroutput>pDynPrms</computeroutput> and/or batchPrmHndl is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pdschTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of PdschTx instance to be setup </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Dynamic parameters carrying information needed for slot processing </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>batchPrmHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Workload batching information</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gabdd17751369db576a6388389d95ccf29" kindref="member">cuphyCreatePdschTx</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gab4bc6647a6c6d5224e14453a70c7ef4c" kindref="member">cuphyRunPdschTx</ref>,<ref refid="group__CUPHY__PDSCH__TRANSMITTER_1gaad305e65c1affea95330d9e8c4ca487e" kindref="member">cuphyDestroyPdschTx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2159" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="2159" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the PDSCH transmit pipeline functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

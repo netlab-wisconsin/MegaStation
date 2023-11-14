@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPrachCellStatPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPrachCellStatPrms</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPrachCellStatPrms_1a791325a4da52c462172e322c7aa9d45d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPrachCellStatPrms::configurationIndex</definition>
+        <argsstring></argsstring>
+        <name>configurationIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>valid values 0-255 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2777" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2777" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachCellStatPrms_1a7c5310516248ffcacc698efe22d4a385" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPrachCellStatPrms::duplex</definition>
+        <argsstring></argsstring>
+        <name>duplex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>0: FDD, 1: TDD </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2775" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2775" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachCellStatPrms_1a5adbeb7ca14f40a429a84e3a5dd5087b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPrachCellStatPrms::FR</definition>
+        <argsstring></argsstring>
+        <name>FR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>FR1: sub-6G, FR2: mm-wave. valid values: 1, 2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2774" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2774" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachCellStatPrms_1a8ab44e12e81cc8a795635d7802bec77a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPrachCellStatPrms::mu</definition>
+        <argsstring></argsstring>
+        <name>mu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>numerology. Only supported value 0 and 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2776" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2776" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachCellStatPrms_1a7184c015c04a03171ab00f39ec0388d6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t _cuphyPrachCellStatPrms::N_ant</definition>
+        <argsstring></argsstring>
+        <name>N_ant</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of antennas </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2773" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2773" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachCellStatPrms_1a97b164c3f12f2d5267ab6c668da73947" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPrachCellStatPrms::nFdmOccasions</definition>
+        <argsstring></argsstring>
+        <name>nFdmOccasions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of FDM occasions for this cell (upto 8 per cell) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2772" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2772" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachCellStatPrms_1a9f363872fe400113c5fa1a49ba54ff31" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPrachCellStatPrms::occaStartIdx</definition>
+        <argsstring></argsstring>
+        <name>occaStartIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start index of the occasion in cuphyPrachStatPrms.pOccaPrms </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2771" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2771" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachCellStatPrms_1ad9523e54ab409d54fa272dbd228e5941" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPrachCellStatPrms::restrictedSet</definition>
+        <argsstring></argsstring>
+        <name>restrictedSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Only supported value 0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2778" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2778" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Cell specific static parameters for PRACH receiver processing. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2770" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2769" bodyend="2779"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPrachCellStatPrms_1a791325a4da52c462172e322c7aa9d45d" prot="public" virt="non-virtual"><scope>_cuphyPrachCellStatPrms</scope><name>configurationIndex</name></member>
+      <member refid="struct__cuphyPrachCellStatPrms_1a7c5310516248ffcacc698efe22d4a385" prot="public" virt="non-virtual"><scope>_cuphyPrachCellStatPrms</scope><name>duplex</name></member>
+      <member refid="struct__cuphyPrachCellStatPrms_1a5adbeb7ca14f40a429a84e3a5dd5087b" prot="public" virt="non-virtual"><scope>_cuphyPrachCellStatPrms</scope><name>FR</name></member>
+      <member refid="struct__cuphyPrachCellStatPrms_1a8ab44e12e81cc8a795635d7802bec77a" prot="public" virt="non-virtual"><scope>_cuphyPrachCellStatPrms</scope><name>mu</name></member>
+      <member refid="struct__cuphyPrachCellStatPrms_1a7184c015c04a03171ab00f39ec0388d6" prot="public" virt="non-virtual"><scope>_cuphyPrachCellStatPrms</scope><name>N_ant</name></member>
+      <member refid="struct__cuphyPrachCellStatPrms_1a97b164c3f12f2d5267ab6c668da73947" prot="public" virt="non-virtual"><scope>_cuphyPrachCellStatPrms</scope><name>nFdmOccasions</name></member>
+      <member refid="struct__cuphyPrachCellStatPrms_1a9f363872fe400113c5fa1a49ba54ff31" prot="public" virt="non-virtual"><scope>_cuphyPrachCellStatPrms</scope><name>occaStartIdx</name></member>
+      <member refid="struct__cuphyPrachCellStatPrms_1ad9523e54ab409d54fa272dbd228e5941" prot="public" virt="non-virtual"><scope>_cuphyPrachCellStatPrms</scope><name>restrictedSet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

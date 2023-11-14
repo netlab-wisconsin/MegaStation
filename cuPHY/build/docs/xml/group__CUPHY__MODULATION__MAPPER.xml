@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__MODULATION__MAPPER" kind="group">
+    <compoundname>CUPHY_MODULATION_MAPPER</compoundname>
+    <title>Modulation Mapper</title>
+    <innerclass refid="structcuphyModulationLaunchConfig" prot="public">cuphyModulationLaunchConfig</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__MODULATION__MAPPER_1ga02edebaf8f7d9ae2c663bf1d5a86ca7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyModulationGetDescrInfo</definition>
+        <argsstring>(size_t *pDescrSizeBytes, size_t *pDescrAlignBytes)</argsstring>
+        <name>cuphyModulationGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>: Compute descriptor size and alignment for modulation mapper. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size in bytes of descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alignment in bytes of descriptor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CUPHY_STATUS_SUCCESS or CUPHY_STATUS_INVALID_ARGUMENT </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4148" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4148" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__MODULATION__MAPPER_1ga13905bdb807185ac71673e9a52f8cd85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cuphySetD2HMemcpyNodeParams</definition>
+        <argsstring>(CUDA_MEMCPY3D *memcpyParams, void *src_d, void *dst_h, size_t size_in_bytes)</argsstring>
+        <name>cuphySetD2HMemcpyNodeParams</name>
+        <param>
+          <type>CUDA_MEMCPY3D *</type>
+          <declname>memcpyParams</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>src_d</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>dst_h</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size_in_bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4140" column="7" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4140" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__MODULATION__MAPPER_1gabda8ccad94d322fd5c781eedca1e338c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetEmptyKernelNodeParams</definition>
+        <argsstring>(CUDA_KERNEL_NODE_PARAMS *pNodeParams)</argsstring>
+        <name>cuphySetEmptyKernelNodeParams</name>
+        <param>
+          <type>CUDA_KERNEL_NODE_PARAMS *</type>
+          <declname>pNodeParams</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4136" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4136" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__MODULATION__MAPPER_1gab41dfdcd7814ec8b84f223b75af44998" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetGenericEmptyKernelNodeGridConstantParams</definition>
+        <argsstring>(CUDA_KERNEL_NODE_PARAMS *pNodeParams, void **pKernelParams, uint16_t descr_size)</argsstring>
+        <name>cuphySetGenericEmptyKernelNodeGridConstantParams</name>
+        <param>
+          <type>CUDA_KERNEL_NODE_PARAMS *</type>
+          <declname>pNodeParams</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>pKernelParams</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>descr_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4138" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4138" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__MODULATION__MAPPER_1gaf3bdf406df4a4c4fc5bb7c95f816c758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetGenericEmptyKernelNodeParams</definition>
+        <argsstring>(CUDA_KERNEL_NODE_PARAMS *pNodeParams, int ptrArgsCnt, void **pKernelParams)</argsstring>
+        <name>cuphySetGenericEmptyKernelNodeParams</name>
+        <param>
+          <type>CUDA_KERNEL_NODE_PARAMS *</type>
+          <declname>pNodeParams</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ptrArgsCnt</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>pKernelParams</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4137" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4137" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__MODULATION__MAPPER_1ga30699dc1cc9a47fbcb81ec3e0165d87f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupModulation</definition>
+        <argsstring>(cuphyModulationLaunchConfig_t modulationLaunchConfig, PdschDmrsParams *d_params, cuphyTensorDescriptor_t input_desc, const void *modulation_input, int max_num_symbols, int max_bits_per_layer, int num_TBs, PdschPerTbParams *workspace, cuphyTensorDescriptor_t output_desc, void *modulation_output, void *cpu_desc, void *gpu_desc, uint8_t enable_desc_async_copy, cudaStream_t strm)</argsstring>
+        <name>cuphySetupModulation</name>
+        <param>
+          <type>cuphyModulationLaunchConfig_t</type>
+          <declname>modulationLaunchConfig</declname>
+        </param>
+        <param>
+          <type><ref refid="structPdschDmrsParams" kindref="compound">PdschDmrsParams</ref> *</type>
+          <declname>d_params</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>input_desc</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>modulation_input</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_num_symbols</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_bits_per_layer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_TBs</declname>
+        </param>
+        <param>
+          <type><ref refid="structPdschPerTbParams" kindref="compound">PdschPerTbParams</ref> *</type>
+          <declname>workspace</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>output_desc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>modulation_output</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>cpu_desc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>gpu_desc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enable_desc_async_copy</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>: Setup modulation mapper component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">modulationLaunchConfig</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to cuphyModulationLaunchConfig. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to <ref refid="structPdschDmrsParams" kindref="compound">PdschDmrsParams</ref> on the device. If nullptr, then symbols are allocated contiguously, starting from zero in modulation_output. If not, symbols are allocated in the appropriate Rbs, start position, in the {273*12, 14, 16} modulation_output tensor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input tensor descriptor; dimension ceil(num_bits/32.0). Not used. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">modulation_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to input tensor data Data is expected to be contiguously allocated for every layer without any gaps. Each layer should start at a uint32_t aligned boundary. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_num_symbols</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum number of symbols across all TBs. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_bits_per_layer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum number of bits per layer across all TBs in modulation_input. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_TBs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of Transport Blocks contained in modulation_input </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">workspace</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to # TBs PerTBParams struct on the device. Only fields G and Qm are used. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">output_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output tensor descriptor; dimension (num_bits / modulation_order) if d_params=nullptr or {273*12, 14, 16} otherwise. Not used. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">modulation_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to output tensor (preallocated) Each symbol is a complex number using half-precision for the real and imaginary parts. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cpu_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">gpu_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">enable_desc_async_copy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>async copy CPU descriptor into GPU if set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CUDA stream for async copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CUPHY_STATUS_SUCCESS or CUPHY_STATUS_INVALID_ARGUMENT </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4177" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4177" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the modulation function(s) of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

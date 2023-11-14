@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__POL__SEG__DERM__DITL" kind="group">
+    <compoundname>CUPHY_POL_SEG_DERM_DITL</compoundname>
+    <title>Polar segmentation, de-rate matching and de-interleaving</title>
+    <innerclass refid="structcuphyPolSegDeRmDeItlLaunchCfg__t" prot="public">cuphyPolSegDeRmDeItlLaunchCfg_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__POL__SEG__DERM__DITL_1ga97696d2f1311a38f9c3923c10ed5950b" prot="public" static="no">
+        <type>struct cuphyPolSegDeRmDeItl *</type>
+        <definition>typedef struct cuphyPolSegDeRmDeItl* cuphyPolSegDeRmDeItlHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyPolSegDeRmDeItlHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY polSegDeRmDeItl handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6360" column="36" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6360" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__POL__SEG__DERM__DITL_1ga7ad414e268ccb7e7a46b7210beabc116" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePolSegDeRmDeItl</definition>
+        <argsstring>(cuphyPolSegDeRmDeItlHndl_t *pPolSegDeRmDeItlHndl)</argsstring>
+        <name>cuphyCreatePolSegDeRmDeItl</name>
+        <param>
+          <type><ref refid="group__CUPHY__POL__SEG__DERM__DITL_1ga97696d2f1311a38f9c3923c10ed5950b" kindref="member">cuphyPolSegDeRmDeItlHndl_t</ref> *</type>
+          <declname>pPolSegDeRmDeItlHndl</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY polSegDeRmDeItl object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a polSegDeRmDeItl object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPolSegDeRmDeItl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a compCwTreeTypes object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pPolSegDeRmDeItlHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new polSegDeRmDeItl instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__POL__SEG__DERM__DITL_1gaf6dcd160310b993b1bcfa0bda6a1d964" kindref="member">cuphyPolSegDeRmDeItlGetDescrInfo</ref>,<ref refid="group__CUPHY__POL__SEG__DERM__DITL_1gaf1fce0743f158f10b1e72319d16f1484" kindref="member">cuphySetupPolSegDeRmDeItl</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6415" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6415" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__POL__SEG__DERM__DITL_1ga6b2c15ff7972d92348c78ea347c4cfc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPolSegDeRmDeItl</definition>
+        <argsstring>(cuphyPolSegDeRmDeItlHndl_t polSegDeRmDeItlHndl)</argsstring>
+        <name>cuphyDestroyPolSegDeRmDeItl</name>
+        <param>
+          <type><ref refid="group__CUPHY__POL__SEG__DERM__DITL_1ga97696d2f1311a38f9c3923c10ed5950b" kindref="member">cuphyPolSegDeRmDeItlHndl_t</ref></type>
+          <declname>polSegDeRmDeItlHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY polSegDeRmDeItl object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY polSegDeRmDeItl object that was previously created by <ref refid="group__CUPHY__POL__SEG__DERM__DITL_1ga7ad414e268ccb7e7a46b7210beabc116" kindref="member">cuphyCreatePolSegDeRmDeItl</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>polSegDeRmDeItlHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>polSegDeRmDeItlHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated compCwTreeTypes instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUCCH__F0__RECEIVER_1gaaff78ccf8b7521e189799fb45073f145" kindref="member">cuphyPucchF0RxGetDescrInfo</ref>,<ref refid="group__CUPHY__PUCCH__F0__RECEIVER_1ga73a8939f12de1de2fbbf9ee6f6c803d5" kindref="member">cuphyCreatePucchF0Rx</ref>,<ref refid="group__CUPHY__PUCCH__F0__RECEIVER_1gae1d6e3930af130d396bc500dc37a94b0" kindref="member">cuphySetupPucchF0Rx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6487" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6487" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__POL__SEG__DERM__DITL_1gaf6dcd160310b993b1bcfa0bda6a1d964" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPolSegDeRmDeItlGetDescrInfo</definition>
+        <argsstring>(size_t *pDynDescrSizeBytes, size_t *pDynDescrAlignBytes)</argsstring>
+        <name>cuphyPolSegDeRmDeItlGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute PolSegDeRmDeItl descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes PolSegDeRmDeItl descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other PolSegDeRmDeItl APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pDynDescrSizeBytes</computeroutput> and/or <computeroutput>pDynDescrAlignBytes</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of dynamic descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__POL__SEG__DERM__DITL_1ga7ad414e268ccb7e7a46b7210beabc116" kindref="member">cuphyCreatePolSegDeRmDeItl</ref>,<ref refid="group__CUPHY__POL__SEG__DERM__DITL_1ga6b2c15ff7972d92348c78ea347c4cfc1" kindref="member">cuphyDestroyPolSegDeRmDeItl</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6391" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6391" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__POL__SEG__DERM__DITL_1gaf1fce0743f158f10b1e72319d16f1484" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPolSegDeRmDeItl</definition>
+        <argsstring>(cuphyPolSegDeRmDeItlHndl_t polSegDeRmDeItlHndl, uint16_t nPolUciSegs, uint16_t nPolCws, const cuphyPolarUciSegPrm_t *pPolUciSegPrmsCpu, const cuphyPolarUciSegPrm_t *pPolUciSegPrmsGpu, const cuphyPolarCwPrm_t *pPolCwPrmsCpu, const cuphyPolarCwPrm_t *pPolCwPrmsGpu, __half **pUciSegLLRsAddrs, __half **pCwLLRsAddrs, void *pCpuDynDescDrDi, void *pGpuDynDescDrDi, void *pCpuDynDescDrDiCwAddrs, void *pCpuDynDescDrDiUciAddrs, uint8_t enableCpuToGpuDescrAsyncCpy, cuphyPolSegDeRmDeItlLaunchCfg_t *pLaunchCfg, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPolSegDeRmDeItl</name>
+        <param>
+          <type><ref refid="group__CUPHY__POL__SEG__DERM__DITL_1ga97696d2f1311a38f9c3923c10ed5950b" kindref="member">cuphyPolSegDeRmDeItlHndl_t</ref></type>
+          <declname>polSegDeRmDeItlHndl</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nPolUciSegs</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nPolCws</declname>
+        </param>
+        <param>
+          <type>const cuphyPolarUciSegPrm_t *</type>
+          <declname>pPolUciSegPrmsCpu</declname>
+        </param>
+        <param>
+          <type>const cuphyPolarUciSegPrm_t *</type>
+          <declname>pPolUciSegPrmsGpu</declname>
+        </param>
+        <param>
+          <type>const cuphyPolarCwPrm_t *</type>
+          <declname>pPolCwPrmsCpu</declname>
+        </param>
+        <param>
+          <type>const cuphyPolarCwPrm_t *</type>
+          <declname>pPolCwPrmsGpu</declname>
+        </param>
+        <param>
+          <type>__half **</type>
+          <declname>pUciSegLLRsAddrs</declname>
+        </param>
+        <param>
+          <type>__half **</type>
+          <declname>pCwLLRsAddrs</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDescDrDi</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pGpuDynDescDrDi</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDescDrDiCwAddrs</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDescDrDiUciAddrs</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type><ref refid="structcuphyPolSegDeRmDeItlLaunchCfg__t" kindref="compound">cuphyPolSegDeRmDeItlLaunchCfg_t</ref> *</type>
+          <declname>pLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY polSegDeRmDeItl for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY polSegDeRmDeItl in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>polSegDeRmDeItlHndl</computeroutput> and/or <computeroutput>pPolUciSegPrmsCpu</computeroutput> and/or <computeroutput>pPolUciSegPrmsGpu</computeroutput> and/or <computeroutput>pUciSegLLRsAddrs</computeroutput> and/or <computeroutput>pCwLLRsAddrs</computeroutput> and/or <computeroutput>pCpuDynDesc</computeroutput> and/or <computeroutput>pGpuDynDesc</computeroutput> is NULL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>polSegDeRmDeItlHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle to previously created polSegDeRmDeItl instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nPolUciSegs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of polar UCI segments </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nPolCws</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of polar codewords </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pPolUciSegPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- starting address of polar UCI segment parameters (CPU) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pPolUciSegPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- starting address of polar UCI segment parameters (GPU) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pPolCwPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- starting address of polar codeword parameters (CPU) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pPolCwPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- starting address of polar codeword parameters (GPU) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pUciSegLLRsAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to uci segment LLR addresses </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCwLLRsAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to cw LLR addresses </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDescDrDi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to polSegDeRmDeItlDynDescr descriptor in cpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pGpuDynDescDrDi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to polSegDeRmDeItlDynDescr descriptor in gpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDescDrDiCwAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to cw LLR addresses in polSegDeRmDeItlDynDescr descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDescDrDiUciAddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to UCI Seg LLR addresses in polSegDeRmDeItlDynDescr descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- option to copy cpu descriptors from cpu to gpu </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to rate matching launch configuration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- stream to perform copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__POL__SEG__DERM__DITL_1gaf6dcd160310b993b1bcfa0bda6a1d964" kindref="member">cuphyPolSegDeRmDeItlGetDescrInfo</ref>,<ref refid="group__CUPHY__POL__SEG__DERM__DITL_1ga6b2c15ff7972d92348c78ea347c4cfc1" kindref="member">cuphyDestroyPolSegDeRmDeItl</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6451" column="1" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6451" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes application programming interface for polar codeword LLR segmentation + deInterleaving + deRateMatching. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

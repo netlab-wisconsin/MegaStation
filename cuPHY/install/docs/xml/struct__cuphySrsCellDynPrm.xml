@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphySrsCellDynPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphySrsCellDynPrm</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphySrsCellDynPrm_1a38f75331d5c8b46503f12ed4c2142734" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphySrsCellDynPrm::cellPrmDynIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmDynIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1190" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsCellDynPrm_1a0c6f85613e4b9189d3f0f54c71486cdb" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphySrsCellDynPrm::cellPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1189" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsCellDynPrm_1aa4044d34fdf0e2d9d5e6e8df32edbaa9" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphySrsCellDynPrm::frameNum</definition>
+        <argsstring></argsstring>
+        <name>frameNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1192" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsCellDynPrm_1a95ddbd11d5f61b3e977bdd3657dc4ccb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphySrsCellDynPrm::nSrsSym</definition>
+        <argsstring></argsstring>
+        <name>nSrsSym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1195" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsCellDynPrm_1abb5894a35fcb768e8270ef6100c0dd6b" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphySrsCellDynPrm::slotNum</definition>
+        <argsstring></argsstring>
+        <name>slotNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1191" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsCellDynPrm_1aaf6eed066a33eed2863b0076dd4a7640" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphySrsCellDynPrm::srsStartSym</definition>
+        <argsstring></argsstring>
+        <name>srsStartSym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1194" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1194" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1188" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1187" bodyend="1196"/>
+    <listofallmembers>
+      <member refid="struct__cuphySrsCellDynPrm_1a38f75331d5c8b46503f12ed4c2142734" prot="public" virt="non-virtual"><scope>_cuphySrsCellDynPrm</scope><name>cellPrmDynIdx</name></member>
+      <member refid="struct__cuphySrsCellDynPrm_1a0c6f85613e4b9189d3f0f54c71486cdb" prot="public" virt="non-virtual"><scope>_cuphySrsCellDynPrm</scope><name>cellPrmStatIdx</name></member>
+      <member refid="struct__cuphySrsCellDynPrm_1aa4044d34fdf0e2d9d5e6e8df32edbaa9" prot="public" virt="non-virtual"><scope>_cuphySrsCellDynPrm</scope><name>frameNum</name></member>
+      <member refid="struct__cuphySrsCellDynPrm_1a95ddbd11d5f61b3e977bdd3657dc4ccb" prot="public" virt="non-virtual"><scope>_cuphySrsCellDynPrm</scope><name>nSrsSym</name></member>
+      <member refid="struct__cuphySrsCellDynPrm_1abb5894a35fcb768e8270ef6100c0dd6b" prot="public" virt="non-virtual"><scope>_cuphySrsCellDynPrm</scope><name>slotNum</name></member>
+      <member refid="struct__cuphySrsCellDynPrm_1aaf6eed066a33eed2863b0076dd4a7640" prot="public" virt="non-virtual"><scope>_cuphySrsCellDynPrm</scope><name>srsStartSym</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

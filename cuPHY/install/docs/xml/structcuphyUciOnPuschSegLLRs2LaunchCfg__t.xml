@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyUciOnPuschSegLLRs2LaunchCfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyUciOnPuschSegLLRs2LaunchCfg_t</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyUciOnPuschSegLLRs2LaunchCfg__t_1a66a8d21630fe6c3973e868eff38dc2ea" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyUciOnPuschSegLLRs2LaunchCfg_t::kernelArgs[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6717" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6717" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyUciOnPuschSegLLRs2LaunchCfg__t_1a95cb819be7a474eae9b4f5d9ec8336fd" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyUciOnPuschSegLLRs2LaunchCfg_t::kernelNodeParamsDriver</definition>
+        <argsstring></argsstring>
+        <name>kernelNodeParamsDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6716" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6716" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>cuPHY polar uci on pusch LLR segmentation part 1, launch configuration </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6715" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6714" bodyend="6718"/>
+    <listofallmembers>
+      <member refid="structcuphyUciOnPuschSegLLRs2LaunchCfg__t_1a66a8d21630fe6c3973e868eff38dc2ea" prot="public" virt="non-virtual"><scope>cuphyUciOnPuschSegLLRs2LaunchCfg_t</scope><name>kernelArgs</name></member>
+      <member refid="structcuphyUciOnPuschSegLLRs2LaunchCfg__t_1a95cb819be7a474eae9b4f5d9ec8336fd" prot="public" virt="non-virtual"><scope>cuphyUciOnPuschSegLLRs2LaunchCfg_t</scope><name>kernelNodeParamsDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPucchCellPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPucchCellPrm</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPucchCellPrm_1a752abc2d4cc2466ab521a56548707e58" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchCellPrm::mu</definition>
+        <argsstring></argsstring>
+        <name>mu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1393" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1393" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchCellPrm_1a04501e2d4540ec0209486be37c36c257" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchCellPrm::nRxAnt</definition>
+        <argsstring></argsstring>
+        <name>nRxAnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1390" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1390" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchCellPrm_1a4dc25e12f170b8582a774a1c0a2668e8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchCellPrm::pucchHoppingId</definition>
+        <argsstring></argsstring>
+        <name>pucchHoppingId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1392" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1392" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchCellPrm_1ab496f980582afd8cae62f9d24b38e4e8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchCellPrm::slotNum</definition>
+        <argsstring></argsstring>
+        <name>slotNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1391" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1391" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchCellPrm_1a7eb40f795dad44591cb734f4ec4377cb" prot="public" static="no" mutable="no">
+        <type>cuphyTensorInfo3_t</type>
+        <definition>cuphyTensorInfo3_t _cuphyPucchCellPrm::tDataRx</definition>
+        <argsstring></argsstring>
+        <name>tDataRx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1394" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1394" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1389" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1388" bodyend="1395"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPucchCellPrm_1a752abc2d4cc2466ab521a56548707e58" prot="public" virt="non-virtual"><scope>_cuphyPucchCellPrm</scope><name>mu</name></member>
+      <member refid="struct__cuphyPucchCellPrm_1a04501e2d4540ec0209486be37c36c257" prot="public" virt="non-virtual"><scope>_cuphyPucchCellPrm</scope><name>nRxAnt</name></member>
+      <member refid="struct__cuphyPucchCellPrm_1a4dc25e12f170b8582a774a1c0a2668e8" prot="public" virt="non-virtual"><scope>_cuphyPucchCellPrm</scope><name>pucchHoppingId</name></member>
+      <member refid="struct__cuphyPucchCellPrm_1ab496f980582afd8cae62f9d24b38e4e8" prot="public" virt="non-virtual"><scope>_cuphyPucchCellPrm</scope><name>slotNum</name></member>
+      <member refid="struct__cuphyPucchCellPrm_1a7eb40f795dad44591cb734f4ec4377cb" prot="public" virt="non-virtual"><scope>_cuphyPucchCellPrm</scope><name>tDataRx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyBfwUeGrpPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyBfwUeGrpPrm</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyBfwUeGrpPrm_1addee17da9b9183c3d9766e95defdb557" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyBfwUeGrpPrm::coefBufIdx</definition>
+        <argsstring></argsstring>
+        <name>coefBufIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7314" column="25" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwUeGrpPrm_1aaa94f0a115a9a691db49674af23cce6f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyBfwUeGrpPrm::nBfLayers</definition>
+        <argsstring></argsstring>
+        <name>nBfLayers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7312" column="25" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwUeGrpPrm_1a97cc1d0f777de969664667248f1f3a6d" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyBfwUeGrpPrm::nPrbGrp</definition>
+        <argsstring></argsstring>
+        <name>nPrbGrp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7309" column="25" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwUeGrpPrm_1ae69b5c35d3337220e491ea55036405dc" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyBfwUeGrpPrm::nRxAnt</definition>
+        <argsstring></argsstring>
+        <name>nRxAnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7310" column="25" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7310" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwUeGrpPrm_1a79ffcd2449b9fda840e4fb27bb044b6d" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyBfwUeGrpPrm::nRxAntSrs</definition>
+        <argsstring></argsstring>
+        <name>nRxAntSrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7311" column="25" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwUeGrpPrm_1abff8caa1ea3288d2883d6312f623625e" prot="public" static="no" mutable="no">
+        <type>cuphyBfwLayerPrm_t *</type>
+        <definition>cuphyBfwLayerPrm_t* _cuphyBfwUeGrpPrm::pBfLayerPrm</definition>
+        <argsstring></argsstring>
+        <name>pBfLayerPrm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7313" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwUeGrpPrm_1a52d5c3d228488310061a86854290e7ce" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyBfwUeGrpPrm::startPrbGrp</definition>
+        <argsstring></argsstring>
+        <name>startPrbGrp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7308" column="25" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7308" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7307" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7306" bodyend="7315"/>
+    <listofallmembers>
+      <member refid="struct__cuphyBfwUeGrpPrm_1addee17da9b9183c3d9766e95defdb557" prot="public" virt="non-virtual"><scope>_cuphyBfwUeGrpPrm</scope><name>coefBufIdx</name></member>
+      <member refid="struct__cuphyBfwUeGrpPrm_1aaa94f0a115a9a691db49674af23cce6f" prot="public" virt="non-virtual"><scope>_cuphyBfwUeGrpPrm</scope><name>nBfLayers</name></member>
+      <member refid="struct__cuphyBfwUeGrpPrm_1a97cc1d0f777de969664667248f1f3a6d" prot="public" virt="non-virtual"><scope>_cuphyBfwUeGrpPrm</scope><name>nPrbGrp</name></member>
+      <member refid="struct__cuphyBfwUeGrpPrm_1ae69b5c35d3337220e491ea55036405dc" prot="public" virt="non-virtual"><scope>_cuphyBfwUeGrpPrm</scope><name>nRxAnt</name></member>
+      <member refid="struct__cuphyBfwUeGrpPrm_1a79ffcd2449b9fda840e4fb27bb044b6d" prot="public" virt="non-virtual"><scope>_cuphyBfwUeGrpPrm</scope><name>nRxAntSrs</name></member>
+      <member refid="struct__cuphyBfwUeGrpPrm_1abff8caa1ea3288d2883d6312f623625e" prot="public" virt="non-virtual"><scope>_cuphyBfwUeGrpPrm</scope><name>pBfLayerPrm</name></member>
+      <member refid="struct__cuphyBfwUeGrpPrm_1a52d5c3d228488310061a86854290e7ce" prot="public" virt="non-virtual"><scope>_cuphyBfwUeGrpPrm</scope><name>startPrbGrp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

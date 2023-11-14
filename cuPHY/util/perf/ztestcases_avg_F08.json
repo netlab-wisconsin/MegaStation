@@ -1,0 +1,27 @@
+{
+  "F08 - PDSCH": {
+    "F08-PP-00": "TV_cuphy_V08-DS-01_slot0_MIMO4x4_PRB22_DataSyms12_qam256.h5",
+    "F08-AX-01": "TV_cuphy_V08-DS-31_slot0_MIMO1x4_PRB24_DataSyms12_qam256.h5"
+  },
+  "F08 - PUSCH": {
+    "F08-PP-00": "TV_cuphy_U08-US-01_snrdb40.00_MIMO2x4_PRB22_DataSyms13_qam256.h5",
+    "F08-AX-01": "TV_cuphy_U08-US-31_snrdb40.00_MIMO1x4_PRB8_DataSyms13_qam256.h5"
+  },
+  "F08 - PRACH": {
+    "F08-PP-00": "TV_cuphy_F08-RA-01.h5"
+  },
+  "F08 - PDCCH": {
+    "F08-PP-00": "TV_cuphy_F08-DC-40_PRB273.h5",
+    "F08-AX-01": "TV_cuphy_F08-DC-02_PRB273.h5"
+  },
+  "F08 - PUCCH": {
+    "F08-PP-00": "TV_cuphy_F08-UC-01_PRB273.h5",
+    "F08-AX-01": "TV_cuphy_F08-UC-02_PRB273.h5"
+  },
+  "F08 - SSB": {
+    "F08-PP-00": "TV_cuphy_F08-SS-01.h5"
+  },
+  "F08 - CSIRS": {
+    "F08-PP-00": "TV_cuphy_F08-CR-01.h5"
+  }
+}

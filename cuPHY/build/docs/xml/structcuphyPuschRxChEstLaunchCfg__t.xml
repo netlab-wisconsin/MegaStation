@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyPuschRxChEstLaunchCfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyPuschRxChEstLaunchCfg_t</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyPuschRxChEstLaunchCfg__t_1ae26b281f6d868739f16b13a3885c73d8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t cuphyPuschRxChEstLaunchCfg_t::chEst1DmrsSymLocBmsk</definition>
+        <argsstring></argsstring>
+        <name>chEst1DmrsSymLocBmsk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1618" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1618" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschRxChEstLaunchCfg__t_1a178ef0b36323c140f9a3ac2e6069036f" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyPuschRxChEstLaunchCfg_t::kernelArgs[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1617" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1617" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschRxChEstLaunchCfg__t_1a6c9f8cf3d57cffc5f8e3685298a685ef" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyPuschRxChEstLaunchCfg_t::kernelNodeParamsDriver</definition>
+        <argsstring></argsstring>
+        <name>kernelNodeParamsDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1616" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1616" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>cuPHY PUSCH Receiver channel estimation launch configuration </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1615" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1614" bodyend="1619"/>
+    <listofallmembers>
+      <member refid="structcuphyPuschRxChEstLaunchCfg__t_1ae26b281f6d868739f16b13a3885c73d8" prot="public" virt="non-virtual"><scope>cuphyPuschRxChEstLaunchCfg_t</scope><name>chEst1DmrsSymLocBmsk</name></member>
+      <member refid="structcuphyPuschRxChEstLaunchCfg__t_1a178ef0b36323c140f9a3ac2e6069036f" prot="public" virt="non-virtual"><scope>cuphyPuschRxChEstLaunchCfg_t</scope><name>kernelArgs</name></member>
+      <member refid="structcuphyPuschRxChEstLaunchCfg__t_1a6c9f8cf3d57cffc5f8e3685298a685ef" prot="public" virt="non-virtual"><scope>cuphyPuschRxChEstLaunchCfg_t</scope><name>kernelNodeParamsDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

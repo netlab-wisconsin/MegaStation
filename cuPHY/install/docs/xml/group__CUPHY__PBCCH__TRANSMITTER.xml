@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__PBCCH__TRANSMITTER" kind="group">
+    <compoundname>CUPHY_PBCCH_TRANSMITTER</compoundname>
+    <title>SSB Transmitter</title>
+    <innerclass refid="struct__cuphyPerCellSsbDynPrms" prot="public">_cuphyPerCellSsbDynPrms</innerclass>
+    <innerclass refid="struct__cuphyPerSsBlockDynPrms" prot="public">_cuphyPerSsBlockDynPrms</innerclass>
+    <innerclass refid="struct__cuphySsbDataIn" prot="public">_cuphySsbDataIn</innerclass>
+    <innerclass refid="struct__cuphySsbDataOut" prot="public">_cuphySsbDataOut</innerclass>
+    <innerclass refid="struct__cuphySsbDynPrms" prot="public">_cuphySsbDynPrms</innerclass>
+    <innerclass refid="struct__cuphySsbStatPrms" prot="public">_cuphySsbStatPrms</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__CUPHY__PBCCH__TRANSMITTER_1ga162f86d63691409a7d642c834e95ef17" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_cuphySsbProcMode</name>
+        <enumvalue id="group__CUPHY__PBCCH__TRANSMITTER_1gga162f86d63691409a7d642c834e95ef17a56a6f5c8fb7e4569cf9ea48fee1616a1" prot="public">
+          <name>SSB_PROC_MODE_STREAMS</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__CUPHY__PBCCH__TRANSMITTER_1gga162f86d63691409a7d642c834e95ef17a1e9be7b86a3147c3a24239334ac9b511" prot="public">
+          <name>SSB_PROC_MODE_GRAPHS</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3454" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3453" bodyend="3457"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__PBCCH__TRANSMITTER_1ga9b3fe4ab05967157a888cde388842c5d" prot="public" static="no">
+        <type>struct cuphySsbTx *</type>
+        <definition>typedef struct cuphySsbTx* cuphySsbTxHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphySsbTxHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY PBCCH transmitter handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3354" column="26" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3354" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__PBCCH__TRANSMITTER_1ga0e10222aa97aeab2d5fdff4fb092fb6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreateSsbTx</definition>
+        <argsstring>(cuphySsbTxHndl_t *pSsbTxHndl, cuphySsbStatPrms_t const *pStatPrms)</argsstring>
+        <name>cuphyCreateSsbTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga9b3fe4ab05967157a888cde388842c5d" kindref="member">cuphySsbTxHndl_t</ref> *</type>
+          <declname>pSsbTxHndl</declname>
+        </param>
+        <param>
+          <type>cuphySsbStatPrms_t const *</type>
+          <declname>pStatPrms</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY SSB pipeline. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocate a cuPHY SSB transmitter pipeline and return a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pSsbTxHdnl</computeroutput> or <computeroutput>pStatPrms</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a SsbTx object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pSsbTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new SsbTx instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pStatPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to PDCCH static parameters to be used in pipeline creation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga73dbd56b0491bcaa21ecd2003520a151" kindref="member">cuphySetupSsbTx</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1gad98b629d4865d6442413fb967fce4fca" kindref="member">cuphyRunSsbTx</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga97547835c4014ab938e246ec0a3b3976" kindref="member">cuphyDestroySsbTx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3482" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="3482" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PBCCH__TRANSMITTER_1ga97547835c4014ab938e246ec0a3b3976" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroySsbTx</definition>
+        <argsstring>(cuphySsbTxHndl_t ssbTxHndl)</argsstring>
+        <name>cuphyDestroySsbTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga9b3fe4ab05967157a888cde388842c5d" kindref="member">cuphySsbTxHndl_t</ref></type>
+          <declname>ssbTxHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroy a cuPHY SSB transmit pipeline object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroy a cuPHY SSB transmitter pipeline object that was previously created by <ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga0e10222aa97aeab2d5fdff4fb092fb6e" kindref="member">cuphyCreateSsbTx</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>ssbTxHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssbTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated SsbTx instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga0e10222aa97aeab2d5fdff4fb092fb6e" kindref="member">cuphyCreateSsbTx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3567" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="3567" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PBCCH__TRANSMITTER_1gad98b629d4865d6442413fb967fce4fca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyRunSsbTx</definition>
+        <argsstring>(cuphySsbTxHndl_t ssbTxHndl, uint64_t procModeBmsk)</argsstring>
+        <name>cuphyRunSsbTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga9b3fe4ab05967157a888cde388842c5d" kindref="member">cuphySsbTxHndl_t</ref></type>
+          <declname>ssbTxHndl</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>procModeBmsk</declname>
+        </param>
+        <briefdescription>
+<para>Run cuPHY SSB pipeline processing in specified mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call triggers cuPHY SSB transmitter pipeline execution in mode specified by procModeBmsk</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>ssbTxHndl</computeroutput> is NULL and/or procModeBmsk is not supported.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if SsbTx execution is successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssbTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of SsbTx instance which is to be triggered </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>procModeBmsk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Processing mode bitmask containing one or more processing modes applicable during this execution. Currently unused.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga0e10222aa97aeab2d5fdff4fb092fb6e" kindref="member">cuphyCreateSsbTx</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga73dbd56b0491bcaa21ecd2003520a151" kindref="member">cuphySetupSsbTx</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga97547835c4014ab938e246ec0a3b3976" kindref="member">cuphyDestroySsbTx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3546" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="3546" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PBCCH__TRANSMITTER_1ga73dbd56b0491bcaa21ecd2003520a151" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupSsbTx</definition>
+        <argsstring>(cuphySsbTxHndl_t ssbTxHndl, cuphySsbDynPrms_t *pDynPrms)</argsstring>
+        <name>cuphySetupSsbTx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga9b3fe4ab05967157a888cde388842c5d" kindref="member">cuphySsbTxHndl_t</ref></type>
+          <declname>ssbTxHndl</declname>
+        </param>
+        <param>
+          <type>cuphySsbDynPrms_t *</type>
+          <declname>pDynPrms</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY SSB pipeline for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY SSB transmitter pipeline (and its components) state in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>ssbTxHndl</computeroutput> and/or <computeroutput>pDynPrms</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ssbTxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of SsbTx instance to be setup </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Dynamic parameters carrying information needed for slot processing</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga0e10222aa97aeab2d5fdff4fb092fb6e" kindref="member">cuphyCreateSsbTx</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1gad98b629d4865d6442413fb967fce4fca" kindref="member">cuphyRunSsbTx</ref>,<ref refid="group__CUPHY__PBCCH__TRANSMITTER_1ga97547835c4014ab938e246ec0a3b3976" kindref="member">cuphyDestroySsbTx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3523" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="3523" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the SS/SSB transmit pipeline functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

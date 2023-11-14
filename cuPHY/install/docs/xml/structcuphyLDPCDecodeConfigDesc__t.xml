@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyLDPCDecodeConfigDesc__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyLDPCDecodeConfigDesc_t</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1add059eb454be89d5f0022dbe1567e74e" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t cuphyLDPCDecodeConfigDesc_t::algo</definition>
+        <argsstring></argsstring>
+        <name>algo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3832" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3832" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1ae35c728be1c9329872875bd66e4e6a1d" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t cuphyLDPCDecodeConfigDesc_t::BG</definition>
+        <argsstring></argsstring>
+        <name>BG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3831" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3831" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1a998ef8a6b5e1c1eab936ba5678d51051" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t cuphyLDPCDecodeConfigDesc_t::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3830" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3830" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1aa00d63971eff765d9bdafacb9715668c" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t cuphyLDPCDecodeConfigDesc_t::Kb</definition>
+        <argsstring></argsstring>
+        <name>Kb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3828" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3828" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1a8c6335bf0a9b1e531405fea204c06a44" prot="public" static="no" mutable="no">
+        <type><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref></type>
+        <definition>cuphyDataType_t cuphyLDPCDecodeConfigDesc_t::llr_type</definition>
+        <argsstring></argsstring>
+        <name>llr_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3824" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3824" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1a338200dbd4af5a3365d0edf2405851ff" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t cuphyLDPCDecodeConfigDesc_t::max_iterations</definition>
+        <argsstring></argsstring>
+        <name>max_iterations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3827" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3827" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1a212aec42ef014c413c9e694dc8ee02c1" prot="public" static="no" mutable="no">
+        <type>cuphyLDPCNormalization_t</type>
+        <definition>cuphyLDPCNormalization_t cuphyLDPCDecodeConfigDesc_t::norm</definition>
+        <argsstring></argsstring>
+        <name>norm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3829" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3829" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1a5a7a3ee9981399ed5649bdb7db67386d" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t cuphyLDPCDecodeConfigDesc_t::num_parity_nodes</definition>
+        <argsstring></argsstring>
+        <name>num_parity_nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3825" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3825" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1aefc1f949dffac680fb6eab73d3c59a68" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyLDPCDecodeConfigDesc_t::workspace</definition>
+        <argsstring></argsstring>
+        <name>workspace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3833" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3833" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCDecodeConfigDesc__t_1a53ea9eac58fd38bd4fc07936bea73da1" prot="public" static="no" mutable="no">
+        <type>int16_t</type>
+        <definition>int16_t cuphyLDPCDecodeConfigDesc_t::Z</definition>
+        <argsstring></argsstring>
+        <name>Z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3826" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3826" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>LDPC Decoder configuration descriptor </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3823" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3822" bodyend="3834"/>
+    <listofallmembers>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1add059eb454be89d5f0022dbe1567e74e" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>algo</name></member>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1ae35c728be1c9329872875bd66e4e6a1d" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>BG</name></member>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1a998ef8a6b5e1c1eab936ba5678d51051" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>flags</name></member>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1aa00d63971eff765d9bdafacb9715668c" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>Kb</name></member>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1a8c6335bf0a9b1e531405fea204c06a44" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>llr_type</name></member>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1a338200dbd4af5a3365d0edf2405851ff" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>max_iterations</name></member>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1a212aec42ef014c413c9e694dc8ee02c1" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>norm</name></member>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1a5a7a3ee9981399ed5649bdb7db67386d" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>num_parity_nodes</name></member>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1aefc1f949dffac680fb6eab73d3c59a68" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>workspace</name></member>
+      <member refid="structcuphyLDPCDecodeConfigDesc__t_1a53ea9eac58fd38bd4fc07936bea73da1" prot="public" virt="non-virtual"><scope>cuphyLDPCDecodeConfigDesc_t</scope><name>Z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

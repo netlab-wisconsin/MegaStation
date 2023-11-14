@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyBfwStatusOut" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyBfwStatusOut</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyBfwStatusOut_1a2fc488228b683f5afe1c7fd1508d5701" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyBfwStatusOut::cellPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="505" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="505" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwStatusOut_1a55382d2658733ea2b035ea80c88ee684" prot="public" static="no" mutable="no">
+        <type>cuphyBfwStatusType_t</type>
+        <definition>cuphyBfwStatusType_t _cuphyBfwStatusOut::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="504" column="26" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="504" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwStatusOut_1a993665aba8ed01a19f016955c91950d5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyBfwStatusOut::ueIdx</definition>
+        <argsstring></argsstring>
+        <name>ueIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="506" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="506" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>BFW Output Status </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="503" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="502" bodyend="507"/>
+    <listofallmembers>
+      <member refid="struct__cuphyBfwStatusOut_1a2fc488228b683f5afe1c7fd1508d5701" prot="public" virt="non-virtual"><scope>_cuphyBfwStatusOut</scope><name>cellPrmStatIdx</name></member>
+      <member refid="struct__cuphyBfwStatusOut_1a55382d2658733ea2b035ea80c88ee684" prot="public" virt="non-virtual"><scope>_cuphyBfwStatusOut</scope><name>status</name></member>
+      <member refid="struct__cuphyBfwStatusOut_1a993665aba8ed01a19f016955c91950d5" prot="public" virt="non-virtual"><scope>_cuphyBfwStatusOut</scope><name>ueIdx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,377 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__CFO__TA__ESTIMATION" kind="group">
+    <compoundname>CUPHY_CFO_TA_ESTIMATION</compoundname>
+    <title>Carrier Frequency Offset and Timing Advance Estimation</title>
+    <innerclass refid="structcuphyPuschRxCfoTaEstLaunchCfg__t" prot="public">cuphyPuschRxCfoTaEstLaunchCfg_t</innerclass>
+    <innerclass refid="structcuphyPuschRxCfoTaEstLaunchCfgs__t" prot="public">cuphyPuschRxCfoTaEstLaunchCfgs_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__CFO__TA__ESTIMATION_1ga870ade1f460b02c7e1f0e79c6f146710" prot="public" static="no">
+        <type>struct cuphyPuschRxCfoTaEst *</type>
+        <definition>typedef struct cuphyPuschRxCfoTaEst* cuphyPuschRxCfoTaEstHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyPuschRxCfoTaEstHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY PUSCH Receiver carrier frequency offset estimation handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1983" column="36" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1983" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__CFO__TA__ESTIMATION_1ga4940d4581b0c5acc38d4ff30231fbc58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePuschRxCfoTaEst</definition>
+        <argsstring>(cuphyPuschRxCfoTaEstHndl_t *pPuschRxCfoTaEstHndl, uint8_t enableCpuToGpuDescrAsyncCpy, void *pStatDescrCpu, void *pStatDescrGpu, cudaStream_t strm)</argsstring>
+        <name>cuphyCreatePuschRxCfoTaEst</name>
+        <param>
+          <type><ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga870ade1f460b02c7e1f0e79c6f146710" kindref="member">cuphyPuschRxCfoTaEstHndl_t</ref> *</type>
+          <declname>pPuschRxCfoTaEstHndl</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pStatDescrCpu</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pStatDescrGpu</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY PuschRx CFO and TA estimation object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a cuPHY carrier frequency offset and timing advance estimation object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPuschRxCfoTaEstHndl</computeroutput> and/or <computeroutput>pInterpCoef</computeroutput> and/or <computeroutput>pShiftSeq</computeroutput> and/or <computeroutput>pUnShiftSeq</computeroutput> and/or <computeroutput>pStatDescrCpu</computeroutput> and/or <computeroutput>pStatDescrGpu</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a PuschRxCfoTaEst object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pPuschRxCfoTaEstHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new PuschRxCfoTaEst instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- flag if non-zero enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pStatDescrCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to static descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pStatDescrGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to static descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1gaa0c48df622d38a9d27c043736dcd1969" kindref="member">cuphyPuschRxCfoTaEstGetDescrInfo</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga8890f992a82e4febb2cc94e3c105fef3" kindref="member">cuphySetupPuschRxCfoTaEst</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga59cd50205dc4914033840e7eb6d98c30" kindref="member">cuphyDestroyPuschRxCfoTaEst</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2054" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2054" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CFO__TA__ESTIMATION_1ga59cd50205dc4914033840e7eb6d98c30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPuschRxCfoTaEst</definition>
+        <argsstring>(cuphyPuschRxCfoTaEstHndl_t puschRxCfoTaEstHndl)</argsstring>
+        <name>cuphyDestroyPuschRxCfoTaEst</name>
+        <param>
+          <type><ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga870ade1f460b02c7e1f0e79c6f146710" kindref="member">cuphyPuschRxCfoTaEstHndl_t</ref></type>
+          <declname>puschRxCfoTaEstHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY PUSCH CFO estimation object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY PUSCH carrier frequency estimation object that was previously created by <ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga4940d4581b0c5acc38d4ff30231fbc58" kindref="member">cuphyCreatePuschRxCfoTaEst</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>puschRxCfoTaEstHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxCfoTaEstHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated PuschRxCfoTaEst instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1gaa0c48df622d38a9d27c043736dcd1969" kindref="member">cuphyPuschRxCfoTaEstGetDescrInfo</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga4940d4581b0c5acc38d4ff30231fbc58" kindref="member">cuphyCreatePuschRxCfoTaEst</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga8890f992a82e4febb2cc94e3c105fef3" kindref="member">cuphySetupPuschRxCfoTaEst</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2121" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2121" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CFO__TA__ESTIMATION_1gaa0c48df622d38a9d27c043736dcd1969" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPuschRxCfoTaEstGetDescrInfo</definition>
+        <argsstring>(size_t *pStatDescrSizeBytes, size_t *pStatDescrAlignBytes, size_t *pDynDescrSizeBytes, size_t *pDynDescrAlignBytes)</argsstring>
+        <name>cuphyPuschRxCfoTaEstGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pStatDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pStatDescrAlignBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute cuPHY CFO and TA estimation descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes cuPHY PUSCH carrier frequency offset and timing advance estimation descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other PuschRxCfoTaEst APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pStatDescrSizeBytes</computeroutput> and/or <computeroutput>pStatDescrAlignBytes</computeroutput> and/or <computeroutput>pDynDescrSizeBytes</computeroutput> and/or <computeroutput>pDynDescrAlignBytes</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pStatDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of static descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pStatDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of static descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of dynamic descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga4940d4581b0c5acc38d4ff30231fbc58" kindref="member">cuphyCreatePuschRxCfoTaEst</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga59cd50205dc4914033840e7eb6d98c30" kindref="member">cuphyDestroyPuschRxCfoTaEst</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2023" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2023" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CFO__TA__ESTIMATION_1ga8890f992a82e4febb2cc94e3c105fef3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPuschRxCfoTaEst</definition>
+        <argsstring>(cuphyPuschRxCfoTaEstHndl_t puschRxCfoTaEstHndl, cuphyPuschRxUeGrpPrms_t *pDrvdUeGrpPrmsCpu, cuphyPuschRxUeGrpPrms_t *pDrvdUeGrpPrmsGpu, uint16_t nUeGrps, uint32_t nMaxPrb, cuphyTensorPrm_t *pDbg, uint8_t enableCpuToGpuDescrAsyncCpy, void *pDynDescrsCpu, void *pDynDescrsGpu, cuphyPuschRxCfoTaEstLaunchCfgs_t *pLaunchCfgs, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPuschRxCfoTaEst</name>
+        <param>
+          <type><ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga870ade1f460b02c7e1f0e79c6f146710" kindref="member">cuphyPuschRxCfoTaEstHndl_t</ref></type>
+          <declname>puschRxCfoTaEstHndl</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxUeGrpPrms_t *</type>
+          <declname>pDrvdUeGrpPrmsCpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxUeGrpPrms_t *</type>
+          <declname>pDrvdUeGrpPrmsGpu</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nUeGrps</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>nMaxPrb</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t *</type>
+          <declname>pDbg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pDynDescrsCpu</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pDynDescrsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxCfoTaEstLaunchCfgs_t *</type>
+          <declname>pLaunchCfgs</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY PuschRx CFO and TA estimation for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY PUSCH carrier frequency offset and timing advance estimation in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPuschRxCfoTaEstHndl</computeroutput> and/or <computeroutput>pDataRx</computeroutput> and/or <computeroutput>pHEst</computeroutput> and/or <computeroutput>pDbg</computeroutput> and/or <computeroutput>pDynDescrsCpu</computeroutput> and/or <computeroutput>pDynDescrsGpu</computeroutput> is NULL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxCfoTaEstHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle to previously created PuschRxCfoTaEst instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDrvdUeGrpPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to derived UE group parameters on CPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDrvdUeGrpPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to derived UE group parameters on GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nUeGrps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of UE groups to be processed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nMaxPrb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- maximum number of PRBs across UE groups </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDbg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to debug tensor parameters (0 if no debug info is desired) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to channel estimation launch configurations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1gaa0c48df622d38a9d27c043736dcd1969" kindref="member">cuphyPuschRxCfoTaEstGetDescrInfo</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga4940d4581b0c5acc38d4ff30231fbc58" kindref="member">cuphyCreatePuschRxCfoTaEst</ref>,<ref refid="group__CUPHY__CFO__TA__ESTIMATION_1ga59cd50205dc4914033840e7eb6d98c30" kindref="member">cuphyDestroyPuschRxCfoTaEst</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2090" column="1" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2090" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the carrier frequency offset and timing advance estimation functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

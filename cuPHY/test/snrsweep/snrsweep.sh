@@ -1,0 +1,326 @@
+#!/bin/bash
+# Copyright (c) 2019-2023, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted
+# provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright notice, this list of
+#       conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright notice, this list of
+#       conditions and the following disclaimer in the documentation and/or other materials
+#       provided with the distribution.
+#     * Neither the name of the NVIDIA CORPORATION nor the names of its contributors may be used
+#       to endorse or promote products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+# FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL NVIDIA CORPORATION BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TOR (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+# Run this from the build directory to sweep through the test cases
+# each from 0dB to 30dB.  It outputs a text file showing the SNR dB
+# at which where the CRC errors starts to show up.
+
+# snrsweep.sh [tv-path] [build-dir-path]
+# where
+# [tv-path] = optional parameter to set the dir path to the test vectors
+
+# [build-dir-path] = optional parameter to set the dir path to the build directory
+#
+if [ -z "$1" ]; then
+    export TVDIR=../../util/matlab/GPU_test_input
+else
+    export TVDIR=$1
+fi
+echo "Using test vector from default path: $TVDIR"
+
+
+if [ -z "$2" ]; then
+    export BUILDDIR=../../../cuPHY/build
+else
+    export BUILDDIR=$2
+fi
+echo "Using build directory from default path: $BUILDDIR"
+
+
+tclist=(TV_cuphy_pusch-TC1_snrdb0.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb1.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb2.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb3.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb4.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb5.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb6.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb7.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb8.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb9.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb10.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb11.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb12.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb13.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb14.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb15.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb16.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb17.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb18.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb19.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb20.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb21.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb22.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb23.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb24.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb25.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb26.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb27.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb28.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb29.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC1_snrdb30.00_MIMO4x8_PRB272_DataSyms9_qam64.h5
+
+TV_cuphy_pusch-TC2_snrdb0.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb1.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb2.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb3.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb4.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb5.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb6.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb7.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb8.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb9.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb10.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb11.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb12.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb13.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb14.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb15.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb16.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb17.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb18.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb19.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb20.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb21.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb22.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb23.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb24.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb25.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb26.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb27.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb28.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb29.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC2_snrdb30.00_MIMO2x8_PRB272_DataSyms9_qam64.h5
+
+TV_cuphy_pusch-TC3_snrdb0.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb1.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb2.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb3.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb4.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb5.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb6.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb7.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb8.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb9.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb10.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb11.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb12.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb13.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb14.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb15.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb16.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb17.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb18.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb19.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb20.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb21.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb22.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb23.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb24.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb25.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb26.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb27.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb28.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb29.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC3_snrdb30.00_MIMO1x8_PRB272_DataSyms9_qam64.h5
+
+TV_cuphy_pusch-TC4_snrdb0.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb1.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb2.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb3.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb4.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb5.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb6.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb7.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb8.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb9.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb10.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb11.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb12.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb13.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb14.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb15.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb16.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb17.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb18.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb19.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb20.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb21.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb22.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb23.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb24.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb25.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb26.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb27.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb28.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb29.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC4_snrdb30.00_MIMO4x8_PRB272_DataSyms9_qam16.h5
+
+TV_cuphy_pusch-TC5_snrdb0.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb1.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb2.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb3.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb4.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb5.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb6.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb7.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb8.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb9.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb10.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb11.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb12.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb13.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb14.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb15.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb16.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb17.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb18.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb19.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb20.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb21.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb22.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb23.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb24.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb25.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb26.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb27.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb28.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb29.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC5_snrdb30.00_MIMO2x8_PRB272_DataSyms9_qam16.h5
+
+TV_cuphy_pusch-TC6_snrdb0.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb1.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb2.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb3.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb4.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb5.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb6.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb7.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb8.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb9.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb10.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb11.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb12.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb13.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb14.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb15.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb16.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb17.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb18.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb19.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb20.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb21.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb22.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb23.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb24.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb25.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb26.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb27.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb28.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb29.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC6_snrdb30.00_MIMO1x8_PRB272_DataSyms9_qam16.h5
+
+TV_cuphy_pusch-TC7_snrdb0.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb0.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb1.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb2.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb3.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb4.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb5.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb6.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb7.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb8.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb9.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb10.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb11.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb12.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb13.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb14.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb15.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb16.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb17.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb18.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb19.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb20.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb21.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb22.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb23.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb24.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb25.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb26.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb27.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb28.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb29.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+TV_cuphy_pusch-TC7_snrdb30.00_MIMO2x8_PRB48_DataSyms9_qam64.h5
+
+TV_cuphy_pusch-TC8_snrdb0.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb0.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb1.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb2.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb3.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb4.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb5.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb6.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb7.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb8.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb9.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb10.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb11.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb12.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb13.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb14.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb15.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb16.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb17.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb18.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb19.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb20.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb21.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb22.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb23.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb24.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb25.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb26.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb27.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb28.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb29.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+TV_cuphy_pusch-TC8_snrdb30.00_MIMO2x8_PRB64_DataSyms9_qam16.h5
+)
+
+export OUTFNAME=$(date +snrsweep'%G%m%d%H%M'.txt)
+
+rm $OUTFNAME
+mkdir logs
+for TCNAME in "${tclist[@]}"
+do
+  echo "Testcase: $TCNAME"
+  $BUILDDIR/examples/pusch_rx_multi_pipe/cuphy_ex_pusch_rx_multi_pipe -i $TVDIR/$TCNAME | tee logs/$TCNAME.log
+  ok=$(cat logs/$TCNAME.log | grep 'execution time' | wc -l)
+  if (( $ok > 0 )); then
+    echo "$TCNAME $(cat logs/$TCNAME.log | grep 'CRC' | grep 'fail' | wc -l)" >> $OUTFNAME
+  else
+    echo "$TCNAME - File not found" >> $OUTFNAME
+  fi;
+done
+
+

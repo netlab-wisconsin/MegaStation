@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyPuschRxRssiLaunchCfgs__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyPuschRxRssiLaunchCfgs_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyPuschRxRssiLaunchCfgs__t_1a62de1544ae8038fc583522c1702e69fc" prot="public" static="no" mutable="no">
+        <type><ref refid="structcuphyPuschRxRssiLaunchCfg__t" kindref="compound">cuphyPuschRxRssiLaunchCfg_t</ref></type>
+        <definition>cuphyPuschRxRssiLaunchCfg_t cuphyPuschRxRssiLaunchCfgs_t::cfgs[CUPHY_PUSCH_RX_RSSI_N_MAX_HET_CFGS]</definition>
+        <argsstring>[CUPHY_PUSCH_RX_RSSI_N_MAX_HET_CFGS]</argsstring>
+        <name>cfgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2569" column="33" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2569" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPuschRxRssiLaunchCfgs__t_1ad7ee38b3ddc95033be208f21121c7014" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t cuphyPuschRxRssiLaunchCfgs_t::nCfgs</definition>
+        <argsstring></argsstring>
+        <name>nCfgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2568" column="33" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2568" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>cuphyPuschRxRssiLaunchCfg_t</label>
+        <link refid="structcuphyPuschRxRssiLaunchCfg__t"/>
+      </node>
+      <node id="1">
+        <label>cuphyPuschRxRssiLaunchCfgs_t</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>cfgs</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2567" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2566" bodyend="2570"/>
+    <listofallmembers>
+      <member refid="structcuphyPuschRxRssiLaunchCfgs__t_1a62de1544ae8038fc583522c1702e69fc" prot="public" virt="non-virtual"><scope>cuphyPuschRxRssiLaunchCfgs_t</scope><name>cfgs</name></member>
+      <member refid="structcuphyPuschRxRssiLaunchCfgs__t_1ad7ee38b3ddc95033be208f21121c7014" prot="public" virt="non-virtual"><scope>cuphyPuschRxRssiLaunchCfgs_t</scope><name>nCfgs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPuschDmrsPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPuschDmrsPrm</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPuschDmrsPrm_1a5c2a26519411453a6ef69721b08c9a2f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPuschDmrsPrm::dmrsAddlnPos</definition>
+        <argsstring></argsstring>
+        <name>dmrsAddlnPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="282" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDmrsPrm_1ac687fb70cfdcc57ec66f13f9fe93759d" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPuschDmrsPrm::dmrsMaxLen</definition>
+        <argsstring></argsstring>
+        <name>dmrsMaxLen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="283" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDmrsPrm_1ac0a0d4c126e4a3bd1dd3f7bdb5248269" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPuschDmrsPrm::dmrsScrmId</definition>
+        <argsstring></argsstring>
+        <name>dmrsScrmId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="287" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDmrsPrm_1a4ae361b706ff93afd5a9f7aa79927425" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPuschDmrsPrm::nDmrsCdmGrpsNoData</definition>
+        <argsstring></argsstring>
+        <name>nDmrsCdmGrpsNoData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="286" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="280" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="279" bodyend="288"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPuschDmrsPrm_1a5c2a26519411453a6ef69721b08c9a2f" prot="public" virt="non-virtual"><scope>_cuphyPuschDmrsPrm</scope><name>dmrsAddlnPos</name></member>
+      <member refid="struct__cuphyPuschDmrsPrm_1ac687fb70cfdcc57ec66f13f9fe93759d" prot="public" virt="non-virtual"><scope>_cuphyPuschDmrsPrm</scope><name>dmrsMaxLen</name></member>
+      <member refid="struct__cuphyPuschDmrsPrm_1ac0a0d4c126e4a3bd1dd3f7bdb5248269" prot="public" virt="non-virtual"><scope>_cuphyPuschDmrsPrm</scope><name>dmrsScrmId</name></member>
+      <member refid="struct__cuphyPuschDmrsPrm_1a4ae361b706ff93afd5a9f7aa79927425" prot="public" virt="non-virtual"><scope>_cuphyPuschDmrsPrm</scope><name>nDmrsCdmGrpsNoData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

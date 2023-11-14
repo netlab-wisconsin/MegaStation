@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__DL__CUPHY__CSIRS" kind="group">
+    <compoundname>DL_CUPHY_CSIRS</compoundname>
+    <title>CSIRS</title>
+    <innerclass refid="struct__CsirsSymbLocRow" prot="public">_CsirsSymbLocRow</innerclass>
+    <innerclass refid="struct__CsirsTables" prot="public">_CsirsTables</innerclass>
+    <innerclass refid="structcuphyGenCsirsTfSignalLaunchCfg__t" prot="public">cuphyGenCsirsTfSignalLaunchCfg_t</innerclass>
+    <innerclass refid="structcuphyGenScramblingLaunchCfg__t" prot="public">cuphyGenScramblingLaunchCfg_t</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__DL__CUPHY__CSIRS_1ga393dff8b8f101f376821984c8cf6fffd" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_cuphyCdmType</name>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1gga393dff8b8f101f376821984c8cf6fffdac87499e5730ecae67ab41caca8bd822d" prot="public">
+          <name>NO_CDM</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1gga393dff8b8f101f376821984c8cf6fffdae87706c13468de7e633e7e0dd18b05af" prot="public">
+          <name>CDM2_FD</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1gga393dff8b8f101f376821984c8cf6fffda97632e9f9e27585fb945edc2f19834d9" prot="public">
+          <name>CDM4_FD2_TD2</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1gga393dff8b8f101f376821984c8cf6fffdaf3fe676df039f166ad9b4920e0963fe7" prot="public">
+          <name>CDM8_FD2_TD4</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1gga393dff8b8f101f376821984c8cf6fffdaec8fdc5803759dab5792dcd25305f851" prot="public">
+          <name>MAX_CDM_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>CDM type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4455" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4454" bodyend="4461"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__DL__CUPHY__CSIRS_1gaf4a1628aa384989fc1801da55cea92d0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_cuphyCsiType</name>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1ggaf4a1628aa384989fc1801da55cea92d0ae75b1f85b8523de8b406892d03266810" prot="public">
+          <name>TRS</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1ggaf4a1628aa384989fc1801da55cea92d0afc469e4913eccb4fe58bd2bd92f8c7e1" prot="public">
+          <name>NZP_CSI_RS</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1ggaf4a1628aa384989fc1801da55cea92d0a43bd2b042c6b2484f3f3e8f526ad5323" prot="public">
+          <name>ZP_CSI_RS</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>CSIType enum. Only NZP_CSI_RS is currently supported. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4445" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4444" bodyend="4449"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__DL__CUPHY__CSIRS_1gac3365172b1b8d8b07a1ac50530bcf892" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_cuphyUciDtxTypes</name>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1ggac3365172b1b8d8b07a1ac50530bcf892a852887358fc1b911f54d68390b462ec8" prot="public">
+          <name>UCI_HARQ_DTX</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1ggac3365172b1b8d8b07a1ac50530bcf892a71fa3317dbcd78eaf5cb17512756941c" prot="public">
+          <name>UCI_CSI1_DTX</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1ggac3365172b1b8d8b07a1ac50530bcf892adffa42eb98b755d071681c42d203c40f" prot="public">
+          <name>UCI_CSI2_DTX</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__DL__CUPHY__CSIRS_1ggac3365172b1b8d8b07a1ac50530bcf892a7d96d41c04035d4fd4c4150aa82f5d90" prot="public">
+          <name>N_UCI_DTX</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>UCI DTX type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4467" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4466" bodyend="4472"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__DL__CUPHY__CSIRS_1gaab0fa1d1a7fb7d56812dfe1cfbb0e4fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCsirsKernelSelect</definition>
+        <argsstring>(cuphyGenScramblingLaunchCfg_t *pGenCsirsScramblingLaunchCfg, cuphyGenCsirsTfSignalLaunchCfg_t *pGenCsirsTfSignalLaunchCfg, uint32_t numParams)</argsstring>
+        <name>cuphyCsirsKernelSelect</name>
+        <param>
+          <type>cuphyGenScramblingLaunchCfg_t *</type>
+          <declname>pGenCsirsScramblingLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cuphyGenCsirsTfSignalLaunchCfg_t *</type>
+          <declname>pGenCsirsTfSignalLaunchCfg</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>numParams</declname>
+        </param>
+        <briefdescription>
+<para>: CUDA kernel setup for CSI-RS pipeline. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pGenCsirsScramblingLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to launch configuration for scrambling sequence generation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pGenCsirsTfSignalLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to launch configuration for CSI-RS computation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">numParams</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of CSI-RS parameters in the batch across all cells (or in a cell group). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CUPHY_STATUS_SUCCESS or CUPHY_STATUS_INVALID_ARGUMENT. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4525" column="15" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="4525" declcolumn="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the CSIRS functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

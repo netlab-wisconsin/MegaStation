@@ -1,0 +1,200 @@
+Copyright (c) 2021, NVIDIA CORPORATION. All rights reserved.
+
+NVIDIA CORPORATION and its licensors retain all intellectual property
+and proprietary rights in and to this software, related documentation
+and any modifications thereto.  Any use, reproduction, disclosure or
+distribution of this software and related documentation without an express
+license agreement from NVIDIA CORPORATION is strictly prohibited.
+
+1. Background
+    A. LDPC decoder example program (cuphy_ex_ldpc)
+
+        The LDPC decoder example program is a C++ application that
+    is used for all performance measurements on the LDPC decoder.
+    (In this case, "performance" can refer to  either "speed"
+    (meaning throughput and or latency) or "error rate" (bit error
+    rate (BER) or block error rate (BLER)).
+        Assuming a successfully completed cuPHY build, the LDPC
+    example program can be run as follows:
+
+        ./examples/error_correction/cuphy_ex_ldpc -n 10 -f -Z 384 -w 1
+
+        The command line above will run for 10 iterations (-n),
+    using fp16 (-f), with a lifting size (Z) of 384, for a single
+    codeword (-w).
+
+        The output of the example program should look something
+    like the text below:
+
+        *********************************************************************
+        NVIDIA Graphics Device: 108 SMs @ 1005 MHz, 39.6 GiB @ 1215 MHz, Compute Capability 8.0, PCI 0000:65:00
+        *********************************************************************
+        LDPC Configuration:
+        *********************************************************************
+        Source                           = (generated at runtime)
+        BG (base graph)                  = 1
+        Kb (info nodes)                  = 22
+        Z  (lifting size)                = 384
+        B  (code block size in bits)     = 8448
+        F  (filler bits)                 = 0
+        K  (info bits, B + F)            = 8448
+        mb (parity nodes)                = 8
+        P  (punctured parity bits)       = 0
+        N  (modulated bits, B+Z(mb-2)-P) = 10752
+        Number of codewords              = 1
+        R  (code rate = B / N)           = 0.786
+        Modulation                       = QPSK
+        Punctured info nodes             = DISABLED
+        s  (LLR scale factor)            = 1.000000
+        Normalization                    = 0.750000
+        Number of iterations             = 10
+
+        Average (1 runs) elapsed time in usec = 109.6, throughput = 0.08 Gbps
+        bit error count = 0, bit error rate (BER) = (0 / 8448) = 0.00000e+00, block error rate (BLER) = (0 / 1) = 0.00000e+00
+
+        There is a more exhaustive list of options that can be seen
+    using the command line help:
+
+        ./examples/error_correction/cuphy_ex_ldpc -h
+
+        In general, the example program executes an LDPC decoder
+    run for a single configuration (i.e. lifting size, base graph,
+    code rate, etc.). Results from multiple runs can be collected using
+    the Python performance script (below).
+
+    B. LDPC decoder performance collection script (ldpc_perf_collect.py)
+
+        The performance collection script invokes the LDPC decoder
+    example program (typically multiple times), parses the output, and
+    presents the data in a more useful way.
+        The Python script is located in the cuPHY repository in the
+    util/ldpc directory. It can be run as follows to show options:
+
+        ../util/ldpc/ldpc_perf_collect.py -h
+
+    C. Locking GPU clocks for consistent speed measurements.
+
+        When comparing speed measurements, it is important to have a
+    common baseline. Different architectures will (by design) invoke
+    different kernels. The running time is also strongly dependent on
+    clock speed. In general, GPUs have multiple different clocks, and
+    the hardware will throttle the clocks based on the workload.
+
+        You can query the current clock speed using this command:
+
+        nvidia-smi -q -d CLOCK
+
+        Look for the
+
+        Attached GPUs                             : 1
+        GPU 00000000:65:00.0
+            Clocks
+                Graphics                  : 210 MHz   <---- these are
+                SM                        : 210 MHz   <---- the ones...
+                Memory                    : 1215 MHz
+                Video                     : 585 MHz
+
+
+        You can "lock" the clocks to a specific value (to avoid
+    throttling) using the following command (which typically
+    requires root access):
+
+        nvidia-smi -lgc 1380
+
+        On a system with multiple GPUs, you may need to add the
+    "-i" flag and an index value to make sure that you are setting
+    the clock for the appropriate GPU.
+
+        After running the command above, the output of the nvidia-smi
+    clock query should look like this:
+        
+        Attached GPUs                             : 1
+        GPU 00000000:65:00.0
+            Clocks
+                Graphics                          : 1380 MHz
+                SM                                : 1380 MHz
+                ...
+
+    D. LDPC kernels: number of codewords per CTA
+
+        There are (at least) two variants of LDPC kernels: those that
+    decode 1 codeword per cooperative thread array (CTA, also known
+    as a thread block), and those that decode 2 codewords per CTA. In
+    general, the execution time for a 2 CW/CTA kernel is longer than
+    a 1 CW/CTA kernel. However, the 2 CW/CTA kernel does twice as much
+    "work", but it takes less than twice as long.
+        On some architectures (Volta, Turing, GA102), there is not
+    enough shared memory to fit the associated working set for two
+    codewords (using fp16 precision) at the lowest code rate. On
+    those architectures, the 2 CW/CTA kernel is not available at the
+    "lower" code rates (approx. 32 parity nodes or greater). This
+    may manifest itself as a performance "cliff", where the latency
+    jumps between the two kernel implementations. On GA100, there
+    is enough shared memory for ALL code rates to support the 2
+    CW/CTA kernel.
+        The example program (and the cuPHY library LDPC decoder
+    implementation accepts a flag to indicate which kernel should be
+    used. The default is to favor "latency", i.e. the 1 CW/CTA kernel.
+    When the "throughput" flag is given, the 2 CW/CTA kernel will be
+    chosen (if it is available for the given LDPC configuration and
+    GPU architecture).
+
+2. Example program and script measurement scenarios
+
+    A. Measuring latency/througphput
+        1. The -f flag (for fp16) should always be specified. There
+    is still some support for fp32, but it is only partial, and will
+    likely be much slower. (fp16 should be made the default in the
+    example program, and fp32 should be made "opt-in", but that has
+    not happened yet.)
+
+        2. "Baseline" latency measurement (single codeword)
+        This will launch a kernel to decode a single codeword on a
+    single SM:
+    
+        ../util/ldpc/ldpc_perf_collect.py -m latency -f
+    
+        3. If you would like to measure the effect of a "full" GPU on
+    the latency, you can determine the number of SMs (from the example
+    program output, or from the device properties CUDA example program.
+    The number of SMs can then be used as the number of codewords. For
+    example, on an Ampere GPU with 108 SMs, the command to "fill" the
+    GPU would be:
+    
+        ../util/ldpc/ldpc_perf_collect.py -m latency -f -w 108
+
+        4. Measuring the latency of the "throughput" (2 CW/CTA) kernel:
+
+        ../util/ldpc/ldpc_perf_collect.py -m latency -f -t
+
+        5. Measuring the "throughput" kernel latency with a "full" GPU
+
+        After determining the number of SMs, multiply that number by
+    2 and specify that number of codewords. For example, on a GPU with
+    108 codewords, the command would be:
+
+        ../util/ldpc/ldpc_perf_collect.py -m latency -f -t -w 216
+
+        6. Comparing runs
+
+        For latency calculations, the output table can be saved using the
+    -o flag:
+
+        ../util/ldpc/ldpc_perf_collect.py -m latency -f -o latency_baseline.txt
+
+        If you wish to compare latency runs to a previously saved output
+    file, you can use the compare (-c) option. For example, if the LDPC kernel
+    is changed, and you wish to compare it to the measurements stored in the
+    text file above, the command would be:
+
+        ../util/ldpc/ldpc_perf_collect.py -m latency -f -c latency_baseline.txt
+
+    B. Measuring error performance
+        1. Comparisons with other decoders (e.g. Xilinx) should typically
+     have the "puncture" flag (-P).
+
+        2. Comparison with Xilinx data
+
+            https://www.xilinx.com/html_docs/ip_docs/pl_files/sd-fec-ber-plots.html
+
+            ../util/ldpc/ldpc_perf_collect.py --mode ber -Z 384 --min_snr -2.5 --max_snr -0.9 --snr_step 0.1 --num_parity 46 -n 32 --use_fp16 -w 800 -P

@@ -1,0 +1,506 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__CRC" kind="group">
+    <compoundname>CUPHY_CRC</compoundname>
+    <title>CRC Computation</title>
+    <innerclass refid="structcrcLaunchDescriptor" prot="public">crcLaunchDescriptor</innerclass>
+    <innerclass refid="structcuphyCrcEncodeLaunchConfig" prot="public">cuphyCrcEncodeLaunchConfig</innerclass>
+    <innerclass refid="structcuphyPrepareCrcEncodeLaunchConfig" prot="public">cuphyPrepareCrcEncodeLaunchConfig</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__CRC_1gafc293a11f41191a761a4c491dd58eae2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void createCRCDecodeNodes</definition>
+        <argsstring>(cudaGraphNode_t crcNodes[N_CRC_DECODE_GRAPH_NODES], cudaGraph_t graph, const cudaGraphNode_t *dependencies, uint32_t nDependencies, const crcLaunchDescriptor *crcDesc)</argsstring>
+        <name>createCRCDecodeNodes</name>
+        <param>
+          <type>cudaGraphNode_t</type>
+          <declname>crcNodes</declname>
+          <array>[N_CRC_DECODE_GRAPH_NODES]</array>
+        </param>
+        <param>
+          <type>cudaGraph_t</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const cudaGraphNode_t *</type>
+          <declname>dependencies</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>nDependencies</declname>
+        </param>
+        <param>
+          <type>const crcLaunchDescriptor *</type>
+          <declname>crcDesc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2944" column="6" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2944" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC_1gac3a021973d74e4207c4b1fa011861b8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCRCDecode</definition>
+        <argsstring>(uint32_t *d_outputCBCRCs, uint32_t *d_outputTBCRCs, uint8_t *d_outputTransportBlocks, const uint32_t *d_inputCodeBlocks, const PerTbParams *d_tbPrmsArray, uint32_t nTBs, uint32_t maxNCBsPerTB, uint32_t maxTBByteSize, int reverseBytes, int timeIt, uint32_t NRUNS, uint32_t codeBlocksOnly, cudaStream_t strm)</argsstring>
+        <name>cuphyCRCDecode</name>
+        <param>
+          <type>uint32_t *</type>
+          <declname>d_outputCBCRCs</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>d_outputTBCRCs</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>d_outputTransportBlocks</declname>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>d_inputCodeBlocks</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+          <declname>d_tbPrmsArray</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>nTBs</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxNCBsPerTB</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxTBByteSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>reverseBytes</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeIt</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>NRUNS</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>codeBlocksOnly</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2954" column="15" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2954" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC_1gaf3349c06e8917852bb533dbed8f82b97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCRCDecodeLaunchSetup</definition>
+        <argsstring>(uint32_t nTBs, uint32_t maxNCBsPerTB, uint32_t maxTBByteSize, crcLaunchDescriptor *crcDecodeDesc)</argsstring>
+        <name>cuphyCRCDecodeLaunchSetup</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>nTBs</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxNCBsPerTB</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxTBByteSize</declname>
+        </param>
+        <param>
+          <type>crcLaunchDescriptor *</type>
+          <declname>crcDecodeDesc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2948" column="15" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2948" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC_1ga837d3a0ed1e4ebd2febf972bf0f52c98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCrcEncodeGetDescrInfo</definition>
+        <argsstring>(size_t *pDescrSizeBytes, size_t *pDescrAlignBytes)</argsstring>
+        <name>cuphyCrcEncodeGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>: Compute descriptor size and alignment for CRC Encoder. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size in bytes of descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Alignment in bytes of descriptor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CUPHY_STATUS_SUCCESS or CUPHY_STATUS_INVALID_ARGUMENT </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3009" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3009" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC_1gad5be837f0b190fe175cc4242de7e1668" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPrepareCrcEncodeGetDescrInfo</definition>
+        <argsstring>(size_t *pDescrSizeBytes, size_t *pDescrAlignBytes)</argsstring>
+        <name>cuphyPrepareCrcEncodeGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3012" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3012" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC_1gab709d3862977eeb7d782a7c2e956830c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupCrcEncode</definition>
+        <argsstring>(cuphyCrcEncodeLaunchConfig_t crcEncodeLaunchConfig, uint32_t *d_cbCRCs, uint32_t *d_tbCRCs, const uint32_t *d_inputTransportBlocks, uint8_t *d_codeBlocks, const PdschPerTbParams *d_tbPrmsArray, uint32_t nTBs, uint32_t maxNCBsPerTB, uint32_t maxTBByteSize, uint8_t reverseBytes, uint8_t codeBlocksOnly, void *cpu_desc, void *gpu_desc, uint8_t enable_desc_async_copy, cudaStream_t strm)</argsstring>
+        <name>cuphySetupCrcEncode</name>
+        <param>
+          <type>cuphyCrcEncodeLaunchConfig_t</type>
+          <declname>crcEncodeLaunchConfig</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>d_cbCRCs</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>d_tbCRCs</declname>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>d_inputTransportBlocks</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>d_codeBlocks</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPdschPerTbParams" kindref="compound">PdschPerTbParams</ref> *</type>
+          <declname>d_tbPrmsArray</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>nTBs</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxNCBsPerTB</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxTBByteSize</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>reverseBytes</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>codeBlocksOnly</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>cpu_desc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>gpu_desc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enable_desc_async_copy</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>: Setup CRC encoder component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">crcEncodeLaunchConfig</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to cuphyCrcEncodeLaunchConfig. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">d_cbCRCs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if not nullptr, output buffer with per-CB CRCs across all TBs for debugging </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">d_tbCRCs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output buffer containing per-TB CRCs across all TBS (needed by CB kernel) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d_inputTransportBlocks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input buffer; currently prepared via cuphyPrepareCRCEncode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">d_codeBlocks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CRC output </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">d_tbPrmsArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of <ref refid="structPdschPerTbParams" kindref="compound">PdschPerTbParams</ref> structs describing each input transport block. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nTBs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of TBs handled in a kernel launch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maxNCBsPerTB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum number of code blocks per transport block for current launch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maxTBByteSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum size in bytes of transport block for current launch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">reverseBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reverse order of bytes in each word before computing CRC </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">codeBlocksOnly</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>only compute CRC of code blocks (CBs); skip transport block CRC computation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cpu_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">gpu_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">enable_desc_async_copy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>async copy CPU descriptor into GPU if set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CUDA stream for async copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>CUPHY_STATUS_SUCCESS or CUPHY_STATUS_INVALID_ARGUMENT </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3036" column="1" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3036" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC_1gaf36d64904089f851f270d52740a65326" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPrepareCRCEncode</definition>
+        <argsstring>(cuphyPrepareCrcEncodeLaunchConfig_t prepareCrcEncodeLaunchConfig, const uint32_t *d_inputOrigTBs, uint32_t *d_inputTBs, uint32_t *d_inputTBsTM, const PdschPerTbParams *d_tbPrmsArray, uint32_t nTBs, uint32_t maxNCBsPerTB, uint32_t maxTbSizeBytes, void *cpu_desc, void *gpu_desc, uint8_t enable_desc_async_copy, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPrepareCRCEncode</name>
+        <param>
+          <type>cuphyPrepareCrcEncodeLaunchConfig_t</type>
+          <declname>prepareCrcEncodeLaunchConfig</declname>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>d_inputOrigTBs</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>d_inputTBs</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>d_inputTBsTM</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPdschPerTbParams" kindref="compound">PdschPerTbParams</ref> *</type>
+          <declname>d_tbPrmsArray</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>nTBs</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxNCBsPerTB</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxTbSizeBytes</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>cpu_desc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>gpu_desc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enable_desc_async_copy</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2980" column="15" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2980" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC_1ga1c477f80e005547b297634ba11be195d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void updateCRCDecodeNodes</definition>
+        <argsstring>(cudaGraphNode_t crcNodes[N_CRC_DECODE_GRAPH_NODES], cudaGraphExec_t graphExec, const crcLaunchDescriptor *crcDesc)</argsstring>
+        <name>updateCRCDecodeNodes</name>
+        <param>
+          <type>cudaGraphNode_t</type>
+          <declname>crcNodes</declname>
+          <array>[N_CRC_DECODE_GRAPH_NODES]</array>
+        </param>
+        <param>
+          <type>cudaGraphExec_t</type>
+          <declname>graphExec</declname>
+        </param>
+        <param>
+          <type>const crcLaunchDescriptor *</type>
+          <declname>crcDesc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2945" column="6" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="2945" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__CUPHY__CRC_1ga0f27c6b41bb5605c057cade9ef97d765" prot="public" static="no">
+        <name>N_CRC_DECODE_GRAPH_NODES</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="2942" column="9" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="2942" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the CRC computation functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,724 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__CHANNEL__ESTIMATION" kind="group">
+    <compoundname>CUPHY_CHANNEL_ESTIMATION</compoundname>
+    <title>Channel Estimation</title>
+    <innerclass refid="structcuphyPuschRxChEstLaunchCfg__t" prot="public">cuphyPuschRxChEstLaunchCfg_t</innerclass>
+    <innerclass refid="structcuphyPuschRxChEstLaunchCfgs__t" prot="public">cuphyPuschRxChEstLaunchCfgs_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__CHANNEL__ESTIMATION_1ga97987747bbde63fd72a4acb3afe307c5" prot="public" static="no">
+        <type>struct cuphyPuschRxChEst *</type>
+        <definition>typedef struct cuphyPuschRxChEst* cuphyPuschRxChEstHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyPuschRxChEstHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY PUSCH Receiver channel estimation handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1609" column="33" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1609" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__CHANNEL__ESTIMATION_1ga3651c47cc6e35483f01a9d588c0390c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyChannelEst1DTimeFrequency</definition>
+        <argsstring>(cuphyTensorDescriptor_t tensorDescDst, void *dstAddr, cuphyTensorDescriptor_t tensorDescSymbols, const void *symbolsAddr, cuphyTensorDescriptor_t tensorDescFreqFilters, const void *freqFiltersAddr, cuphyTensorDescriptor_t tensorDescTimeFilters, const void *timeFiltersAddr, cuphyTensorDescriptor_t tensorDescFreqIndices, const void *freqIndicesAddr, cuphyTensorDescriptor_t tensorDescTimeIndices, const void *timeIndicesAddr, cudaStream_t strm)</argsstring>
+        <name>cuphyChannelEst1DTimeFrequency</name>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDescDst</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>dstAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDescSymbols</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>symbolsAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDescFreqFilters</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>freqFiltersAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDescTimeFilters</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>timeFiltersAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDescFreqIndices</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>freqIndicesAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDescTimeIndices</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>timeIndicesAddr</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Performs 1-D time/frequency channel estimation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs MMSE channel estimation using 1-D interpolation in the time and frequency dimensions</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tensorDescDst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor descriptor for output </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dstAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for tensor output </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tensorDescSymbols</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor descriptor for input symbol data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>symbolsAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for input symbol data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tensorDescFreqFilters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor descriptor for input frequency filters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>freqFiltersAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for input frequency filters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tensorDescTimeFilters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor descriptor for input time filters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeFiltersAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for input time filters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tensorDescFreqIndices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor descriptor for pilot symbol frequency indices </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>freqIndicesAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for pilot symbol frequency indices </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tensorDescTimeIndices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor descriptor for pilot symbol time indices </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeIndicesAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for pilot symbol time indices </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for kernel launch</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if any of the tensor descriptors or address values are NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if submission of the kernel was successful</para>
+<para><simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1808" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1808" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CHANNEL__ESTIMATION_1ga151dc82d68aefeecab25e5a918c4eddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePuschRxChEst</definition>
+        <argsstring>(cuphyPuschRxChEstHndl_t *pPuschRxChEstHndl, cuphyTensorPrm_t const *pInterpCoef, cuphyTensorPrm_t const *pInterpCoef4, cuphyTensorPrm_t const *pInterpCoefSmall, cuphyTensorPrm_t const *pShiftSeq, cuphyTensorPrm_t const *pShiftSeq4, cuphyTensorPrm_t const *pUnShiftSeq, cuphyTensorPrm_t const *pUnShiftSeq4, const uint32_t *pSymStats, uint8_t enableCpuToGpuDescrAsyncCpy, void **ppStatDescrsCpu, void **ppStatDescrsGpu, cudaStream_t strm)</argsstring>
+        <name>cuphyCreatePuschRxChEst</name>
+        <param>
+          <type><ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga97987747bbde63fd72a4acb3afe307c5" kindref="member">cuphyPuschRxChEstHndl_t</ref> *</type>
+          <declname>pPuschRxChEstHndl</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t const *</type>
+          <declname>pInterpCoef</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t const *</type>
+          <declname>pInterpCoef4</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t const *</type>
+          <declname>pInterpCoefSmall</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t const *</type>
+          <declname>pShiftSeq</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t const *</type>
+          <declname>pShiftSeq4</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t const *</type>
+          <declname>pUnShiftSeq</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t const *</type>
+          <declname>pUnShiftSeq4</declname>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>pSymStats</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>ppStatDescrsCpu</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>ppStatDescrsGpu</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY PuschRx channel estimation object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a cuPHY channel estimation object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPuschRxChEstHndl</computeroutput> and/or <computeroutput>pInterpCoef</computeroutput> and/or <computeroutput>pShiftSeq</computeroutput> and/or <computeroutput>pUnShiftSeq</computeroutput> and/or <computeroutput>ppStatDescrCpu</computeroutput> and/or <computeroutput>ppStatDescrGpu</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a PuschRxChEst object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pPuschRxChEstHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new PuschRxChEst instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pInterpCoef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Tensor parameters for channel interpolation coefficients (8 input / 4 output PRBs) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pInterpCoef4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Tensor parameters for channel interpolation coefficients (4 input / 2 output PRBs) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pInterpCoefSmall</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Tensor parameters for small channel interpolation coefficients (&lt; 4 input PRBs) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pShiftSeq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to (delay) shift sequence tensor parameters (8 input / 4 output PRBs) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pShiftSeq4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to (delay) shift sequence tensor parameters (4 input / 2 output PRBs and &lt; 4 input PRBs) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pUnShiftSeq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to (delay) unshift sequence tensor parameters (8 input / 4 output PRBs) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pUnShiftSeq4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to (delay) unshift sequence tensor parameters (4 input / 2 output PRBs and &lt; 4 input PRBs) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pSymStats</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to symbol received status </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- flag if non-zero enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppStatDescrsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to an array of static descriptor pointers in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppStatDescrsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to an array of static descriptor pointers in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1gab064dff2ed5a4ca155d7728a363cb31d" kindref="member">cuphyPuschRxChEstGetDescrInfo</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga587efb23cef60aa9a6ae5da9660b72a2" kindref="member">cuphySetupPuschRxChEst</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga75833d7aab14aff61e817e6854c3246e" kindref="member">cuphyDestroyPuschRxChEst</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1689" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1689" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CHANNEL__ESTIMATION_1ga75833d7aab14aff61e817e6854c3246e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPuschRxChEst</definition>
+        <argsstring>(cuphyPuschRxChEstHndl_t puschRxChEstHndl)</argsstring>
+        <name>cuphyDestroyPuschRxChEst</name>
+        <param>
+          <type><ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga97987747bbde63fd72a4acb3afe307c5" kindref="member">cuphyPuschRxChEstHndl_t</ref></type>
+          <declname>puschRxChEstHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY PUSCH channel estimation object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY PUSCH channel estimation object that was previously created by <ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga151dc82d68aefeecab25e5a918c4eddb" kindref="member">cuphyCreatePuschRxChEst</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>puschRxChEstHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxChEstHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated PuschRxChEst instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1gab064dff2ed5a4ca155d7728a363cb31d" kindref="member">cuphyPuschRxChEstGetDescrInfo</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga151dc82d68aefeecab25e5a918c4eddb" kindref="member">cuphyCreatePuschRxChEst</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga587efb23cef60aa9a6ae5da9660b72a2" kindref="member">cuphySetupPuschRxChEst</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1775" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1775" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CHANNEL__ESTIMATION_1gab064dff2ed5a4ca155d7728a363cb31d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPuschRxChEstGetDescrInfo</definition>
+        <argsstring>(size_t *pStatDescrSizeBytes, size_t *pStatDescrAlignBytes, size_t *pDynDescrSizeBytes, size_t *pDynDescrAlignBytes)</argsstring>
+        <name>cuphyPuschRxChEstGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pStatDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pStatDescrAlignBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute cuPHY channel estimation descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes cuPHY PUSCH channel estimation descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other PuschRxChEst APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pStatDescrSizeBytes</computeroutput> and/or <computeroutput>pStatDescrAlignBytes</computeroutput> and/or <computeroutput>pDynDescrSizeBytes</computeroutput> and/or <computeroutput>pDynDescrAlignBytes</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pStatDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of static descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pStatDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of static descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of dynamic descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga151dc82d68aefeecab25e5a918c4eddb" kindref="member">cuphyCreatePuschRxChEst</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga75833d7aab14aff61e817e6854c3246e" kindref="member">cuphyDestroyPuschRxChEst</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1650" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1650" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CHANNEL__ESTIMATION_1ga587efb23cef60aa9a6ae5da9660b72a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPuschRxChEst</definition>
+        <argsstring>(cuphyPuschRxChEstHndl_t puschRxChEstHndl, cuphyPuschRxUeGrpPrms_t *pDrvdUeGrpPrmsCpu, cuphyPuschRxUeGrpPrms_t *pDrvdUeGrpPrmsGpu, uint16_t nUeGrps, uint8_t enableDftSOfdm, uint8_t *pPreEarlyHarqWaitKernelStatus_d, uint8_t *pPostEarlyHarqWaitKernelStatus_d, const uint16_t waitTimeOutPreEarlyHarqUs, const uint16_t waitTimeOutPostEarlyHarqUs, uint8_t enableCpuToGpuDescrAsyncCpy, void **ppDynDescrsCpu, void **ppDynDescrsGpu, cuphyPuschRxChEstLaunchCfgs_t *pLaunchCfgs, uint8_t enableEarlyHarqProc, cuphyPuschRxEarlyHarqWaitLaunchCfg_t *pLaunchCfgsPreEHQ, cuphyPuschRxEarlyHarqWaitLaunchCfg_t *pLaunchCfgsPostEHQ, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPuschRxChEst</name>
+        <param>
+          <type><ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga97987747bbde63fd72a4acb3afe307c5" kindref="member">cuphyPuschRxChEstHndl_t</ref></type>
+          <declname>puschRxChEstHndl</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxUeGrpPrms_t *</type>
+          <declname>pDrvdUeGrpPrmsCpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxUeGrpPrms_t *</type>
+          <declname>pDrvdUeGrpPrmsGpu</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nUeGrps</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableDftSOfdm</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pPreEarlyHarqWaitKernelStatus_d</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pPostEarlyHarqWaitKernelStatus_d</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>waitTimeOutPreEarlyHarqUs</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>waitTimeOutPostEarlyHarqUs</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>ppDynDescrsCpu</declname>
+        </param>
+        <param>
+          <type>void **</type>
+          <declname>ppDynDescrsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxChEstLaunchCfgs_t *</type>
+          <declname>pLaunchCfgs</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableEarlyHarqProc</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxEarlyHarqWaitLaunchCfg_t *</type>
+          <declname>pLaunchCfgsPreEHQ</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxEarlyHarqWaitLaunchCfg_t *</type>
+          <declname>pLaunchCfgsPostEHQ</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY channel estimation for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY PUSCH channel estimation in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPuschRxChEstHndl</computeroutput> and/or and/or <computeroutput>ppDynDescrsCpu</computeroutput> and/or <computeroutput>ppDynDescrsGpu</computeroutput> is NULL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxChEstHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle to previously created PuschRxChEst instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDrvdUeGrpPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to derived UE groups parameters in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDrvdUeGrpPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to derived UE groups parameters in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nUeGrps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of UE groups to be processed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableDftSOfdm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set support DFT-s-OFDM </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pPreEarlyHarqWaitKernelStatus_d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Status of pre-early-HARQ wait kernel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pPostEarlyHarqWaitKernelStatus_d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Status of post-early-HARQ wait kernel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>waitTimeOutPreEarlyHarqUs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- timeout value in us for pre-early-HARQ wait kernel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>waitTimeOutPostEarlyHarqUs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- timeout value in us for post-early-HARQ wait kernel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppDynDescrsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to array of dynamic descriptor pointers in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ppDynDescrsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to array of dynamic descriptor pointers in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to channel estimation launch configurations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableEarlyHarqProc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set enables sub-slot processing for early HARQ symbols </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfgsPreEHQ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to wait kernel launch configurations used in early HARQ sub-slot processing </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfgsPostEHQ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to wait kernel launch configurations used after early HARQ sub-slot processing </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1gab064dff2ed5a4ca155d7728a363cb31d" kindref="member">cuphyPuschRxChEstGetDescrInfo</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga151dc82d68aefeecab25e5a918c4eddb" kindref="member">cuphyCreatePuschRxChEst</ref>,<ref refid="group__CUPHY__CHANNEL__ESTIMATION_1ga75833d7aab14aff61e817e6854c3246e" kindref="member">cuphyDestroyPuschRxChEst</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1738" column="1" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1738" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the channel estimation functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphySsbDynPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphySsbDynPrms</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1a32409f5aa72c37b724c2fcfd9ffad798" prot="public" static="no" mutable="no">
+        <type>CUgraph *</type>
+        <definition>CUgraph* _cuphySsbDynPrms::chan_graph</definition>
+        <argsstring></argsstring>
+        <name>chan_graph</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3445" column="35" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3445" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1a9dd280af8d6ffd8d4ed8fc3960a5bb0c" prot="public" static="no" mutable="no">
+        <type>cudaStream_t</type>
+        <definition>cudaStream_t _cuphySsbDynPrms::cuStream</definition>
+        <argsstring></argsstring>
+        <name>cuStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CUDA stream on which pipeline is launched. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3429" column="18" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1aced99633a4d7a616dfaa728a976f9ab5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphySsbDynPrms::nCells</definition>
+        <argsstring></argsstring>
+        <name>nCells</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of cells for which SSB needs to be processed in this slot </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3436" column="35" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1ac35232b0b3671d3fbcd1fd7336a075c5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphySsbDynPrms::nPrecodingMatrices</definition>
+        <argsstring></argsstring>
+        <name>nPrecodingMatrices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of precoding matrices </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3442" column="35" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1af82c98a522fdbd0745ab6b6f49e1fd41" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphySsbDynPrms::nSSBlocks</definition>
+        <argsstring></argsstring>
+        <name>nSSBlocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of SSBs across all nCells </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3439" column="35" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3439" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1a793ba194691d0e4f579f382e0b72e04a" prot="public" static="no" mutable="no">
+        <type>cuphySsbDataIn_t const  *</type>
+        <definition>cuphySsbDataIn_t const* _cuphySsbDynPrms::pDataIn</definition>
+        <argsstring></argsstring>
+        <name>pDataIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data parameters Pointer to SSB data input <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3448" column="34" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3448" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1a063eaa56dc08d3a0410506d4008cac7a" prot="public" static="no" mutable="no">
+        <type>cuphySsbDataOut_t *</type>
+        <definition>cuphySsbDataOut_t* _cuphySsbDynPrms::pDataOut</definition>
+        <argsstring></argsstring>
+        <name>pDataOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to SSB data output </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3449" column="34" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3449" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1ae12189c5cf81de08b0f364829fe2ba7d" prot="public" static="no" mutable="no">
+        <type>cuphyPerCellSsbDynPrms_t *</type>
+        <definition>cuphyPerCellSsbDynPrms_t* _cuphySsbDynPrms::pPerCellSsbDynParams</definition>
+        <argsstring></argsstring>
+        <name>pPerCellSsbDynParams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Array with nCells elements; cell-specific parameters are common across all SSBs in a given cell </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3437" column="34" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3437" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1a6b969cdb7409b2c8cc0dbe7a34fe45cd" prot="public" static="no" mutable="no">
+        <type>cuphyPerSsBlockDynPrms_t *</type>
+        <definition>cuphyPerSsBlockDynPrms_t* _cuphySsbDynPrms::pPerSsBlockParams</definition>
+        <argsstring></argsstring>
+        <name>pPerSsBlockParams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Array with nSSBlocks SSB-specific elements spanning all nCells cells </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3440" column="34" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3440" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1a59786f6dc9fb94e85473ad73a498ee53" prot="public" static="no" mutable="no">
+        <type>cuphyPmWOneLayer_t *</type>
+        <definition>cuphyPmWOneLayer_t* _cuphySsbDynPrms::pPmwParams</definition>
+        <argsstring></argsstring>
+        <name>pPmwParams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>array of pre-coding matrices </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3443" column="34" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3443" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbDynPrms_1ac3ee824367a51c619140ee0b6dcb973a" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t _cuphySsbDynPrms::procModeBmsk</definition>
+        <argsstring></argsstring>
+        <name>procModeBmsk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Control parameters </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3432" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3432" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>SSB Dynamic Parameters </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3428" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3427" bodyend="3450"/>
+    <listofallmembers>
+      <member refid="struct__cuphySsbDynPrms_1a32409f5aa72c37b724c2fcfd9ffad798" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>chan_graph</name></member>
+      <member refid="struct__cuphySsbDynPrms_1a9dd280af8d6ffd8d4ed8fc3960a5bb0c" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>cuStream</name></member>
+      <member refid="struct__cuphySsbDynPrms_1aced99633a4d7a616dfaa728a976f9ab5" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>nCells</name></member>
+      <member refid="struct__cuphySsbDynPrms_1ac35232b0b3671d3fbcd1fd7336a075c5" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>nPrecodingMatrices</name></member>
+      <member refid="struct__cuphySsbDynPrms_1af82c98a522fdbd0745ab6b6f49e1fd41" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>nSSBlocks</name></member>
+      <member refid="struct__cuphySsbDynPrms_1a793ba194691d0e4f579f382e0b72e04a" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>pDataIn</name></member>
+      <member refid="struct__cuphySsbDynPrms_1a063eaa56dc08d3a0410506d4008cac7a" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>pDataOut</name></member>
+      <member refid="struct__cuphySsbDynPrms_1ae12189c5cf81de08b0f364829fe2ba7d" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>pPerCellSsbDynParams</name></member>
+      <member refid="struct__cuphySsbDynPrms_1a6b969cdb7409b2c8cc0dbe7a34fe45cd" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>pPerSsBlockParams</name></member>
+      <member refid="struct__cuphySsbDynPrms_1a59786f6dc9fb94e85473ad73a498ee53" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>pPmwParams</name></member>
+      <member refid="struct__cuphySsbDynPrms_1ac3ee824367a51c619140ee0b6dcb973a" prot="public" virt="non-virtual"><scope>_cuphySsbDynPrms</scope><name>procModeBmsk</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

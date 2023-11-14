@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPrachStatDbgPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPrachStatDbgPrms</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPrachStatDbgPrms_1a6c8cc5849e9391d1441d6bd2933e727c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPrachStatDbgPrms::enableApiLogging</definition>
+        <argsstring></argsstring>
+        <name>enableApiLogging</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2753" column="17" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2753" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachStatDbgPrms_1a857b77dbcab8819ae73757be6baecc91" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* _cuphyPrachStatDbgPrms::pOutFileName</definition>
+        <argsstring></argsstring>
+        <name>pOutFileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2752" column="16" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2752" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PRACH Static Debug Parameters. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2751" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2750" bodyend="2754"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPrachStatDbgPrms_1a6c8cc5849e9391d1441d6bd2933e727c" prot="public" virt="non-virtual"><scope>_cuphyPrachStatDbgPrms</scope><name>enableApiLogging</name></member>
+      <member refid="struct__cuphyPrachStatDbgPrms_1a857b77dbcab8819ae73757be6baecc91" prot="public" virt="non-virtual"><scope>_cuphyPrachStatDbgPrms</scope><name>pOutFileName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

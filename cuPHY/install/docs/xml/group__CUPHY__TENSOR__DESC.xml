@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__TENSOR__DESC" kind="group">
+    <compoundname>CUPHY_TENSOR_DESC</compoundname>
+    <title>Tensor Descriptors</title>
+    <innerclass refid="struct__cuphyTensorPrm" prot="public">_cuphyTensorPrm</innerclass>
+    <innerclass refid="structcuphyTensorInfo1__t" prot="public">cuphyTensorInfo1_t</innerclass>
+    <innerclass refid="structcuphyTensorInfo2__t" prot="public">cuphyTensorInfo2_t</innerclass>
+    <innerclass refid="structcuphyTensorInfo3__t" prot="public">cuphyTensorInfo3_t</innerclass>
+    <innerclass refid="structcuphyTensorInfo4__t" prot="public">cuphyTensorInfo4_t</innerclass>
+    <innerclass refid="structcuphyTensorInfo5__t" prot="public">cuphyTensorInfo5_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" prot="public" static="no">
+        <type>struct cuphyTensorDescriptor *</type>
+        <definition>typedef struct cuphyTensorDescriptor* cuphyTensorDescriptor_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyTensorDescriptor_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY Tensor Descriptor handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1074" column="37" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="1074" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__TENSOR__DESC_1gad3f91f7ab5e7c52bf6fec07a9087df34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreateTensorDescriptor</definition>
+        <argsstring>(cuphyTensorDescriptor_t *ptensorDesc)</argsstring>
+        <name>cuphyCreateTensorDescriptor</name>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref> *</type>
+          <declname>ptensorDesc</declname>
+        </param>
+        <briefdescription>
+<para>Allocates and initializes a cuPHY tensor descriptor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a cuPHY tensor descriptor and returns a handle in the address provided by the caller.</para>
+<para>The allocated descriptor will have type <ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1aa7c335cc7e09d242c2e9b1123d7c98b8" kindref="member">CUPHY_VOID</ref>, and (in most cases) cannot be used for operations until the tensor state has been initialized by calling <ref refid="group__CUPHY__TENSOR__DESC_1ga6ebea13853d743a7a38476079a8875e9" kindref="member">cuphySetTensorDescriptor</ref>.</para>
+<para>Upon successful return the tensor descriptor will have a rank of 0.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>ptensorDesc</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a tensor descriptor cannot be allocated on the host.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptensorDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address for the new <ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref> instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1153" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1153" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__TENSOR__DESC_1gab979bfd4ad13f09b674fd6f42e35fa59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyTensorDescriptor</definition>
+        <argsstring>(cuphyTensorDescriptor_t tensorDesc)</argsstring>
+        <name>cuphyDestroyTensorDescriptor</name>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDesc</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY tensor descriptor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY tensor descriptor that was previously allocated by a call to <ref refid="group__CUPHY__TENSOR__DESC_1gad3f91f7ab5e7c52bf6fec07a9087df34" kindref="member">cuphyCreateTensorDescriptor</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>tensorDesc</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tensorDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- previously allocated <ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref> instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__TENSOR__DESC_1gad3f91f7ab5e7c52bf6fec07a9087df34" kindref="member">cuphyCreateTensorDescriptor</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1176" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1176" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__TENSOR__DESC_1ga11a48828fede593a0c13afe5dab6fc1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* cuphyGetDataTypeString</definition>
+        <argsstring>(cuphyDataType_t type)</argsstring>
+        <name>cuphyGetDataTypeString</name>
+        <param>
+          <type><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Returns a string value for a given data type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a string for the given <ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref>, or &quot;UNKNOWN_TYPE&quot; if the type is unknown.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- data type (<ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref>)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>char*</computeroutput> pointer to a NULL-terminated string</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1316" column="13" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1316" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__TENSOR__DESC_1gaf6d717e1c7ec6440fe4876bd78ae254e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyGetTensorDescriptor</definition>
+        <argsstring>(cuphyTensorDescriptor_t tensorDesc, int numDimsRequested, cuphyDataType_t *dataType, int *numDims, int dimensions[], int strides[])</argsstring>
+        <name>cuphyGetTensorDescriptor</name>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDesc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numDimsRequested</declname>
+        </param>
+        <param>
+          <type><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref> *</type>
+          <declname>dataType</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>numDims</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dimensions</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>strides</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Query values for the internal state of a cuPHY tensor descriptor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the internal state of a tensor descriptor that was created via the <ref refid="group__CUPHY__TENSOR__DESC_1gad3f91f7ab5e7c52bf6fec07a9087df34" kindref="member">cuphyCreateTensorDescriptor</ref> function and initialized with the <ref refid="group__CUPHY__TENSOR__DESC_1ga6ebea13853d743a7a38476079a8875e9" kindref="member">cuphySetTensorDescriptor</ref> function</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tensorDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- previously allocated <ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref> instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numDimsRequested</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the size of the array provided by the <computeroutput>dimensions</computeroutput> parameter, and the <computeroutput>strides</computeroutput> parameter (if non-NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dataType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for the returned <ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref> (may be NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numDims</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- output address for the rank of the tensor descriptor (may be NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- output location for dimensions for the tensor descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strides</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- output location for tensor strides (may be NULL)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>tensorDesc</computeroutput> is NULL, or if <computeroutput>numDimsRequested</computeroutput> &gt; 0 and dimensions is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if the state query was successful.</para>
+<para><simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__TENSOR__DESC_1gad3f91f7ab5e7c52bf6fec07a9087df34" kindref="member">cuphyCreateTensorDescriptor</ref>,<ref refid="group__CUPHY__TENSOR__DESC_1ga6ebea13853d743a7a38476079a8875e9" kindref="member">cuphySetTensorDescriptor</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1272" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1272" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__TENSOR__DESC_1gaffab6a1d2327c6a2ab28ce45102dd1ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyGetTensorSizeInBytes</definition>
+        <argsstring>(cuphyTensorDescriptor_t tensorDesc, size_t *psz)</argsstring>
+        <name>cuphyGetTensorSizeInBytes</name>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDesc</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>psz</declname>
+        </param>
+        <briefdescription>
+<para>Returns the size of an allocation for a tensor descriptor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the size (in bytes) of an allocation that would be required to represent a tensor described by the given descriptor.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tensorDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- previously allocated <ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref> instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>psz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address to hold the calculated size output</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>tensorDesc</computeroutput> is NULL, or if <computeroutput>psz</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if the size calculation was successful.</para>
+<para><simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__TENSOR__DESC_1gad3f91f7ab5e7c52bf6fec07a9087df34" kindref="member">cuphyCreateTensorDescriptor</ref>,<ref refid="group__CUPHY__TENSOR__DESC_1ga6ebea13853d743a7a38476079a8875e9" kindref="member">cuphySetTensorDescriptor</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1300" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1300" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__TENSOR__DESC_1ga6ebea13853d743a7a38476079a8875e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetTensorDescriptor</definition>
+        <argsstring>(cuphyTensorDescriptor_t tensorDesc, cuphyDataType_t type, int numDimensions, const int dimensions[], const int strides[], unsigned int flags)</argsstring>
+        <name>cuphySetTensorDescriptor</name>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDesc</declname>
+        </param>
+        <param>
+          <type><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numDimensions</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>dimensions</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>strides</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>Provide values for the internal state of a cuPHY tensor descriptor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the internal state of a tensor descriptor that was created via the <ref refid="group__CUPHY__TENSOR__DESC_1gad3f91f7ab5e7c52bf6fec07a9087df34" kindref="member">cuphyCreateTensorDescriptor</ref> function.</para>
+<para>Note that a tensor descriptor is not associated with a specific memory allocation or address. A tensor descriptor provides the cuPHY library with values that can be used &quot;interpret&quot; a range of memory as a tensor with the specified properties. A tensor descriptor can be used with multiple different addresses, and an address can be accessed with multiple different tensor descriptors.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tensorDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- previously allocated <ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref> instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- <ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref> enumeration with the desired tensor element type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numDimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the desired tensor rank </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- an array of dimensions for the tensor descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strides</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- an array of strides (may be NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor descriptor flags</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if: <itemizedlist>
+<listitem>
+<para><computeroutput>tensorDesc</computeroutput> is NULL. </para>
+</listitem>
+<listitem>
+<para><computeroutput>dimensions</computeroutput> is NULL. </para>
+</listitem>
+<listitem>
+<para><computeroutput>numDimensions</computeroutput> &lt;= 0. </para>
+</listitem>
+<listitem>
+<para><computeroutput>numDimensions</computeroutput> &gt; CUPHY_DIM_MAX. </para>
+</listitem>
+<listitem>
+<para><computeroutput>type</computeroutput> is <ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1aa7c335cc7e09d242c2e9b1123d7c98b8" kindref="member">CUPHY_VOID</ref>. </para>
+</listitem>
+<listitem>
+<para>Any element of the dimensions array is less than equal to 0. </para>
+</listitem>
+</itemizedlist>
+</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if the state update was successful.</para>
+<para>The stride of a given dimension describes the distance between two elements that differ by 1 in that dimension. For example, a 2-dimensional, (10 x 8) matrix with no padding would have a stride[0] = 1 and stride[1] = 10.</para>
+<para>There is no requirement that strides be in ascending order.</para>
+<para>The <computeroutput>flags</computeroutput> argument can be used to request that the cuPHY library automatically calculate values for the tensor strides, as a convenience. The values allowed for <computeroutput>flags</computeroutput> are: <itemizedlist>
+<listitem>
+<para>CUPHY_TENSOR_ALIGN_DEFAULT: If strides are provided, they will be used. Otherwise, set the strides for tight packing. </para>
+</listitem>
+<listitem>
+<para>CUPHY_TENSOR_ALIGN_TIGHT: Set the strides so that no padding is present. stride[0] = 1, and stride[i] = dimensions[i - 1] * strides[i - 1] </para>
+</listitem>
+<listitem>
+<para>CUPHY_TENSOR_ALIGN_COALESCE: Set the strides for the first dimension based on the element type, so that the stride (in bytes) will be a multiple of 128. </para>
+</listitem>
+</itemizedlist>
+</para>
+<para><simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__TENSOR__DESC_1gad3f91f7ab5e7c52bf6fec07a9087df34" kindref="member">cuphyCreateTensorDescriptor</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1238" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1238" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the tensor descriptor functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

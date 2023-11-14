@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyPolSegDeRmDeItlLaunchCfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyPolSegDeRmDeItlLaunchCfg_t</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyPolSegDeRmDeItlLaunchCfg__t_1abd4e64697a2e424b3e008fb5a9630f65" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyPolSegDeRmDeItlLaunchCfg_t::kernelArgs[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6368" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6368" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyPolSegDeRmDeItlLaunchCfg__t_1a39350ba631384542cbdd44218dc06ed2" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyPolSegDeRmDeItlLaunchCfg_t::kernelNodeParamsDriver</definition>
+        <argsstring></argsstring>
+        <name>kernelNodeParamsDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6367" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6367" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>cuPHY polar codeword LLR segmentation + deInterleaving + deRateMatching, launch configuration </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6366" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6365" bodyend="6369"/>
+    <listofallmembers>
+      <member refid="structcuphyPolSegDeRmDeItlLaunchCfg__t_1abd4e64697a2e424b3e008fb5a9630f65" prot="public" virt="non-virtual"><scope>cuphyPolSegDeRmDeItlLaunchCfg_t</scope><name>kernelArgs</name></member>
+      <member refid="structcuphyPolSegDeRmDeItlLaunchCfg__t_1a39350ba631384542cbdd44218dc06ed2" prot="public" virt="non-virtual"><scope>cuphyPolSegDeRmDeItlLaunchCfg_t</scope><name>kernelNodeParamsDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

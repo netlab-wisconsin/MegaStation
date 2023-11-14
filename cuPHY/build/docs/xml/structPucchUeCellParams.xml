@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structPucchUeCellParams" kind="struct" language="C++" prot="public">
+    <compoundname>PucchUeCellParams</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPucchUeCellParams_1a6c4bf85577f813ccdb2ff274cbe84e62" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchUeCellParams::init_cyclic_shift_index</definition>
+        <argsstring></argsstring>
+        <name>init_cyclic_shift_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>initial cyclic shift; used in cyclic shift index computation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4214" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchUeCellParams_1a419568d7c01fc65c2b32724302a3a790" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchUeCellParams::num_bits</definition>
+        <argsstring></argsstring>
+        <name>num_bits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of transmitted bits: 1 or 2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4213" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPucchUeCellParams_1a244a524e7571d30975d49318618149ca" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PucchUeCellParams::time_cover_code_index</definition>
+        <argsstring></argsstring>
+        <name>time_cover_code_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>time cover code index; used to remove user&apos;s code </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4212" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4212" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct that tracks user equipment (UE) specific PUCCH parameters. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4211" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4210" bodyend="4215"/>
+    <listofallmembers>
+      <member refid="structPucchUeCellParams_1a6c4bf85577f813ccdb2ff274cbe84e62" prot="public" virt="non-virtual"><scope>PucchUeCellParams</scope><name>init_cyclic_shift_index</name></member>
+      <member refid="structPucchUeCellParams_1a419568d7c01fc65c2b32724302a3a790" prot="public" virt="non-virtual"><scope>PucchUeCellParams</scope><name>num_bits</name></member>
+      <member refid="structPucchUeCellParams_1a244a524e7571d30975d49318618149ca" prot="public" virt="non-virtual"><scope>PucchUeCellParams</scope><name>time_cover_code_index</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

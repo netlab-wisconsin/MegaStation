@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyTransportBlockDataDesc__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyTransportBlockDataDesc_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyTransportBlockDataDesc__t_1ae3854488cdab2830818db09e3947cf1f" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* cuphyTransportBlockDataDesc_t::addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3808" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3808" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyTransportBlockDataDesc__t_1a9edb02377dd7139cbf904a46166ae8a1" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t cuphyTransportBlockDataDesc_t::num_codewords</definition>
+        <argsstring></argsstring>
+        <name>num_codewords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3810" column="15" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3810" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyTransportBlockDataDesc__t_1acfb779ac086027967451d2dd55652d73" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t cuphyTransportBlockDataDesc_t::stride_words</definition>
+        <argsstring></argsstring>
+        <name>stride_words</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3809" column="15" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3809" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3807" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3806" bodyend="3811"/>
+    <listofallmembers>
+      <member refid="structcuphyTransportBlockDataDesc__t_1ae3854488cdab2830818db09e3947cf1f" prot="public" virt="non-virtual"><scope>cuphyTransportBlockDataDesc_t</scope><name>addr</name></member>
+      <member refid="structcuphyTransportBlockDataDesc__t_1a9edb02377dd7139cbf904a46166ae8a1" prot="public" virt="non-virtual"><scope>cuphyTransportBlockDataDesc_t</scope><name>num_codewords</name></member>
+      <member refid="structcuphyTransportBlockDataDesc__t_1acfb779ac086027967451d2dd55652d73" prot="public" virt="non-virtual"><scope>cuphyTransportBlockDataDesc_t</scope><name>stride_words</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

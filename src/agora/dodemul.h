@@ -35,7 +35,7 @@ class DoDemul : public Doer {
           Table<cudaStream_t>& cuda_streams,
           float2* cuda_data_buffer,
           float2* cuda_beam_buffer,
-          int8_t* cuda_demod_buffer,
+          half* cuda_demod_buffer,
           Stats* in_stats_manager);
   ~DoDemul() override;
 
@@ -95,10 +95,13 @@ class DoDemul : public Doer {
   Table<cudaStream_t>& cuda_streams_;
   complex_demul* cuda_data_buffer_;
   complex_demul* cuda_beam_buffer_;
-  int8_t* cuda_demod_buffer_;
+  half* cuda_demod_buffer_;
   cudaStream_t cuda_stream_;
 
   int8_t* cpu_demod_buffer_;
+  size_t prefix_zeros;
+  size_t sz_line_ue;
+  size_t sz_block;
 };
 
 #endif  // DODEMUL_H_

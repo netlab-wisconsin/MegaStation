@@ -9,8 +9,6 @@
 #include "symbols.h"
 #include "utils.h"
 
-#include "ldpc_cuda.h"
-
 // Since the LDPC helper function input parameter undergoes 32byte read/write it
 // is necessary to pad the input buffers 32 bytes max (ie 32 will work for all
 // configurations)
@@ -198,21 +196,8 @@ static inline void LdpcEncodeHelper(size_t base_graph, size_t zc, size_t nRows,
                                     int8_t* encoded_buffer,
                                     int8_t* parity_buffer,
                                     const int8_t* input_buffer) {
-  LDPC_encode encoder(base_graph, zc, nRows);
   const size_t num_input_bits = LdpcNumInputBits(base_graph, zc);
-  tensor_desc tIn(CUPHY_BIT, 1, {num_input_bits});
-  cudaMalloc(&(tIn.data), BitsToBytes(num_input_bits));
-  cudaMemcpy(tIn.data, input_buffer, BitsToBytes(num_input_bits),
-             cudaMemcpyHostToDevice);
-  const size_t num_encoded_bits =
-      LdpcNumEncodedBits(base_graph, zc, nRows);
-  tensor_desc tOut(CUPHY_BIT, 1, {num_encoded_bits});
-  cudaMalloc(&(tOut.data), BitsToBytes(num_encoded_bits));
-  encoder.encode(tIn, tOut, 1, 0);
-  cudaMemcpy(encoded_buffer, tOut.data, BitsToBytes(num_encoded_bits),
-             cudaMemcpyDeviceToHost);
-  return;
-  /*const size_t num_parity_bits = nRows * zc;
+  const size_t num_parity_bits = nRows * zc;
 
   bblib_ldpc_encoder_5gnr_request req;
   bblib_ldpc_encoder_5gnr_response resp;
@@ -283,7 +268,7 @@ static inline void LdpcEncodeHelper(size_t base_graph, size_t zc, size_t nRows,
     // Gather the concatenated chunks to create the encoded buffer
     adapter_func(encoded_buffer, internal_buffer2, zc,
                  LdpcNumEncodedBits(base_graph, zc, nRows), 0);
-  }*/
+  }
 }
 
 #endif  // UTILS_LDPC_H_

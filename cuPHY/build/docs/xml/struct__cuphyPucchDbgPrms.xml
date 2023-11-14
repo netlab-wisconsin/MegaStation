@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPucchDbgPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPucchDbgPrms</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPucchDbgPrms_1a3c1b30971d65afc32265c4bc019b86e8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchDbgPrms::enableDynApiLogging</definition>
+        <argsstring></argsstring>
+        <name>enableDynApiLogging</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="836" column="17" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="836" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchDbgPrms_1a21e7b71d0c7d429d7ade8e958926a7e2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPucchDbgPrms::enableStatApiLogging</definition>
+        <argsstring></argsstring>
+        <name>enableStatApiLogging</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="837" column="17" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="837" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchDbgPrms_1a099ed8ce8281fd3e59cbb1ea01f711f0" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* _cuphyPucchDbgPrms::pOutFileName</definition>
+        <argsstring></argsstring>
+        <name>pOutFileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="835" column="16" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="835" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="834" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="833" bodyend="838"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPucchDbgPrms_1a3c1b30971d65afc32265c4bc019b86e8" prot="public" virt="non-virtual"><scope>_cuphyPucchDbgPrms</scope><name>enableDynApiLogging</name></member>
+      <member refid="struct__cuphyPucchDbgPrms_1a21e7b71d0c7d429d7ade8e958926a7e2" prot="public" virt="non-virtual"><scope>_cuphyPucchDbgPrms</scope><name>enableStatApiLogging</name></member>
+      <member refid="struct__cuphyPucchDbgPrms_1a099ed8ce8281fd3e59cbb1ea01f711f0" prot="public" virt="non-virtual"><scope>_cuphyPucchDbgPrms</scope><name>pOutFileName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

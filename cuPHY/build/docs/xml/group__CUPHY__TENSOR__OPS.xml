@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__TENSOR__OPS" kind="group">
+    <compoundname>CUPHY_TENSOR_OPS</compoundname>
+    <title>Tensor Operations</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__TENSOR__OPS_1ga26399534c9728022061124361f86e0bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyConvertTensor</definition>
+        <argsstring>(cuphyTensorDescriptor_t tensorDescDst, void *dstAddr, cuphyTensorDescriptor_t tensorDescSrc, const void *srcAddr, cudaStream_t strm)</argsstring>
+        <name>cuphyConvertTensor</name>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDescDst</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>dstAddr</declname>
+        </param>
+        <param>
+          <type><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDescSrc</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>srcAddr</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Converts a source tensor to a different type or layout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts an input tensor (described by an address and a tensor descriptor) to an output tensor, possibly changing layout and/or data type in the process. The input and output tensors must have the same dimensions.</para>
+<para>Tensors with identical data types, dimensions, and strides may be converted internally using a memory copy operation.</para>
+<para>The following conversions are currently supported: <itemizedlist>
+<listitem>
+<para>Conversion of all types to tensors with the same dimensions but different strides </para>
+</listitem>
+<listitem>
+<para>Widening conversions (e.g. conversion of a signed, unsigned, or floating point fundamental type to the same fundamental type with a larger range (e.g. CUPHY_R_8I to CUPHY_R_32I) </para>
+</listitem>
+</itemizedlist>
+</para>
+<para>Other conversions are possible and may be added in the future.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tensorDescDst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- previously allocated <ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref> for the destination (output) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dstAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor address for output data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tensorDescSrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- previously allocated <ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref> for source data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>srcAddr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- tensor address for input data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for memory copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if any of <computeroutput>tensorDescDst</computeroutput>, <computeroutput>dstAddr</computeroutput>, <computeroutput>tensorDescSrc</computeroutput>, or <computeroutput>srcAddr</computeroutput> is NULL, or if the data type of either <computeroutput>tensorDescDst</computeroutput> or <computeroutput>tensorDescSrc</computeroutput> is CUPHY_VOID.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a671f7036c1b9a08d820d862b70f2173e" kindref="member">CUPHY_STATUS_SIZE_MISMATCH</ref> if all dimensions of tensor descriptors <computeroutput>tensorDescDst</computeroutput> and <computeroutput>tensorDescSrc</computeroutput> do not match.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a8e8eef08526acd79a1bb064dc643405b" kindref="member">CUPHY_STATUS_MEMCPY_ERROR</ref> if an error occurred performing a memory copy from the source to the destination.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if the conversion operation was submitted to the given stream successfully.</para>
+<para><simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a671f7036c1b9a08d820d862b70f2173e" kindref="member">CUPHY_STATUS_SIZE_MISMATCH</ref> <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__TENSOR__DESC_1gad3f91f7ab5e7c52bf6fec07a9087df34" kindref="member">cuphyCreateTensorDescriptor</ref>,<ref refid="group__CUPHY__TENSOR__DESC_1ga6ebea13853d743a7a38476079a8875e9" kindref="member">cuphySetTensorDescriptor</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="1379" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="1379" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the tensor operation functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

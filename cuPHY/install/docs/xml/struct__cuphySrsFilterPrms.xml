@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphySrsFilterPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphySrsFilterPrms</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1aa83284058533a8b3a59b9efa661e788a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsFilterPrms::noisEstDebias_comb2_nPorts1</definition>
+        <argsstring></argsstring>
+        <name>noisEstDebias_comb2_nPorts1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7219" column="11" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a74c8b632bb922a8977d4dcfbdfd16b03" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsFilterPrms::noisEstDebias_comb2_nPorts2</definition>
+        <argsstring></argsstring>
+        <name>noisEstDebias_comb2_nPorts2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7220" column="11" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a19f41e486047200817e72287ebbad837" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsFilterPrms::noisEstDebias_comb2_nPorts4</definition>
+        <argsstring></argsstring>
+        <name>noisEstDebias_comb2_nPorts4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7221" column="11" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a93689c4b99010ec94002385ed5295fdf" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsFilterPrms::noisEstDebias_comb4_nPorts1</definition>
+        <argsstring></argsstring>
+        <name>noisEstDebias_comb4_nPorts1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7222" column="11" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a3e6ea46a25db3d099e439150e4a8bbf4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsFilterPrms::noisEstDebias_comb4_nPorts2</definition>
+        <argsstring></argsstring>
+        <name>noisEstDebias_comb4_nPorts2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7223" column="11" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1adbbd446134506367f111fa9327a107e1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphySrsFilterPrms::noisEstDebias_comb4_nPorts4</definition>
+        <argsstring></argsstring>
+        <name>noisEstDebias_comb4_nPorts4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7224" column="11" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a0a5b14c2b52ca31af8c20766218af1f6" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmFocc_table</definition>
+        <argsstring></argsstring>
+        <name>tPrmFocc_table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7203" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a4f14ac726a4934f88ddebe7ac3e7d5ee" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb2_nPorts1_narrow</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb2_nPorts1_narrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7212" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1add43a6a549418f659c2f0c66562a0938" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb2_nPorts1_wide</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb2_nPorts1_wide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7205" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a3cde7e4967ef525ed940965f8acf0e94" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb2_nPorts2_narrow</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb2_nPorts2_narrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7213" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1afb082dc856df955bf001cb9d66c34e9e" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb2_nPorts2_wide</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb2_nPorts2_wide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7206" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a90d5e91b2d48c0f5678c95c176d402a9" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb2_nPorts4_narrow</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb2_nPorts4_narrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7214" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a81bf4688da5526c9e268adb7eed6c8a4" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb2_nPorts4_wide</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb2_nPorts4_wide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7207" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1ad2b8c6aa60a4a96d8cfa3aa618a4107e" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb4_nPorts1_narrow</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb4_nPorts1_narrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7215" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a4a731f485f71500f6c18b8ebdb4625f9" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb4_nPorts1_wide</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb4_nPorts1_wide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7208" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a0ad6a89135846408e80a5994925948dc" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb4_nPorts2_narrow</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb4_nPorts2_narrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7216" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1ab1fc1c67038a44408f5f86ac5f73664f" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb4_nPorts2_wide</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb4_nPorts2_wide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7209" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a8763637de6fb78ea6c778dabf1eb9d4d" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb4_nPorts4_narrow</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb4_nPorts4_narrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7217" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySrsFilterPrms_1a1a0109c510ab20a1cd46e25029687fd2" prot="public" static="no" mutable="no">
+        <type>cuphyTensorPrm_t</type>
+        <definition>cuphyTensorPrm_t _cuphySrsFilterPrms::tPrmW_comb4_nPorts4_wide</definition>
+        <argsstring></argsstring>
+        <name>tPrmW_comb4_nPorts4_wide</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7210" column="22" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7210" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="7202" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="7201" bodyend="7225"/>
+    <listofallmembers>
+      <member refid="struct__cuphySrsFilterPrms_1aa83284058533a8b3a59b9efa661e788a" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>noisEstDebias_comb2_nPorts1</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a74c8b632bb922a8977d4dcfbdfd16b03" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>noisEstDebias_comb2_nPorts2</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a19f41e486047200817e72287ebbad837" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>noisEstDebias_comb2_nPorts4</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a93689c4b99010ec94002385ed5295fdf" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>noisEstDebias_comb4_nPorts1</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a3e6ea46a25db3d099e439150e4a8bbf4" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>noisEstDebias_comb4_nPorts2</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1adbbd446134506367f111fa9327a107e1" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>noisEstDebias_comb4_nPorts4</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a0a5b14c2b52ca31af8c20766218af1f6" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmFocc_table</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a4f14ac726a4934f88ddebe7ac3e7d5ee" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb2_nPorts1_narrow</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1add43a6a549418f659c2f0c66562a0938" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb2_nPorts1_wide</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a3cde7e4967ef525ed940965f8acf0e94" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb2_nPorts2_narrow</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1afb082dc856df955bf001cb9d66c34e9e" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb2_nPorts2_wide</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a90d5e91b2d48c0f5678c95c176d402a9" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb2_nPorts4_narrow</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a81bf4688da5526c9e268adb7eed6c8a4" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb2_nPorts4_wide</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1ad2b8c6aa60a4a96d8cfa3aa618a4107e" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb4_nPorts1_narrow</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a4a731f485f71500f6c18b8ebdb4625f9" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb4_nPorts1_wide</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a0ad6a89135846408e80a5994925948dc" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb4_nPorts2_narrow</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1ab1fc1c67038a44408f5f86ac5f73664f" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb4_nPorts2_wide</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a8763637de6fb78ea6c778dabf1eb9d4d" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb4_nPorts4_narrow</name></member>
+      <member refid="struct__cuphySrsFilterPrms_1a1a0109c510ab20a1cd46e25029687fd2" prot="public" virt="non-virtual"><scope>_cuphySrsFilterPrms</scope><name>tPrmW_comb4_nPorts4_wide</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPdschCellDynPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPdschCellDynPrm</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPdschCellDynPrm_1a2768cedf9b87ca90169eb369a231e5f9" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdschCellDynPrm::cellPrmDynIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmDynIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index to cell-dynamic parameter information, i.e., to the pCellPrms array of the cuphyPdschCellGrpDynPrm_t struct </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1727" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1727" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschCellDynPrm_1aca347e1008ed15ca0a220986abf54a1a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdschCellDynPrm::cellPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index to cell-static parameter information, i.e., to the pCellStatPrms array of the cuphyPdschStatPrms_t struct. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1725" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1725" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschCellDynPrm_1a51601caaf44c80b6f2bd4139b7229950" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdschCellDynPrm::csiRsPrmsOffset</definition>
+        <argsstring></argsstring>
+        <name>csiRsPrmsOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>start index for this cell&apos;s nCsiRsPrms elements in the pCsiRsPrms array of cuphyPdschCellGrpDynPrm_t; all elements are allocated continuously. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1723" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1723" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschCellDynPrm_1a140e5d5acea3e3286e3de1a8d3d6bf91" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdschCellDynPrm::dmrsSymLocBmsk</definition>
+        <argsstring></argsstring>
+        <name>dmrsSymLocBmsk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DMRS symbol location bitmask (least significant 14 bits are valid); A set bit i, specifies symbol i is DMRS. For example if symbols 2 and 3 are DMRS, then: dmrsSymLocBmsk = 0000 0000 0000 1100 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1749" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1749" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschCellDynPrm_1a48a23933eb2227b5fc3c3aeb0f6047a4" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdschCellDynPrm::nCsiRsPrms</definition>
+        <argsstring></argsstring>
+        <name>nCsiRsPrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CSI-RS information for current cell number of CSI-RS params co-scheduled for this cell </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1722" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1722" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschCellDynPrm_1a342eb3d857c38497d5608696c2fd7167" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPdschCellDynPrm::nPdschSym</definition>
+        <argsstring></argsstring>
+        <name>nPdschSym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PDSCH DMRS + data symbol count. Value: 1-&gt;14 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1747" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1747" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschCellDynPrm_1a706d490cabf997a787efd897ef096674" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPdschCellDynPrm::pdschStartSym</definition>
+        <argsstring></argsstring>
+        <name>pdschStartSym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>PDSCH time domain resource allocation The pdschStartSym, nPdschSym and dmrsSymLocBmsk fields are also added at the user group level. The current expectation is that the caller uses the UE-group fields only if nPdschSym (cell level) and dmrsSymLocBmsk (cell level) are zero. If these fields are not zero, then the cell-level fields are used, and the implementation assumes these values are identical across all UEs and all UE groups belonging to this cell.</para>
+<para>TODO: Other possible design choices:<itemizedlist>
+<listitem><para>Wrap the time domain resource allocation fields in a seperate struct, and add a pointer both here and at the UE group level. Use one of the two fields depending on which pointer is not nullptr. Note: that from a memory perspective storing the pointer would likely be more expensive, as these 3 fields take up only 4B. PDSCH start symbol location (0-indexing). Value: 0-&gt;13 </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1745" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1745" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschCellDynPrm_1ae5a507765f4c011679de4d9df2079121" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdschCellDynPrm::slotNum</definition>
+        <argsstring></argsstring>
+        <name>slotNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>slot number. Value: 0-&gt;319. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1729" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1729" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdschCellDynPrm_1a7530071a750e38c0cfeaaf74e9409cce" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPdschCellDynPrm::testModel</definition>
+        <argsstring></argsstring>
+        <name>testModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Specifies the cell is in testing mode if set to 1. Value: 0-1 For cells in testing mode, the TB payload buffers hold bits from the PN23 (pseudorandom) sequence instead of a TB payload. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1753" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1753" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>PDSCH per-cell dynamic parameters </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1720" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1719" bodyend="1757"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPdschCellDynPrm_1a2768cedf9b87ca90169eb369a231e5f9" prot="public" virt="non-virtual"><scope>_cuphyPdschCellDynPrm</scope><name>cellPrmDynIdx</name></member>
+      <member refid="struct__cuphyPdschCellDynPrm_1aca347e1008ed15ca0a220986abf54a1a" prot="public" virt="non-virtual"><scope>_cuphyPdschCellDynPrm</scope><name>cellPrmStatIdx</name></member>
+      <member refid="struct__cuphyPdschCellDynPrm_1a51601caaf44c80b6f2bd4139b7229950" prot="public" virt="non-virtual"><scope>_cuphyPdschCellDynPrm</scope><name>csiRsPrmsOffset</name></member>
+      <member refid="struct__cuphyPdschCellDynPrm_1a140e5d5acea3e3286e3de1a8d3d6bf91" prot="public" virt="non-virtual"><scope>_cuphyPdschCellDynPrm</scope><name>dmrsSymLocBmsk</name></member>
+      <member refid="struct__cuphyPdschCellDynPrm_1a48a23933eb2227b5fc3c3aeb0f6047a4" prot="public" virt="non-virtual"><scope>_cuphyPdschCellDynPrm</scope><name>nCsiRsPrms</name></member>
+      <member refid="struct__cuphyPdschCellDynPrm_1a342eb3d857c38497d5608696c2fd7167" prot="public" virt="non-virtual"><scope>_cuphyPdschCellDynPrm</scope><name>nPdschSym</name></member>
+      <member refid="struct__cuphyPdschCellDynPrm_1a706d490cabf997a787efd897ef096674" prot="public" virt="non-virtual"><scope>_cuphyPdschCellDynPrm</scope><name>pdschStartSym</name></member>
+      <member refid="struct__cuphyPdschCellDynPrm_1ae5a507765f4c011679de4d9df2079121" prot="public" virt="non-virtual"><scope>_cuphyPdschCellDynPrm</scope><name>slotNum</name></member>
+      <member refid="struct__cuphyPdschCellDynPrm_1a7530071a750e38c0cfeaaf74e9409cce" prot="public" virt="non-virtual"><scope>_cuphyPdschCellDynPrm</scope><name>testModel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

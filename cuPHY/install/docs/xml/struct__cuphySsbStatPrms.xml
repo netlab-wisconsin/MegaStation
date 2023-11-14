@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphySsbStatPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphySsbStatPrms</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphySsbStatPrms_1aa7ad8dfe0556590975ad887c3e069ab2" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphySsbStatPrms::nMaxCellsPerSlot</definition>
+        <argsstring></argsstring>
+        <name>nMaxCellsPerSlot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum number of supported cells FIXME expand </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3362" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3362" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphySsbStatPrms_1a17334e49dffa4a5fdfd204ab7ea38128" prot="public" static="no" mutable="no">
+        <type>cuphyTracker_t *</type>
+        <definition>cuphyTracker_t* _cuphySsbStatPrms::pOutInfo</definition>
+        <argsstring></argsstring>
+        <name>pOutInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pointer to cuphyTracker_t. Its pMemoryFootprint pointer will be updated by cuPHY in channel objection creation. The caller will thus have access to the cuphyMemoryFootprint object of that cuPHY SSB channel object. The cuphyMemoryFootprint object tracks the size of the GPU memory allocations owned by that cuPHY SSB channel object. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3361" column="24" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3361" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>SSB static parameters </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="3360" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="3359" bodyend="3363"/>
+    <listofallmembers>
+      <member refid="struct__cuphySsbStatPrms_1aa7ad8dfe0556590975ad887c3e069ab2" prot="public" virt="non-virtual"><scope>_cuphySsbStatPrms</scope><name>nMaxCellsPerSlot</name></member>
+      <member refid="struct__cuphySsbStatPrms_1a17334e49dffa4a5fdfd204ab7ea38128" prot="public" virt="non-virtual"><scope>_cuphySsbStatPrms</scope><name>pOutInfo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

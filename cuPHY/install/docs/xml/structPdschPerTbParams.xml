@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structPdschPerTbParams" kind="struct" language="C++" prot="public">
+    <compoundname>PdschPerTbParams</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPdschPerTbParams_1ae7d4387ff6b815b6741f4316f0d7381e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PdschPerTbParams::bg</definition>
+        <argsstring></argsstring>
+        <name>bg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>base graph per TB; options are 1 or 2 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3484" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3484" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a611aaf6d69e724c32adc427bf4139846" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::cinit</definition>
+        <argsstring></argsstring>
+        <name>cinit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>used to generate scrambling sequence; seed2 arg. of gold32 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3495" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3495" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1ac5c9476f652a7d9ca25fed7d83e64c77" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::cumulativeTbSizePadding</definition>
+        <argsstring></argsstring>
+        <name>cumulativeTbSizePadding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3479" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3479" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a9010012af6cee897b9a4fa5974f9cdc7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::F</definition>
+        <argsstring></argsstring>
+        <name>F</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>filler bits </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3494" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3494" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1afe226a08570e99b38dd9361f2aca4cca" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::firstCodeBlockIndex</definition>
+        <argsstring></argsstring>
+        <name>firstCodeBlockIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3497" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3497" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a3f507056898d8d75e5fa275a3aeb4323" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::G</definition>
+        <argsstring></argsstring>
+        <name>G</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of rate-matched bits available for TB transmission without accounting punctured REs due to CSI-RS (max_G) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3491" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3491" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a5705758dbf3377b3263bd6045f6b2fa9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::K</definition>
+        <argsstring></argsstring>
+        <name>K</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>non punctured systematic bits </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3493" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3493" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1abfe4b234a2fa651a736062248f4df11c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::max_REs</definition>
+        <argsstring></argsstring>
+        <name>max_REs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of REs for TB transmission without accounting punctured REs due to CSI-RS. It&apos;s G /(Qm * Nl) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3492" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3492" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1af60d9fbadb7fe63e808bed6559b220eb" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::N</definition>
+        <argsstring></argsstring>
+        <name>N</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<sect1 id="structPdschPerTbParams_1autotoc_md1">
+<title>bits in code block per TB</title>
+</sect1>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3489" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3489" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a5ac24b44f580b559d5a336372e483c07" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::Ncb</definition>
+        <argsstring></argsstring>
+        <name>Ncb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>same as N for now </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3490" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3490" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a2fdf4298d5563741378a7100c2cc3d79" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PdschPerTbParams::Nl</definition>
+        <argsstring></argsstring>
+        <name>Nl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of transmission layers per TB; [1, MAX_DL_LAYERS_PER_TB] in DL </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3485" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3485" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1afaf486d6e712752b202fb69b0f39dac5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::num_CBs</definition>
+        <argsstring></argsstring>
+        <name>num_CBs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of code blocks (CBs) per TB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3486" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3486" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a8f607558f9a328b2ec33ed9dd1d4bc68" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PdschPerTbParams::Qm</definition>
+        <argsstring></argsstring>
+        <name>Qm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>modulation order per TB: [2, 4, 6, 8] </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3483" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3483" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a8345a8db524012b27ab8579e1e7f7864" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PdschPerTbParams::rv</definition>
+        <argsstring></argsstring>
+        <name>rv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>redundancy version per TB; [0, 3] </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3482" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3482" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a207626c0aad7ab9d90c2d2ea73ec03e1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::tbSize</definition>
+        <argsstring></argsstring>
+        <name>tbSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>TB size in bytes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3478" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1ae48ab142f8b4fae1a9af95e6509b182a" prot="public" static="no" mutable="no">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t* PdschPerTbParams::tbStartAddr</definition>
+        <argsstring></argsstring>
+        <name>tbStartAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3476" column="19" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3476" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1af16771fb21708518ed37230c9bf5292f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::tbStartOffset</definition>
+        <argsstring></argsstring>
+        <name>tbStartOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3477" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3477" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a1d3a7ced0f67498c07b1bcf94d6655dc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PdschPerTbParams::testModel</definition>
+        <argsstring></argsstring>
+        <name>testModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>TB&apos;s cell not in testing mode if 0; 1 otherwise. When 1, tbSize holds the length of PN23 (pseudorandom sequence). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3480" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3480" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdschPerTbParams_1a2323b714882cb1b9df1f84bc913e71ab" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdschPerTbParams::Zc</definition>
+        <argsstring></argsstring>
+        <name>Zc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>lifting factor per TB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3487" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3487" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct that tracks configuration information at a per TB (Transport Block) granularity for the downlink shared channel (PDSCH). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3474" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3473" bodyend="3498"/>
+    <listofallmembers>
+      <member refid="structPdschPerTbParams_1ae7d4387ff6b815b6741f4316f0d7381e" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>bg</name></member>
+      <member refid="structPdschPerTbParams_1a611aaf6d69e724c32adc427bf4139846" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>cinit</name></member>
+      <member refid="structPdschPerTbParams_1ac5c9476f652a7d9ca25fed7d83e64c77" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>cumulativeTbSizePadding</name></member>
+      <member refid="structPdschPerTbParams_1a9010012af6cee897b9a4fa5974f9cdc7" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>F</name></member>
+      <member refid="structPdschPerTbParams_1afe226a08570e99b38dd9361f2aca4cca" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>firstCodeBlockIndex</name></member>
+      <member refid="structPdschPerTbParams_1a3f507056898d8d75e5fa275a3aeb4323" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>G</name></member>
+      <member refid="structPdschPerTbParams_1a5705758dbf3377b3263bd6045f6b2fa9" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>K</name></member>
+      <member refid="structPdschPerTbParams_1abfe4b234a2fa651a736062248f4df11c" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>max_REs</name></member>
+      <member refid="structPdschPerTbParams_1af60d9fbadb7fe63e808bed6559b220eb" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>N</name></member>
+      <member refid="structPdschPerTbParams_1a5ac24b44f580b559d5a336372e483c07" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>Ncb</name></member>
+      <member refid="structPdschPerTbParams_1a2fdf4298d5563741378a7100c2cc3d79" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>Nl</name></member>
+      <member refid="structPdschPerTbParams_1afaf486d6e712752b202fb69b0f39dac5" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>num_CBs</name></member>
+      <member refid="structPdschPerTbParams_1a8f607558f9a328b2ec33ed9dd1d4bc68" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>Qm</name></member>
+      <member refid="structPdschPerTbParams_1a8345a8db524012b27ab8579e1e7f7864" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>rv</name></member>
+      <member refid="structPdschPerTbParams_1a207626c0aad7ab9d90c2d2ea73ec03e1" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>tbSize</name></member>
+      <member refid="structPdschPerTbParams_1ae48ab142f8b4fae1a9af95e6509b182a" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>tbStartAddr</name></member>
+      <member refid="structPdschPerTbParams_1af16771fb21708518ed37230c9bf5292f" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>tbStartOffset</name></member>
+      <member refid="structPdschPerTbParams_1a1d3a7ced0f67498c07b1bcf94d6655dc" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>testModel</name></member>
+      <member refid="structPdschPerTbParams_1a2323b714882cb1b9df1f84bc913e71ab" prot="public" virt="non-virtual"><scope>PdschPerTbParams</scope><name>Zc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

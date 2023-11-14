@@ -1,0 +1,1044 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="cuphy__hdf5_8h" kind="file" language="C++">
+    <compoundname>cuphy_hdf5.h</compoundname>
+    <includes refid="cuphy_8h" local="yes">cuphy.h</includes>
+    <includes local="yes">hdf5.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>cufft.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+      <node id="10">
+        <label>stdlib.h</label>
+      </node>
+      <node id="3">
+        <label>cuda_runtime.h</label>
+      </node>
+      <node id="6">
+        <label>cuda_fp16.h</label>
+      </node>
+      <node id="1">
+        <label>cuphy_hdf5.h</label>
+        <link refid="cuphy__hdf5_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>hdf5.h</label>
+      </node>
+      <node id="5">
+        <label>cuComplex.h</label>
+      </node>
+      <node id="8">
+        <label>cuda.h</label>
+      </node>
+      <node id="2">
+        <label>cuphy.h</label>
+        <link refid="cuphy_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" prot="public" static="no" strong="no">
+        <type></type>
+        <name>cuphyHDF5Status_t</name>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" prot="public">
+          <name>CUPHYHDF5_STATUS_SUCCESS</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The API call returned with no errors. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" prot="public">
+          <name>CUPHYHDF5_STATUS_INVALID_ARGUMENT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>One or more of the arguments provided to the function was invalid. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba53d9a7a15cfbe957479bf7a6400656f5" prot="public">
+          <name>CUPHYHDF5_STATUS_INVALID_DATASET</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The HDF5 dataset argument provided was invalid. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaaa5c47a790d112ec75f1b41074e9fdac" prot="public">
+          <name>CUPHYHDF5_STATUS_DATATYPE_ERROR</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The HDF5 datatype is not supported by the cuPHY library. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" prot="public">
+          <name>CUPHYHDF5_STATUS_DATASPACE_ERROR</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The HDF5 library returned an error creating or querying the dataspace. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba39f54b59ac098f0543bb4640bf8b94e0" prot="public">
+          <name>CUPHYHDF5_STATUS_UNSUPPORTED_RANK</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The HDF5 dataspace rank is not supported by cuPHY. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" prot="public">
+          <name>CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>One or more HDF5 dataspace dimensions are larger than cuPHY supports. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a93e56748b4bd1804b98d131f82072c" prot="public">
+          <name>CUPHYHDF5_STATUS_INVALID_TENSOR_DESC</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>An invalid tensor descriptor was provided. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba88f668173e5c538b6fe5bcea6ef838e5" prot="public">
+          <name>CUPHYHDF5_STATUS_INADEQUATE_BUFFER_SIZE</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The provided buffer size was inadequate. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaa511bd6168c84aabc0960f05adacdd01" prot="public">
+          <name>CUPHYHDF5_STATUS_TENSOR_MISMATCH</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Tensor descriptor arguments do not match in rank and/or dimension(s). <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbab23dd03cb0b716be444f5c22c1545696" prot="public">
+          <name>CUPHYHDF5_STATUS_UNKNOWN_ERROR</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Unknown or unexpected internal error. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbab6d6826feb891392b06d2645aefd5d2c" prot="public">
+          <name>CUPHYHDF5_STATUS_ALLOC_FAILED</name>
+          <initializer>= 11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Memory allocation failed. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba443dc57388b9a1291fd164b64e63cc94" prot="public">
+          <name>CUPHYHDF5_STATUS_TENSOR_DESC_FAILURE</name>
+          <initializer>= 12</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Creating or setting the cuPHY tensor descriptor failed. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbad1317fc3cbdf9ee62879e2048bfb70dd" prot="public">
+          <name>CUPHYHDF5_STATUS_READ_ERROR</name>
+          <initializer>= 13</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>An HDF5 read error occurred. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba75dc9b0d29fac1426201bd0b6d9a6f1a" prot="public">
+          <name>CUPHYHDF5_STATUS_CONVERT_ERROR</name>
+          <initializer>= 14</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>A conversion error occurred, or an unsupported conversion was requested. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba007c0a652a9d081c1c836b7d57b6f09e" prot="public">
+          <name>CUPHYHDF5_STATUS_WRITE_ERROR</name>
+          <initializer>= 15</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>An HDF5 write error occurred. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a18f1725b1c90dd2c5ec64cec6d1f64" prot="public">
+          <name>CUPHYHDF5_STATUS_DATASET_ERROR</name>
+          <initializer>= 16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>An HDF5 dataset creation/query error occurred. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba4c1a3c5a78c80aca59c2c18830e99f8c" prot="public">
+          <name>CUPHYHDF5_STATUS_INVALID_NAME</name>
+          <initializer>= 17</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No such scalar or structure field with the given name exists. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba5fe8ae109365881ac89398e9230ff7a0" prot="public">
+          <name>CUPHYHDF5_STATUS_INCORRECT_OBJ_TYPE</name>
+          <initializer>= 18</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The HDF5 object provided is not of the correct/expected type. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbafa8961a61b950d82fb6b184f453de5a0" prot="public">
+          <name>CUPHYHDF5_STATUS_OBJ_CREATE_FAILURE</name>
+          <initializer>= 19</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>HDF5 object creation failure. <linebreak/>
+ </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba2c2380792dbba6d9e5035c31ab3f25a7" prot="public">
+          <name>CUPHYHDF5_STATUS_VALUE_OUT_OF_RANGE</name>
+          <initializer>= 20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Data conversion could not occur because an input value was out of range. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuphyHDF5 error codes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="71" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" bodystart="70" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="cuphy__hdf5_8h_1ab86d3b58f9d3c5dab814b7209dcbc307" prot="public" static="no">
+        <type>struct cuphyHDF5Struct *</type>
+        <definition>typedef struct cuphyHDF5Struct* cuphyHDF5Struct_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyHDF5Struct_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="352" column="31" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" bodystart="352" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="cuphy__hdf5_8h_1a3e4d6878275ad68416ab5c92c5bad732" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref></type>
+        <definition>cuphyHDF5Status_t cuphyHDF5GetDatasetInfo</definition>
+        <argsstring>(hid_t h5Dataset, int dimBufferSize, cuphyDataType_t *dataType, int *numDims, int dimensions[])</argsstring>
+        <name>cuphyHDF5GetDatasetInfo</name>
+        <param>
+          <type>hid_t</type>
+          <declname>h5Dataset</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dimBufferSize</declname>
+        </param>
+        <param>
+          <type><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref> *</type>
+          <declname>dataType</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>numDims</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dimensions</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Returns information about an HDF5 dataset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines the rank, dimensions, and datatype of an HDF5 dataset. The stored type of the dataset is mapped to the tensor element types supported by cuPHY.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h5Dataset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- HDF5 dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dimBufferSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- size of the array for the <computeroutput>outputDimensions</computeroutput> argument </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dataType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for returned cuPHY datatype (may be NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numDims</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for returned rank (may be NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- array for storage of dataset dimensions (may be NULL if <computeroutput>dimBufferSize</computeroutput> is zero)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba53d9a7a15cfbe957479bf7a6400656f5" kindref="member">CUPHYHDF5_STATUS_INVALID_DATASET</ref> if <computeroutput>h5Dataset</computeroutput> &lt; 0.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>dimBufferSize</computeroutput> &gt; 0 and <computeroutput>outputDimensions</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba88f668173e5c538b6fe5bcea6ef838e5" kindref="member">CUPHYHDF5_STATUS_INADEQUATE_BUFFER_SIZE</ref> if <computeroutput>dimBufferSize</computeroutput> is less than the HDF5 dataspace rank</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaaa5c47a790d112ec75f1b41074e9fdac" kindref="member">CUPHYHDF5_STATUS_DATATYPE_ERROR</ref> if the data type of the HDF5 dataset cannot be represented by a cuPHY tensor element type</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref> if the HDF5 dataspace cannot be queried</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba39f54b59ac098f0543bb4640bf8b94e0" kindref="member">CUPHYHDF5_STATUS_UNSUPPORTED_RANK</ref> if the HDF5 dataspace is larger than the maximum rank supported by the cuPHY library</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" kindref="member">CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</ref> if one or more of the HDF5 dataspace dimensions is larger than the maximum size supported by the cuPHY library</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref> if the query was successful.</para>
+<para><simplesect kind="return"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref>, <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba53d9a7a15cfbe957479bf7a6400656f5" kindref="member">CUPHYHDF5_STATUS_INVALID_DATASET</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" kindref="member">CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba39f54b59ac098f0543bb4640bf8b94e0" kindref="member">CUPHYHDF5_STATUS_UNSUPPORTED_RANK</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaaa5c47a790d112ec75f1b41074e9fdac" kindref="member">CUPHYHDF5_STATUS_DATATYPE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba88f668173e5c538b6fe5bcea6ef838e5" kindref="member">CUPHYHDF5_STATUS_INADEQUATE_BUFFER_SIZE</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref>,<ref refid="cuphy__hdf5_8h_1ad844786c20fcd70f4c7af17620587e49" kindref="member">cuphyHDF5GetErrorString</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="173" column="20" declfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" declline="173" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="cuphy__hdf5_8h_1a969360cf91d2a180b95bebe020924a89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* cuphyHDF5GetErrorName</definition>
+        <argsstring>(cuphyHDF5Status_t status)</argsstring>
+        <name>cuphyHDF5GetErrorName</name>
+        <param>
+          <type><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref></type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Returns a string version of an error code enumeration value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a string version of an error code. If the error code is not recognized, &quot;CUPHYHDF5_UNKNOWN_STATUS&quot; is returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Status code for desired string</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>char*</computeroutput> pointer to a NULL-terminated string</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy__hdf5_8h_1ad844786c20fcd70f4c7af17620587e49" kindref="member">cuphyHDF5GetErrorString</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="123" column="13" declfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" declline="123" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="cuphy__hdf5_8h_1ad844786c20fcd70f4c7af17620587e49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* cuphyHDF5GetErrorString</definition>
+        <argsstring>(cuphyHDF5Status_t status)</argsstring>
+        <name>cuphyHDF5GetErrorString</name>
+        <param>
+          <type><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref></type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Returns the description string for an error code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the description string for an error code. If the error code is not recognized, &quot;Unknown status code&quot; is returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Status code for desired string</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>char*</computeroutput> pointer to a NULL-terminated string</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref>, <ref refid="cuphy__hdf5_8h_1a969360cf91d2a180b95bebe020924a89" kindref="member">cuphyHDF5GetErrorName</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="108" column="13" declfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" declline="108" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="cuphy__hdf5_8h_1a6f540d2717ce21928da44d8c8f7429aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref></type>
+        <definition>cuphyHDF5Status_t cuphyHDF5GetStruct</definition>
+        <argsstring>(hid_t h5Dataset, size_t numDim, const hsize_t *coord, cuphyHDF5Struct_t *s)</argsstring>
+        <name>cuphyHDF5GetStruct</name>
+        <param>
+          <type>hid_t</type>
+          <declname>h5Dataset</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>numDim</declname>
+        </param>
+        <param>
+          <type>const hsize_t *</type>
+          <declname>coord</declname>
+        </param>
+        <param>
+          <type>cuphyHDF5Struct_t *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Acquires a cuPHY HDF5 structure handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a cuPHY HDF5 structure handle that references an instance of an HDF5 compound data type in the given HDF5 dataset. The <computeroutput>numDim</computeroutput> and <computeroutput>coord</computeroutput> arguments can be used to identify a specific instance when the dataset argument refers to an array of structures. For datasets with a single struct element, NULL can be specified for the <computeroutput>coord</computeroutput> argument (and the <computeroutput>numDim</computeroutput> value should be zero) to access the lone element. Otherwise, <computeroutput>numDim</computeroutput> should match the rank of the dataset, and one coordinate value for each dimension should be provided in the <computeroutput>coord</computeroutput> array. The (HDF5 library) reference count of the dataset is incremented so that the HDF5 dataset can be accessed during the lifetime of the cuphyHDF5Struct_t instance. The reference count will be decremented (and the object potentially destroyed) when the <ref refid="cuphy__hdf5_8h_1a9e27655b419f4893f4e091a8dfce7d10" kindref="member">cuphyHDF5ReleaseStruct</ref> function is called.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h5Dataset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- HDF5 dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numDim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of elements in the coord array (or zero) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- array of indices for element to access (or NULL) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for returned cuphy HDF5 structure handle</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>h5Dataset</computeroutput> &lt; 0, or if s is NULL</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba53d9a7a15cfbe957479bf7a6400656f5" kindref="member">CUPHYHDF5_STATUS_INVALID_DATASET</ref> if the type of the HDF5 dataset is not the HDF5 compound datatype</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref> if an error occurs querying the dataspace of the given dataset</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" kindref="member">CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</ref> if the dataset rank is greater than 1 and <computeroutput>numDim</computeroutput> is zero (or <computeroutput>coord</computeroutput> is NULL), or if <computeroutput>numDim</computeroutput> is greater than 0 and <computeroutput>coord</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbab6d6826feb891392b06d2645aefd5d2c" kindref="member">CUPHYHDF5_STATUS_ALLOC_FAILED</ref> if memory for the internal data structure could not be allocated</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba5fe8ae109365881ac89398e9230ff7a0" kindref="member">CUPHYHDF5_STATUS_INCORRECT_OBJ_TYPE</ref> if the given HDF5 id <computeroutput>h5Dataset</computeroutput> does not refer to a dataset</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref> if the handle acquisition was successful</para>
+<para><simplesect kind="return"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref>, <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba53d9a7a15cfbe957479bf7a6400656f5" kindref="member">CUPHYHDF5_STATUS_INVALID_DATASET</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" kindref="member">CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbab6d6826feb891392b06d2645aefd5d2c" kindref="member">CUPHYHDF5_STATUS_ALLOC_FAILED</ref>;</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref>,<ref refid="cuphy__hdf5_8h_1ad844786c20fcd70f4c7af17620587e49" kindref="member">cuphyHDF5GetErrorString</ref>,<ref refid="cuphy__hdf5_8h_1a9e27655b419f4893f4e091a8dfce7d10" kindref="member">cuphyHDF5ReleaseStruct</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="408" column="20" declfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" declline="408" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="cuphy__hdf5_8h_1a13497463e24ffb4d0c5f831b9fb79bb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref></type>
+        <definition>cuphyHDF5Status_t cuphyHDF5GetStructScalar</definition>
+        <argsstring>(cuphyVariant_t *res, const cuphyHDF5Struct_t s, const char *name, cuphyDataType_t valueAs)</argsstring>
+        <name>cuphyHDF5GetStructScalar</name>
+        <param>
+          <type>cuphyVariant_t *</type>
+          <declname>res</declname>
+        </param>
+        <param>
+          <type>const cuphyHDF5Struct_t</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref></type>
+          <declname>valueAs</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves a scalar value from a cuphy HDF5 struct. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves a scalar value from a HDF5 compound dataset (structure), optionally converting the value to a caller provided type.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- output value (variant) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- cuphy HDF5 structure handle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of field to retrieve </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valueAs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- desired type of result (or CUPHY_VOID to use the stored type)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> if an of <computeroutput>res</computeroutput>, <computeroutput>s</computeroutput>, or <computeroutput>name</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" kindref="member">CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</ref> if the field contains more than a single element</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba4c1a3c5a78c80aca59c2c18830e99f8c" kindref="member">CUPHYHDF5_STATUS_INVALID_NAME</ref> if the structure does not contain a field with the given name</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba75dc9b0d29fac1426201bd0b6d9a6f1a" kindref="member">CUPHYHDF5_STATUS_CONVERT_ERROR</ref> if conversion to the requested cuPHY element type is not possible, or if conversion failed (due to overflow/underflow), or if the file datatype cannot be represented by one of the available variant types.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref> if the query was successful.</para>
+<para><simplesect kind="return"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref>, <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" kindref="member">CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba75dc9b0d29fac1426201bd0b6d9a6f1a" kindref="member">CUPHYHDF5_STATUS_CONVERT_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba4c1a3c5a78c80aca59c2c18830e99f8c" kindref="member">CUPHYHDF5_STATUS_INVALID_NAME</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref>,<ref refid="cuphy__hdf5_8h_1ad844786c20fcd70f4c7af17620587e49" kindref="member">cuphyHDF5GetErrorString</ref>,<ref refid="cuphy__hdf5_8h_1a6f540d2717ce21928da44d8c8f7429aa" kindref="member">cuphyHDF5GetStruct</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="449" column="20" declfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" declline="449" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="cuphy__hdf5_8h_1af33bc32aa58a757cf2bce4ad7d8f14be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref></type>
+        <definition>cuphyHDF5Status_t cuphyHDF5ReadDataset</definition>
+        <argsstring>(const cuphyTensorDescriptor_t tensorDesc, void *addr, hid_t h5Dataset, cudaStream_t strm)</argsstring>
+        <name>cuphyHDF5ReadDataset</name>
+        <param>
+          <type>const <ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDesc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>hid_t</type>
+          <declname>h5Dataset</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Reads data from an HDF5 dataset into a cuPHY tensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads data from a source HDF5 dataset into a destination cuPHY tensor. The cuPHY tensor descriptor and an appropriately sized buffer must be allocated before this function is called. The buffer must be GPU addressable (i.e. either in device or pinned host memory). The <ref refid="cuphy__hdf5_8h_1a3e4d6878275ad68416ab5c92c5bad732" kindref="member">cuphyHDF5GetDatasetInfo</ref> function can be called to obtain information on the HDF5 dataset.</para>
+<para>Note that the destination tensor does not have to be the same as the cuPHY type that maps directly to the stored HDF5 datatype. Any conversion that is supported by the cuphyConvertTensor function will be supported by this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tensorDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- descriptor for the destination tensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- destination address for the loaded data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h5Dataset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- source dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream used to perform the read operation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba53d9a7a15cfbe957479bf7a6400656f5" kindref="member">CUPHYHDF5_STATUS_INVALID_DATASET</ref> if <computeroutput>h5Dataset</computeroutput> &lt; 0.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a93e56748b4bd1804b98d131f82072c" kindref="member">CUPHYHDF5_STATUS_INVALID_TENSOR_DESC</ref> if <computeroutput>tensorDesc</computeroutput> is invalid.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>dimBufferSize</computeroutput> &gt; 0 and <computeroutput>outputDimensions</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba88f668173e5c538b6fe5bcea6ef838e5" kindref="member">CUPHYHDF5_STATUS_INADEQUATE_BUFFER_SIZE</ref> if <computeroutput>dimBufferSize</computeroutput> is less than the HDF5 dataspace rank</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaaa5c47a790d112ec75f1b41074e9fdac" kindref="member">CUPHYHDF5_STATUS_DATATYPE_ERROR</ref> if the data type of the HDF5 dataset cannot be represented by a cuPHY tensor element type</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref> if the HDF5 dataspace cannot be queried</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba39f54b59ac098f0543bb4640bf8b94e0" kindref="member">CUPHYHDF5_STATUS_UNSUPPORTED_RANK</ref> if the HDF5 dataspace is larger than the maximum rank supported by the cuPHY library</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" kindref="member">CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</ref> if one or more of the HDF5 dataspace dimensions is larger than the maximum size supported by the cuPHY library</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaa511bd6168c84aabc0960f05adacdd01" kindref="member">CUPHYHDF5_STATUS_TENSOR_MISMATCH</ref> if the rank and/or dimensions of the given cuPHY tensor descriptor do not match those of the HDF5 dataset.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba443dc57388b9a1291fd164b64e63cc94" kindref="member">CUPHYHDF5_STATUS_TENSOR_DESC_FAILURE</ref> if a cuPHY tensor descriptor could not be created, or if the tensor descriptor fields could not be set.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbad1317fc3cbdf9ee62879e2048bfb70dd" kindref="member">CUPHYHDF5_STATUS_READ_ERROR</ref> if the HDF5 library returned an error when a read operation was attempted.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba75dc9b0d29fac1426201bd0b6d9a6f1a" kindref="member">CUPHYHDF5_STATUS_CONVERT_ERROR</ref> if conversion from the HDF5 type to the given tensor type is not supported.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref> if the read was successful.</para>
+<para><simplesect kind="return"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref>, <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a93e56748b4bd1804b98d131f82072c" kindref="member">CUPHYHDF5_STATUS_INVALID_TENSOR_DESC</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba53d9a7a15cfbe957479bf7a6400656f5" kindref="member">CUPHYHDF5_STATUS_INVALID_DATASET</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" kindref="member">CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba39f54b59ac098f0543bb4640bf8b94e0" kindref="member">CUPHYHDF5_STATUS_UNSUPPORTED_RANK</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaaa5c47a790d112ec75f1b41074e9fdac" kindref="member">CUPHYHDF5_STATUS_DATATYPE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba88f668173e5c538b6fe5bcea6ef838e5" kindref="member">CUPHYHDF5_STATUS_INADEQUATE_BUFFER_SIZE</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaa511bd6168c84aabc0960f05adacdd01" kindref="member">CUPHYHDF5_STATUS_TENSOR_MISMATCH</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba443dc57388b9a1291fd164b64e63cc94" kindref="member">CUPHYHDF5_STATUS_TENSOR_DESC_FAILURE</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbad1317fc3cbdf9ee62879e2048bfb70dd" kindref="member">CUPHYHDF5_STATUS_READ_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba75dc9b0d29fac1426201bd0b6d9a6f1a" kindref="member">CUPHYHDF5_STATUS_CONVERT_ERROR</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref>,<ref refid="cuphy__hdf5_8h_1ad844786c20fcd70f4c7af17620587e49" kindref="member">cuphyHDF5GetErrorString</ref>,<ref refid="cuphy__hdf5_8h_1a3e4d6878275ad68416ab5c92c5bad732" kindref="member">cuphyHDF5GetDatasetInfo</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="252" column="20" declfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" declline="252" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="cuphy__hdf5_8h_1a9e27655b419f4893f4e091a8dfce7d10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref></type>
+        <definition>cuphyHDF5Status_t cuphyHDF5ReleaseStruct</definition>
+        <argsstring>(cuphyHDF5Struct_t s)</argsstring>
+        <name>cuphyHDF5ReleaseStruct</name>
+        <param>
+          <type>cuphyHDF5Struct_t</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Releases a cuPHY HDF5 structure handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases a reference to a cuPHY HDF5 structure handle</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- cuphy HDF5 structure handle</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>s</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref> if the release was successful.</para>
+<para><simplesect kind="return"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref>, <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref>,<ref refid="cuphy__hdf5_8h_1ad844786c20fcd70f4c7af17620587e49" kindref="member">cuphyHDF5GetErrorString</ref>,<ref refid="cuphy__hdf5_8h_1a6f540d2717ce21928da44d8c8f7429aa" kindref="member">cuphyHDF5GetStruct</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="471" column="20" declfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" declline="471" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="cuphy__hdf5_8h_1a428ce4f571335478fa214a351f3122c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref></type>
+        <definition>cuphyHDF5Status_t cuphyHDF5WriteDataset</definition>
+        <argsstring>(hid_t h5LocationID, const char *name, const cuphyTensorDescriptor_t tensorDesc, const void *addr, cudaStream_t strm)</argsstring>
+        <name>cuphyHDF5WriteDataset</name>
+        <param>
+          <type>hid_t</type>
+          <declname>h5LocationID</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref></type>
+          <declname>tensorDesc</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Writes data from a cuPHY tensor to an HDF5 dataset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes data from a source cuPHY tensor to a destination HDF5 dataset.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h5LocationID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- output HDF5 location (HDF5 root/group) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of output HDF5 dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tensorDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- input tensor descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address for input data source </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream used to perform the write operation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> if an of <computeroutput>tensorDesc</computeroutput>, <computeroutput>addr</computeroutput>, or <computeroutput>name</computeroutput> is NULL, or if <computeroutput>h5LocationID</computeroutput> &lt; 0.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a93e56748b4bd1804b98d131f82072c" kindref="member">CUPHYHDF5_STATUS_INVALID_TENSOR_DESC</ref> if the tensor descriptor cannot be queried.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaaa5c47a790d112ec75f1b41074e9fdac" kindref="member">CUPHYHDF5_STATUS_DATATYPE_ERROR</ref> if the data type of the cuPHY tensor cannot be stored in an HDF5 dataset (either directly, or via conversion)</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba443dc57388b9a1291fd164b64e63cc94" kindref="member">CUPHYHDF5_STATUS_TENSOR_DESC_FAILURE</ref> if a cuPHY tensor descriptor could not be created, or if the tensor descriptor fields could not be set.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbab6d6826feb891392b06d2645aefd5d2c" kindref="member">CUPHYHDF5_STATUS_ALLOC_FAILED</ref> if memory allocation for a host copy of the input tensor failed.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba75dc9b0d29fac1426201bd0b6d9a6f1a" kindref="member">CUPHYHDF5_STATUS_CONVERT_ERROR</ref> if conversion from the cuPHY tensor type to the HDF5 datatype failed.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref> if an HDF5 dataspace could not be created.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a18f1725b1c90dd2c5ec64cec6d1f64" kindref="member">CUPHYHDF5_STATUS_DATASET_ERROR</ref> if an HDF5 dataset could not be created.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba007c0a652a9d081c1c836b7d57b6f09e" kindref="member">CUPHYHDF5_STATUS_WRITE_ERROR</ref> if the HDF5 library returned an error when a write operation was attempted.</para>
+<para>Returns <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref> if the write was successful.</para>
+<para><simplesect kind="return"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref>, <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a93e56748b4bd1804b98d131f82072c" kindref="member">CUPHYHDF5_STATUS_INVALID_TENSOR_DESC</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaaa5c47a790d112ec75f1b41074e9fdac" kindref="member">CUPHYHDF5_STATUS_DATATYPE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a18f1725b1c90dd2c5ec64cec6d1f64" kindref="member">CUPHYHDF5_STATUS_DATASET_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba443dc57388b9a1291fd164b64e63cc94" kindref="member">CUPHYHDF5_STATUS_TENSOR_DESC_FAILURE</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbab6d6826feb891392b06d2645aefd5d2c" kindref="member">CUPHYHDF5_STATUS_ALLOC_FAILED</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba007c0a652a9d081c1c836b7d57b6f09e" kindref="member">CUPHYHDF5_STATUS_WRITE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba75dc9b0d29fac1426201bd0b6d9a6f1a" kindref="member">CUPHYHDF5_STATUS_CONVERT_ERROR</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref>,<ref refid="cuphy__hdf5_8h_1ad844786c20fcd70f4c7af17620587e49" kindref="member">cuphyHDF5GetErrorString</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="313" column="20" declfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" declline="313" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="cuphy__hdf5_8h_1a05e10fc1a0da38d067f91060030fea75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref></type>
+        <definition>cuphyHDF5Status_t cuphyHDF5WriteDatasetFromCPU</definition>
+        <argsstring>(hid_t h5LocationID, const char *name, const cuphyDataType_t type, const int32_t size, void *pData)</argsstring>
+        <name>cuphyHDF5WriteDatasetFromCPU</name>
+        <param>
+          <type>hid_t</type>
+          <declname>h5LocationID</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const int32_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pData</declname>
+        </param>
+        <briefdescription>
+<para>Writes data from CPU to an HDF5 dataset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes data from a source CPU array to a destination HDF5 dataset.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h5LocationID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- output HDF5 location (HDF5 root/group) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of output HDF5 dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- input data type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- input data size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- input data array</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref>, <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a93e56748b4bd1804b98d131f82072c" kindref="member">CUPHYHDF5_STATUS_INVALID_TENSOR_DESC</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaaa5c47a790d112ec75f1b41074e9fdac" kindref="member">CUPHYHDF5_STATUS_DATATYPE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a18f1725b1c90dd2c5ec64cec6d1f64" kindref="member">CUPHYHDF5_STATUS_DATASET_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba443dc57388b9a1291fd164b64e63cc94" kindref="member">CUPHYHDF5_STATUS_TENSOR_DESC_FAILURE</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbab6d6826feb891392b06d2645aefd5d2c" kindref="member">CUPHYHDF5_STATUS_ALLOC_FAILED</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba007c0a652a9d081c1c836b7d57b6f09e" kindref="member">CUPHYHDF5_STATUS_WRITE_ERROR</ref> <ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba75dc9b0d29fac1426201bd0b6d9a6f1a" kindref="member">CUPHYHDF5_STATUS_CONVERT_ERROR</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" line="345" column="20" declfile="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h" declline="345" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Physical layer library support for HDF5 file I/O. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Header file for the cuPHY HDF5 API </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2019-2023,<sp/>NVIDIA<sp/>CORPORATION<sp/>&amp;<sp/>AFFILIATES.<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>NOTICE<sp/>TO<sp/>LICENSEE:</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>This<sp/>source<sp/>code<sp/>and/or<sp/>documentation<sp/>(&quot;Licensed<sp/>Deliverables&quot;)<sp/>are</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>subject<sp/>to<sp/>NVIDIA<sp/>intellectual<sp/>property<sp/>rights<sp/>under<sp/>U.S.<sp/>and</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>international<sp/>Copyright<sp/>laws.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>These<sp/>Licensed<sp/>Deliverables<sp/>contained<sp/>herein<sp/>is<sp/>PROPRIETARY<sp/>and</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>CONFIDENTIAL<sp/>to<sp/>NVIDIA<sp/>and<sp/>is<sp/>being<sp/>provided<sp/>under<sp/>the<sp/>terms<sp/>and</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>conditions<sp/>of<sp/>a<sp/>form<sp/>of<sp/>NVIDIA<sp/>software<sp/>license<sp/>agreement<sp/>by<sp/>and</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>between<sp/>NVIDIA<sp/>and<sp/>Licensee<sp/>(&quot;License<sp/>Agreement&quot;)<sp/>or<sp/>electronically</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>accepted<sp/>by<sp/>Licensee.<sp/><sp/>Notwithstanding<sp/>any<sp/>terms<sp/>or<sp/>conditions<sp/>to</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>the<sp/>contrary<sp/>in<sp/>the<sp/>License<sp/>Agreement,<sp/>reproduction<sp/>or<sp/>disclosure</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>of<sp/>the<sp/>Licensed<sp/>Deliverables<sp/>to<sp/>any<sp/>third<sp/>party<sp/>without<sp/>the<sp/>express</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>written<sp/>consent<sp/>of<sp/>NVIDIA<sp/>is<sp/>prohibited.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>NOTWITHSTANDING<sp/>ANY<sp/>TERMS<sp/>OR<sp/>CONDITIONS<sp/>TO<sp/>THE<sp/>CONTRARY<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>LICENSE<sp/>AGREEMENT,<sp/>NVIDIA<sp/>MAKES<sp/>NO<sp/>REPRESENTATION<sp/>ABOUT<sp/>THE</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>SUITABILITY<sp/>OF<sp/>THESE<sp/>LICENSED<sp/>DELIVERABLES<sp/>FOR<sp/>ANY<sp/>PURPOSE.<sp/><sp/>IT<sp/>IS</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;<sp/>WITHOUT<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>NVIDIA<sp/>DISCLAIMS<sp/>ALL<sp/>WARRANTIES<sp/>WITH<sp/>REGARD<sp/>TO<sp/>THESE<sp/>LICENSED</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>DELIVERABLES,<sp/>INCLUDING<sp/>ALL<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>NONINFRINGEMENT,<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>NOTWITHSTANDING<sp/>ANY<sp/>TERMS<sp/>OR<sp/>CONDITIONS<sp/>TO<sp/>THE<sp/>CONTRARY<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>LICENSE<sp/>AGREEMENT,<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>NVIDIA<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES,<sp/>OR<sp/>ANY</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>DAMAGES<sp/>WHATSOEVER<sp/>RESULTING<sp/>FROM<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA<sp/>OR<sp/>PROFITS,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>NEGLIGENCE<sp/>OR<sp/>OTHER<sp/>TORTIOUS</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>ACTION,<sp/>ARISING<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>USE<sp/>OR<sp/>PERFORMANCE</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>OF<sp/>THESE<sp/>LICENSED<sp/>DELIVERABLES.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>U.S.<sp/>Government<sp/>End<sp/>Users.<sp/><sp/>These<sp/>Licensed<sp/>Deliverables<sp/>are<sp/>a</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>&quot;commercial<sp/>item&quot;<sp/>as<sp/>that<sp/>term<sp/>is<sp/>defined<sp/>at<sp/>48<sp/>C.F.R.<sp/>2.101<sp/>(OCT</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>1995),<sp/>consisting<sp/>of<sp/>&quot;commercial<sp/>computer<sp/>software&quot;<sp/>and<sp/>&quot;commercial</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>computer<sp/>software<sp/>documentation&quot;<sp/>as<sp/>such<sp/>terms<sp/>are<sp/>used<sp/>in<sp/>48</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>C.F.R.<sp/>12.212<sp/>(SEPT<sp/>1995)<sp/>and<sp/>is<sp/>provided<sp/>to<sp/>the<sp/>U.S.<sp/>Government</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>only<sp/>as<sp/>a<sp/>commercial<sp/>end<sp/>item.<sp/><sp/>Consistent<sp/>with<sp/>48<sp/>C.F.R.12.212<sp/>and</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>48<sp/>C.F.R.<sp/>227.7202-1<sp/>through<sp/>227.7202-4<sp/>(JUNE<sp/>1995),<sp/>all</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>U.S.<sp/>Government<sp/>End<sp/>Users<sp/>acquire<sp/>the<sp/>Licensed<sp/>Deliverables<sp/>with</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>only<sp/>those<sp/>rights<sp/>set<sp/>forth<sp/>herein.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>Any<sp/>use<sp/>of<sp/>the<sp/>Licensed<sp/>Deliverables<sp/>in<sp/>individual<sp/>and<sp/>commercial</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>software<sp/>must<sp/>include,<sp/>in<sp/>the<sp/>user<sp/>documentation<sp/>and<sp/>internal</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>comments<sp/>to<sp/>the<sp/>code,<sp/>the<sp/>above<sp/>Disclaimer<sp/>and<sp/>U.S.<sp/>Government<sp/>End</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>Users<sp/>Notice.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor">#if<sp/>!defined(CUPHY_HDF5_H_INCLUDED_)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CUPHY_HDF5_H_INCLUDED_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cuphy_8h" kindref="compound">cuphy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;hdf5.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>defined(__cplusplus)<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba970bd1d61c9ec7ae19597aca0c5531af" kindref="member">CUPHYHDF5_STATUS_SUCCESS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba19c903fb621d3faa4840e71ba403f7e6" kindref="member">CUPHYHDF5_STATUS_INVALID_ARGUMENT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1,<sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba53d9a7a15cfbe957479bf7a6400656f5" kindref="member">CUPHYHDF5_STATUS_INVALID_DATASET</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>2,<sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaaa5c47a790d112ec75f1b41074e9fdac" kindref="member">CUPHYHDF5_STATUS_DATATYPE_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>3,<sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbae4c152ea9141c59a425847a85cb6b04c" kindref="member">CUPHYHDF5_STATUS_DATASPACE_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>4,<sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba39f54b59ac098f0543bb4640bf8b94e0" kindref="member">CUPHYHDF5_STATUS_UNSUPPORTED_RANK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>5,<sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba862b4d8a6b07978ecdb97249b1cdab87" kindref="member">CUPHYHDF5_STATUS_DIMENSION_TOO_LARGE</ref><sp/><sp/><sp/><sp/>=<sp/>6,<sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a93e56748b4bd1804b98d131f82072c" kindref="member">CUPHYHDF5_STATUS_INVALID_TENSOR_DESC</ref><sp/><sp/><sp/><sp/>=<sp/>7,<sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba88f668173e5c538b6fe5bcea6ef838e5" kindref="member">CUPHYHDF5_STATUS_INADEQUATE_BUFFER_SIZE</ref><sp/>=<sp/>8,<sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbaa511bd6168c84aabc0960f05adacdd01" kindref="member">CUPHYHDF5_STATUS_TENSOR_MISMATCH</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>9,<sp/><sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbab23dd03cb0b716be444f5c22c1545696" kindref="member">CUPHYHDF5_STATUS_UNKNOWN_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>10,<sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbab6d6826feb891392b06d2645aefd5d2c" kindref="member">CUPHYHDF5_STATUS_ALLOC_FAILED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>11,<sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba443dc57388b9a1291fd164b64e63cc94" kindref="member">CUPHYHDF5_STATUS_TENSOR_DESC_FAILURE</ref><sp/><sp/><sp/><sp/>=<sp/>12,<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbad1317fc3cbdf9ee62879e2048bfb70dd" kindref="member">CUPHYHDF5_STATUS_READ_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>13,<sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba75dc9b0d29fac1426201bd0b6d9a6f1a" kindref="member">CUPHYHDF5_STATUS_CONVERT_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>14,<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba007c0a652a9d081c1c836b7d57b6f09e" kindref="member">CUPHYHDF5_STATUS_WRITE_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>15,<sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba1a18f1725b1c90dd2c5ec64cec6d1f64" kindref="member">CUPHYHDF5_STATUS_DATASET_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>16,<sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba4c1a3c5a78c80aca59c2c18830e99f8c" kindref="member">CUPHYHDF5_STATUS_INVALID_NAME</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>17,<sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba5fe8ae109365881ac89398e9230ff7a0" kindref="member">CUPHYHDF5_STATUS_INCORRECT_OBJ_TYPE</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>18,<sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbbafa8961a61b950d82fb6b184f453de5a0" kindref="member">CUPHYHDF5_STATUS_OBJ_CREATE_FAILURE</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>19,<sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbba2c2380792dbba6d9e5035c31ab3f25a7" kindref="member">CUPHYHDF5_STATUS_VALUE_OUT_OF_RANGE</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>20<sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}<sp/><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>CUPHYWINAPI<sp/><ref refid="cuphy__hdf5_8h_1ad844786c20fcd70f4c7af17620587e49" kindref="member">cuphyHDF5GetErrorString</ref>(<ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref><sp/>status);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>CUPHYWINAPI<sp/><ref refid="cuphy__hdf5_8h_1a969360cf91d2a180b95bebe020924a89" kindref="member">cuphyHDF5GetErrorName</ref>(<ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref><sp/>status);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref><sp/>CUPHYWINAPI<sp/><ref refid="cuphy__hdf5_8h_1a3e4d6878275ad68416ab5c92c5bad732" kindref="member">cuphyHDF5GetDatasetInfo</ref>(hid_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h5Dataset,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dimBufferSize,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref>*<sp/>dataType,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numDims,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dimensions[]);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref><sp/>CUPHYWINAPI<sp/><ref refid="cuphy__hdf5_8h_1af33bc32aa58a757cf2bce4ad7d8f14be" kindref="member">cuphyHDF5ReadDataset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref><sp/>tensorDesc,</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>addr,</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hid_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h5Dataset,</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStream_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref><sp/>CUPHYWINAPI<sp/><ref refid="cuphy__hdf5_8h_1a428ce4f571335478fa214a351f3122c4" kindref="member">cuphyHDF5WriteDataset</ref>(hid_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h5LocationID,</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name,</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__CUPHY__TENSOR__DESC_1ga8ed3c2125e6a047ab77f07158eabc8f2" kindref="member">cuphyTensorDescriptor_t</ref><sp/>tensorDesc,</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>addr,</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStream_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strm);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref><sp/>CUPHYWINAPI<sp/><ref refid="cuphy__hdf5_8h_1a05e10fc1a0da38d067f91060030fea75" kindref="member">cuphyHDF5WriteDatasetFromCPU</ref>(hid_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h5LocationID,</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name,</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref><sp/><sp/>type,</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size,</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pData);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">cuphyHDF5Struct;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">cuphyHDF5Struct*<sp/>cuphyHDF5Struct_t;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref><sp/>CUPHYWINAPI<sp/><ref refid="cuphy__hdf5_8h_1a6f540d2717ce21928da44d8c8f7429aa" kindref="member">cuphyHDF5GetStruct</ref>(hid_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h5Dataset,</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numDim,</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>hsize_t*<sp/><sp/><sp/><sp/><sp/>coord,</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cuphyHDF5Struct_t*<sp/>s);</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref><sp/>CUPHYWINAPI<sp/><ref refid="cuphy__hdf5_8h_1a13497463e24ffb4d0c5f831b9fb79bb1" kindref="member">cuphyHDF5GetStructScalar</ref>(cuphyVariant_t*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res,</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cuphyHDF5Struct_t<sp/>s,</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name,</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="cuphy_8h_1a941a9befb93ca193de52d2814aeee0e1" kindref="member">cuphyDataType_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valueAs);</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><ref refid="cuphy__hdf5_8h_1a396f838e2c5c119c347c828157220dbb" kindref="member">cuphyHDF5Status_t</ref><sp/>CUPHYWINAPI<sp/><ref refid="cuphy__hdf5_8h_1a9e27655b419f4893f4e091a8dfce7d10" kindref="member">cuphyHDF5ReleaseStruct</ref>(cuphyHDF5Struct_t<sp/>s);</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="474"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>defined(__cplusplus)<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!defined(CUPHY_HDF5_H_INCLUDED_)<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy_hdf5/cuphy_hdf5.h"/>
+  </compounddef>
+</doxygen>

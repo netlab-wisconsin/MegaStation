@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__CRC__DECODE" kind="group">
+    <compoundname>CUPHY_CRC_DECODE</compoundname>
+    <title>CRC Decode</title>
+    <innerclass refid="structcuphyPuschRxCrcDecode" prot="public">cuphyPuschRxCrcDecode</innerclass>
+    <innerclass refid="structcuphyPuschRxCrcDecodeLaunchCfg__t" prot="public">cuphyPuschRxCrcDecodeLaunchCfg_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__CRC__DECODE_1ga6edcf269acda1c71dd860be27e758d0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePuschRxCrcDecode</definition>
+        <argsstring>(cuphyPuschRxCrcDecodeHndl_t *puschRxCrcDecodeHndl, int reverseBytes)</argsstring>
+        <name>cuphyCreatePuschRxCrcDecode</name>
+        <param>
+          <type>cuphyPuschRxCrcDecodeHndl_t *</type>
+          <declname>puschRxCrcDecodeHndl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>reverseBytes</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY PuschRx crc decode object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a cuPHY pusch crc decode object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>puschRxCrcDecodeHndl</computeroutput> and/or <computeroutput>FPconfig</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a PuschRxCrcDecode object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxCrcDecodeHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new PuschRxRateMatch instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reverseBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- 0 or 1. Option to reverse bytes during crc.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CRC__DECODE_1ga035ee94fdda1f68b27cf590ca44069c0" kindref="member">cuphyPuschRxCrcDecodeGetDescrInfo</ref>,<ref refid="group__CUPHY__CRC__DECODE_1ga16c684ebd7f53f3107f50d0f98354a6d" kindref="member">cuphySetupPuschRxCrcDecode</ref>,<ref refid="group__CUPHY__CRC__DECODE_1gaf498a5c961986528bcc1b2f2fe9e6cff" kindref="member">cuphyDestroyPuschRxCrcDecode</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3127" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3127" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC__DECODE_1gaf498a5c961986528bcc1b2f2fe9e6cff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPuschRxCrcDecode</definition>
+        <argsstring>(cuphyPuschRxCrcDecodeHndl_t puschRxCrcDecodeHndl)</argsstring>
+        <name>cuphyDestroyPuschRxCrcDecode</name>
+        <param>
+          <type>cuphyPuschRxCrcDecodeHndl_t</type>
+          <declname>puschRxCrcDecodeHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY PUSCH crc decode object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY PUSCH crc decode object that was previously created by <ref refid="group__CUPHY__CRC__DECODE_1ga6edcf269acda1c71dd860be27e758d0e" kindref="member">cuphyCreatePuschRxCrcDecode</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>puschRxCrcDecodeHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxCrcDecodeHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated PuschRxRateMatch instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CRC__DECODE_1ga035ee94fdda1f68b27cf590ca44069c0" kindref="member">cuphyPuschRxCrcDecodeGetDescrInfo</ref>,<ref refid="group__CUPHY__CRC__DECODE_1ga6edcf269acda1c71dd860be27e758d0e" kindref="member">cuphyCreatePuschRxCrcDecode</ref>,<ref refid="group__CUPHY__CRC__DECODE_1ga16c684ebd7f53f3107f50d0f98354a6d" kindref="member">cuphySetupPuschRxCrcDecode</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3198" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3198" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC__DECODE_1ga035ee94fdda1f68b27cf590ca44069c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPuschRxCrcDecodeGetDescrInfo</definition>
+        <argsstring>(size_t *pDescrSizeBytes, size_t *pDescrAlignBytes)</argsstring>
+        <name>cuphyPuschRxCrcDecodeGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute cuPHY crc decoder descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes cuPHY PUSCH crc decoder descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other PuschRxCrcDecode APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pDescrSizeBytes</computeroutput> and/or <computeroutput>pDescrAlignBytes</computeroutput> </para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment of descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gaf459a70d3157f1428c69dc6da0f7d663" kindref="member">cuphyCreatePuschRxRateMatch</ref>,<ref refid="group__CUPHY__RATE__MATCHING_1gac86fb49b0b86189c8ee5d633a3d72bc4" kindref="member">cuphyDestroyPuschRxRateMatch</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3100" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3100" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__CRC__DECODE_1ga16c684ebd7f53f3107f50d0f98354a6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPuschRxCrcDecode</definition>
+        <argsstring>(cuphyPuschRxCrcDecodeHndl_t puschRxCrcDecodeHndl, uint16_t nSchUes, uint16_t *pSchUserIdxsCpu, uint32_t *pOutputCBCRCs, uint8_t *pOutputTBs, const uint32_t *pInputCodeBlocks, uint32_t *pOutputTBCRCs, const PerTbParams *pTbPrmsCpu, const PerTbParams *pTbPrmsGpu, void *pCpuDesc, void *pGpuDesc, uint8_t enableCpuToGpuDescrAsyncCpy, cuphyPuschRxCrcDecodeLaunchCfg_t *pCbCrcLaunchCfg, cuphyPuschRxCrcDecodeLaunchCfg_t *pTbCrcLaunchCfg, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPuschRxCrcDecode</name>
+        <param>
+          <type>cuphyPuschRxCrcDecodeHndl_t</type>
+          <declname>puschRxCrcDecodeHndl</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nSchUes</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>pSchUserIdxsCpu</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>pOutputCBCRCs</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pOutputTBs</declname>
+        </param>
+        <param>
+          <type>const uint32_t *</type>
+          <declname>pInputCodeBlocks</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>pOutputTBCRCs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+          <declname>pTbPrmsCpu</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+          <declname>pTbPrmsGpu</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDesc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pGpuDesc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxCrcDecodeLaunchCfg_t *</type>
+          <declname>pCbCrcLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxCrcDecodeLaunchCfg_t *</type>
+          <declname>pTbCrcLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY crc decode for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY PUSCH crc decode in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if any inputs NULL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puschRxCrcDecodeHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the PuschRxCrcDecode instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nSchUes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of users with sch data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pSchUserIdxsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of sch user indicies </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pOutputCBCRCs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of where to strore CB crc results </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pOutputTBs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of where to store estimated transport blocks (w/h crc removed) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pInputCodeBlocks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of input codeblocks (output of LDPC) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pOutputTBCRCs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of where to stroe TB crc results </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTbPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of tb parameters in CPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTbPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of tb parameters in GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of descriptor in CPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pGpuDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of descriptor in GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Option to copy desc from CPU to GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCbCrcLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of CB CRC decoder launch configuration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTbCrcLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address of TB CRC decoder launch configuration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- stream to perform copy</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__CRC__DECODE_1ga035ee94fdda1f68b27cf590ca44069c0" kindref="member">cuphyPuschRxCrcDecodeGetDescrInfo</ref>,<ref refid="group__CUPHY__CRC__DECODE_1ga6edcf269acda1c71dd860be27e758d0e" kindref="member">cuphyCreatePuschRxCrcDecode</ref>,<ref refid="group__CUPHY__CRC__DECODE_1gaf498a5c961986528bcc1b2f2fe9e6cff" kindref="member">cuphyDestroyPuschRxCrcDecode</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3162" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="3162" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the puschRx CRC deocder (transport block + code block + segmentation) functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

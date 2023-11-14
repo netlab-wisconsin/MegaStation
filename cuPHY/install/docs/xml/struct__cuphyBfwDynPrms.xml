@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyBfwDynPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyBfwDynPrms</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyBfwDynPrms_1acc48bd54b73609938faa2086e8151020" prot="public" static="no" mutable="no">
+        <type>cudaStream_t</type>
+        <definition>cudaStream_t _cuphyBfwDynPrms::cuStream</definition>
+        <argsstring></argsstring>
+        <name>cuStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1491" column="18" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1491" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwDynPrms_1ad7f8661985d27583982058e8b3b96ac8" prot="public" static="no" mutable="no">
+        <type>cuphyBfwDataIn_t const  *</type>
+        <definition>cuphyBfwDataIn_t const* _cuphyBfwDynPrms::pDataIn</definition>
+        <argsstring></argsstring>
+        <name>pDataIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1498" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1498" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwDynPrms_1a4d2420561aa32f31d4c92cee72cc6fd8" prot="public" static="no" mutable="no">
+        <type>cuphyBfwDataOut_t *</type>
+        <definition>cuphyBfwDataOut_t* _cuphyBfwDynPrms::pDataOut</definition>
+        <argsstring></argsstring>
+        <name>pDataOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1499" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1499" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwDynPrms_1a9626e10e405e0791a6deb822e26d4c21" prot="public" static="no" mutable="no">
+        <type>cuphyBfwDynDbgPrms_t *</type>
+        <definition>cuphyBfwDynDbgPrms_t* _cuphyBfwDynPrms::pDynDbg</definition>
+        <argsstring></argsstring>
+        <name>pDynDbg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1502" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1502" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwDynPrms_1a5905c5b2604608a0c336c7269aaaf4d3" prot="public" static="no" mutable="no">
+        <type>cuphyBfwDynPrm_t const  *</type>
+        <definition>cuphyBfwDynPrm_t const* _cuphyBfwDynPrms::pDynPrm</definition>
+        <argsstring></argsstring>
+        <name>pDynPrm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1495" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1495" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwDynPrms_1ab7bd8a7d286cffb49cd97090be419c6b" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t _cuphyBfwDynPrms::procModeBmsk</definition>
+        <argsstring></argsstring>
+        <name>procModeBmsk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1494" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1494" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwDynPrms_1a230c745931e74fcf9d69ef9487d82796" prot="public" static="no" mutable="no">
+        <type>cuphyBfwStatusOut_t *</type>
+        <definition>cuphyBfwStatusOut_t* _cuphyBfwDynPrms::pStatusOut</definition>
+        <argsstring></argsstring>
+        <name>pStatusOut</name>
+        <briefdescription>
+<para>status parameter </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1505" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1505" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1489" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1488" bodyend="1507"/>
+    <listofallmembers>
+      <member refid="struct__cuphyBfwDynPrms_1acc48bd54b73609938faa2086e8151020" prot="public" virt="non-virtual"><scope>_cuphyBfwDynPrms</scope><name>cuStream</name></member>
+      <member refid="struct__cuphyBfwDynPrms_1ad7f8661985d27583982058e8b3b96ac8" prot="public" virt="non-virtual"><scope>_cuphyBfwDynPrms</scope><name>pDataIn</name></member>
+      <member refid="struct__cuphyBfwDynPrms_1a4d2420561aa32f31d4c92cee72cc6fd8" prot="public" virt="non-virtual"><scope>_cuphyBfwDynPrms</scope><name>pDataOut</name></member>
+      <member refid="struct__cuphyBfwDynPrms_1a9626e10e405e0791a6deb822e26d4c21" prot="public" virt="non-virtual"><scope>_cuphyBfwDynPrms</scope><name>pDynDbg</name></member>
+      <member refid="struct__cuphyBfwDynPrms_1a5905c5b2604608a0c336c7269aaaf4d3" prot="public" virt="non-virtual"><scope>_cuphyBfwDynPrms</scope><name>pDynPrm</name></member>
+      <member refid="struct__cuphyBfwDynPrms_1ab7bd8a7d286cffb49cd97090be419c6b" prot="public" virt="non-virtual"><scope>_cuphyBfwDynPrms</scope><name>procModeBmsk</name></member>
+      <member refid="struct__cuphyBfwDynPrms_1a230c745931e74fcf9d69ef9487d82796" prot="public" virt="non-virtual"><scope>_cuphyBfwDynPrms</scope><name>pStatusOut</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

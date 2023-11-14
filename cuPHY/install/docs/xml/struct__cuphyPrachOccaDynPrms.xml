@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPrachOccaDynPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPrachOccaDynPrms</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPrachOccaDynPrms_1aac38dbd3146fb8c2541e00f9143ff5b4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float _cuphyPrachOccaDynPrms::force_thr0</definition>
+        <argsstring></argsstring>
+        <name>force_thr0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>0: use the default threshold computed by cuPHY, &gt; 0: use this value as threshold (overwrite cuPHY computed threshold) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2987" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2987" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachOccaDynPrms_1a382e76d26ad95d55e941bcb0cf5a2e98" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPrachOccaDynPrms::occaPrmDynIdx</definition>
+        <argsstring></argsstring>
+        <name>occaPrmDynIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index to occasion-dynamic parameter information (index into: pTDataRx in cuphyPrachDataIn_t, numDetectedPrmb in cuphyPrachDataOut_t, ...) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2985" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2985" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPrachOccaDynPrms_1a85a3de7a31b6372a94b3110ae101a146" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPrachOccaDynPrms::occaPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>occaPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Index to occasion static/quasi-static parameter information (index into pOccaPrms created during PrachRx object construction) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2984" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2984" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2967" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2966" bodyend="2988"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPrachOccaDynPrms_1aac38dbd3146fb8c2541e00f9143ff5b4" prot="public" virt="non-virtual"><scope>_cuphyPrachOccaDynPrms</scope><name>force_thr0</name></member>
+      <member refid="struct__cuphyPrachOccaDynPrms_1a382e76d26ad95d55e941bcb0cf5a2e98" prot="public" virt="non-virtual"><scope>_cuphyPrachOccaDynPrms</scope><name>occaPrmDynIdx</name></member>
+      <member refid="struct__cuphyPrachOccaDynPrms_1a85a3de7a31b6372a94b3110ae101a146" prot="public" virt="non-virtual"><scope>_cuphyPrachOccaDynPrms</scope><name>occaPrmStatIdx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

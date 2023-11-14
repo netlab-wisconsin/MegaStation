@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyGenScramblingLaunchCfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyGenScramblingLaunchCfg_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyGenScramblingLaunchCfg__t_1aa8f2e105fa2b39f00159630b56519e93" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyGenScramblingLaunchCfg_t::kernelArgs[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4477" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4477" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyGenScramblingLaunchCfg__t_1a3eff56eb1dd2304cc7f412d08146956a" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyGenScramblingLaunchCfg_t::kernelNodeParamsDriver</definition>
+        <argsstring></argsstring>
+        <name>kernelNodeParamsDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4476" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4476" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4475" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4474" bodyend="4478"/>
+    <listofallmembers>
+      <member refid="structcuphyGenScramblingLaunchCfg__t_1aa8f2e105fa2b39f00159630b56519e93" prot="public" virt="non-virtual"><scope>cuphyGenScramblingLaunchCfg_t</scope><name>kernelArgs</name></member>
+      <member refid="structcuphyGenScramblingLaunchCfg__t_1a3eff56eb1dd2304cc7f412d08146956a" prot="public" virt="non-virtual"><scope>cuphyGenScramblingLaunchCfg_t</scope><name>kernelNodeParamsDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

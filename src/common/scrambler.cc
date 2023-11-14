@@ -8,6 +8,8 @@
 #include <bitset>
 
 #include "logger.h"
+//#include <cuda_runtime.h>
+//#include "temp_launch.h"
 
 namespace AgoraScrambler {
 
@@ -16,7 +18,19 @@ static constexpr size_t kBitsInitArraySize = 7u;
 static constexpr size_t kStartingVectorSize = (64 * 125);
 
 Scrambler::Scrambler()
-    : scram_buffer_(kScramblerlength), bit_buffer_(kStartingVectorSize) {}
+    : scram_buffer_(kScramblerlength), bit_buffer_(kStartingVectorSize) {
+  /*uint8_t scrambler_init = kScramblerInitState;
+  uint8_t res_xor = 0;
+  uint8_t scram_byte = 0;
+  uint8_t scram_buffer_cpu[kScramblerlength];
+  for (size_t i = 0; i < kScramblerlength; i++) {
+    res_xor = (scrambler_init ^ (scrambler_init >> 3)) & 0x01;
+    scram_buffer_cpu[i] = res_xor;
+    scrambler_init >>= 1;
+    scrambler_init |= res_xor << 6;
+  }
+  init_scrambler_launch(scram_buffer_cpu);*/
+}
 
 // in byte 0xA5
 // out_bits[7] = msb
@@ -115,6 +129,38 @@ void Scrambler::WlanScrambler(void* output_buffer, const void* input_buffer,
     }
   }
   ConvertBitsToBytes(bit_buffer.data(), num_bytes, output_buffer_ptr);
+  /*uint8_t scrambler_init = kScramblerInitState;
+  uint8_t res_xor = 0;
+  uint8_t scram_byte = 0;
+  uint8_t scram_buffer_[kScramblerlength];
+  for (size_t i = 0; i < kScramblerlength; i++) {
+    res_xor = (scrambler_init ^ (scrambler_init >> 3)) & 0x01;
+    //scram_byte |= res_xor << (i % 8);
+    //scram_byte = (scram_byte << 1) | res_xor;
+    scram_buffer_[i] = res_xor;
+    scrambler_init >>= 1;
+    scrambler_init |= res_xor << 6;
+    //if ((i + 1) % 8 == 0) {
+    //  scram_buffer_[i / 8] = scram_byte;
+    //  scram_byte = 0;
+    //}
+  }
+  size_t j = 0;
+  for (size_t i = 0; i < num_bytes; i++) {
+    scram_byte = 0;
+    // coallesce 8 bits scram_buffer[j:j+8] into a byte
+    for (size_t k = 0; k < 8; k++) {
+      //scram_byte |= ((unsigned char*)input_buffer)[i * 8 + j] << (7 - j);
+      scram_byte = (scram_byte << 1) | scram_buffer_[j];
+      j = (j + 1) % kScramblerlength;
+    }
+    ((uint8_t *)output_buffer)[i] = scram_byte ^ ((uint8_t *)input_buffer)[i];
+  }
+  uint8_t *inout_buffer;
+  cudaMalloc(&inout_buffer, num_bytes);
+  cudaMemcpy(inout_buffer, input_buffer, num_bytes, cudaMemcpyHostToDevice);
+  scrambler_launch(inout_buffer, inout_buffer, num_bytes);
+  cudaMemcpy(output_buffer, inout_buffer, num_bytes, cudaMemcpyDeviceToHost);*/
 }
 
 void Scrambler::Scramble(void* scrambled, const void* to_scramble,

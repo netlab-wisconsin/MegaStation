@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyBfwDynPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyBfwDynPrm</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyBfwDynPrm_1ab42c4e2b37e706f48a1de95751fbe0e2" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyBfwDynPrm::nUeGrps</definition>
+        <argsstring></argsstring>
+        <name>nUeGrps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1459" column="31" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1459" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyBfwDynPrm_1a10c5027056b384e4e194d63e5dbd8339" prot="public" static="no" mutable="no">
+        <type>cuphyBfwUeGrpPrm_t const  *</type>
+        <definition>cuphyBfwUeGrpPrm_t const* _cuphyBfwDynPrm::pUeGrpPrms</definition>
+        <argsstring></argsstring>
+        <name>pUeGrpPrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1460" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1460" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1458" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1457" bodyend="1461"/>
+    <listofallmembers>
+      <member refid="struct__cuphyBfwDynPrm_1ab42c4e2b37e706f48a1de95751fbe0e2" prot="public" virt="non-virtual"><scope>_cuphyBfwDynPrm</scope><name>nUeGrps</name></member>
+      <member refid="struct__cuphyBfwDynPrm_1a10c5027056b384e4e194d63e5dbd8339" prot="public" virt="non-virtual"><scope>_cuphyBfwDynPrm</scope><name>pUeGrpPrms</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

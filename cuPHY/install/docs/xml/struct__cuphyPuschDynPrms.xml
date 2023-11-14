@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPuschDynPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPuschDynPrms</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1aa223a55a673727cc9649437809e411e7" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _cuphyPuschDynPrms::cpuCopyOn</definition>
+        <argsstring></argsstring>
+        <name>cpuCopyOn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="543" column="31" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="543" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1a44589e4a1ef87ef1efe2901d4b2d2d02" prot="public" static="no" mutable="no">
+        <type>cudaStream_t</type>
+        <definition>cudaStream_t _cuphyPuschDynPrms::cuStream</definition>
+        <argsstring></argsstring>
+        <name>cuStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="525" column="18" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="525" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1aa3bdb6dede867991856afeeee26dae57" prot="public" static="no" mutable="no">
+        <type>cuphyPuschCellGrpDynPrm_t const  *</type>
+        <definition>cuphyPuschCellGrpDynPrm_t const* _cuphyPuschDynPrms::pCellGrpDynPrm</definition>
+        <argsstring></argsstring>
+        <name>pCellGrpDynPrm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="537" column="37" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="537" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1abb9cd8d19e326304f60e04cfee11a5a4" prot="public" static="no" mutable="no">
+        <type>cuphyPuschDataIn_t const  *</type>
+        <definition>cuphyPuschDataIn_t const* _cuphyPuschDynPrms::pDataIn</definition>
+        <argsstring></argsstring>
+        <name>pDataIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="540" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="540" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1a3c7150afc075929fc65fab884b2b4535" prot="public" static="no" mutable="no">
+        <type>cuphyPuschDataInOut_t *</type>
+        <definition>cuphyPuschDataInOut_t* _cuphyPuschDynPrms::pDataInOut</definition>
+        <argsstring></argsstring>
+        <name>pDataInOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="542" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="542" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1a0d348b698d2198f72aa0d2c664b5d6a4" prot="public" static="no" mutable="no">
+        <type>cuphyPuschDataOut_t *</type>
+        <definition>cuphyPuschDataOut_t* _cuphyPuschDynPrms::pDataOut</definition>
+        <argsstring></argsstring>
+        <name>pDataOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="541" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="541" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1a3de0f9747900b8d1d946eba35a7cd87e" prot="public" static="no" mutable="no">
+        <type>cuphyPuschDynDbgPrms_t *</type>
+        <definition>cuphyPuschDynDbgPrms_t* _cuphyPuschDynPrms::pDbg</definition>
+        <argsstring></argsstring>
+        <name>pDbg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="549" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="549" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1a7369caad26bc868e3eeb3ee0040246eb" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t _cuphyPuschDynPrms::procModeBmsk</definition>
+        <argsstring></argsstring>
+        <name>procModeBmsk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="533" column="32" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="533" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1a2daea9a3cf8ccc43a21357ec189d21ef" prot="public" static="no" mutable="no">
+        <type>cuphyPuschStatusOut_t *</type>
+        <definition>cuphyPuschStatusOut_t* _cuphyPuschDynPrms::pStatusOut</definition>
+        <argsstring></argsstring>
+        <name>pStatusOut</name>
+        <briefdescription>
+<para>status parameter </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="546" column="27" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="546" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1a45e337fa15423723381f1ec9d0c56e18" prot="public" static="no" mutable="no">
+        <type>cuphyPuschSetupPhase_t</type>
+        <definition>cuphyPuschSetupPhase_t _cuphyPuschDynPrms::setupPhase</definition>
+        <argsstring></argsstring>
+        <name>setupPhase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="530" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="530" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1a02a5b4fda72227b85957c403dd308658" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPuschDynPrms::waitTimeOutPostEarlyHarqUs</definition>
+        <argsstring></argsstring>
+        <name>waitTimeOutPostEarlyHarqUs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="535" column="32" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="535" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPuschDynPrms_1a4a758340d132a6eb529144354a889b84" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPuschDynPrms::waitTimeOutPreEarlyHarqUs</definition>
+        <argsstring></argsstring>
+        <name>waitTimeOutPreEarlyHarqUs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="534" column="32" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="534" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="523" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="522" bodyend="550"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPuschDynPrms_1aa223a55a673727cc9649437809e411e7" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>cpuCopyOn</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1a44589e4a1ef87ef1efe2901d4b2d2d02" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>cuStream</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1aa3bdb6dede867991856afeeee26dae57" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>pCellGrpDynPrm</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1abb9cd8d19e326304f60e04cfee11a5a4" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>pDataIn</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1a3c7150afc075929fc65fab884b2b4535" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>pDataInOut</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1a0d348b698d2198f72aa0d2c664b5d6a4" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>pDataOut</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1a3de0f9747900b8d1d946eba35a7cd87e" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>pDbg</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1a7369caad26bc868e3eeb3ee0040246eb" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>procModeBmsk</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1a2daea9a3cf8ccc43a21357ec189d21ef" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>pStatusOut</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1a45e337fa15423723381f1ec9d0c56e18" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>setupPhase</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1a02a5b4fda72227b85957c403dd308658" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>waitTimeOutPostEarlyHarqUs</name></member>
+      <member refid="struct__cuphyPuschDynPrms_1a4a758340d132a6eb529144354a889b84" prot="public" virt="non-virtual"><scope>_cuphyPuschDynPrms</scope><name>waitTimeOutPreEarlyHarqUs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

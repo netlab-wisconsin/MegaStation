@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyEncoderRateMatchMultiDCILaunchCfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyEncoderRateMatchMultiDCILaunchCfg_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyEncoderRateMatchMultiDCILaunchCfg__t_1af0387d79ad8fbfe60932f6dcb8c179fa" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyEncoderRateMatchMultiDCILaunchCfg_t::kernelArgs[5]</definition>
+        <argsstring>[5]</argsstring>
+        <name>kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4319" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyEncoderRateMatchMultiDCILaunchCfg__t_1affc6f6bb5c8073648d35a75f3f748ae2" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyEncoderRateMatchMultiDCILaunchCfg_t::kernelNodeParamsDriver</definition>
+        <argsstring></argsstring>
+        <name>kernelNodeParamsDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4318" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4318" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4317" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4316" bodyend="4320"/>
+    <listofallmembers>
+      <member refid="structcuphyEncoderRateMatchMultiDCILaunchCfg__t_1af0387d79ad8fbfe60932f6dcb8c179fa" prot="public" virt="non-virtual"><scope>cuphyEncoderRateMatchMultiDCILaunchCfg_t</scope><name>kernelArgs</name></member>
+      <member refid="structcuphyEncoderRateMatchMultiDCILaunchCfg__t_1affc6f6bb5c8073648d35a75f3f748ae2" prot="public" virt="non-virtual"><scope>cuphyEncoderRateMatchMultiDCILaunchCfg_t</scope><name>kernelNodeParamsDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

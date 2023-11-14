@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL" kind="group">
+    <compoundname>CUPHY_UCI_ON_PUSCH_CSI2_CTRL</compoundname>
+    <title>uci on pusch: computes number of CSI-P2 bits. Setups CSI-P2 backend.</title>
+    <innerclass refid="structcuphyUciOnPuschCsi2CtrlLaunchCfg__t" prot="public">cuphyUciOnPuschCsi2CtrlLaunchCfg_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1gab30a744d7e3b9bdbe670d882390ae180" prot="public" static="no">
+        <type>struct cuphyUciOnPuschCsi2Ctrl *</type>
+        <definition>typedef struct cuphyUciOnPuschCsi2Ctrl* cuphyUciOnPuschCsi2CtrlHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyUciOnPuschCsi2CtrlHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY uciOnPuschCsi2Ctrl handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6847" column="39" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="6847" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1ga8e3c6b42b4345fb0fbe4295e4e87d0c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreateUciOnPuschCsi2Ctrl</definition>
+        <argsstring>(cuphyUciOnPuschCsi2CtrlHndl_t *pUciOnPuschCsi2CtrlHndl)</argsstring>
+        <name>cuphyCreateUciOnPuschCsi2Ctrl</name>
+        <param>
+          <type><ref refid="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1gab30a744d7e3b9bdbe670d882390ae180" kindref="member">cuphyUciOnPuschCsi2CtrlHndl_t</ref> *</type>
+          <declname>pUciOnPuschCsi2CtrlHndl</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY uciOnPuschCsi2Ctrl object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a uciOnPuschCsi2Ctrl object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pUciOnPuschCsi2CtrlHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a uciOnPuschCsi2Ctrl object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pUciOnPuschCsi2CtrlHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new uciOnPuschCsi2Ctrl instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__2_1gaafe1bff85bd793c1e01ada7e84d46ccb" kindref="member">cuphyUciOnPuschSegLLRs2GetDescrInfo</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__2_1gab6b97a4e3aed4680772bd92a5aa69e45" kindref="member">cuphySetupUciOnPuschSegLLRs2</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6902" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6902" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1gab66631d984199594496a6bf8b7d2a4de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyUciOnPuschCsi2Ctrl</definition>
+        <argsstring>(cuphyUciOnPuschCsi2CtrlHndl_t uciOnPuschCsi2CtrlHndl)</argsstring>
+        <name>cuphyDestroyUciOnPuschCsi2Ctrl</name>
+        <param>
+          <type><ref refid="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1gab30a744d7e3b9bdbe670d882390ae180" kindref="member">cuphyUciOnPuschCsi2CtrlHndl_t</ref></type>
+          <declname>uciOnPuschCsi2CtrlHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY uciOnPuschCsi2Ctrl object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY uciOnPuschCsi2Ctrl object that was previously created by <ref refid="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1ga8e3c6b42b4345fb0fbe4295e4e87d0c4" kindref="member">cuphyCreateUciOnPuschCsi2Ctrl</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>uciOnPuschSegLLRs2Hndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uciOnPuschCsi2CtrlHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>,q <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1ga9e42717cd4a875c5ccfea6ec32dd87f4" kindref="member">cuphyUciOnPuschCsi2CtrlGetDescrInfo</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1ga8e3c6b42b4345fb0fbe4295e4e87d0c4" kindref="member">cuphyCreateUciOnPuschCsi2Ctrl</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1gaa3e790894fe8b3276df95e2392d929ad" kindref="member">cuphySetupUciOnPuschCsi2Ctrl</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6978" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6978" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1gaa3e790894fe8b3276df95e2392d929ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupUciOnPuschCsi2Ctrl</definition>
+        <argsstring>(cuphyUciOnPuschCsi2CtrlHndl_t uciOnPuschCsi2CtrlHndl, uint16_t nCsi2Ues, uint16_t *pCsi2UeIdxsCpu, PerTbParams *pTbPrmsCpu, PerTbParams *pTbPrmsGpu, cuphyPuschRxUeGrpPrms_t *pUeGrpPrmsCpu, cuphyPuschCellStatPrm_t *pCellStatPrmsGpu, cuphyUciOnPuschOutOffsets_t *pUciOnPuschOutOffsetsCpu, uint8_t *pUciPayloadsGpu, uint16_t *pNumCsi2BitsGpu, cuphyPolarUciSegPrm_t *pCsi2PolarSegPrmsGpu, cuphyPolarCwPrm_t *pCsi2PolarCwPrmsGpu, cuphyRmCwPrm_t *pCsi2RmCwPrmsGpu, cuphySimplexCwPrm_t *pCsi2SpxCwPrmsGpu, uint16_t forcedNumCsi2Bits, void *pCpuDynDesc, void *pGpuDynDesc, uint8_t enableCpuToGpuDescrAsyncCpy, cuphyUciOnPuschCsi2CtrlLaunchCfg_t *pLaunchCfg, cudaStream_t strm)</argsstring>
+        <name>cuphySetupUciOnPuschCsi2Ctrl</name>
+        <param>
+          <type><ref refid="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1gab30a744d7e3b9bdbe670d882390ae180" kindref="member">cuphyUciOnPuschCsi2CtrlHndl_t</ref></type>
+          <declname>uciOnPuschCsi2CtrlHndl</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nCsi2Ues</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>pCsi2UeIdxsCpu</declname>
+        </param>
+        <param>
+          <type><ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+          <declname>pTbPrmsCpu</declname>
+        </param>
+        <param>
+          <type><ref refid="structPerTbParams" kindref="compound">PerTbParams</ref> *</type>
+          <declname>pTbPrmsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschRxUeGrpPrms_t *</type>
+          <declname>pUeGrpPrmsCpu</declname>
+        </param>
+        <param>
+          <type>cuphyPuschCellStatPrm_t *</type>
+          <declname>pCellStatPrmsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyUciOnPuschOutOffsets_t *</type>
+          <declname>pUciOnPuschOutOffsetsCpu</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pUciPayloadsGpu</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>pNumCsi2BitsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyPolarUciSegPrm_t *</type>
+          <declname>pCsi2PolarSegPrmsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyPolarCwPrm_t *</type>
+          <declname>pCsi2PolarCwPrmsGpu</declname>
+        </param>
+        <param>
+          <type>cuphyRmCwPrm_t *</type>
+          <declname>pCsi2RmCwPrmsGpu</declname>
+        </param>
+        <param>
+          <type>cuphySimplexCwPrm_t *</type>
+          <declname>pCsi2SpxCwPrmsGpu</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>forcedNumCsi2Bits</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDesc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pGpuDynDesc</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type><ref refid="structcuphyUciOnPuschCsi2CtrlLaunchCfg__t" kindref="compound">cuphyUciOnPuschCsi2CtrlLaunchCfg_t</ref> *</type>
+          <declname>pLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY uciOnPuschCsi2Ctrl for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY uciOnPuschCsi2Ctrl in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uciOnPuschCsi2CtrlHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle for PUSCH CSI part 2 component instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nCsi2Ues</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- number of UES bearing CSI part2 payload </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCsi2UeIdxsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- indices of CSI part2 payload bearing UEs in CPU memory (index to resolve UE from set of all UEs being processed by PUSCH) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTbPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address of Transport block parameters in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTbPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- address of Transport block parameters in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pUeGrpPrmsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- UE group parameters in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCellStatPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- cell static parameters specific to PUSCH pipeline </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pUciOnPuschOutOffsetsCpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to any array of structures containing per UE offsets for locating PUSCH outputs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pUciPayloadsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to UCI payloads in GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pNumCsi2BitsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to array containing number of CSI part2 payload bits </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCsi2PolarSegPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to parameters for polar encoded UCI segment </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCsi2PolarCwPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to parameters for polar code words </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCsi2RmCwPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Reed-muller decoder code word parameters in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCsi2SpxCwPrmsGpu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- simplex decoder code word parameters in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>forcedNumCsi2Bits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Debug feature. if &gt; 0 cuPHY assumes all csi2 UCIs have forcedNumCsi2Bits bits </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to dynamic descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pGpuDynDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to dynamic descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to channel estimation launch configurations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1ga9e42717cd4a875c5ccfea6ec32dd87f4" kindref="member">cuphyUciOnPuschCsi2CtrlGetDescrInfo</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1gab66631d984199594496a6bf8b7d2a4de" kindref="member">cuphyDestroyUciOnPuschCsi2Ctrl</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6938" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6938" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__UCI__ON__PUSCH__CSI2__CTRL_1ga9e42717cd4a875c5ccfea6ec32dd87f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyUciOnPuschCsi2CtrlGetDescrInfo</definition>
+        <argsstring>(size_t *pDynDescrSizeBytes, size_t *pDynDescrAlignBytes)</argsstring>
+        <name>cuphyUciOnPuschCsi2CtrlGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute uciOnPuschCsi2Ctrl descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes uciOnPuschCsi2Ctrl descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other uciOnPuschCsi2Ctrl APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pDynDescrSizeBytes</computeroutput> and/or <computeroutput>pDynDescrAlignBytes</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of dynamic descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1gadc383c60699974481d2c7470fe500722" kindref="member">cuphyCreateUciOnPuschSegLLRs1</ref>,<ref refid="group__CUPHY__UCI__ON__PUSCH__SEG__LLRS__1_1ga34e791cf90ef169e1fb20c0f00ed6706" kindref="member">cuphyDestroyUciOnPuschSegLLRs1</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="6878" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="6878" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes application programming interface for the uciOnPusch CSI-P2 control kernel. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

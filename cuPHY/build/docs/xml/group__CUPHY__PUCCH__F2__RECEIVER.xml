@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__PUCCH__F2__RECEIVER" kind="group">
+    <compoundname>CUPHY_PUCCH_F2_RECEIVER</compoundname>
+    <title>PUCCH F2 receiver</title>
+    <innerclass refid="structcuphyPucchF2RxLaunchCfg__t" prot="public">cuphyPucchF2RxLaunchCfg_t</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__PUCCH__F2__RECEIVER_1ga00d173d23a7f993f81c2544be3fbcf73" prot="public" static="no">
+        <type>struct cuphyPucchF2Rx *</type>
+        <definition>typedef struct cuphyPucchF2Rx* cuphyPucchF2RxHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphyPucchF2RxHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY PUCCH F2 receiver handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5499" column="30" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="5499" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__PUCCH__F2__RECEIVER_1ga897fbf1217945b03bd0951a8a6c0700e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreatePucchF2Rx</definition>
+        <argsstring>(cuphyPucchF2RxHndl_t *pPucchF2RxHndl, cudaStream_t strm)</argsstring>
+        <name>cuphyCreatePucchF2Rx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1ga00d173d23a7f993f81c2544be3fbcf73" kindref="member">cuphyPucchF2RxHndl_t</ref> *</type>
+          <declname>pPucchF2RxHndl</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Allocate and initialize a cuPHY PucchF2Rx object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a cuPHY pucch F2 receiver object and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pPucchF2RxHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a pucchF2Rx object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pPucchF2RxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new pucchF2Rx instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for async copies</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1gadd281ec22de446eb12122a0edcfe179c" kindref="member">cuphyPucchF2RxGetDescrInfo</ref>,<ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1gaea2ae7420ba0000790c9c500cd150b5e" kindref="member">cuphySetupPucchF2Rx</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5555" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="5555" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUCCH__F2__RECEIVER_1ga57ce45d56466a2c9f210b8341c07f0de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroyPucchF2Rx</definition>
+        <argsstring>(cuphyPucchF2RxHndl_t pucchF2RxHndl)</argsstring>
+        <name>cuphyDestroyPucchF2Rx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1ga00d173d23a7f993f81c2544be3fbcf73" kindref="member">cuphyPucchF2RxHndl_t</ref></type>
+          <declname>pucchF2RxHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY PUCCH F2 receiver object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY PUCCH F2 receiver object that was previously created by <ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1ga897fbf1217945b03bd0951a8a6c0700e" kindref="member">cuphyCreatePucchF2Rx</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pucchF2RxHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pucchF2RxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated pucchF2Rx instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1gadd281ec22de446eb12122a0edcfe179c" kindref="member">cuphyPucchF2RxGetDescrInfo</ref>,<ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1ga897fbf1217945b03bd0951a8a6c0700e" kindref="member">cuphyCreatePucchF2Rx</ref>,<ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1gaea2ae7420ba0000790c9c500cd150b5e" kindref="member">cuphySetupPucchF2Rx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5634" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="5634" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUCCH__F2__RECEIVER_1gadd281ec22de446eb12122a0edcfe179c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyPucchF2RxGetDescrInfo</definition>
+        <argsstring>(size_t *pDynDescrSizeBytes, size_t *pDynDescrAlignBytes)</argsstring>
+        <name>cuphyPucchF2RxGetDescrInfo</name>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrSizeBytes</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pDynDescrAlignBytes</declname>
+        </param>
+        <briefdescription>
+<para>Helper to compute cuPHY PUCCH F2 receiver descriptor buffer sizes and alignments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes cuPHY PUSCH PUCCH F2 receiver descriptor buffer sizes and alignments. To be used by the caller to allocate these buffers (in CPU and GPU memories) and provide them to other PucchF2Rx APIs</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pDynDescrSizeBytes</computeroutput> and/or <computeroutput>pDynDescrAlignBytes</computeroutput> is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pDynDescrSizeBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Size in bytes of dynamic descriptor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynDescrAlignBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Alignment in bytes of dynamic descriptor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1ga897fbf1217945b03bd0951a8a6c0700e" kindref="member">cuphyCreatePucchF2Rx</ref>,<ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1ga57ce45d56466a2c9f210b8341c07f0de" kindref="member">cuphyDestroyPucchF2Rx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5530" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="5530" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__PUCCH__F2__RECEIVER_1gaea2ae7420ba0000790c9c500cd150b5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupPucchF2Rx</definition>
+        <argsstring>(cuphyPucchF2RxHndl_t pucchF2RxHndl, cuphyTensorPrm_t *pDataRx, __half **pDescramLLRaddrs, uint8_t *pDTXflags, float *pSinr, float *pRssi, float *pRsrp, float *pInterf, float *pNoiseVar, float *pTaEst, uint16_t nCells, uint16_t nF2Ucis, cuphyPucchUciPrm_t *pF2UciPrms, cuphyPucchCellPrm_t *pCmnCellPrms, uint8_t enableCpuToGpuDescrAsyncCpy, void *pCpuDynDesc, void *pGpuDynDesc, cuphyPucchF2RxLaunchCfg_t *pLaunchCfg, cudaStream_t strm)</argsstring>
+        <name>cuphySetupPucchF2Rx</name>
+        <param>
+          <type><ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1ga00d173d23a7f993f81c2544be3fbcf73" kindref="member">cuphyPucchF2RxHndl_t</ref></type>
+          <declname>pucchF2RxHndl</declname>
+        </param>
+        <param>
+          <type>cuphyTensorPrm_t *</type>
+          <declname>pDataRx</declname>
+        </param>
+        <param>
+          <type>__half **</type>
+          <declname>pDescramLLRaddrs</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pDTXflags</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>pSinr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>pRssi</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>pRsrp</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>pInterf</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>pNoiseVar</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>pTaEst</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nCells</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>nF2Ucis</declname>
+        </param>
+        <param>
+          <type>cuphyPucchUciPrm_t *</type>
+          <declname>pF2UciPrms</declname>
+        </param>
+        <param>
+          <type>cuphyPucchCellPrm_t *</type>
+          <declname>pCmnCellPrms</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>enableCpuToGpuDescrAsyncCpy</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pCpuDynDesc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pGpuDynDesc</declname>
+        </param>
+        <param>
+          <type><ref refid="structcuphyPucchF2RxLaunchCfg__t" kindref="compound">cuphyPucchF2RxLaunchCfg_t</ref> *</type>
+          <declname>pLaunchCfg</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>strm</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY PucchF2Rx for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY PUCCH F2 receiver in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if setup is successful.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pucchF2RxHndl</computeroutput> and/or <computeroutput>pDataRx</computeroutput> and/or <computeroutput>pF2UciPrms</computeroutput> and/or <computeroutput>pCpuDynDesc</computeroutput> and/or <computeroutput>pDynDescrsGpu</computeroutput> is NULL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pucchF2RxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle to previously created PucchF2Rx instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDataRx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to received data tensor parameters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDescramLLRaddrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to descrambled segment 1 LLR addresses </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDTXflags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to DTX flag buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pSinr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to SINR buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pRssi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to RSSI buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pRsrp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to RSRP buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pInterf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to interference level buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pNoiseVar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to Noise Var buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pTaEst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- pointer to timing advance buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nCells</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of cells </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nF2Ucis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of F2 ucis to process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pF2UciPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to F2 uci parameters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCmnCellPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Common cell parameters: number of gNB receive antennas, current slot number, gNB hopping ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enableCpuToGpuDescrAsyncCpy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Flag when set enables async copy of CPU descriptor into GPU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pCpuDynDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in CPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pGpuDynDesc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to dynamic descriptor in GPU memory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pLaunchCfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to channel estimation launch configurations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream for descriptor copy operation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1gadd281ec22de446eb12122a0edcfe179c" kindref="member">cuphyPucchF2RxGetDescrInfo</ref>,<ref refid="group__CUPHY__PUCCH__F2__RECEIVER_1ga57ce45d56466a2c9f210b8341c07f0de" kindref="member">cuphyDestroyPucchF2Rx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="5595" column="1" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" declline="5595" declcolumn="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the PUCCH F2 receiver functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

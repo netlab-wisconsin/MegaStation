@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPdcchDynPrms" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPdcchDynPrms</compoundname>
+    <includes local="no">cuphy_api.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1ac707a38391f3a193b28464571d4af449" prot="public" static="no" mutable="no">
+        <type>CUgraph *</type>
+        <definition>CUgraph* _cuphyPdcchDynPrms::chan_graph</definition>
+        <argsstring></argsstring>
+        <name>chan_graph</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2381" column="37" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1ad60f3ba4ec78583f0c14d871faaff69f" prot="public" static="no" mutable="no">
+        <type>cudaStream_t</type>
+        <definition>cudaStream_t _cuphyPdcchDynPrms::cuStream</definition>
+        <argsstring></argsstring>
+        <name>cuStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CUDA stream on which pipeline is launched. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2365" column="18" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2365" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1ae0bd452ce09d2657176560be8fd95de1" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdcchDynPrms::nCells</definition>
+        <argsstring></argsstring>
+        <name>nCells</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of cells for which PDCCH needs to be processed in this slot </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2376" column="38" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1a43e95598198bb9a1ae293a38dde69fc5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdcchDynPrms::nCoresets</definition>
+        <argsstring></argsstring>
+        <name>nCoresets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>total number of PDCCH coresets to be processed and transmitted </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2373" column="38" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2373" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1ac781733b40c72bd1345742d4fe1fafc7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t _cuphyPdcchDynPrms::nDci</definition>
+        <argsstring></argsstring>
+        <name>nDci</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>total number of DCIs to be processed and transmitted </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2370" column="38" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1a68d20ffb0f58d03a8f79f31e879d7e72" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPdcchDynPrms::nPrecodingMatrices</definition>
+        <argsstring></argsstring>
+        <name>nPrecodingMatrices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of precoding matrices </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2378" column="35" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1a9e30cc47fb13dc940a46eac12bc51198" prot="public" static="no" mutable="no">
+        <type>cuphyPdcchCoresetDynPrm_t const  *</type>
+        <definition>cuphyPdcchCoresetDynPrm_t const* _cuphyPdcchDynPrms::pCoresetDynPrm</definition>
+        <argsstring></argsstring>
+        <name>pCoresetDynPrm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to array of Coreset configuration parameters </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2374" column="37" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1ab3015d4f852bf0a7cecea188a982bde8" prot="public" static="no" mutable="no">
+        <type>cuphyPdcchDataIn_t const  *</type>
+        <definition>cuphyPdcchDataIn_t const* _cuphyPdcchDynPrms::pDataIn</definition>
+        <argsstring></argsstring>
+        <name>pDataIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data parameters Pointer to PDCCH data input </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2384" column="37" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1aa9872060bc8fa1d9c4b8af6451eff19b" prot="public" static="no" mutable="no">
+        <type>cuphyPdcchDataOut_t *</type>
+        <definition>cuphyPdcchDataOut_t* _cuphyPdcchDynPrms::pDataOut</definition>
+        <argsstring></argsstring>
+        <name>pDataOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to PDCCH data output </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2385" column="37" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2385" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1aef03611a09fcca417f41602e9692ce0e" prot="public" static="no" mutable="no">
+        <type>cuphyPdcchDciPrm_t const  *</type>
+        <definition>cuphyPdcchDciPrm_t const* _cuphyPdcchDynPrms::pDciPrms</definition>
+        <argsstring></argsstring>
+        <name>pDciPrms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>array of per-DCI parameters with nDCIs elements </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2371" column="37" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1ada866887b95eae1fae35530dbd2bcaf5" prot="public" static="no" mutable="no">
+        <type>cuphyPmWOneLayer_t *</type>
+        <definition>cuphyPmWOneLayer_t* _cuphyPdcchDynPrms::pPmwParams</definition>
+        <argsstring></argsstring>
+        <name>pPmwParams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>array of pre-coding matrices </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2379" column="34" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPdcchDynPrms_1aeed36c1fc0512eac4bd2fe407cfd4b5c" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t _cuphyPdcchDynPrms::procModeBmsk</definition>
+        <argsstring></argsstring>
+        <name>procModeBmsk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Control parameters </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2368" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2368" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>PDCCH Dynamic Parameters </para>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="2364" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="2363" bodyend="2386"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPdcchDynPrms_1ac707a38391f3a193b28464571d4af449" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>chan_graph</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1ad60f3ba4ec78583f0c14d871faaff69f" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>cuStream</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1ae0bd452ce09d2657176560be8fd95de1" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>nCells</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1a43e95598198bb9a1ae293a38dde69fc5" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>nCoresets</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1ac781733b40c72bd1345742d4fe1fafc7" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>nDci</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1a68d20ffb0f58d03a8f79f31e879d7e72" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>nPrecodingMatrices</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1a9e30cc47fb13dc940a46eac12bc51198" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>pCoresetDynPrm</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1ab3015d4f852bf0a7cecea188a982bde8" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>pDataIn</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1aa9872060bc8fa1d9c4b8af6451eff19b" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>pDataOut</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1aef03611a09fcca417f41602e9692ce0e" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>pDciPrms</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1ada866887b95eae1fae35530dbd2bcaf5" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>pPmwParams</name></member>
+      <member refid="struct__cuphyPdcchDynPrms_1aeed36c1fc0512eac4bd2fe407cfd4b5c" prot="public" virt="non-virtual"><scope>_cuphyPdcchDynPrms</scope><name>procModeBmsk</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

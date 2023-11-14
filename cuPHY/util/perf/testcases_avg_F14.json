@@ -1,0 +1,88 @@
+{
+  "F14 - PDSCH": {
+    "F14-PP-00": "TV_cuphy_F14-DS-01_slot0_MIMO16x16_PRB273_DataSyms11_qam256.h5",
+    "F14-AC-01": "TV_cuphy_F14-DS-30_slot0_MIMO16x16_PRB32_DataSyms11_qam256.h5",
+    "F14-AM-01": "TV_cuphy_F14-DS-31_slot0_MIMO4x16_PRB40_DataSyms11_qam64.h5",
+    "F14-AE-01": "TV_cuphy_F14-DS-32_slot0_MIMO2x16_PRB24_DataSyms11_qam16.h5",
+    "F14-AC-02": "TV_cuphy_F14-DS-33_slot0_MIMO16x16_PRB64_DataSyms11_qam256.h5",
+    "F14-AM-02": "TV_cuphy_F14-DS-34_slot0_MIMO4x16_PRB72_DataSyms11_qam64.h5",
+    "F14-AE-02": "TV_cuphy_F14-DS-35_slot0_MIMO2x16_PRB48_DataSyms11_qam16.h5",
+    "F14-AC-03": "TV_cuphy_F14-DS-36_slot0_MIMO16x16_PRB88_DataSyms11_qam256.h5",
+    "F14-AM-03": "TV_cuphy_F14-DS-37_slot0_MIMO4x16_PRB104_DataSyms11_qam64.h5",
+    "F14-AE-03": "TV_cuphy_F14-DS-38_slot0_MIMO2x16_PRB64_DataSyms11_qam16.h5",
+    "F14-AC-04": "TV_cuphy_F14-DS-39_slot0_MIMO16x16_PRB120_DataSyms11_qam256.h5",
+    "F14-AM-04": "TV_cuphy_F14-DS-40_slot0_MIMO4x16_PRB136_DataSyms11_qam64.h5",
+    "F14-AE-04": "TV_cuphy_F14-DS-41_slot0_MIMO2x16_PRB88_DataSyms11_qam16.h5",
+    "F14-AC-05": "TV_cuphy_F14-DS-42_slot0_MIMO16x16_PRB144_DataSyms11_qam256.h5",
+    "F14-AM-05": "TV_cuphy_F14-DS-43_slot0_MIMO4x16_PRB168_DataSyms11_qam64.h5",
+    "F14-AE-05": "TV_cuphy_F14-DS-44_slot0_MIMO2x16_PRB104_DataSyms11_qam16.h5",
+    "F14-AC-06": "TV_cuphy_F14-DS-45_slot0_MIMO16x16_PRB176_DataSyms11_qam256.h5",
+    "F14-AM-06": "TV_cuphy_F14-DS-46_slot0_MIMO4x16_PRB200_DataSyms11_qam64.h5",
+    "F14-AE-06": "TV_cuphy_F14-DS-47_slot0_MIMO2x16_PRB128_DataSyms11_qam16.h5",
+    "F14-AC-07": "TV_cuphy_F14-DS-48_slot0_MIMO16x16_PRB208_DataSyms11_qam256.h5",
+    "F14-AM-07": "TV_cuphy_F14-DS-49_slot0_MIMO4x16_PRB232_DataSyms11_qam64.h5",
+    "F14-AE-07": "TV_cuphy_F14-DS-50_slot0_MIMO2x16_PRB144_DataSyms11_qam16.h5"
+  },
+  "F14 - PUSCH": {
+    "F14-PP-00": "TV_cuphy_F14-US-01_snrdb40.00_MIMO8x16_PRB272_DataSyms12_qam256.h5",
+    "F14-AC-01": "TV_cuphy_F14-US-30_snrdb40.00_MIMO8x16_PRB32_DataSyms12_qam256.h5",
+    "F14-AM-01": "TV_cuphy_F14-US-31_snrdb40.00_MIMO2x16_PRB40_DataSyms12_qam64.h5",
+    "F14-AE-01": "TV_cuphy_F14-US-32_snrdb40.00_MIMO1x16_PRB24_DataSyms12_qam16.h5",
+    "F14-AC-02": "TV_cuphy_F14-US-33_snrdb40.00_MIMO8x16_PRB64_DataSyms12_qam256.h5",
+    "F14-AM-02": "TV_cuphy_F14-US-34_snrdb40.00_MIMO2x16_PRB72_DataSyms12_qam64.h5",
+    "F14-AE-02": "TV_cuphy_F14-US-35_snrdb40.00_MIMO1x16_PRB48_DataSyms12_qam16.h5",
+    "F14-AC-03": "TV_cuphy_F14-US-36_snrdb40.00_MIMO8x16_PRB88_DataSyms12_qam256.h5",
+    "F14-AM-03": "TV_cuphy_F14-US-37_snrdb40.00_MIMO2x16_PRB104_DataSyms12_qam64.h5",
+    "F14-AE-03": "TV_cuphy_F14-US-38_snrdb40.00_MIMO1x16_PRB64_DataSyms12_qam16.h5",
+    "F14-AC-04": "TV_cuphy_F14-US-39_snrdb40.00_MIMO8x16_PRB120_DataSyms12_qam256.h5",
+    "F14-AM-04": "TV_cuphy_F14-US-40_snrdb40.00_MIMO2x16_PRB136_DataSyms12_qam64.h5",
+    "F14-AE-04": "TV_cuphy_F14-US-41_snrdb40.00_MIMO1x16_PRB88_DataSyms12_qam16.h5",
+    "F14-AC-05": "TV_cuphy_F14-US-42_snrdb40.00_MIMO8x16_PRB144_DataSyms12_qam256.h5",
+    "F14-AM-05": "TV_cuphy_F14-US-43_snrdb40.00_MIMO2x16_PRB168_DataSyms12_qam64.h5",
+    "F14-AE-05": "TV_cuphy_F14-US-44_snrdb40.00_MIMO1x16_PRB104_DataSyms12_qam16.h5",
+    "F14-AC-06": "TV_cuphy_F14-US-45_snrdb40.00_MIMO8x16_PRB176_DataSyms12_qam256.h5",
+    "F14-AM-06": "TV_cuphy_F14-US-46_snrdb40.00_MIMO2x16_PRB200_DataSyms12_qam64.h5",
+    "F14-AE-06": "TV_cuphy_F14-US-47_snrdb40.00_MIMO1x16_PRB128_DataSyms12_qam16.h5",
+    "F14-AC-07": "TV_cuphy_F14-US-48_snrdb40.00_MIMO8x16_PRB200_DataSyms12_qam256.h5",
+    "F14-AM-07": "TV_cuphy_F14-US-49_snrdb40.00_MIMO2x16_PRB232_DataSyms12_qam64.h5",
+    "F14-AE-07": "TV_cuphy_F14-US-50_snrdb40.00_MIMO1x16_PRB144_DataSyms12_qam16.h5"
+  },
+  "F14 - BWC": {
+    "F14-PP-00": "TV_cuphy_F14-BW-01_slot0_MIMO16x16_PRB273.h5",
+    "F14-AC-01": "TV_cuphy_F14-BW-30_slot0_MIMO16x16_PRB32.h5",
+    "F14-AM-01": "TV_cuphy_F14-BW-31_slot0_MIMO4x16_PRB40.h5",
+    "F14-AE-01": "TV_cuphy_F14-BW-32_slot0_MIMO2x16_PRB24.h5",
+    "F14-AC-02": "TV_cuphy_F14-BW-33_slot0_MIMO16x16_PRB64.h5",
+    "F14-AM-02": "TV_cuphy_F14-BW-34_slot0_MIMO4x16_PRB72.h5",
+    "F14-AE-02": "TV_cuphy_F14-BW-35_slot0_MIMO2x16_PRB48.h5",
+    "F14-AC-03": "TV_cuphy_F14-BW-36_slot0_MIMO16x16_PRB88.h5",
+    "F14-AM-03": "TV_cuphy_F14-BW-37_slot0_MIMO4x16_PRB104.h5",
+    "F14-AE-03": "TV_cuphy_F14-BW-38_slot0_MIMO2x16_PRB64.h5",
+    "F14-AC-04": "TV_cuphy_F14-BW-39_slot0_MIMO16x16_PRB120.h5",
+    "F14-AM-04": "TV_cuphy_F14-BW-40_slot0_MIMO4x16_PRB136.h5",
+    "F14-AE-04": "TV_cuphy_F14-BW-41_slot0_MIMO2x16_PRB88.h5",
+    "F14-AC-05": "TV_cuphy_F14-BW-42_slot0_MIMO16x16_PRB144.h5",
+    "F14-AM-05": "TV_cuphy_F14-BW-43_slot0_MIMO4x16_PRB168.h5",
+    "F14-AE-05": "TV_cuphy_F14-BW-44_slot0_MIMO2x16_PRB104.h5",
+    "F14-AC-06": "TV_cuphy_F14-BW-45_slot0_MIMO16x16_PRB176.h5",
+    "F14-AM-06": "TV_cuphy_F14-BW-46_slot0_MIMO4x16_PRB200.h5",
+    "F14-AE-06": "TV_cuphy_F14-BW-47_slot0_MIMO2x16_PRB128.h5",
+    "F14-AC-07": "TV_cuphy_F14-BW-48_slot0_MIMO16x16_PRB208.h5",
+    "F14-AM-07": "TV_cuphy_F14-BW-49_slot0_MIMO4x16_PRB232.h5",
+    "F14-AE-07": "TV_cuphy_F14-BW-50_slot0_MIMO2x16_PRB144.h5"
+  },
+  "F14 - SRS": {
+    "F14-PP-00": "TV_cuphy_F14-SR-01_snrdb40.00_MIMO8x16_PRB272.h5"
+  },
+  "F14 - PRACH": {
+    "F14-PP-00": "TV_cuphy_F14-RA-01.h5"
+  },
+  "F14 - PDCCH": {
+    "F14-PP-00": "TV_cuphy_F14-DC-01_PRB273.h5",
+    "F14-AX-01": "TV_cuphy_F14-DC-02_PRB273.h5"
+  },
+  "F14 - PUCCH": {
+    "F14-PP-00": "TV_cuphy_F14-UC-01_PRB273.h5",
+    "F14-AX-01": "TV_cuphy_F14-UC-02_PRB273.h5"
+  }
+}

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structcuphyLDPCEncodeLaunchConfig" kind="struct" language="C++" prot="public">
+    <compoundname>cuphyLDPCEncodeLaunchConfig</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcuphyLDPCEncodeLaunchConfig_1a64a3588727d3ba4c7b2711cc192cd215" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyLDPCEncodeLaunchConfig_t::m_desc</definition>
+        <argsstring></argsstring>
+        <name>m_desc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3668" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3668" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCEncodeLaunchConfig_1a34eb24eb761750d6f6450e3fadf34a66" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* cuphyLDPCEncodeLaunchConfig_t::m_kernelArgs[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>m_kernelArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3669" column="28" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3669" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcuphyLDPCEncodeLaunchConfig_1aeb0fbc6c202513d0599d4422473d1e89" prot="public" static="no" mutable="no">
+        <type>CUDA_KERNEL_NODE_PARAMS</type>
+        <definition>CUDA_KERNEL_NODE_PARAMS cuphyLDPCEncodeLaunchConfig_t::m_kernelNodeParams</definition>
+        <argsstring></argsstring>
+        <name>m_kernelNodeParams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3667" column="29" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3667" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="3666" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="3665" bodyend="3670"/>
+    <listofallmembers>
+      <member refid="structcuphyLDPCEncodeLaunchConfig_1a64a3588727d3ba4c7b2711cc192cd215" prot="public" virt="non-virtual"><scope>cuphyLDPCEncodeLaunchConfig</scope><name>m_desc</name></member>
+      <member refid="structcuphyLDPCEncodeLaunchConfig_1a34eb24eb761750d6f6450e3fadf34a66" prot="public" virt="non-virtual"><scope>cuphyLDPCEncodeLaunchConfig</scope><name>m_kernelArgs</name></member>
+      <member refid="structcuphyLDPCEncodeLaunchConfig_1aeb0fbc6c202513d0599d4422473d1e89" prot="public" virt="non-virtual"><scope>cuphyLDPCEncodeLaunchConfig</scope><name>m_kernelNodeParams</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

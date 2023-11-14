@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structPdcchParams" kind="struct" language="C++" prot="public">
+    <compoundname>PdcchParams</compoundname>
+    <includes local="no">cuphy.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPdcchParams_1adc076c821fd2398925e72f66227b5906" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::bundle_size</definition>
+        <argsstring></argsstring>
+        <name>bundle_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>bundle size for PDCCH. It is in REGs. Can be 2, 3, or 6. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4373" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4373" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1ac94735bf11b81b8d8a7d0c01122641b5" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t PdcchParams::coreset_map</definition>
+        <argsstring></argsstring>
+        <name>coreset_map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Derived. Used as bitmask. Shifted version of freq_domain_resource </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4377" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1affc95a699b3735974f53c57ab325452d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::coreset_type</definition>
+        <argsstring></argsstring>
+        <name>coreset_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Coreset type: 0 or 1 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4381" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a5204b6d68c8a909bae4f20ac5824be41" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::dciStartIdx</definition>
+        <argsstring></argsstring>
+        <name>dciStartIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4387" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4387" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1aef91251a8005ea3a2392dcc0dfbd2610" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t PdcchParams::freq_domain_resource</definition>
+        <argsstring></argsstring>
+        <name>freq_domain_resource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bitmask. Used to compute coreset_map, n_CCE, rb_coreset </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4383" column="20" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4383" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a044f05b608d6a876d8ea085de562bd99" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PdcchParams::interleaved</definition>
+        <argsstring></argsstring>
+        <name>interleaved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>1 for interleaved mode, 0 otherwise </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4375" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1acca07c98f286c3aa18c75cfa01c4f755" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t PdcchParams::interleaver_size</definition>
+        <argsstring></argsstring>
+        <name>interleaver_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Interleaving happens at the bundle granularity. Can be 2, 3, or 6. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4374" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a7c500f79767feadbddd6c8442842af00" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::n_CCE</definition>
+        <argsstring></argsstring>
+        <name>n_CCE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Derived. It is the number of set bits in coreset_map (or freq_domain_resource) multiplied by n_sym </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4378" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a022840e55bcb9d23e1e604761831f71b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::n_f</definition>
+        <argsstring></argsstring>
+        <name>n_f</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of subcarriers in full BW </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4366" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1ac5d9e9dbb2077cf39d9089dfbb886c94" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::n_sym</definition>
+        <argsstring></argsstring>
+        <name>n_sym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of PDCCH OFDM symbols (1-3) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4370" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a6a78676d6e2f2f378f9c7cecaaac5e72" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::num_dl_dci</definition>
+        <argsstring></argsstring>
+        <name>num_dl_dci</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<sect1 id="structPdcchParams_1autotoc_md2">
+<title>DCIs included in this CORESET</title>
+</sect1>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4380" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4380" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a0be86cc9b52b0fd499d03c5ab6cca105" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::rb_coreset</definition>
+        <argsstring></argsstring>
+        <name>rb_coreset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Derived. Indicates the number of bits in coreset_map to be considered. It is # RBs divided by 6. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4379" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1af03735b21a6f72d364a791d97a0ee2b2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::shift_index</definition>
+        <argsstring></argsstring>
+        <name>shift_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>shift index </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4372" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a3cfa7db4a211d464befbe54fb22eeb9c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::slot_number</definition>
+        <argsstring></argsstring>
+        <name>slot_number</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>slot number </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4367" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4367" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a673986c9703b432bd78b203a0e3620f4" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* PdcchParams::slotBufferAddr</definition>
+        <argsstring></argsstring>
+        <name>slotBufferAddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4388" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a153bf3910fa94758ce66947e82499f39" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::slotBufferIdx</definition>
+        <argsstring></argsstring>
+        <name>slotBufferIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4386" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4386" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a57414dfd51b601d51b9245a39e396b68" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::start_rb</definition>
+        <argsstring></argsstring>
+        <name>start_rb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>starting RB </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4368" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4368" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a94ab8b3f8755389c93c8a22a730e112c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t PdcchParams::start_sym</definition>
+        <argsstring></argsstring>
+        <name>start_sym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>starting OFDM symbol number </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4369" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4369" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPdcchParams_1a6a621b188bb1fe99fcf73d0fa8c01f87" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t PdcchParams::testModel</definition>
+        <argsstring></argsstring>
+        <name>testModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>1 if coreset belongs to cell in testing mode; 0 otherwise </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4376" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4376" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct that tracks all necessary parameters for PDCCH computation. It contains information common across all DCIs, as well as as per-DCI specific configuration parameters. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" line="4365" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy.h" bodystart="4364" bodyend="4389"/>
+    <listofallmembers>
+      <member refid="structPdcchParams_1adc076c821fd2398925e72f66227b5906" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>bundle_size</name></member>
+      <member refid="structPdcchParams_1ac94735bf11b81b8d8a7d0c01122641b5" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>coreset_map</name></member>
+      <member refid="structPdcchParams_1affc95a699b3735974f53c57ab325452d" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>coreset_type</name></member>
+      <member refid="structPdcchParams_1a5204b6d68c8a909bae4f20ac5824be41" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>dciStartIdx</name></member>
+      <member refid="structPdcchParams_1aef91251a8005ea3a2392dcc0dfbd2610" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>freq_domain_resource</name></member>
+      <member refid="structPdcchParams_1a044f05b608d6a876d8ea085de562bd99" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>interleaved</name></member>
+      <member refid="structPdcchParams_1acca07c98f286c3aa18c75cfa01c4f755" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>interleaver_size</name></member>
+      <member refid="structPdcchParams_1a7c500f79767feadbddd6c8442842af00" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>n_CCE</name></member>
+      <member refid="structPdcchParams_1a022840e55bcb9d23e1e604761831f71b" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>n_f</name></member>
+      <member refid="structPdcchParams_1ac5d9e9dbb2077cf39d9089dfbb886c94" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>n_sym</name></member>
+      <member refid="structPdcchParams_1a6a78676d6e2f2f378f9c7cecaaac5e72" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>num_dl_dci</name></member>
+      <member refid="structPdcchParams_1a0be86cc9b52b0fd499d03c5ab6cca105" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>rb_coreset</name></member>
+      <member refid="structPdcchParams_1af03735b21a6f72d364a791d97a0ee2b2" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>shift_index</name></member>
+      <member refid="structPdcchParams_1a3cfa7db4a211d464befbe54fb22eeb9c" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>slot_number</name></member>
+      <member refid="structPdcchParams_1a673986c9703b432bd78b203a0e3620f4" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>slotBufferAddr</name></member>
+      <member refid="structPdcchParams_1a153bf3910fa94758ce66947e82499f39" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>slotBufferIdx</name></member>
+      <member refid="structPdcchParams_1a57414dfd51b601d51b9245a39e396b68" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>start_rb</name></member>
+      <member refid="structPdcchParams_1a94ab8b3f8755389c93c8a22a730e112c" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>start_sym</name></member>
+      <member refid="structPdcchParams_1a6a621b188bb1fe99fcf73d0fa8c01f87" prot="public" virt="non-virtual"><scope>PdcchParams</scope><name>testModel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

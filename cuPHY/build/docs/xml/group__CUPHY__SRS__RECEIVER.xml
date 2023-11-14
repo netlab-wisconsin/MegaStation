@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__CUPHY__SRS__RECEIVER" kind="group">
+    <compoundname>CUPHY_SRS_RECEIVER</compoundname>
+    <title>SRS Receiver</title>
+    <innerclass refid="struct__cuphySrsCellDynPrm" prot="public">_cuphySrsCellDynPrm</innerclass>
+    <innerclass refid="struct__cuphySrsCellGrpDynPrm" prot="public">_cuphySrsCellGrpDynPrm</innerclass>
+    <innerclass refid="struct__cuphySrsDataIn" prot="public">_cuphySrsDataIn</innerclass>
+    <innerclass refid="struct__cuphySrsDataOut" prot="public">_cuphySrsDataOut</innerclass>
+    <innerclass refid="struct__cuphySrsDbgPrms" prot="public">_cuphySrsDbgPrms</innerclass>
+    <innerclass refid="struct__cuphySrsDynDbgPrms" prot="public">_cuphySrsDynDbgPrms</innerclass>
+    <innerclass refid="struct__cuphySrsDynPrms" prot="public">_cuphySrsDynPrms</innerclass>
+    <innerclass refid="struct__cuphySrsStatDbgPrms" prot="public">_cuphySrsStatDbgPrms</innerclass>
+    <innerclass refid="struct__cuphySrsStatPrms" prot="public">_cuphySrsStatPrms</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__CUPHY__SRS__RECEIVER_1ga56144b2680f47f8040fd2eaebceffdd5" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_cuphySrsProcMode</name>
+        <enumvalue id="group__CUPHY__SRS__RECEIVER_1gga56144b2680f47f8040fd2eaebceffdd5a12b84b00dff687e6d31fa9899a6ec575" prot="public">
+          <name>SRS_PROC_MODE_FULL_SLOT</name>
+          <initializer>= 0x0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__CUPHY__SRS__RECEIVER_1gga56144b2680f47f8040fd2eaebceffdd5a97bc332731e787395ddef8d801cc1d36" prot="public">
+          <name>SRS_PROC_MODE_FULL_SLOT_GRAPHS</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__CUPHY__SRS__RECEIVER_1gga56144b2680f47f8040fd2eaebceffdd5abfc3bec20ca2b8ddb9c9a39d8f3d1fc1" prot="public">
+          <name>SRS_MAX_PROC_MODES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1138" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1137" bodyend="1142"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__CUPHY__SRS__RECEIVER_1ga65fabdb317f5fd0bca869fc7602bc317" prot="public" static="no">
+        <type>struct cuphySrsBatchPrm *</type>
+        <definition>typedef struct cuphySrsBatchPrm* cuphySrsBatchPrmHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphySrsBatchPrmHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1253" column="32" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__CUPHY__SRS__RECEIVER_1ga6b0e821202fb5d78b685a7fe76bcf408" prot="public" static="no">
+        <type>struct cuphySrsRx *</type>
+        <definition>typedef struct cuphySrsRx* cuphySrsRxHndl_t</definition>
+        <argsstring></argsstring>
+        <name>cuphySrsRxHndl_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>cuPHY SRS Receiver handle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1134" column="26" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1134" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__CUPHY__SRS__RECEIVER_1ga7030a61dbc018f5c3bd69bbc0f719ce0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyCreateSrsRx</definition>
+        <argsstring>(cuphySrsRxHndl_t *pSrsRxHndl, cuphySrsStatPrms_t const *pStatPrms, cudaStream_t cuStream)</argsstring>
+        <name>cuphyCreateSrsRx</name>
+        <param>
+          <type><ref refid="group__CUPHY__SRS__RECEIVER_1ga6b0e821202fb5d78b685a7fe76bcf408" kindref="member">cuphySrsRxHndl_t</ref> *</type>
+          <declname>pSrsRxHndl</declname>
+        </param>
+        <param>
+          <type>cuphySrsStatPrms_t const *</type>
+          <declname>pStatPrms</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>cuStream</declname>
+        </param>
+        <briefdescription>
+<para>Allocates and initializes a cuPHY SRS pipeline. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocates a cuPHY SRS receiver pipeline and returns a handle in the address provided by the caller.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>pSrsRxHndl</computeroutput> and/or <computeroutput>pStatPrms</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref> if a SrsRx object cannot be allocated</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pSrsRxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Address to return the new PucchRx instance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pStatPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Pointer to SRS static parameters to be used in pipeline creation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cuStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream used for creation time work (e.g static tensor copy, conversion)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a52a709523f0220a960564b5d4bde19bc" kindref="member">CUPHY_STATUS_ALLOC_FAILED</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__SRS__RECEIVER_1ga41a806d765e931161dfa0eb120cd3bd7" kindref="member">cuphySetupSrsRx</ref>,<ref refid="group__CUPHY__SRS__RECEIVER_1ga67f1bde6aef3b11d3792a1ec083bbed6" kindref="member">cuphyRunSrsRx</ref>,<ref refid="group__CUPHY__SRS__RECEIVER_1ga1a63ac6179248043304ff8fd21d5f1e2" kindref="member">cuphyDestroySrsRx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1283" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="1283" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__SRS__RECEIVER_1ga1a63ac6179248043304ff8fd21d5f1e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyDestroySrsRx</definition>
+        <argsstring>(cuphySrsRxHndl_t srsRxHndl)</argsstring>
+        <name>cuphyDestroySrsRx</name>
+        <param>
+          <type><ref refid="group__CUPHY__SRS__RECEIVER_1ga6b0e821202fb5d78b685a7fe76bcf408" kindref="member">cuphySrsRxHndl_t</ref></type>
+          <declname>srsRxHndl</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a cuPHY SRS receiver pipeline object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys a cuPHY SRS receiver pipeline object that was previously created by <ref refid="group__CUPHY__SRS__RECEIVER_1ga7030a61dbc018f5c3bd69bbc0f719ce0" kindref="member">cuphyCreateSrsRx</ref>. The handle provided to this function should not be used for any operations after this function returns.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>srsRxHndl</computeroutput> is NULL.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if destruction was successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>srsRxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- handle to previously allocated SrsRx instance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__PUCCH__RECEIVER_1ga458cf5534942962a61e83b9d690d725c" kindref="member">cuphyCreatePucchRx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1392" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="1392" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__SRS__RECEIVER_1ga67f1bde6aef3b11d3792a1ec083bbed6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyRunSrsRx</definition>
+        <argsstring>(cuphySrsRxHndl_t srsRxHndl, uint64_t procModeBmsk)</argsstring>
+        <name>cuphyRunSrsRx</name>
+        <param>
+          <type><ref refid="group__CUPHY__SRS__RECEIVER_1ga6b0e821202fb5d78b685a7fe76bcf408" kindref="member">cuphySrsRxHndl_t</ref></type>
+          <declname>srsRxHndl</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>procModeBmsk</declname>
+        </param>
+        <briefdescription>
+<para>Run cuPHY SRS receive pipeline processing in specified mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call triggers cuPHY SRS receive pipeline exeuction in mode specified by procModeBmsk</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>srsRxHdnl</computeroutput> is NULL and/or procModeBmsk is not supported.</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if SrsRx execution is successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>srsRxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of SrsRx instance which is to be triggered </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>procModeBmsk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Processing mode bitmask containing one or more processing modes applicable during this execution</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__SRS__RECEIVER_1ga7030a61dbc018f5c3bd69bbc0f719ce0" kindref="member">cuphyCreateSrsRx</ref>,<ref refid="group__CUPHY__SRS__RECEIVER_1ga41a806d765e931161dfa0eb120cd3bd7" kindref="member">cuphySetupSrsRx</ref>,<ref refid="group__CUPHY__SRS__RECEIVER_1ga1a63ac6179248043304ff8fd21d5f1e2" kindref="member">cuphyDestroySrsRx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1357" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="1357" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__SRS__RECEIVER_1ga41a806d765e931161dfa0eb120cd3bd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphySetupSrsRx</definition>
+        <argsstring>(cuphySrsRxHndl_t srsRxHndl, cuphySrsDynPrms_t *pDynPrms, cuphySrsBatchPrmHndl_t const batchPrmHndl)</argsstring>
+        <name>cuphySetupSrsRx</name>
+        <param>
+          <type><ref refid="group__CUPHY__SRS__RECEIVER_1ga6b0e821202fb5d78b685a7fe76bcf408" kindref="member">cuphySrsRxHndl_t</ref></type>
+          <declname>srsRxHndl</declname>
+        </param>
+        <param>
+          <type>cuphySrsDynPrms_t *</type>
+          <declname>pDynPrms</declname>
+        </param>
+        <param>
+          <type>cuphySrsBatchPrmHndl_t const</type>
+          <declname>batchPrmHndl</declname>
+        </param>
+        <briefdescription>
+<para>Setup cuPHY SRS receive pipeline for slot processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setup cuPHY SRS receiver pipeline (and its components) state in preparation towards slot execution</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> if <computeroutput>srsRxHdnl</computeroutput> and/or <computeroutput>pDynPrms</computeroutput> and/or batchPrmHndl is NULL</para>
+<para>Returns <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref> if allocation and initialization were successful.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>srsRxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of SrsRx instance to be setup </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pDynPrms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Dynamic parameters carrying information needed for slot processing </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>batchPrmHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Workload batching information</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref>,<ref refid="group__CUPHY__ERROR_1ga66176ce79cdbfabf435ad1193f479242" kindref="member">cuphyGetErrorName</ref>,<ref refid="group__CUPHY__ERROR_1ga5274721e01aa356e15917123415b8e5f" kindref="member">cuphyGetErrorString</ref>,<ref refid="group__CUPHY__SRS__RECEIVER_1ga7030a61dbc018f5c3bd69bbc0f719ce0" kindref="member">cuphyCreateSrsRx</ref>,<ref refid="group__CUPHY__SRS__RECEIVER_1ga67f1bde6aef3b11d3792a1ec083bbed6" kindref="member">cuphyRunSrsRx</ref>,<ref refid="group__CUPHY__SRS__RECEIVER_1ga1a63ac6179248043304ff8fd21d5f1e2" kindref="member">cuphyDestroySrsRx</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1335" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="1335" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__CUPHY__SRS__RECEIVER_1ga35063f6edbb3f644f1ee4784af6e1102" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3" kindref="member">cuphyStatus_t</ref></type>
+        <definition>cuphyStatus_t cuphyWriteDbgBufSynchSrs</definition>
+        <argsstring>(cuphySrsRxHndl_t srsRxHndl, cudaStream_t cuStream)</argsstring>
+        <name>cuphyWriteDbgBufSynchSrs</name>
+        <param>
+          <type><ref refid="group__CUPHY__SRS__RECEIVER_1ga6b0e821202fb5d78b685a7fe76bcf408" kindref="member">cuphySrsRxHndl_t</ref></type>
+          <declname>srsRxHndl</declname>
+        </param>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>cuStream</declname>
+        </param>
+        <briefdescription>
+<para>Run cuPHY save SRS receiver debug buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>srsRxHndl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Handle of SrsRx instance which saves the debug buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cuStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- CUDA stream used for PucchRx pipeline execution Note: requires stream synchronization durring call</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a87e220ee223e11582aff7bc92c750fa5" kindref="member">CUPHY_STATUS_SUCCESS</ref>, <ref refid="cuphy_8h_1a2762a3ffaa39cf82703cd3340c4f6ef3a37fb8559215f6d3286889e04a22e28a8" kindref="member">CUPHY_STATUS_INVALID_ARGUMENT</ref> Note: requires stream synchronization durring call </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1371" column="16" declfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" declline="1371" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This section describes the SRS receive pipeline functions of the cuPHY application programming interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPucchCellDynPrm" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPucchCellDynPrm</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPucchCellDynPrm_1a5567d51150493d7e89cb820b9bbae405" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchCellDynPrm::cellPrmDynIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmDynIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="870" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="870" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchCellDynPrm_1abfe622ee6076b699ce824a909fbedad6" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchCellDynPrm::cellPrmStatIdx</definition>
+        <argsstring></argsstring>
+        <name>cellPrmStatIdx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="869" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="869" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchCellDynPrm_1a4ca599d55e6686650b0baf684d5714c8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchCellDynPrm::pucchHoppingId</definition>
+        <argsstring></argsstring>
+        <name>pucchHoppingId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="872" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="872" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPucchCellDynPrm_1aab4a049a1f9490106dfcfc32e3cf0b1a" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t _cuphyPucchCellDynPrm::slotNum</definition>
+        <argsstring></argsstring>
+        <name>slotNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="871" column="14" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="871" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="868" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="867" bodyend="874"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPucchCellDynPrm_1a5567d51150493d7e89cb820b9bbae405" prot="public" virt="non-virtual"><scope>_cuphyPucchCellDynPrm</scope><name>cellPrmDynIdx</name></member>
+      <member refid="struct__cuphyPucchCellDynPrm_1abfe622ee6076b699ce824a909fbedad6" prot="public" virt="non-virtual"><scope>_cuphyPucchCellDynPrm</scope><name>cellPrmStatIdx</name></member>
+      <member refid="struct__cuphyPucchCellDynPrm_1a4ca599d55e6686650b0baf684d5714c8" prot="public" virt="non-virtual"><scope>_cuphyPucchCellDynPrm</scope><name>pucchHoppingId</name></member>
+      <member refid="struct__cuphyPucchCellDynPrm_1aab4a049a1f9490106dfcfc32e3cf0b1a" prot="public" virt="non-virtual"><scope>_cuphyPucchCellDynPrm</scope><name>slotNum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

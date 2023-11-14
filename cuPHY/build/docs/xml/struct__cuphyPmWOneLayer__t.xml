@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct__cuphyPmWOneLayer__t" kind="struct" language="C++" prot="public">
+    <compoundname>_cuphyPmWOneLayer_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cuphyPmWOneLayer__t_1a71065344d8b578a8e7051cdd83230389" prot="public" static="no" mutable="no">
+        <type>__half2</type>
+        <definition>__half2 cuphyCsirsPmWOneLayer_t::matrix[MAX_DL_PORTS]</definition>
+        <argsstring>[MAX_DL_PORTS]</argsstring>
+        <name>matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt; Pre-coding matrix used only if enablePrcdBf is true and one layer of input is considered. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1896" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1896" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cuphyPmWOneLayer__t_1a34ae6d9a77cbd96480de85386849f8d3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t cuphyCsirsPmWOneLayer_t::nPorts</definition>
+        <argsstring></argsstring>
+        <name>nPorts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of ports for this UE. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1897" column="13" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1897" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" line="1894" column="1" bodyfile="/home/xxc/cuBB/cuPHY/src/cuphy/cuphy_api.h" bodystart="1893" bodyend="1898"/>
+    <listofallmembers>
+      <member refid="struct__cuphyPmWOneLayer__t_1a71065344d8b578a8e7051cdd83230389" prot="public" virt="non-virtual"><scope>_cuphyPmWOneLayer_t</scope><name>matrix</name></member>
+      <member refid="struct__cuphyPmWOneLayer__t_1a34ae6d9a77cbd96480de85386849f8d3" prot="public" virt="non-virtual"><scope>_cuphyPmWOneLayer_t</scope><name>nPorts</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
