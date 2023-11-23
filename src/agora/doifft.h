@@ -12,10 +12,18 @@
 #include "mkl_dfti.h"
 #include "stats.h"
 
+#include <cuda_runtime.h>
+#include <cufftXt.h>
+#include "doIFFTCallback.h"
+
 class DoIFFT : public Doer {
  public:
   DoIFFT(Config* in_config, int in_tid, Table<complex_float>& in_dl_ifft_buffer,
-         char* in_dl_socket_buffer, Stats* in_stats_manager);
+         char* in_dl_socket_buffer,
+         Table<cudaStream_t>& cuda_streams,
+         float2 *cuda_ifft_buffer,
+         short *cuda_fft_out_buffer,
+         Stats* in_stats_manager);
   ~DoIFFT() override;
 
   /**
@@ -51,6 +59,17 @@ class DoIFFT : public Doer {
   float* ifft_out_;  // Buffer for IFFT output
   complex_float* ifft_shift_tmp_;
   float ifft_scale_factor_;
+
+  // GPU
+  cufftHandle cufft_plan_;
+  short *fft_out_;
+  cufftComplex *fft_in_;
+  short *fft_out_cpu_;
+  Table<cudaStream_t>& cuda_streams_;
+
+  cufftCallbackLoadC hostLoadCallbackPtr;
+  cufftCallbackStoreC hostStoreCallbackPtr;
+  struct bothInfo *stInfoPtr_;
 };
 
 #endif  // DOIFFT_H_

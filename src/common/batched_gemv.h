@@ -16,10 +16,13 @@
 	#define MMLT_LOOP _Pragma("unroll 1")
 #endif
 
+#ifndef COORD
+#define COORD
 struct coord
 {
   unsigned int row, col;
 };
+#endif
 
 class BatchedGemv {
 private:

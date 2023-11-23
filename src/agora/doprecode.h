@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 
+#define half flex_half
 #include "common_typedef_sdk.h"
 #include "config.h"
 #include "doer.h"
@@ -17,13 +18,25 @@
 #include "mkl_dfti.h"
 #include "stats.h"
 #include "symbols.h"
+#undef half
+
+#define half cuda_half
+#include <cuda.h>
+#include <cuda_runtime.h>
+#include <cublas_v2.h>
+#undef half
 
 class DoPrecode : public Doer {
  public:
   DoPrecode(Config* in_config, int in_tid,
             PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& dl_beam_matrices_,
             Table<complex_float>& in_dl_ifft_buffer,
-            Table<int8_t>& dl_encoded_or_raw_data, Stats* in_stats_manager);
+            Table<int8_t>& dl_encoded_or_raw_data,
+            float2 *cuda_precode_buffer,
+            float2 *cuda_beam_buffer,
+            float2 *cuda_mod_buffer,
+            Table<cudaStream_t> cuda_streams,
+            Stats* in_stats_manager);
   ~DoPrecode() override;
 
   /**
@@ -71,6 +84,13 @@ class DoPrecode : public Doer {
   void* jitter_;
   cgemm_jit_kernel_t my_cgemm_;
 #endif
+  // GPU
+  cublasHandle_t handle_blas_;
+  float2 *cuda_precode_buffer_;
+  float2 *cuda_beam_buffer_;
+  float2 *cuda_mod_buffer_;
+  Table<cudaStream_t> cuda_streams_;
+  cudaStream_t cuda_stream_;
 };
 
 #endif  // DOPRECODE_H_

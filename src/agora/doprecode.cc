@@ -7,6 +7,9 @@
 #include "concurrent_queue_wrapper.h"
 #include "modulation.h"
 
+#include "temp_launch.h"
+#include "logger.h"
+
 static constexpr bool kUseSpatialLocality = true;
 
 DoPrecode::DoPrecode(
@@ -14,11 +17,19 @@ DoPrecode::DoPrecode(
     PtrGrid<kFrameWnd, kMaxDataSCs, complex_float>& dl_beam_matrices,
     Table<complex_float>& in_dl_ifft_buffer,
     Table<int8_t>& dl_encoded_or_raw_data /* Encoded if LDPC is enabled */,
+    float2 *cuda_precode_buffer,
+    float2 *cuda_beam_buffer,
+    float2 *cuda_mod_buffer,
+    Table<cudaStream_t> cuda_streams,
     Stats* in_stats_manager)
     : Doer(in_config, in_tid),
       dl_beam_matrices_(dl_beam_matrices),
       dl_ifft_buffer_(in_dl_ifft_buffer),
-      dl_raw_data_(dl_encoded_or_raw_data) {
+      dl_raw_data_(dl_encoded_or_raw_data),
+      cuda_precode_buffer_(cuda_precode_buffer),
+      cuda_beam_buffer_(cuda_beam_buffer),
+      cuda_mod_buffer_(cuda_mod_buffer),
+      cuda_streams_(cuda_streams) {
   duration_stat_ =
       in_stats_manager->GetDurationStat(DoerType::kPrecode, in_tid);
 
@@ -48,6 +59,7 @@ DoPrecode::DoPrecode(
   }
   my_cgemm_ = mkl_jit_get_cgemm_ptr(jitter_);
 #endif
+  cublasCreate_v2(&handle_blas_);
 }
 
 DoPrecode::~DoPrecode() {
@@ -64,13 +76,67 @@ DoPrecode::~DoPrecode() {
 
 EventData DoPrecode::Launch(size_t tag) {
   size_t start_tsc = GetTime::WorkerRdtsc();
-  const size_t frame_id = gen_tag_t(tag).frame_id_;
-  const size_t base_sc_id = gen_tag_t(tag).sc_id_;
+  // const size_t frame_id = gen_tag_t(tag).frame_id_;
+  //const size_t base_sc_id = gen_tag_t(tag).sc_id_;
   const size_t symbol_id = gen_tag_t(tag).symbol_id_;
   const size_t symbol_idx_dl = cfg_->Frame().GetDLSymbolIdx(symbol_id);
-  const size_t total_data_symbol_idx =
-      cfg_->GetTotalDataSymbolIdxDl(frame_id, symbol_idx_dl);
-  const size_t frame_slot = frame_id % kFrameWnd;
+  size_t start_tsc1 = GetTime::WorkerRdtsc();
+  duration_stat_->task_duration_[1] += start_tsc1 - start_tsc;
+  // const size_t total_data_symbol_idx =
+  //     cfg_->GetTotalDataSymbolIdxDl(frame_id, symbol_idx_dl);
+  // const size_t frame_slot = frame_id % kFrameWnd;
+  // size_t codew_bytes = cfg_->LdpcConfig(Direction::kDownlink).NumBlocksInSymbol() * (cfg_->LdpcConfig(Direction::kDownlink).NumCbCodewLen() / 8);
+  // int8_t *encoded = cuda_encoded_buffer_ + symbol_idx_dl * cfg_->UeAntNum() * codew_bytes;
+  // complex_precode *modulated = cuda_mod_buffer_ + symbol_idx_dl * cfg_->UeAntNum() * cfg_->OfdmDataNum();
+  // {complex_precode *modulated_cpy = (complex_precode *)malloc(cfg_->UeAntNum() * cfg_->OfdmDataNum() * sizeof(complex_precode));
+  // int8_t *encoded_cpy = (int8_t *)malloc(cfg_->UeAntNum() * codew_bytes * sizeof(int8_t));
+  // cudaMemcpy(modulated_cpy, modulated, cfg_->UeAntNum() * cfg_->OfdmDataNum() * sizeof(complex_precode), cudaMemcpyDeviceToHost);
+  // cudaMemcpy(encoded_cpy, encoded, cfg_->UeAntNum() * codew_bytes * sizeof(int8_t), cudaMemcpyDeviceToHost);
+  // spdlog::warn("symbol {} encoded_cpy[0] {}-{}, modulated_cpy[0] = ({}, {})\n", symbol_idx_dl, (uint8_t)encoded_cpy[0], (void *)encoded, modulated_cpy[0].re, modulated_cpy[0].im);
+  // free(modulated_cpy);
+  // free(encoded_cpy);}
+  // int mod = cfg_->ModOrderBits(Direction::kDownlink);
+  cuda_stream_ = cuda_streams_[symbol_id][0];
+  float2 *modulated_ptr = cuda_mod_buffer_ + symbol_idx_dl * cfg_->UeAntNum() * cfg_->OfdmDataNum();
+  float2 *precode_ptr = cuda_precode_buffer_ + symbol_idx_dl * cfg_->BsAntNum() * cfg_->OfdmCaNum();
+  cudaMemsetAsync(precode_ptr, 0, cfg_->BsAntNum() * cfg_->OfdmCaNum() * sizeof(float2), cuda_stream_);
+  size_t start_tsc2 = GetTime::WorkerRdtsc();
+  duration_stat_->task_duration_[2] += start_tsc2 - start_tsc1;
+
+  // int8_t *encoded_cpy = (int8_t *)malloc(cfg_->UeAntNum() * codew_bytes * sizeof(int8_t));
+  // cudaMemcpy(encoded_cpy, encoded, cfg_->UeAntNum() * codew_bytes * sizeof(int8_t), cudaMemcpyDeviceToHost);
+
+  // modulation_launch(
+  //     (uint8_t *)encoded, modulated, mod, codew_bytes, cfg_->OfdmDataNum(), cfg_->UeAntNum(), cuda_stream_);
+  precode_launch(
+    cfg_->BsAntNum(),
+    cfg_->UeAntNum(),
+    cfg_->OfdmDataNum(),
+    cuda_beam_buffer_,
+    modulated_ptr,
+    precode_ptr,
+    cfg_->OfdmCaNum(),
+    cfg_->OfdmDataStart(),
+    cfg_->PilotScGroupSize(),
+    cuda_stream_
+  );
+  duration_stat_->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc2;
+  // cudaStreamSynchronize(cuda_stream_);
+  // float2 *cpu_precode_ptr = (float2 *)malloc(cfg_->BsAntNum() * cfg_->OfdmCaNum() * sizeof(float2));
+  // cudaMemcpy(cpu_precode_ptr, precode_ptr, cfg_->BsAntNum() * cfg_->OfdmCaNum() * sizeof(float2), cudaMemcpyDeviceToHost);
+  // float2 *cpu_modulated_ptr = (float2 *)malloc(cfg_->UeAntNum() * cfg_->OfdmDataNum() * sizeof(float2));
+  // cudaMemcpy(cpu_modulated_ptr, modulated_ptr, cfg_->UeAntNum() * cfg_->OfdmDataNum() * sizeof(float2), cudaMemcpyDeviceToHost);
+  // float2 *cpu_beam_ptr = (float2 *)malloc(cfg_->BsAntNum() * cfg_->UeAntNum() * sizeof(float2));
+  // cudaMemcpy(cpu_beam_ptr, cuda_beam_buffer_, cfg_->BsAntNum() * cfg_->UeAntNum() * sizeof(float2), cudaMemcpyDeviceToHost);
+  // spdlog::warn("symbol {} beam[0] ({}, {}) modulated[0] ({}, {}) precoded[0] ({}, {})\n", symbol_idx_dl, cpu_beam_ptr[cfg_->BsAntNum()].x, cpu_beam_ptr[cfg_->BsAntNum()].y, cpu_modulated_ptr[cfg_->UeAntNum()].x, cpu_modulated_ptr[cfg_->UeAntNum()].y, cpu_precode_ptr[cfg_->OfdmDataStart() + cfg_->OfdmCaNum()+1].x, cpu_precode_ptr[cfg_->OfdmDataStart() + cfg_->OfdmCaNum()+1].y);
+  // free(cpu_beam_ptr);
+  // free(cpu_precode_ptr);
+  // free(cpu_modulated_ptr);
+  // cudaStreamSynchronize(cuda_stream_);
+  // cudaError_t error = cudaGetLastError();
+  // if (error != cudaSuccess) {
+  //   std::cout << "[ERROR]CUDA error: " << cudaGetErrorString(error) << std::endl;
+  // }
 
   // Mark pilot subcarriers in this block
   // In downlink pilot symbols, all subcarriers are used as pilots
@@ -90,77 +156,77 @@ EventData DoPrecode::Launch(size_t tag) {
   //         pilot_sc_flags[i] = 1;
   // }
 
-  if (kDebugPrintInTask) {
-    std::printf(
-        "In doPrecode thread %d: frame %zu, symbol %zu, subcarrier %zu\n", tid_,
-        frame_id, symbol_id, base_sc_id);
-  }
+  // if (kDebugPrintInTask) {
+  //   std::printf(
+  //       "In doPrecode thread %d: frame %zu, symbol %zu, subcarrier %zu\n", tid_,
+  //       frame_id, symbol_id, base_sc_id);
+  // }
 
-  size_t max_sc_ite =
-      std::min(cfg_->DemulBlockSize(), cfg_->OfdmDataNum() - base_sc_id);
+  // size_t max_sc_ite =
+  //     std::min(cfg_->DemulBlockSize(), cfg_->OfdmDataNum() - base_sc_id);
 
-  if (kUseSpatialLocality) {
-    for (size_t i = 0; i < max_sc_ite; i = i + kSCsPerCacheline) {
-      size_t start_tsc1 = GetTime::WorkerRdtsc();
-      for (size_t user_id = 0; user_id < cfg_->UeAntNum(); user_id++) {
-        for (size_t j = 0; j < kSCsPerCacheline; j++) {
-          LoadInputData(symbol_idx_dl, total_data_symbol_idx, user_id,
-                        base_sc_id + i + j, j);
-        }
-      }
+  // if (kUseSpatialLocality) {
+  //   for (size_t i = 0; i < max_sc_ite; i = i + kSCsPerCacheline) {
+  //     size_t start_tsc1 = GetTime::WorkerRdtsc();
+  //     for (size_t user_id = 0; user_id < cfg_->UeAntNum(); user_id++) {
+  //       for (size_t j = 0; j < kSCsPerCacheline; j++) {
+  //         LoadInputData(symbol_idx_dl, total_data_symbol_idx, user_id,
+  //                       base_sc_id + i + j, j);
+  //       }
+  //     }
 
-      size_t start_tsc2 = GetTime::WorkerRdtsc();
-      duration_stat_->task_duration_[1] += start_tsc2 - start_tsc1;
-      for (size_t j = 0; j < kSCsPerCacheline; j++) {
-        PrecodingPerSc(frame_slot, base_sc_id + i + j, i + j);
-      }
-      duration_stat_->task_count_ =
-          duration_stat_->task_count_ + kSCsPerCacheline;
-      duration_stat_->task_duration_[2] += GetTime::WorkerRdtsc() - start_tsc2;
-    }
-  } else {
-    for (size_t i = 0; i < max_sc_ite; i++) {
-      size_t start_tsc1 = GetTime::WorkerRdtsc();
-      int cur_sc_id = base_sc_id + i;
-      for (size_t user_id = 0; user_id < cfg_->UeAntNum(); user_id++) {
-        LoadInputData(symbol_idx_dl, total_data_symbol_idx, user_id, cur_sc_id,
-                      0);
-      }
-      size_t start_tsc2 = GetTime::WorkerRdtsc();
-      duration_stat_->task_duration_[1] += start_tsc2 - start_tsc1;
+  //     size_t start_tsc2 = GetTime::WorkerRdtsc();
+  //     duration_stat_->task_duration_[1] += start_tsc2 - start_tsc1;
+  //     for (size_t j = 0; j < kSCsPerCacheline; j++) {
+  //       PrecodingPerSc(frame_slot, base_sc_id + i + j, i + j);
+  //     }
+  //     duration_stat_->task_count_ =
+  //         duration_stat_->task_count_ + kSCsPerCacheline;
+  //     duration_stat_->task_duration_[2] += GetTime::WorkerRdtsc() - start_tsc2;
+  //   }
+  // } else {
+  //   for (size_t i = 0; i < max_sc_ite; i++) {
+  //     size_t start_tsc1 = GetTime::WorkerRdtsc();
+  //     int cur_sc_id = base_sc_id + i;
+  //     for (size_t user_id = 0; user_id < cfg_->UeAntNum(); user_id++) {
+  //       LoadInputData(symbol_idx_dl, total_data_symbol_idx, user_id, cur_sc_id,
+  //                     0);
+  //     }
+  //     size_t start_tsc2 = GetTime::WorkerRdtsc();
+  //     duration_stat_->task_duration_[1] += start_tsc2 - start_tsc1;
 
-      PrecodingPerSc(frame_slot, cur_sc_id, i);
-      duration_stat_->task_count_++;
-      duration_stat_->task_duration_[2] += GetTime::WorkerRdtsc() - start_tsc2;
-    }
-  }
+  //     PrecodingPerSc(frame_slot, cur_sc_id, i);
+  //     duration_stat_->task_count_++;
+  //     duration_stat_->task_duration_[2] += GetTime::WorkerRdtsc() - start_tsc2;
+  //   }
+  // }
 
-  size_t start_tsc3 = GetTime::WorkerRdtsc();
+  // size_t start_tsc3 = GetTime::WorkerRdtsc();
 
-  __m256i index = _mm256_setr_epi64x(0, cfg_->BsAntNum(), cfg_->BsAntNum() * 2,
-                                     cfg_->BsAntNum() * 3);
-  auto* precoded_ptr = reinterpret_cast<float*>(precoded_buffer_temp_);
-  for (size_t ant_id = 0; ant_id < cfg_->BsAntNum(); ant_id++) {
-    int ifft_buffer_offset = ant_id + cfg_->BsAntNum() * total_data_symbol_idx;
-    auto* ifft_ptr = reinterpret_cast<float*>(
-        &dl_ifft_buffer_[ifft_buffer_offset]
-                        [base_sc_id + cfg_->OfdmDataStart()]);
-    for (size_t i = 0; i < cfg_->DemulBlockSize() / 4; i++) {
-      float* input_shifted_ptr =
-          precoded_ptr + 4 * i * 2 * cfg_->BsAntNum() + ant_id * 2;
-      __m256d t_data = _mm256_i64gather_pd(
-          reinterpret_cast<double*>(input_shifted_ptr), index, 8);
-      _mm256_stream_pd(reinterpret_cast<double*>(ifft_ptr + i * 8), t_data);
-    }
-  }
-  duration_stat_->task_duration_[3] += GetTime::WorkerRdtsc() - start_tsc3;
+  // __m256i index = _mm256_setr_epi64x(0, cfg_->BsAntNum(), cfg_->BsAntNum() * 2,
+  //                                    cfg_->BsAntNum() * 3);
+  // auto* precoded_ptr = reinterpret_cast<float*>(precoded_buffer_temp_);
+  // for (size_t ant_id = 0; ant_id < cfg_->BsAntNum(); ant_id++) {
+  //   int ifft_buffer_offset = ant_id + cfg_->BsAntNum() * total_data_symbol_idx;
+  //   auto* ifft_ptr = reinterpret_cast<float*>(
+  //       &dl_ifft_buffer_[ifft_buffer_offset]
+  //                       [base_sc_id + cfg_->OfdmDataStart()]);
+  //   for (size_t i = 0; i < cfg_->DemulBlockSize() / 4; i++) {
+  //     float* input_shifted_ptr =
+  //         precoded_ptr + 4 * i * 2 * cfg_->BsAntNum() + ant_id * 2;
+  //     __m256d t_data = _mm256_i64gather_pd(
+  //         reinterpret_cast<double*>(input_shifted_ptr), index, 8);
+  //     _mm256_stream_pd(reinterpret_cast<double*>(ifft_ptr + i * 8), t_data);
+  //   }
+  // }
   duration_stat_->task_duration_[0] += GetTime::WorkerRdtsc() - start_tsc;
-  if (kDebugPrintInTask) {
-    std::printf(
-        "In doPrecode thread %d: finished frame: %zu, symbol: %zu, "
-        "subcarrier: %zu\n",
-        tid_, frame_id, symbol_id, base_sc_id);
-  }
+  duration_stat_->task_count_++;
+  // if (kDebugPrintInTask) {
+  //   std::printf(
+  //       "In doPrecode thread %d: finished frame: %zu, symbol: %zu, "
+  //       "subcarrier: %zu\n",
+  //       tid_, frame_id, symbol_id, base_sc_id);
+  // }
   return EventData(EventType::kPrecode, tag);
 }
 

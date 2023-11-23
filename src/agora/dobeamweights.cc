@@ -30,6 +30,7 @@ DoBeamWeights::DoBeamWeights(
     PhyStats* in_phy_stats,
     Table<cudaStream_t>& cuda_streams,
     cuComplex *csi_gpu_buffer,
+    cuComplex *cuda_precode_buffer,
     Stats* stats_manager)
     : Doer(config, tid),
       csi_buffers_(csi_buffers),
@@ -42,7 +43,8 @@ DoBeamWeights::DoBeamWeights(
       dl_beam_matrices_(dl_beam_matrices),
       phy_stats_(in_phy_stats),
       cuda_streams_(cuda_streams),
-      csi_gpu_buffer_(csi_gpu_buffer) {
+      csi_gpu_buffer_(csi_gpu_buffer),
+      cuda_precode_buffer_(cuda_precode_buffer) {
   duration_stat_ = stats_manager->GetDurationStat(DoerType::kBeam, tid);
   pred_csi_buffer_ =
       static_cast<complex_float*>(Agora_memory::PaddedAlignedAlloc(
@@ -96,6 +98,7 @@ DoBeamWeights::DoBeamWeights(
   Xarray_cpu_ = (cuComplex**)malloc(estim_batch_count * cfg_->BsAntNum() * sizeof(cuComplex*));
   cudaMalloc(&Xarray_, estim_batch_count * cfg_->BsAntNum() * sizeof(cuComplex*));
   cudaMalloc(&infoArray_, estim_batch_count * cfg_->BsAntNum() * sizeof(int));
+  // cudaMalloc(&cuda_precode_buffer_, estim_batch_count * cfg_->UeAntNum() * cfg_->BsAntNum() * sizeof(cuComplex));
 }
 
 DoBeamWeights::~DoBeamWeights() {
@@ -110,7 +113,7 @@ EventData DoBeamWeights::Launch(size_t tag) {
   return EventData(EventType::kBeam, tag);
 }
 
-void DoBeamWeights::cuda_precoder(cuComplex *csi, int batch_count = 1) {
+void DoBeamWeights::cuda_precoder(cuComplex *csi, cuComplex *precode, int batch_count = 1) {
   RtAssert(cfg_->BeamformingAlgo() == CommsLib::BeamformingAlgorithm::kZF, "Only ZF is supported");
 
   cublasSetStream_v2(handle_blas_, stream_);
@@ -147,6 +150,8 @@ void DoBeamWeights::cuda_precoder(cuComplex *csi, int batch_count = 1) {
   set_ptr_launch<cuComplex>(Xarray_, CSI, batch_count * bs, ue, 1, stream_);
 
   cusolverDnCpotrsBatched(handle_solver_, CUBLAS_FILL_MODE_LOWER, ue, 1, Aarray_, lda, Xarray_, ldb, infoArray_, batch_count * bs);
+
+  absmax_launch(CSI, precode, ue * bs, batch_count, ue, bs, stream_);
 }
 
 void DoBeamWeights::ComputePrecoder(size_t frame_id, size_t cur_sc_id,
@@ -499,7 +504,8 @@ void DoBeamWeights::ComputeBeams(size_t tag) {
   duration_stat_->task_duration_[1] += start_tsc2 - start_tsc1;
 
   cuComplex *cur_csi_gpu_ = csi_gpu_buffer_ + gather_offset;
-  cuda_precoder(cur_csi_gpu_, batch_count);
+  cuComplex *cur_precode_gpu_ = cuda_precode_buffer_ + gather_offset;
+  cuda_precoder(cur_csi_gpu_, cur_precode_gpu_, batch_count);
 
   const double start_tsc3 = GetTime::WorkerRdtsc();
   duration_stat_->task_duration_[2] += start_tsc3 - start_tsc2;

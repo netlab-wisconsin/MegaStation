@@ -107,6 +107,11 @@ public:
   cufftComplex *uplink_fft_out_;
   half *demul_out_;
   int8_t *decoded_out_;
+  int8_t *encoded_out_;
+  cuComplex *cuda_mod_buffer_;
+  cuComplex *cuda_precode_buffer_;
+  cuComplex *cuda_dl_beam_;
+  short *cuda_fft_out_;
   // #symbol
   Table<cudaStream_t> cuda_streams_;
   struct storeInfo *stInfoPtr_;

@@ -306,7 +306,8 @@ include_directories(third_party third_party/spdlog/include third_party/nlohmann/
 
 # cuBB
 include_directories(/home/xxc/cuBB/cuPHY/install/include)
-set(CUBB_LIBS /home/xxc/cuBB/cuPHY/install/lib/libcuphy.so /home/xxc/cuBB/cuPHY/build/nvlog/libnvlog_static.a /home/xxc/cuBB/cuPHY/install/lib/libfmtlog-static.so /home/xxc/cuBB/cuPHY/install/lib/libyaml.so)
+link_directories(/home/xxc/cuBB/cuPHY/install/lib)
+set(CUBB_LIBS cuphy nvlog yaml fmt)
 
 add_definitions(-DTHREADED_INIT)
 
@@ -465,7 +466,8 @@ set(AGORA_SOURCES ${AGORA_SOURCES}
   src/agora/agora_worker.cc
   src/agora/dofft.cu
   src/agora/doFFTCallback.cu
-  src/agora/doifft.cc
+  src/agora/doIFFTCallback.cu
+  src/agora/doifft.cu
   src/agora/dobeamweights.cc
   src/agora/dodemul.cc
   src/agora/doprecode.cc

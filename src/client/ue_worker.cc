@@ -96,10 +96,15 @@ void UeWorker::TaskThread(size_t core_offset) {
   AGORA_LOG_INFO("UeWorker[%zu]: started\n", tid_);
   PinToCoreWithOffset(ThreadType::kWorker, core_offset, tid_);
 
+  Table<cudaStream_t> cuda_streams;
   auto encoder = std::make_unique<DoEncode>(
       &config_, (int)tid_, Direction::kUplink,
       (kEnableMac == true) ? ul_bits_buffer_ : config_.UlBits(),
-      (kEnableMac == true) ? kFrameWnd : 1, encoded_buffer_, &stats_);
+      (kEnableMac == true) ? kFrameWnd : 1, encoded_buffer_,
+      cuda_streams,
+      nullptr,
+      nullptr,
+      &stats_);
 
   auto iffter = std::make_unique<DoIFFTClient>(
       &config_, (int)tid_, ifft_buffer_, tx_buffer_, &stats_);

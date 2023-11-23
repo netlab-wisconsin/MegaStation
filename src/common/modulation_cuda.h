@@ -2,6 +2,7 @@
 
 //#include <math.h>
 #include <cuda_fp16.h>
+#include <stdio.h>
 
 struct myComplex {
   float re;
@@ -58,6 +59,10 @@ struct myComplex {
   inline myComplex conj() const {
     return myComplex(re, -im);
   }
+  __device__ __host__
+  inline float abs() const {
+    return sqrtf(re * re + im * im);
+  }
 };
 
 
@@ -112,3 +117,35 @@ inline void demod256QAM(const myComplex &c, half llr[]) {
 
 typedef void (*demodPtr)(const myComplex &, half[]);
 // static const demodPtr kDemodPtrs[] = {demodQPSK, demod16QAM, demod64QAM, demod256QAM};
+
+__constant__ float2 modTable[256];
+
+__global__ void modulateKernel(const uint8_t *input, myComplex *output,
+  const myComplex *pilot_table, int pilot_spacing,
+  uint8_t mod, size_t in_bytes, size_t out_bytes, size_t batch_count) {
+  const myComplex *modTable_ptr = (myComplex *)modTable;
+  for (int batch_idx = blockIdx.z; batch_idx < batch_count; batch_idx += gridDim.z) {
+    size_t idx = blockIdx.x * blockDim.x + threadIdx.x;
+    size_t idx_shrink = idx - ((idx / pilot_spacing) + 1);
+
+    const uint8_t *input_data_ptr = input + batch_idx * in_bytes;
+    myComplex *output_data_ptr = output + batch_idx;
+
+    uint8_t mod_byte = 0;
+
+    for(int i = 0, mod_idx = idx_shrink * mod;
+      i < mod && (mod_idx / 8) < in_bytes;
+      i++, mod_idx++) {
+      mod_byte = ((input_data_ptr[mod_idx / 8] >> (mod_idx % 8)) & 0x1) | (mod_byte << 1);
+    }
+
+    if (idx < out_bytes) {
+      output_data_ptr[idx * batch_count] = ((idx % pilot_spacing) == 0) ?
+        pilot_table[batch_idx * out_bytes + idx] : modTable_ptr[mod_byte];
+    }
+  }
+}
+
+__host__ void init_modulation_table(myComplex *modulation, size_t sz, cudaStream_t stream) {
+  cudaMemcpyToSymbol(modTable, modulation, sz);
+}

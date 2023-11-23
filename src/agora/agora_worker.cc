@@ -57,6 +57,7 @@ void AgoraWorker::WorkerThread(int tid) {
       buffer_->GetUlBeamMatrix(), buffer_->GetDlBeamMatrix(), phy_stats_,
       buffer_->cuda_streams_,
       buffer_->pilot_fft_out_,
+      buffer_->cuda_dl_beam_,
       stats_);
 
   auto compute_fft = std::make_unique<DoFFT>(
@@ -68,16 +69,29 @@ void AgoraWorker::WorkerThread(int tid) {
 
   // Downlink workers
   auto compute_ifft = std::make_unique<DoIFFT>(config_, tid, buffer_->GetIfft(),
-                                               buffer_->GetDlSocket(), stats_);
+      buffer_->GetDlSocket(),
+      buffer_->cuda_streams_,
+      buffer_->cuda_precode_buffer_,
+      buffer_->cuda_fft_out_,
+      stats_);
 
   auto compute_precode = std::make_unique<DoPrecode>(
       config_, tid, buffer_->GetDlBeamMatrix(), buffer_->GetIfft(),
-      buffer_->GetDlModBits(), stats_);
+      buffer_->GetDlModBits(),
+      buffer_->cuda_precode_buffer_,
+      buffer_->cuda_dl_beam_,
+      buffer_->cuda_mod_buffer_,
+      buffer_->cuda_streams_,
+      stats_);
 
   auto compute_encoding = std::make_unique<DoEncode>(
       config_, tid, Direction::kDownlink,
       (kEnableMac == true) ? buffer_->GetDlBits() : config_->DlBits(),
-      (kEnableMac == true) ? kFrameWnd : 1, buffer_->GetDlModBits(), stats_);
+      (kEnableMac == true) ? kFrameWnd : 1, buffer_->GetDlModBits(),
+      buffer_->cuda_streams_,
+      buffer_->encoded_out_,
+      buffer_->cuda_mod_buffer_,
+      stats_);
 
   // Uplink workers
   auto compute_decoding =

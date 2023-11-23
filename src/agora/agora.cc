@@ -143,6 +143,7 @@ void Agora::ScheduleAntennas(EventType event_type, size_t frame_id,
   assert(event_type == EventType::kFFT or event_type == EventType::kIFFT);
   auto base_tag = gen_tag_t::FrmSymAnt(frame_id, symbol_id, 0);
 
+  if (event_type == EventType::kFFT) {
   size_t num_blocks = config_->BsAntNum() / config_->FftBlockSize();
   size_t num_remainder = config_->BsAntNum() % config_->FftBlockSize();
   if (num_remainder > 0) {
@@ -162,6 +163,12 @@ void Agora::ScheduleAntennas(EventType event_type, size_t frame_id,
     }
     TryEnqueueFallback(message_->GetConq(event_type, qid),
                        message_->GetPtok(event_type, qid), event);
+  }
+  } else {
+    size_t qid = frame_id & 0x1;
+    TryEnqueueFallback(message_->GetConq(event_type, qid),
+                       message_->GetPtok(event_type, qid),
+                       EventData(event_type, base_tag.tag_));
   }
 }
 
@@ -239,11 +246,13 @@ void Agora::ScheduleSubcarriers(EventType event_type, size_t frame_id,
 
 void Agora::ScheduleCodeblocks(EventType event_type, Direction dir,
                                size_t frame_id, size_t symbol_idx) {
-  size_t qid = frame_id & 0x1;
-  EventData event(event_type,
-    gen_tag_t::FrmSymCb(frame_id, symbol_idx, 0).tag_);
-  TryEnqueueFallback(message_->GetConq(event_type, qid),
+  //if (event_type == EventType::kDecode) {
+    size_t qid = frame_id & 0x1;
+    EventData event(event_type,
+      gen_tag_t::FrmSymCb(frame_id, symbol_idx, 0).tag_);
+    TryEnqueueFallback(message_->GetConq(event_type, qid),
                        message_->GetPtok(event_type, qid), event);
+  // } else {
   // auto base_tag = gen_tag_t::FrmSymCb(frame_id, symbol_idx, 0);
   // const size_t num_tasks =
   //     config_->UeAntNum() * config_->LdpcConfig(dir).NumBlocksInSymbol();
@@ -266,6 +275,7 @@ void Agora::ScheduleCodeblocks(EventType event_type, Direction dir,
   //   }
   //   TryEnqueueFallback(message_->GetConq(event_type, qid),
   //                      message_->GetPtok(event_type, qid), event);
+  // }
   // }
 }
 
@@ -1114,8 +1124,7 @@ void Agora::InitializeCounters() {
 
     encode_counters_.Init(
         config_->Frame().NumDlDataSyms(),
-        config_->LdpcConfig(Direction::kDownlink).NumBlocksInSymbol() *
-            config_->UeAntNum());
+        1);
     encode_cur_frame_for_symbol_ =
         std::vector<size_t>(config_->Frame().NumDLSyms(), SIZE_MAX);
     ifft_cur_frame_for_symbol_ =
@@ -1124,7 +1133,7 @@ void Agora::InitializeCounters() {
                            config_->DemulEventsPerSymbol());
     // precode_cur_frame_for_symbol_ =
     //    std::vector<size_t>(config_->Frame().NumDLSyms(), SIZE_MAX);
-    ifft_counters_.Init(config_->Frame().NumDLSyms(), config_->BsAntNum());
+    ifft_counters_.Init(config_->Frame().NumDLSyms(), 1);
     tx_counters_.Init(config_->Frame().NumDLSyms(), config_->BsAntNum());
     // mac data is sent per frame, so we set max symbol to 1
     mac_to_phy_counters_.Init(1, config_->UeAntNum());

@@ -40,6 +40,7 @@ class DoBeamWeights : public Doer {
       PhyStats* in_phy_stats,
       Table<cudaStream_t>& cuda_streams,
       cuComplex *csi_gpu_buffer,
+      cuComplex *cuda_precode_buffer,
       Stats* stats_manager);
   ~DoBeamWeights() override;
 
@@ -69,7 +70,7 @@ class DoBeamWeights : public Doer {
                        complex_float* ul_beam_mem, complex_float* dl_beam_mem);
   void ComputeCalib(size_t frame_id, size_t sc_id, arma::cx_fvec& calib_sc_vec);
   void ComputeBeams(size_t tag);
-  void cuda_precoder(cuComplex *csi, int batch_count);
+  void cuda_precoder(cuComplex *csi, cuComplex *precode, int batch_count);
 
   PtrGrid<kFrameWnd, kMaxUEs, complex_float>& csi_buffers_;
   complex_float* pred_csi_buffer_;
@@ -102,6 +103,7 @@ class DoBeamWeights : public Doer {
   cusolverDnHandle_t handle_solver_;
   cuComplex* gpu_buffer_;
   cuComplex* csi_gpu_buffer_;
+  cuComplex* cuda_precode_buffer_;
   cuComplex **Aarray_cpu_;
   cuComplex **Aarray_;
   cuComplex **Xarray_cpu_;

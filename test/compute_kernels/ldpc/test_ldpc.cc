@@ -42,7 +42,7 @@ void ldpc_encode_cuda(
   size_t encode_bit
 );
 
-static constexpr size_t kNumCodeBlocks = 2;
+static constexpr size_t kNumCodeBlocks = 13;
 static constexpr size_t kBaseGraph = 1;
 static constexpr bool kEnableEarlyTermination = false;
 static constexpr size_t kNumFillerBits = 0;
@@ -97,16 +97,16 @@ int main() {
     }
 
     const size_t encoding_start_tsc = GetTime::Rdtsc();
-    for (size_t n = 0; n < kNumCodeBlocks; n++) {
+    /*for (size_t n = 0; n < kNumCodeBlocks; n++) {
       LdpcEncodeHelper(kBaseGraph, zc, kNumRows, encoded[n], parity[n],
                        input[n]);
-    }
+    }*/
     //printf("input[0]: %d\n", input[0][0]);
     /*LDPC_encode ldpc_encode(kBaseGraph, zc, kNumRows, 1);
     for (size_t n = 0; n < kNumCodeBlocks; n++) {
       ldpc_encode_cuda(ldpc_encode, zc, &(input[n]), &(encoded[n]), num_input_bits, num_encoded_bits);
     }*/
-    //ldpc_encode_cuda(zc, input, encoded, num_input_bits, num_encoded_bits);
+    ldpc_encode_cuda(zc, input, encoded, num_input_bits, num_encoded_bits);
     //printf("encoded[0]: %d\n", encoded[0][0]);
 
     const double encoding_us =
@@ -161,7 +161,7 @@ int main() {
       uint8_t* output_buffer = decoded[n];
       for (size_t i = 0; i < BitsToBytes(num_input_bits); i++) {
         uint8_t error = input_buffer[i] ^ output_buffer[i];
-        printf("%ld\terror: %i, input_buffer: %i, output_buffer: %i\n", i, error, input_buffer[i], output_buffer[i]);
+        //printf("%ld\terror: %i, input_buffer: %i, output_buffer: %i\n", i, error, input_buffer[i], output_buffer[i]);
         for (size_t j = 0; j < 8; j++) {
           if (i * 8 + j >= num_input_bits) {
             continue;  // Don't compare beyond end of input bits

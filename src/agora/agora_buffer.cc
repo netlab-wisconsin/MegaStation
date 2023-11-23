@@ -49,7 +49,7 @@ void AgoraBuffer::AllocateTables() {
       Agora_memory::Alignment_t::kAlign64);
   
   // GPU
-  size_t total_ul_sym = config_->Frame().NumPilotSyms() + config_->Frame().NumULSyms();
+  size_t total_ul_sym = config_->Frame().NumPilotSyms() + config_->Frame().NumULSyms() + 1;
   fft_gather_cpu_.Malloc(total_ul_sym,
                      2 * config_->OfdmCaNum() * config_->BsAntNum(),
                      Agora_memory::Alignment_t::kAlign64);
@@ -57,6 +57,8 @@ void AgoraBuffer::AllocateTables() {
       2 * sizeof(short) * config_->OfdmCaNum() * total_ul_sym * config_->BsAntNum());
   cudaMalloc(reinterpret_cast<void **>(&fft_out_),
       sizeof(cufftComplex) * config_->OfdmDataNum() * total_ul_sym * config_->BsAntNum());
+  cudaMalloc(reinterpret_cast<void **>(&cuda_dl_beam_),
+      sizeof(cufftComplex) * config_->OfdmCaNum() * config_->BsAntNum());
   pilot_fft_out_ = fft_out_;
   uplink_fft_out_ = fft_out_
     + config_->OfdmDataNum() * config_->Frame().NumPilotSyms() * config_->BsAntNum();
@@ -76,8 +78,10 @@ void AgoraBuffer::AllocateTables() {
   tensor_desc desc_decoded(CUPHY_BIT, 2, dims, CUPHY_TENSOR_ALIGN_COALESCE);
   cudaMalloc(reinterpret_cast<void **>(&decoded_out_),
       config_->Frame().NumULSyms() * config_->UeAntNum() * desc_decoded.sz_bytes);
-  cuda_streams_.Malloc(total_ul_sym, 1, Agora_memory::Alignment_t::kAlign64);
-  for (size_t i = 0; i < total_ul_sym; i++) {
+
+  size_t total_sym = total_ul_sym + config_->Frame().NumDLSyms();
+  cuda_streams_.Malloc(total_sym, 1, Agora_memory::Alignment_t::kAlign64);
+  for (size_t i = 0; i < total_sym; i++) {
     cudaStreamCreateWithFlags(cuda_streams_[i], cudaStreamNonBlocking);
   }
 
@@ -152,7 +156,24 @@ void AgoraBuffer::AllocateTables() {
         task_buffer_symbol_num,
         Roundup<64>(config_->GetOFDMDataNum()) * config_->UeAntNum(),
         Agora_memory::Alignment_t::kAlign64);
-  }
+  
+    dims[0] = int(config_->LdpcConfig(Direction::kDownlink).NumCbCodewLen());
+    tensor_desc dl_encoded_out(CUPHY_BIT, 2, dims, CUPHY_TENSOR_ALIGN_DEFAULT);
+    cudaMalloc(reinterpret_cast<void **>(&encoded_out_),
+        config_->Frame().NumDLSyms() * config_->UeAntNum() * dl_encoded_out.sz_bytes);
+    // cudaMemset(encoded_out_, 13, config_->Frame().NumDLSyms() * config_->UeAntNum() * dl_encoded_out.sz_bytes);
+    // encoded_out_ = (int8_t *)malloc(
+    //     config_->Frame().NumDLSyms() * config_->UeAntNum() * dl_encoded_out.sz_bytes);
+    cudaMalloc(reinterpret_cast<void **>(&cuda_mod_buffer_), 
+        sizeof(cuComplex) * config_->Frame().NumDLSyms() * config_->UeAntNum() *
+        config_->OfdmDataNum());
+    cudaMalloc(reinterpret_cast<void **>(&cuda_precode_buffer_), 
+        sizeof(cuComplex) * config_->Frame().NumDLSyms() * config_->BsAntNum() *
+        config_->OfdmCaNum());
+    cudaMalloc(reinterpret_cast<void **>(&cuda_fft_out_),
+        2 * sizeof(short) * config_->Frame().NumDLSyms() * config_->BsAntNum() *
+        config_->OfdmCaNum());
+    }
 }
 
 void AgoraBuffer::FreeTables() {
