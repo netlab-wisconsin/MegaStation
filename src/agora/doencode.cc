@@ -127,8 +127,8 @@ EventData DoEncode::Launch(size_t tag) {
   // tOut.data = cuda_encoded_buffer_local_;
   tOut.data = cuda_encoded_buffer_ + symbol_idx * tOut.sz_bytes * num_blocks;
 
-  // LDPC_encode ldpc_encode(ldpc_config.BaseGraph(),
-  //   ldpc_config.ExpansionFactor(), ldpc_config.NumRows(), num_blocks);
+  LDPC_encode ldpc_encode(ldpc_config.BaseGraph(),
+    ldpc_config.ExpansionFactor(), ldpc_config.NumRows(), num_blocks);
   // ldpc_encode.encode(tIn, tOut, cuda_stream_);
 
   // return EventData(EventType::kEncode, tag);
@@ -232,7 +232,7 @@ EventData DoEncode::Launch(size_t tag) {
   // LDPC_encode ldpc_encoder(ldpc_config.BaseGraph(),
   //   ldpc_config.ExpansionFactor(),
   //   ldpc_config.NumRows(), ldpc_config.NumBlocksInSymbol() * cfg_->UeAntNum());
-  ldpc_encoder_.encode(tIn, tOut, cuda_stream_);
+  ldpc_encode.encode(tIn, tOut, cuda_stream_);
   //cudaStreamSynchronize(cuda_stream_);
 
   float2 *cuda_mod_buffer_local = cuda_mod_buffer_ + symbol_idx * cfg_->UeAntNum() * cfg_->OfdmDataNum();
