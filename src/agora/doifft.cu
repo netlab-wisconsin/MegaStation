@@ -185,6 +185,7 @@ EventData DoIFFT::Launch(size_t tag) {
   cudaMemcpyAsync(fft_out_cpu_, out_ptr,
     sizeof(short) * cfg_->OfdmCaNum() * cfg_->BsAntNum() * 2,
     cudaMemcpyDeviceToHost, cur_stream);
+  cudaStreamSynchronize(cur_stream);
   // cuComplex *fft_in_cpu_ = (cuComplex *)malloc(sizeof(cuComplex) * cfg_->OfdmCaNum() * cfg_->BsAntNum());
   // cudaMemcpyAsync(fft_in_cpu_, in_ptr,
   //   sizeof(cuComplex) * cfg_->OfdmCaNum() * cfg_->BsAntNum(),
