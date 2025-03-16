@@ -1,0 +1,339 @@
+diff --git a/third_party/cuBB/cuPHY/CMakeLists.txt b/third_party/cuBB/cuPHY/CMakeLists.txt
+index 9553aba..411f6a3 100644
+--- a/third_party/cuBB/cuPHY/CMakeLists.txt
++++ b/third_party/cuBB/cuPHY/CMakeLists.txt
+@@ -74,7 +74,7 @@ if(CMAKE_CUDA_COMPILER_VERSION VERSION_LESS 11.0)
+   message(ERROR "CUDA versions lower than 11.0 not supported")
+ else()
+   set(CUPHY_GENCODE_ARCH_LIST
+-      "70"
++      "70,80"
+       CACHE STRING "List of target CUDA architectures for cuPHY")
+ endif()
+ 
+diff --git a/third_party/cuBB/cuPHY/src/cuphy/cuphy.h b/third_party/cuBB/cuPHY/src/cuphy/cuphy.h
+index a8632b2..c2a245c 100644
+--- a/third_party/cuBB/cuPHY/src/cuphy/cuphy.h
++++ b/third_party/cuBB/cuPHY/src/cuphy/cuphy.h
+@@ -811,33 +811,21 @@ cuphyStatus_t CUPHYWINAPI cuphyLDPCEncodeGetDescrInfo(size_t*  pDescrSizeBytes,
+  *
+  *  @return CUPHY_STATUS_SUCCESS or CUPHY_STATUS_INVALID_ARGUMENT
+  */
+-cuphyStatus_t CUPHYWINAPI cuphySetupLDPCEncode(cuphyLDPCEncodeLaunchConfig_t ldpcEncodeLaunchConfig,
+-                                               cuphyTensorDescriptor_t       inDesc,
++cuphyStatus_t CUPHYWINAPI cuphySetupLDPCEncode(cuphyTensorDescriptor_t       inDesc,
+                                                void*                         inAddr,
+                                                cuphyTensorDescriptor_t       outDesc,
+                                                void*                         outAddr,
+                                                int                           BG,
+                                                int                           Z,
+                                                uint8_t                       puncture,
+-                                               int                           maxParityNodes,
++                                               int                           max_parity_nodes,
+                                                int                           max_rv,
+                                                uint8_t                       batching,
+                                                int                           batched_TBs,
+-                                               void**                        inBatchedAddr,
+-                                               void**                        outBatchedAddr,
+-                                               void*                         h_workspace,
+-                                               void*                         d_workspace,
+-                                               void*                         cpu_desc,
+-                                               void*                         gpu_desc,
+-                                               uint8_t                       enable_desc_async_copy,
++                                               uint64_t                      nextIn,
++                                               uint64_t                      nextOut,
+                                                cudaStream_t                  strm);
+ 
+-cuphyStatus_t CUPHYWINAPI cuphySetLDPCEncodeAddr(cuphyLDPCEncodeLaunchConfig_t ldpcEncodeLaunchConfig,
+-                                                 uint8_t*                      inAddr,
+-                                                 uint8_t*                      outAddr,
+-                                                 uint64_t                      nextIn,
+-                                                 uint64_t                      nextOut);
+-
+ /**
+  * \defgroup CUPHY_ERROR_CORRECTION Error Correction
+  *
+diff --git a/third_party/cuBB/cuPHY/src/cuphy/error_correction/ldpc.hpp b/third_party/cuBB/cuPHY/src/cuphy/error_correction/ldpc.hpp
+index 1529622..554bced 100644
+--- a/third_party/cuBB/cuPHY/src/cuphy/error_correction/ldpc.hpp
++++ b/third_party/cuBB/cuPHY/src/cuphy/error_correction/ldpc.hpp
+@@ -192,8 +192,8 @@ struct ldpcEncodeDescr
+ {
+     // Swapped old overprovisioned arrays of PDSCH_MAX_UES_PER_CELL_GROUP with pointers to buffers. Note that
+     // these would need to be allocated by the caller; OK for PDSCH not as user-friendly for component level API.
+-    LDPC_output_t* input;
+-    LDPC_output_t* output;
++    LDPC_output_t input;
++    LDPC_output_t output;
+     int num_TBs; // Number of input or output elements that are valid for each buffer. The size of the buffers themselves can be different.
+     uint16_t BG;
+     uint16_t Kb;
+diff --git a/third_party/cuBB/cuPHY/src/cuphy/error_correction/ldpc_encode.cu b/third_party/cuBB/cuPHY/src/cuphy/error_correction/ldpc_encode.cu
+index ecc89f8..3304f00 100644
+--- a/third_party/cuBB/cuPHY/src/cuphy/error_correction/ldpc_encode.cu
++++ b/third_party/cuBB/cuPHY/src/cuphy/error_correction/ldpc_encode.cu
+@@ -14,6 +14,7 @@
+ #include "ldpc.hpp"
+ #include "ldpc_load_store.cuh"
+ #include <cooperative_groups.h>
++#include <cstdint>
+ 
+ namespace cg = cooperative_groups;
+ 
+@@ -198,7 +199,7 @@ inline __device__ void block_multiply_in_bit(const int       BG,
+ ////////////////////////////////////////////////////////////////////////
+ // ldpc_encode_in_bit_kernel()
+ template <typename DType, uint32_t Z>
+-__global__ void ldpc_encode_in_bit_kernel(const __grid_constant__ ldpcEncodeDescr_t desc)
++__global__ void ldpc_encode_in_bit_kernel(ldpcEncodeDescr_t desc)
+ {
+     if (blockIdx.y >= desc.num_TBs) return;
+ 
+@@ -218,16 +219,16 @@ __global__ void ldpc_encode_in_bit_kernel(const __grid_constant__ ldpcEncodeDesc
+ 
+     cg::thread_block block = cg::this_thread_block();
+ 
+-    desc.input[blockIdx.y].set_addr(desc.in_addr + desc.next_in * blockIdx.y);
+-    int K_in_word = desc.input[blockIdx.y].layout().dimensions[0];
+-    int C_in_word = desc.input[blockIdx.y].layout().dimensions[1];
++    desc.input.set_addr(desc.in_addr + desc.next_in * blockIdx.y);
++    int K_in_word = desc.input.layout().dimensions[0];
++    int C_in_word = desc.input.layout().dimensions[1];
+ 
+     // Each thread block processes different code blocks
+     for(int c = blockIdx.x; c < C_in_word; c += gridDim.x)
+     {
+         // Step 1. Load a code block segment into the on-chip SMEM
+         load_from_gmem_to_smem<DType, remainder>(Z,
+-                                                 desc.input[blockIdx.y],
++                                                 desc.input,
+                                                  info_vec,
+                                                  c,
+                                                  K_in_word,
+@@ -345,10 +346,10 @@ __global__ void ldpc_encode_in_bit_kernel(const __grid_constant__ ldpcEncodeDesc
+         int N_in_word       = div_round_up(((Kb + num_rows - punctured_nodes) * Z), 32u); // LDPC's per CB size in uint32_t elements
+ 
+         // Step 5. Store the resulting code block segment from the on-chip SMEM to GMEM
+-        desc.output[blockIdx.y].set_addr(desc.out_addr + desc.next_out * blockIdx.y);
++        desc.output.set_addr(desc.out_addr + desc.next_out * blockIdx.y);
+         store_from_smem_to_gmem<DType, remainder>(Z,
+                                                   num_tdbv,
+-                                                  desc.output[blockIdx.y],
++                                                  desc.output,
+                                                   sbuf,
+                                                   c,
+                                                   N_in_word,
+@@ -387,8 +388,7 @@ int get_encode_cta_size(int Z, int num_rows)
+ 
+ } // namespace ldpc
+ 
+-cuphyStatus_t CUPHYWINAPI cuphySetupLDPCEncode(cuphyLDPCEncodeLaunchConfig_t ldpcEncodeLaunchConfig,
+-                                               cuphyTensorDescriptor_t       inDesc,
++cuphyStatus_t CUPHYWINAPI cuphySetupLDPCEncode(cuphyTensorDescriptor_t       inDesc,
+                                                void*                         inAddr,
+                                                cuphyTensorDescriptor_t       outDesc,
+                                                void*                         outAddr,
+@@ -399,13 +399,8 @@ cuphyStatus_t CUPHYWINAPI cuphySetupLDPCEncode(cuphyLDPCEncodeLaunchConfig_t ldp
+                                                int                           max_rv,
+                                                uint8_t                       batching,
+                                                int                           batched_TBs,
+-                                               void**                        inBatchedAddr,
+-                                               void**                        outBatchedAddr,
+-                                               void*                         h_workspace,
+-                                               void*                         d_workspace,
+-                                               void*                         cpu_desc,
+-                                               void*                         gpu_desc,
+-                                               uint8_t                       enable_desc_async_copy,
++                                               uint64_t                      nextIn,
++                                               uint64_t                      nextOut,
+                                                cudaStream_t                  strm)
+ {
+     if((max_rv < 0) || (max_rv > 3))
+@@ -416,20 +411,13 @@ cuphyStatus_t CUPHYWINAPI cuphySetupLDPCEncode(cuphyLDPCEncodeLaunchConfig_t ldp
+     {
+         return CUPHY_STATUS_INVALID_ARGUMENT;
+     }
+-    if(batching && ((inBatchedAddr == nullptr) || (outBatchedAddr == nullptr)))
+-    {
+-        return CUPHY_STATUS_INVALID_ARGUMENT;
+-    }
+-    if ((h_workspace == nullptr) || (d_workspace == nullptr))
++    if ((inDesc == nullptr) || (outDesc == nullptr))
+     {
+         return CUPHY_STATUS_INVALID_ARGUMENT;
+     }
+ 
+-    tensor_pair in_pair(static_cast<const tensor_desc&>(*inDesc), (batching == 0) ? inAddr : inBatchedAddr[0]);
+-    tensor_pair out_pair(static_cast<const tensor_desc&>(*outDesc), (batching == 0) ? outAddr: outBatchedAddr[0]);
+-
+-    const tensor_desc& in_desc  = in_pair.first.get();
+-    const tensor_desc& out_desc = out_pair.first.get();
++    const tensor_desc& in_desc  = static_cast<const tensor_desc&>(*inDesc);
++    const tensor_desc& out_desc = static_cast<const tensor_desc&>(*outDesc);
+ 
+     if(out_desc.layout().rank() > 2 || in_desc.layout().rank() > 2)
+     {
+@@ -470,88 +458,67 @@ cuphyStatus_t CUPHYWINAPI cuphySetupLDPCEncode(cuphyLDPCEncodeLaunchConfig_t ldp
+ 
+ 
+     tensor_layout_any inWordLayout = word_layout_from_bit_layout(in_desc.layout());
+-#if 0
+-    LDPC_output_t     input(in_pair.second,
+-                        LDPC_output_t::layout_t(inWordLayout.dimensions.begin(),
+-                                                inWordLayout.strides.begin() + 1));
+-#endif
+-    tensor_layout_any  outWordLayout = word_layout_from_bit_layout(out_desc.layout());
+-#if 0
+-    LDPC_output_t      output(out_pair.second,
+-                         LDPC_output_t::layout_t(outWordLayout.dimensions.begin(),
+-                                                 outWordLayout.strides.begin() + 1));
+-#endif
+-    ldpcEncodeDescr_t& desc = *(static_cast<ldpcEncodeDescr_t*>(cpu_desc));
+-    desc.BG                 = BG;
+-    // FIXME: should KB be renamed to something else? The way it is used in the code is not spec compliant
+-    desc.Kb                 = BG == 1 ? CUPHY_LDPC_BG1_INFO_NODES : CUPHY_LDPC_MAX_BG2_INFO_NODES;
+-    desc.Z                  = Z;
+-    desc.puncture           = puncture;
+-    desc.H_type             = H_type;
+-    desc.num_rows           = num_rows;
+-    desc.num_TBs            = (batching == 0) ? 1 : batched_TBs;
+-    LDPC_output_t* h_input  = (LDPC_output_t*)h_workspace;
+-    LDPC_output_t* h_output = (LDPC_output_t*)h_workspace + desc.num_TBs;
+-    if (batching == 0) {
+-        h_input[0]          = LDPC_output_t(inAddr,
+-                                            LDPC_output_t::layout_t(inWordLayout.dimensions.begin(),
+-                                                                    inWordLayout.strides.begin() + 1));
+-        h_output[0]         = LDPC_output_t(outAddr,
+-                                            LDPC_output_t::layout_t(outWordLayout.dimensions.begin(),
+-                                                                    outWordLayout.strides.begin() + 1));
+-    } else {
+-        for (int cnt = 0; cnt < batched_TBs; cnt++)
+-        {
+-            h_input[cnt]   = LDPC_output_t(inBatchedAddr[cnt],
+-                                           LDPC_output_t::layout_t(inWordLayout.dimensions.begin(),
+-                                                                   inWordLayout.strides.begin() + 1));
+-            h_output[cnt]  = LDPC_output_t(outBatchedAddr[cnt],
+-                                           LDPC_output_t::layout_t(outWordLayout.dimensions.begin(),
+-                                                                   outWordLayout.strides.begin() + 1));
+-        }
+-    }
+-    desc.input  = (LDPC_output_t*)d_workspace;
+-    desc.output = (LDPC_output_t*)d_workspace +  desc.num_TBs;
++    tensor_layout_any outWordLayout = word_layout_from_bit_layout(out_desc.layout());
++
++    ldpcEncodeDescr_t desc = {
++        LDPC_output_t (nullptr,
++                              LDPC_output_t::layout_t(inWordLayout.dimensions.begin(),
++                                                         inWordLayout.strides.begin() + 1)),
++        LDPC_output_t(nullptr,
++                       LDPC_output_t::layout_t(outWordLayout.dimensions.begin(),
++                                                     outWordLayout.strides.begin() + 1)),
++        (batching == 0) ? 1 : batched_TBs,
++        static_cast<uint16_t>(BG),
++        static_cast<uint16_t>(BG == 1 ? CUPHY_LDPC_BG1_INFO_NODES : CUPHY_LDPC_MAX_BG2_INFO_NODES),
++        static_cast<uint16_t>(Z),
++        static_cast<uint16_t>(num_rows),
++        H_type,
++        static_cast<bool>(puncture),
++        reinterpret_cast<uint8_t *>(inAddr),
++        reinterpret_cast<uint8_t *>(outAddr),
++        nextIn,
++        nextOut,
++    };
+ 
+     // Optional descriptor copy to GPU memory
+     // When running as part of a pipeline, it's better to do a single copy of all descriptors in the pipeline.
+-    if(enable_desc_async_copy)
+-    {
+-        // Copy part of the workspace at a time
+-        CUDA_CHECK_EXCEPTION_TRY_RESET_ERROR(cudaMemcpyAsync(d_workspace, h_workspace, 2 * desc.num_TBs * sizeof(LDPC_output_t), cudaMemcpyHostToDevice, strm));
+-        // CUDA_CHECK_EXCEPTION_TRY_RESET_ERROR(cudaMemcpyAsync(gpu_desc, cpu_desc, sizeof(ldpcEncodeDescr_t), cudaMemcpyHostToDevice, strm));
+-    }
++    // if(enable_desc_async_copy)
++    // {
++    //     // Copy part of the workspace at a time
++    //     CUDA_CHECK_EXCEPTION_TRY_RESET_ERROR(cudaMemcpyAsync(d_workspace, h_workspace, 2 * desc.num_TBs * sizeof(LDPC_output_t), cudaMemcpyHostToDevice, strm));
++    //     // CUDA_CHECK_EXCEPTION_TRY_RESET_ERROR(cudaMemcpyAsync(gpu_desc, cpu_desc, sizeof(ldpcEncodeDescr_t), cudaMemcpyHostToDevice, strm));
++    // }
+ 
+     // ldpcEncodeLaunchConfig->m_desc = static_cast<ldpcEncodeDescr_t*>(gpu_desc);
+ 
+-    int  C_in_word = h_input[0].layout().dimensions[1];
++    int  C_in_word = desc.input.layout().dimensions[1];
+     dim3 blocks(C_in_word, desc.num_TBs, 1);
+     dim3 block_size(ldpc::get_encode_cta_size(Z, num_rows), 1, 1);
+ 
+     // We use a __grid_constant__ kernel parameter, so we pass the CPU descriptor and
+     // its fields will be copied to constant memory.
+-    ldpcEncodeLaunchConfig->m_kernelArgs[0]                 = cpu_desc;
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.extra        = nullptr;
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.kernelParams = &(ldpcEncodeLaunchConfig->m_kernelArgs[0]);
+-
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.blockDimX = block_size.x;
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.blockDimY = block_size.y;
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.blockDimZ = block_size.z;
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.gridDimX  = blocks.x;
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.gridDimY  = blocks.y;
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.gridDimZ  = blocks.z;
++    // ldpcEncodeLaunchConfig->m_kernelArgs[0]                 = cpu_desc;
++    // ldpcEncodeLaunchConfig->m_kernelNodeParams.extra        = nullptr;
++    // ldpcEncodeLaunchConfig->m_kernelNodeParams.kernelParams = &(ldpcEncodeLaunchConfig->m_kernelArgs[0]);
++
++    // ldpcEncodeLaunchConfig->m_kernelNodeParams.blockDimX = block_size.x;
++    // ldpcEncodeLaunchConfig->m_kernelNodeParams.blockDimY = block_size.y;
++    // ldpcEncodeLaunchConfig->m_kernelNodeParams.blockDimZ = block_size.z;
++    // ldpcEncodeLaunchConfig->m_kernelNodeParams.gridDimX  = blocks.x;
++    // ldpcEncodeLaunchConfig->m_kernelNodeParams.gridDimY  = blocks.y;
++    // ldpcEncodeLaunchConfig->m_kernelNodeParams.gridDimZ  = blocks.z;
+     //printf("grid {%d, %d, %d}\n", blocks.x, blocks.y, blocks.z);
+ 
+-    cudaFunction_t ldpc_device_function = nullptr;
++    // cudaFunction_t ldpc_device_function = nullptr;
+ 
+     constexpr size_t elem_size = sizeof(uint32_t) * 8;
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.sharedMemBytes = (Z >= 32) ?
++    uint32_t sharedMemBytes  = (Z >= 32) ?
+         (((Z / 32 + int(Z % 32 != 0)) * (desc.Kb + smem_num_rows) * sizeof(int)) +
+             (Z / elem_size + int(Z % elem_size != 0))) :
+         (desc.Kb + smem_num_rows + 1) * sizeof(int);
+     #define LDPC_Z_CASE(_Z) \
+         case _Z: \
+-            CUDA_CHECK_EXCEPTION_TRY_RESET_ERROR(cudaGetFuncBySymbol(&ldpc_device_function, reinterpret_cast<void*>(ldpc::ldpc_encode_in_bit_kernel<uint32_t, _Z>))); \
++            ldpc::ldpc_encode_in_bit_kernel<uint32_t, _Z><<<blocks, block_size, sharedMemBytes, strm>>>(desc); \
+             break;
+     switch (Z)
+     {
+@@ -611,20 +578,19 @@ cuphyStatus_t CUPHYWINAPI cuphySetupLDPCEncode(cuphyLDPCEncodeLaunchConfig_t ldp
+     }
+     #undef LDPC_Z_CASE
+ 
+-    ldpcEncodeLaunchConfig->m_kernelNodeParams.func = ldpc_device_function;
+     return CUPHY_STATUS_SUCCESS;
+ }
+ 
+-cuphyStatus_t CUPHYWINAPI cuphySetLDPCEncodeAddr(cuphyLDPCEncodeLaunchConfig_t ldpcEncodeLaunchConfig,
+-                                                 uint8_t*                      inAddr,
+-                                                 uint8_t*                      outAddr,
+-                                                 uint64_t                      nextIn,
+-                                                 uint64_t                      nextOut)
+-{
+-    ldpcEncodeDescr_t& desc = *(static_cast<ldpcEncodeDescr_t*>(ldpcEncodeLaunchConfig->m_kernelArgs[0]));
+-    desc.in_addr           = inAddr;
+-    desc.out_addr          = outAddr;
+-    desc.next_in           = nextIn;
+-    desc.next_out          = nextOut;
+-    return CUPHY_STATUS_SUCCESS;
+-}
++// cuphyStatus_t CUPHYWINAPI cuphySetLDPCEncodeAddr(cuphyLDPCEncodeLaunchConfig_t ldpcEncodeLaunchConfig,
++//                                                  uint8_t*                      inAddr,
++//                                                  uint8_t*                      outAddr,
++//                                                  uint64_t                      nextIn,
++//                                                  uint64_t                      nextOut)
++// {
++//     ldpcEncodeDescr_t& desc = *(static_cast<ldpcEncodeDescr_t*>(ldpcEncodeLaunchConfig->m_kernelArgs[0]));
++//     desc.in_addr           = inAddr;
++//     desc.out_addr          = outAddr;
++//     desc.next_in           = nextIn;
++//     desc.next_out          = nextOut;
++//     return CUPHY_STATUS_SUCCESS;
++// }
